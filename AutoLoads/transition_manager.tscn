@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bh4m2akps71me"]
 
-[ext_resource type="Script" uid="uid://d3b8r6h0ww33f" path="res://canvas_layer.gd" id="1_004wo"]
+[ext_resource type="Script" uid="uid://d3b8r6h0ww33f" path="res://AutoLoads/transition_manager.gd" id="1_004wo"]
 [ext_resource type="Shader" uid="uid://cpweioulbmlm1" path="res://Shaders/universalTransition.gdshader" id="2_4n2lq"]
 [ext_resource type="Shader" uid="uid://cw83ncdeyxqne" path="res://Shaders/red_vignette.gdshader" id="3_hiihg"]
 
