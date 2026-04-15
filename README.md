@@ -1,3 +1,3 @@
 # ChoppingLogs
 Game about chopping logs!
-Testing discord webhook
+Testing discord webhook v2
