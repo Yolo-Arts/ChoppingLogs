@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bd8pw5g1pc7gb"]
+
+[ext_resource type="Script" uid="uid://c2613f8x5vj6g" path="res://Game/Managers/stage_controller.gd" id="1_kxtph"]
+
+[node name="MainGame" type="Node" unique_id=35583829]
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1208827721]
+
+[node name="StageController" type="Node" parent="." unique_id=559222550]
+script = ExtResource("1_kxtph")

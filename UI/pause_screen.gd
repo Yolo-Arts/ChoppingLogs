@@ -25,5 +25,5 @@ func _on_main_menu_btn_pressed() -> void:
 	get_tree().paused = false
 	Engine.time_scale = 1.0
 	SoundManager.play_menuBtn()
-	get_tree().change_scene_to_file("res://UI/start_screen.tscn")
+	EventSystem.STA_change_stage.emit(StageConfig.Keys.MainMenu)
 	queue_free()

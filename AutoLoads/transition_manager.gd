@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var fade_in_black_animation_player: AnimationPlayer = $AnimationPlayer
 @onready var fade_in_black: ColorRect = $FadeInBlack
 
 @onready var iris_transition: ColorRect = $IrisTransition
@@ -15,12 +15,12 @@ extends CanvasLayer
 func play_fade_in_black(reversed: bool = false) -> void:
 	if reversed == false:
 		fade_in_black.visible = true
-		animation_player.play("fade_in")
+		fade_in_black_animation_player.play("fade_in")
 	else:
 		fade_in_black.visible = true
-		animation_player.play_backwards("fade_in")
+		fade_in_black_animation_player.play_backwards("fade_in")
 	
-	await animation_player.animation_finished
+	await fade_in_black_animation_player.animation_finished
 	fade_in_black.visible = false
 
 

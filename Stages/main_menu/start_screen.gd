@@ -10,9 +10,10 @@ func _ready() -> void:
 func _on_play_btn_pressed() -> void:
 	process_mode = PROCESS_MODE_DISABLED
 	SoundManager.play_menuBtn()
-	TransitionManager.play_fade_in_black(true)
-	await TransitionManager.animation_player.animation_finished
-	get_tree().change_scene_to_file(main_tscn)
+	EventSystem.STA_change_stage.emit(StageConfig.Keys.Main)
+	#TransitionManager.play_fade_in_black(true)
+	#await TransitionManager.fade_in_black_animation_player.animation_finished
+	#get_tree().change_scene_to_file(main_tscn)
 
 
 func _on_options_btn_pressed() -> void:
