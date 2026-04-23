@@ -16,11 +16,11 @@ func _input(event: InputEvent) -> void:
 
 func _on_resume_btn_pressed() -> void:
 	get_tree().paused = false
-	SoundManager.play_normalBtn()
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.PauseMenu)
 
 func _on_options_btn_pressed() -> void:
-	SoundManager.play_normalBtn()
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.SettingsMenu, true)
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.PauseMenu)
 
@@ -28,7 +28,7 @@ func _on_options_btn_pressed() -> void:
 func _on_main_menu_btn_pressed() -> void:
 	get_tree().paused = false
 	Engine.time_scale = 1.0
-	SoundManager.play_menuBtn()
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.MenuBtnPressed)
 	EventSystem.STA_change_stage.emit(StageConfig.Keys.MainMenu)
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.PauseMenu)
 	

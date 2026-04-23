@@ -1,24 +1,10 @@
 [gd_scene format=3 uid="uid://cl2twy81spmbb"]
 
 [ext_resource type="Script" uid="uid://bhdcda7l3hgpm" path="res://AutoLoads/sound_manager.gd" id="1_35e10"]
-[ext_resource type="AudioStream" uid="uid://tnhiws4tdj2p" path="res://Assets/Audio/UIBtnSFX/RetroBtnSFX/Retro8.mp3" id="2_i86m2"]
-[ext_resource type="AudioStream" uid="uid://662i7ee2w662" path="res://Assets/Audio/UIBtnSFX/RetroBtnSFX/Retro9.mp3" id="3_2ty25"]
-[ext_resource type="AudioStream" uid="uid://c5cy38ymb3w8p" path="res://Assets/Audio/UIBtnSFX/RetroBtnSFX/Retro6.mp3" id="4_sv47m"]
-[ext_resource type="AudioStream" uid="uid://deteqhacy3dxa" path="res://Assets/Audio/UIBtnSFX/RetroBtnSFX/Retro7.mp3" id="5_g0lm7"]
+[ext_resource type="AudioStream" uid="uid://bddgp4rr8y56e" path="res://Assets/Audio/SFX_Resources/MenuBtnPressedRandomizer.tres" id="2_35e10"]
+[ext_resource type="AudioStream" uid="uid://5lr77gteyirm" path="res://Assets/Audio/SFX_Resources/NormalButtonRandomizer.tres" id="4_i86m2"]
 [ext_resource type="AudioStream" uid="uid://bt5qxyher3fsk" path="res://Assets/Audio/UIBtnSFX/RetroBtnSFX/Retro10.mp3" id="6_i86m2"]
 [ext_resource type="AudioStream" uid="uid://c8qwwlsgbawma" path="res://Assets/Audio/Music/_investigation.wav" id="7_2ty25"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_15cr7"]
-random_pitch = 1.2
-streams_count = 2
-stream_0/stream = ExtResource("2_i86m2")
-stream_1/stream = ExtResource("3_2ty25")
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a7nun"]
-random_pitch = 1.2
-streams_count = 2
-stream_0/stream = ExtResource("4_sv47m")
-stream_1/stream = ExtResource("5_g0lm7")
 
 [node name="SoundManager" type="Node" unique_id=1135687308]
 script = ExtResource("1_35e10")
@@ -28,11 +14,11 @@ script = ExtResource("1_35e10")
 [node name="UIBtnSounds" type="Node" parent="SFX" unique_id=6147134]
 
 [node name="MenuBtnPressed" type="AudioStreamPlayer" parent="SFX/UIBtnSounds" unique_id=29815258]
-stream = SubResource("AudioStreamRandomizer_15cr7")
+stream = ExtResource("2_35e10")
 bus = &"SFX"
 
 [node name="NormalBtnPressed" type="AudioStreamPlayer" parent="SFX/UIBtnSounds" unique_id=1045687845]
-stream = SubResource("AudioStreamRandomizer_a7nun")
+stream = ExtResource("4_i86m2")
 bus = &"SFX"
 
 [node name="uiSfxTest" type="AudioStreamPlayer" parent="SFX/UIBtnSounds" unique_id=1391241352]

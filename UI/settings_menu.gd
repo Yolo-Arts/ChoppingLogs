@@ -32,12 +32,12 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(SFX_BUS_ID, value < .05)
 	user_prefs.sfx_volume = value
-	SoundManager.play_uiSfxTest()
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UISFXTest)
 
 func _on_reset_defaults_btn_pressed() -> void:
 	music_slider.value = 0.8
 	sfx_slider.value = 0.8
-	SoundManager.play_normalBtn()
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 
 func _on_close_btn_pressed() -> void:
 	user_prefs.save()
@@ -48,7 +48,7 @@ func close_settings():
 		music_slider.value = user_prefs.music_volume
 	if sfx_slider:
 		sfx_slider.value = user_prefs.sfx_volume
-	SoundManager.play_normalBtn()
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	#queue_free()
 	
 	if open_pause_menu_after_closing:

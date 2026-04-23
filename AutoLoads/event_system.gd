@@ -7,3 +7,6 @@ signal BUL_destroy_all_bulletins
 signal STA_change_stage
 
 signal MUS_play_music
+
+signal SFX_play_sfx
+signal SFX_play_dynamic_sfx
