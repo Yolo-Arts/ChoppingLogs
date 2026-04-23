@@ -1,14 +1,12 @@
 extends Node
 
-@export_enum("Menu", "LevelOne", "LevelTwo", "Endless") var scene: String = "Menu"
-
 var user_prefs: UserPrefs
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
 
 func _ready() -> void:
 	user_prefs = UserPrefs.load_or_create()
-	SoundManager.play_bgmPlaceholder()
+	#SoundManager.play_bgmPlaceholder()
 	
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(user_prefs.sfx_volume))
 	AudioServer.set_bus_mute(SFX_BUS_ID, user_prefs.sfx_volume < .05)

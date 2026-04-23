@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2613f8x5vj6g" path="res://Game/Managers/stage_controller.gd" id="1_kxtph"]
 [ext_resource type="Script" uid="uid://now2sdxyg1yo" path="res://Game/Managers/bulletin_controller.gd" id="1_welsx"]
+[ext_resource type="Script" uid="uid://bgp1cbwstmloy" path="res://Game/Managers/music_controller.gd" id="3_1iqn0"]
 
 [node name="MainGame" type="Node" unique_id=35583829]
 
@@ -12,3 +13,6 @@ script = ExtResource("1_welsx")
 
 [node name="StageController" type="Node" parent="." unique_id=559222550]
 script = ExtResource("1_kxtph")
+
+[node name="MusicController" type="AudioStreamPlayer" parent="." unique_id=2131579621]
+script = ExtResource("3_1iqn0")

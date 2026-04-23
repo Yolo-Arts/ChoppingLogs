@@ -5,3 +5,5 @@ signal BUL_destroy_bulletin
 signal BUL_destroy_all_bulletins
 
 signal STA_change_stage
+
+signal MUS_play_music

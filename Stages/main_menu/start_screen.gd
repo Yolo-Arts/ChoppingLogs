@@ -3,7 +3,7 @@ extends Control
 var main_tscn = "uid://cqguftua63irx"
 
 func _ready() -> void:
-	Globals.scene = "Menu"
+	EventSystem.MUS_play_music.emit(MusicConfig.Keys.BGMPlaceHolder)
 	TransitionManager.play_fade_in_black()
 
 func _on_play_btn_pressed() -> void:

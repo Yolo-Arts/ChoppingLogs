@@ -30,4 +30,5 @@ func _on_main_menu_btn_pressed() -> void:
 	Engine.time_scale = 1.0
 	SoundManager.play_menuBtn()
 	EventSystem.STA_change_stage.emit(StageConfig.Keys.MainMenu)
-	queue_free()
+	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.PauseMenu)
+	
