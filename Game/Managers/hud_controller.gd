@@ -10,7 +10,10 @@ func _ready() -> void:
 	hide_hud()
 
 func hide_hud() -> void:
-	remove_child(hud)
+	if hud:
+		hud.visible = false
+		hud.process_mode = PROCESS_MODE_DISABLED
 
 func show_hud() -> void:
-	add_child(hud)
+	hud.visible = true
+	hud.process_mode = PROCESS_MODE_INHERIT
