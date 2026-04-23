@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dfa6w3onh1aef"]
 
 [ext_resource type="Script" uid="uid://c3yf4t2bsel87" path="res://Player/player.gd" id="1_4ntmi"]
+[ext_resource type="Script" uid="uid://c40f4lfb11mqv" path="res://Game/Managers/inventory_manager.gd" id="2_4ntmi"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
 
@@ -21,3 +22,8 @@ mesh = SubResource("CapsuleMesh_l8h54")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1661252004]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0155582, 0)
 shape = SubResource("CapsuleShape3D_l8h54")
+
+[node name="Managers" type="Node" parent="." unique_id=1911751187]
+
+[node name="InventoryManager" type="Node" parent="Managers" unique_id=2003678697]
+script = ExtResource("2_4ntmi")

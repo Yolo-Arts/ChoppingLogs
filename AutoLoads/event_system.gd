@@ -17,3 +17,8 @@ signal SFX_play_dynamic_sfx
 
 signal HUD_hide_hud
 signal HUD_show_hud
+
+signal INV_ask_update_inventory
+signal INV_inventory_updated
+signal INV_switch_two_inventory_item_indexes
+signal INV_delete_item_by_index

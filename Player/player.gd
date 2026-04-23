@@ -13,6 +13,7 @@ func _ready() -> void:
 	EventSystem.HUD_show_hud.emit()
 	EventSystem.PLA_freeze_player.connect(set_freeze.bind(true))
 	EventSystem.PLA_unfreeze_player.connect(set_freeze.bind(false))
+	
 
 func set_freeze(freeze: bool) -> void:
 	set_process(!freeze)
@@ -60,6 +61,10 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		#Globals.open_pause_menu()
 		if EventSystem.is_transitioning == false:
 			EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PauseMenu)
+	
+	if event.is_action_pressed("open_inventory"):
+		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.Inventory)
+		
 
 func _exit_tree() -> void:
 	EventSystem.HUD_hide_hud.emit()

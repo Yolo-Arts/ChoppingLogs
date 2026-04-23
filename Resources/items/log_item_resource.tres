@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://73l6ntlviutw"]
+
+[ext_resource type="Texture2D" uid="uid://bdmbqpnrlodgr" path="res://Assets/UI/log.png" id="1_15wof"]
+[ext_resource type="Script" uid="uid://rrdagysicmkc" path="res://Resources/items/item_resource.gd" id="1_hwx4q"]
+
+[resource]
+script = ExtResource("1_hwx4q")
+display_name = "Log"
+icon = ExtResource("1_15wof")
+description = "A sturdy log."
+metadata/_custom_type_script = "uid://rrdagysicmkc"
