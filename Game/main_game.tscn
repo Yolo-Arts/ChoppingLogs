@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c2613f8x5vj6g" path="res://Game/Managers/stage_controller.gd" id="1_kxtph"]
 [ext_resource type="Script" uid="uid://now2sdxyg1yo" path="res://Game/Managers/bulletin_controller.gd" id="1_welsx"]
+[ext_resource type="PackedScene" uid="uid://sm3vg43jhtca" path="res://UI/HUD/hud.tscn" id="2_76wv5"]
+[ext_resource type="Script" uid="uid://hi3sg4yx2a50" path="res://Game/Managers/hud_controller.gd" id="2_dj6w8"]
 [ext_resource type="Script" uid="uid://bgp1cbwstmloy" path="res://Game/Managers/music_controller.gd" id="3_1iqn0"]
 [ext_resource type="Script" uid="uid://cjpfi8480l5h1" path="res://Game/Managers/sfx_controller.gd" id="4_o2gyw"]
 
@@ -11,6 +13,12 @@
 
 [node name="BulletinController" type="Node" parent="UILayer" unique_id=1789201587]
 script = ExtResource("1_welsx")
+
+[node name="HUDController" type="Node" parent="UILayer" unique_id=1166291365]
+script = ExtResource("2_dj6w8")
+
+[node name="HUD" parent="UILayer/HUDController" unique_id=1722912934 instance=ExtResource("2_76wv5")]
+unique_name_in_owner = true
 
 [node name="StageController" type="Node" parent="." unique_id=559222550]
 script = ExtResource("1_kxtph")

@@ -10,6 +10,7 @@ extends CharacterBody3D
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	EventSystem.HUD_show_hud.emit()
 	EventSystem.PLA_freeze_player.connect(set_freeze.bind(true))
 	EventSystem.PLA_unfreeze_player.connect(set_freeze.bind(false))
 
@@ -59,3 +60,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		#Globals.open_pause_menu()
 		if EventSystem.is_transitioning == false:
 			EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PauseMenu)
+
+func _exit_tree() -> void:
+	EventSystem.HUD_hide_hud.emit()

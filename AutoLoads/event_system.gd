@@ -14,3 +14,6 @@ signal MUS_play_music
 
 signal SFX_play_sfx
 signal SFX_play_dynamic_sfx
+
+signal HUD_hide_hud
+signal HUD_show_hud

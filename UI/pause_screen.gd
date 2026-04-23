@@ -6,6 +6,7 @@ extends Bulletin
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	EventSystem.HUD_hide_hud.emit()
 	resume_btn.pressed.connect(_on_resume_btn_pressed)
 	options_btn.pressed.connect(_on_options_btn_pressed)
 	main_menu_btn.pressed.connect(_on_main_menu_btn_pressed)
@@ -17,6 +18,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_resume_btn_pressed() -> void:
 	get_tree().paused = false
+	EventSystem.HUD_show_hud.emit()
 	EventSystem.PLA_unfreeze_player.emit()
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.PauseMenu)
