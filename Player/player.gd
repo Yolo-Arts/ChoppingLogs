@@ -10,10 +10,17 @@ extends CharacterBody3D
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	EventSystem.PLA_freeze_player.connect(set_freeze.bind(true))
+	EventSystem.PLA_unfreeze_player.connect(set_freeze.bind(false))
+
+func set_freeze(freeze: bool) -> void:
+	set_process(!freeze)
+	set_physics_process(!freeze)
+	set_process_unhandled_key_input(!freeze)
+	set_process_input(!freeze)
 
 func _physics_process(delta: float) -> void:
 	move()
-
 
 func move() -> void:
 	var is_sprinting: bool
@@ -50,4 +57,5 @@ func look_around(relative: Vector2) -> void:
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		#Globals.open_pause_menu()
-		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PauseMenu)
+		if EventSystem.is_transitioning == false:
+			EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PauseMenu)

@@ -14,6 +14,8 @@ func change_stage(key: StageConfig.Keys) -> void:
 	add_child(new_stage)
 
 func start_stage_change_sequence(key: StageConfig.Keys) -> void:
+	EventSystem.is_transitioning = true
 	TransitionManager.play_fade_in_black(true)
 	await TransitionManager.fade_in_black_animation_player.animation_finished
 	change_stage(key)
+	EventSystem.is_transitioning = false

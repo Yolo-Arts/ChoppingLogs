@@ -10,9 +10,9 @@
 script = ExtResource("1_4ntmi")
 
 [node name="Head" type="Node3D" parent="." unique_id=497952282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6848296, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=30710601]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6102438, 0)
 
 [node name="Body" type="MeshInstance3D" parent="." unique_id=1229439208]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0174714, 0)
