@@ -9,7 +9,7 @@ func _ready() -> void:
 func _on_play_btn_pressed() -> void:
 	process_mode = PROCESS_MODE_DISABLED
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.MenuBtnPressed)
-	EventSystem.STA_change_stage.emit(StageConfig.Keys.Main)
+	EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
 
 
 func _on_options_btn_pressed() -> void:
