@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0ln2u5hybkr7"]
 
-[ext_resource type="Shader" uid="uid://whc3xvmgjd25" path="res://UI/gaussianBlur.gdshader" id="1_k1q3y"]
+[ext_resource type="Shader" uid="uid://whc3xvmgjd25" path="res://Shaders/gaussianBlur.gdshader" id="1_k1q3y"]
 [ext_resource type="Script" uid="uid://jfk5filh83k" path="res://UI/pause_screen.gd" id="1_pqas3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p4nw2"]
@@ -9,12 +9,19 @@ shader_parameter/blur_amount = 2.5
 shader_parameter/mix_amount = 0.5
 shader_parameter/color_over = Color(0, 0, 0, 1)
 
-[node name="PauseScreen" type="CanvasLayer" unique_id=641903758]
+[node name="PauseScreen" type="Control" unique_id=608497350]
 process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_pqas3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1849549465]
 material = SubResource("ShaderMaterial_p4nw2")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=271093209]
+layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5

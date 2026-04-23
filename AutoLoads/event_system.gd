@@ -1,3 +1,7 @@
 extends Node
 
+signal BUL_create_bulletin
+signal BUL_destroy_bulletin
+signal BUL_destroy_all_bulletins
+
 signal STA_change_stage

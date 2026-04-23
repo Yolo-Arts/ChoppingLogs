@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Bulletin
 
 @onready var resume_btn: Button = %ResumeBtn
 @onready var options_btn: Button = %OptionsBtn
@@ -10,15 +10,19 @@ func _ready() -> void:
 	main_menu_btn.pressed.connect(_on_main_menu_btn_pressed)
 	get_tree().paused = true
 
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		_on_resume_btn_pressed()
+
 func _on_resume_btn_pressed() -> void:
 	get_tree().paused = false
 	SoundManager.play_normalBtn()
-	queue_free()
-
+	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.PauseMenu)
 
 func _on_options_btn_pressed() -> void:
 	SoundManager.play_normalBtn()
-	Globals.open_settings_menu()
+	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.SettingsMenu, true)
+	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.PauseMenu)
 
 
 func _on_main_menu_btn_pressed() -> void:

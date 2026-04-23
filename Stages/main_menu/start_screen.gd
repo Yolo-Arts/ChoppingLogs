@@ -2,7 +2,6 @@ extends Control
 
 var main_tscn = "uid://cqguftua63irx"
 
-
 func _ready() -> void:
 	Globals.scene = "Menu"
 	TransitionManager.play_fade_in_black()
@@ -18,7 +17,7 @@ func _on_play_btn_pressed() -> void:
 
 func _on_options_btn_pressed() -> void:
 	SoundManager.play_menuBtn()
-	Globals.open_settings_menu()
+	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.SettingsMenu)
 
 func _on_quit_btn_pressed() -> void:
 	SoundManager.play_menuBtn()
