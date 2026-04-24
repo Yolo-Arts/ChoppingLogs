@@ -4,6 +4,7 @@ var inventory_size := 5
 var inventory := []
 
 var can_add_to_inventory: bool = true
+var item_too_heavy :bool = false
 
 func _enter_tree() -> void:
 	EventSystem.INV_ask_update_inventory.connect(send_inventory)
@@ -12,6 +13,8 @@ func _enter_tree() -> void:
 	EventSystem.INV_try_to_pickup_item.connect(try_to_pickup_item)
 	EventSystem.WEI_weight_maxed.connect(lock_inventory.bind(true))
 	EventSystem.WEI_weight_not_maxed.connect(lock_inventory.bind(false))
+	EventSystem.WEI_item_weight_too_much.connect(check_if_item_too_heavy.bind(true))
+	EventSystem.WEI_item_weight_not_too_much.connect(check_if_item_too_heavy.bind(false))
 
 func _ready() -> void:
 	inventory.resize(inventory_size)
@@ -21,13 +24,18 @@ func lock_inventory(weight_maxed: bool):
 	can_add_to_inventory = !weight_maxed
 	print("Can add to inventory?", can_add_to_inventory)
 
+func check_if_item_too_heavy(is_item_too_heavy: bool):
+	item_too_heavy = is_item_too_heavy
+
 func try_to_pickup_item(item_key:ItemConfig.Keys, destroy_pickuppable:Callable) -> void:
 	if not get_free_slots():
 		return
 	
 	if can_add_to_inventory:
-		add_item(item_key)
-		destroy_pickuppable.call()
+		EventSystem.WEI_check_if_weight_will_be_maxed.emit(item_key)
+		if item_too_heavy == false:
+			add_item(item_key)
+			destroy_pickuppable.call()
 
 func get_free_slots() -> int:
 	var free_slots := 0

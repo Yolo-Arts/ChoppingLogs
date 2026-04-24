@@ -29,3 +29,6 @@ signal WEI_update_weight_visual
 signal WEI_ask_update_weight_visual
 signal WEI_weight_maxed
 signal WEI_weight_not_maxed
+signal WEI_check_if_weight_will_be_maxed
+signal WEI_item_weight_too_much
+signal WEI_item_weight_not_too_much
