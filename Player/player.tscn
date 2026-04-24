@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3yf4t2bsel87" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Script" uid="uid://c40f4lfb11mqv" path="res://Game/Managers/inventory_manager.gd" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://dt1rcawit7yfg" path="res://Player/interaction_ray_cast.gd" id="2_btcbx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
 
@@ -14,6 +15,13 @@ script = ExtResource("1_4ntmi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6848296, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=30710601]
+
+[node name="InteractionRayCast" type="RayCast3D" parent="Head" unique_id=990858903]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -2.5)
+collision_mask = 128
+collide_with_areas = true
+script = ExtResource("2_btcbx")
 
 [node name="Body" type="MeshInstance3D" parent="." unique_id=1229439208]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0174714, 0)

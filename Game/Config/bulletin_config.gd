@@ -4,6 +4,7 @@ enum Keys{
 	PauseMenu,
 	SettingsMenu,
 	Inventory,
+	InteractionPrompt,
 }
 
 
@@ -15,4 +16,5 @@ const BULLETIN_PATHS := {
 	Keys.PauseMenu : "res://UI/pause_screen.tscn",
 	Keys.SettingsMenu : "res://UI/settings_menu.tscn",
 	Keys.Inventory: "res://Bulletins/player_menus/player_menu_base.tscn",
+	Keys.InteractionPrompt: "res://Bulletins/interaction_prompt/interaction_prompt.tscn",
 }

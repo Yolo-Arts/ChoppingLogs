@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dqkk3nlf7mssv"]
+
+[ext_resource type="PackedScene" uid="uid://du65qekkmsdh3" path="res://Objects/interactables/pickuppables/pickuppable_template.tscn" id="1_m3gvp"]
+[ext_resource type="PackedScene" uid="uid://bw6s6a4egoido" path="res://Assets/Meshes/PlaceholderMeshes/log.tscn" id="2_0sx86"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sejwy"]
+height = 1.0019531
+radius = 0.11425781
+
+[node name="PickuppableLog" unique_id=1033591961 instance=ExtResource("1_m3gvp")]
+
+[node name="Pickuppable" parent="." index="0" unique_id=1303360086]
+prompt = "Pickup Log"
+
+[node name="CollisionShape3D" parent="Pickuppable" index="0" unique_id=838533291]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_sejwy")
+
+[node name="Log" parent="." index="1" unique_id=1790793256 instance=ExtResource("2_0sx86")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
