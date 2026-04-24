@@ -2,6 +2,7 @@ class_name UserPrefs extends Resource
 
 @export_range(0,1,.05) var music_volume: float = 0.8
 @export_range(0,1,.05) var sfx_volume: float = 0.8
+@export var resolution_str: String = "1920x1080"
 
 const USER_PREFS_PATH:String = "user://user_prefs.tres"
 

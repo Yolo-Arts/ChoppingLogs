@@ -82,7 +82,7 @@ columns = 3
 
 [node name="MusicLabel" type="Label" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=1822630746]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 24
 text = "Music"
 
@@ -118,6 +118,18 @@ max_value = 1.0
 step = 0.05
 value = 0.8
 
+[node name="SFXLabel2" type="Label" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=1702839736]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Resolution"
+
+[node name="VSeparator3" type="VSeparator" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=627106145]
+layout_mode = 2
+
+[node name="ResolutionSelector" type="OptionButton" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=1584301784]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="BottomSeperator" type="HSeparator" parent="PanelContainer/Panel/VBoxContainer" unique_id=947347240]
 layout_mode = 2
 theme_override_constants/separation = 30
@@ -150,6 +162,7 @@ text = " Save Settings "
 
 [connection signal="value_changed" from="PanelContainer/Panel/VBoxContainer/OptionsContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="PanelContainer/Panel/VBoxContainer/OptionsContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="item_selected" from="PanelContainer/Panel/VBoxContainer/OptionsContainer/ResolutionSelector" to="." method="_on_resolution_selector_item_selected"]
 [connection signal="pressed" from="PanelContainer/Panel/VBoxContainer/OptionsBackContainer/CloseBtn" to="." method="_on_close_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/Panel/VBoxContainer/OptionsBackContainer/ResetDefaultsBtn" to="." method="_on_reset_defaults_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/Panel/VBoxContainer/OptionsBackContainer/SaveSettingsBtn" to="." method="_on_save_settings_btn_pressed"]

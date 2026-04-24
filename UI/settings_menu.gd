@@ -1,12 +1,24 @@
 extends Bulletin
 @onready var music_slider: HSlider = %MusicSlider
 @onready var sfx_slider: HSlider = %SFXSlider
+@onready var resolution_selector: OptionButton = %ResolutionSelector
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
 
 var user_prefs: UserPrefs
-
 var open_pause_menu_after_closing = false
+
+# Note: If you change this, do not forget to change it in Globals.gd
+var resolutions: Dictionary = {
+	"3840x2160": Vector2i(3840, 2160),
+	"2560x1440": Vector2i(2560, 1440),
+	"1920x1080": Vector2i(1920, 1080),
+	"1600x900": Vector2i(1600, 900),
+	"1366x768": Vector2i(1366, 768),
+	"1280x720": Vector2i(1280, 720),
+	"1024x576": Vector2i(1024, 576), 
+	"640x360": Vector2i(640, 360)    
+}
 
 func _ready() -> void:
 	user_prefs = UserPrefs.load_or_create()
@@ -15,6 +27,19 @@ func _ready() -> void:
 		music_slider.value = user_prefs.music_volume
 	if sfx_slider:
 		sfx_slider.value = user_prefs.sfx_volume
+	
+	populate_resolutions()
+
+func populate_resolutions() -> void:
+	resolution_selector.clear()
+	
+	for res_text in resolutions:
+		resolution_selector.add_item(res_text)
+	
+	for i in range(resolution_selector.item_count):
+		if resolution_selector.get_item_text(i) == user_prefs.resolution_str:
+			resolution_selector.selected = i
+			break
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -61,3 +86,17 @@ func _on_save_settings_btn_pressed() -> void:
 	user_prefs.music_volume = music_slider.value
 	user_prefs.sfx_volume = sfx_slider.value
 	user_prefs.save()
+
+
+func _on_resolution_selector_item_selected(index: int) -> void:
+	var res_text = resolution_selector.get_item_text(index)
+	var size = resolutions[res_text]
+	
+	DisplayServer.window_set_size(size)
+	
+	# centers the screen
+	var screen_center = DisplayServer.screen_get_position() + (DisplayServer.screen_get_size() / 2)
+	var window_pos = screen_center - (size / 2)
+	DisplayServer.window_set_position(window_pos)
+	
+	user_prefs.resolution_str = res_text
