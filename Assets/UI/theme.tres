@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://ks0hgvfqbimr"]
 
 [ext_resource type="FontFile" uid="uid://dik0c3hhwsknx" path="res://Assets/Fonts/PixulBrush.ttf" id="1_0qw6d"]
+[ext_resource type="Texture2D" uid="uid://umtcjiwbpefg" path="res://Assets/UI/GUI_4x.png" id="2_sk3jv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sk3jv"]
 content_margin_left = 4.0
@@ -25,6 +26,26 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3oq6"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sk3jv"]
+texture = ExtResource("2_sk3jv")
+texture_margin_left = 16.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(380, 0, 100, 96)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t3oq6"]
+texture = ExtResource("2_sk3jv")
+texture_margin_left = 36.0
+texture_margin_top = 36.0
+texture_margin_right = 36.0
+texture_margin_bottom = 36.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(128, 224, 128, 128)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0qw6d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3oq6"]
@@ -44,7 +65,7 @@ Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
 Label/constants/line_spacing = 3
-Label/constants/outline_size = 25
+Label/constants/outline_size = 36
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
@@ -52,6 +73,8 @@ Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_0qw6d")
 Label/styles/focus = SubResource("StyleBoxFlat_sk3jv")
 Label/styles/normal = SubResource("StyleBoxEmpty_t3oq6")
+Panel/styles/panel = SubResource("StyleBoxTexture_sk3jv")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_t3oq6")
 ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
 ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
 ProgressBar/constants/outline_size = 27

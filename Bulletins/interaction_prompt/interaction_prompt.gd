@@ -8,7 +8,6 @@ func initialize(prompt) -> void:
 	if prompt is String:
 		prompt_text = "E\n" + prompt
 
-
 func _ready() -> void:
 	label.text = prompt_text
 	EventSystem.WEI_cannot_pickup_due_to_weight.connect(make_prompt_red)
