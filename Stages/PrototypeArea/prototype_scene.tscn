@@ -49,6 +49,15 @@ script = ExtResource("1_pkgy2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/StaticBody3D" unique_id=62796443]
 shape = SubResource("ConcavePolygonShape3D_i71hr")
 
+[node name="PickuppableLog" parent="Terrain/StaticBody3D" unique_id=1033591961 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.8006791, 0, 0.5990935, 0, 1, 0, -0.5990935, 0, 0.8006791, 0.4497987, 0.11804147, 4.7827787)
+
+[node name="PickuppableLog2" parent="Terrain/StaticBody3D" unique_id=178658151 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6236157, 0.11804195, -3.3821115)
+
+[node name="PickuppableLog3" parent="Terrain/StaticBody3D" unique_id=668516309 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(-0.7879892, 0, -0.6156891, 0, 1, 0, 0.6156891, 0, -0.7879892, 4.92209, 0.11804195, 3.5470228)
+
 [node name="Tree" parent="Terrain" unique_id=1141151295 instance=ExtResource("2_i71hr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6091924, 0, 1.0772417)
 
@@ -72,7 +81,7 @@ mesh = SubResource("PlaneMesh_w28og")
 
 [node name="Player" parent="." unique_id=842877921 instance=ExtResource("4_w28og")]
 
-[node name="PickuppableLog" parent="." unique_id=1033591961 instance=ExtResource("5_pkgy2")]
+[node name="PickuppableLog" parent="." unique_id=1962213027 instance=ExtResource("5_pkgy2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9506497, 0.11804147, 2.8088613)
 
 [node name="PickuppableLog2" parent="." unique_id=1301673163 instance=ExtResource("5_pkgy2")]

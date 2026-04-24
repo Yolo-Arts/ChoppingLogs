@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c3yf4t2bsel87" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Script" uid="uid://c40f4lfb11mqv" path="res://Game/Managers/inventory_manager.gd" id="2_4ntmi"]
 [ext_resource type="Script" uid="uid://dt1rcawit7yfg" path="res://Player/interaction_ray_cast.gd" id="2_btcbx"]
+[ext_resource type="Script" uid="uid://dbrt0np04ex1f" path="res://Game/Managers/weight_manager.gd" id="4_gwnis"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
 
@@ -35,3 +36,6 @@ shape = SubResource("CapsuleShape3D_l8h54")
 
 [node name="InventoryManager" type="Node" parent="Managers" unique_id=2003678697]
 script = ExtResource("2_4ntmi")
+
+[node name="WeightManager" type="Node" parent="Managers" unique_id=1473663417]
+script = ExtResource("4_gwnis")

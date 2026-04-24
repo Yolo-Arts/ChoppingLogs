@@ -6,15 +6,18 @@ extends Bulletin
 @onready var item_sell: Label = %ItemSell
 @onready var item_weight: Label = %ItemWeight
 @onready var discard_area: PanelContainer = %DiscardArea
+@onready var weight_progress: ProgressBar = %WeightProgress
 
 func _enter_tree() -> void:
 	EventSystem.INV_inventory_updated.connect(update_inventory)
+	EventSystem.WEI_update_weight_visual.connect(update_weight)
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	EventSystem.PLA_freeze_player.emit()
 	EventSystem.INV_ask_update_inventory.emit()
 	discard_area.item_scrapped.connect(hide_item_info)
+	
 	
 	for inventory_slot in inventory_slot_container.get_children():
 		inventory_slot.mouse_entered.connect(show_item_info.bind(inventory_slot))
@@ -51,6 +54,12 @@ func hide_item_info() -> void:
 func update_inventory(inventory:Array) -> void:
 	for i in inventory.size():
 		inventory_slot_container.get_child(i).set_item_key(inventory[i])
+
+func update_weight(weight: int, max_weight: int) -> void:
+	print("Weight is: ", weight)
+	print("Max Weight is: ", max_weight)
+	weight_progress.max_value = max_weight
+	weight_progress.value = weight
 
 func _on_close_button_pressed() -> void:
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.Inventory)

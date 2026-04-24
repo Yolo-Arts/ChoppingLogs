@@ -23,3 +23,9 @@ signal INV_inventory_updated
 signal INV_switch_two_inventory_item_indexes
 signal INV_delete_item_by_index
 signal INV_try_to_pickup_item
+
+signal WEI_weight_changed
+signal WEI_update_weight_visual
+signal WEI_ask_update_weight_visual
+signal WEI_weight_maxed
+signal WEI_weight_not_maxed

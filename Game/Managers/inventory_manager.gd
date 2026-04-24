@@ -3,24 +3,31 @@ extends Node
 var inventory_size := 5
 var inventory := []
 
+var can_add_to_inventory: bool = true
+
 func _enter_tree() -> void:
 	EventSystem.INV_ask_update_inventory.connect(send_inventory)
 	EventSystem.INV_switch_two_inventory_item_indexes.connect(switch_two_item_indexes)
 	EventSystem.INV_delete_item_by_index.connect(delete_item_by_index)
 	EventSystem.INV_try_to_pickup_item.connect(try_to_pickup_item)
-
-
+	EventSystem.WEI_weight_maxed.connect(lock_inventory.bind(true))
+	EventSystem.WEI_weight_not_maxed.connect(lock_inventory.bind(false))
 
 func _ready() -> void:
 	inventory.resize(inventory_size)
-	inventory[0] = ItemConfig.Keys.Log
+	#inventory[0] = ItemConfig.Keys.Log
+
+func lock_inventory(weight_maxed: bool):
+	can_add_to_inventory = !weight_maxed
+	print("Can add to inventory?", can_add_to_inventory)
 
 func try_to_pickup_item(item_key:ItemConfig.Keys, destroy_pickuppable:Callable) -> void:
 	if not get_free_slots():
 		return
 	
-	add_item(item_key)
-	destroy_pickuppable.call()
+	if can_add_to_inventory:
+		add_item(item_key)
+		destroy_pickuppable.call()
 
 func get_free_slots() -> int:
 	var free_slots := 0
@@ -36,6 +43,8 @@ func add_item(item_key:ItemConfig.Keys) -> void:
 			inventory[i] = item_key
 			break
 	
+	var weight = ItemConfig.get_item_resource(item_key).weight
+	EventSystem.WEI_weight_changed.emit(weight)
 	EventSystem.INV_inventory_updated.emit(inventory)
 
 func send_inventory() -> void:
@@ -49,5 +58,7 @@ func switch_two_item_indexes(slot1:int, slot2:int, ) -> void:
 	EventSystem.INV_inventory_updated.emit(inventory)
 
 func delete_item_by_index(index:int) -> void:
+	var weight = ItemConfig.get_item_resource(inventory[index]).weight
 	inventory[index] = null
+	EventSystem.WEI_weight_changed.emit(-weight)
 	EventSystem.INV_inventory_updated.emit(inventory)
