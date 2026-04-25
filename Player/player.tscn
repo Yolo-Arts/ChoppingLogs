@@ -4,13 +4,15 @@
 [ext_resource type="Script" uid="uid://c40f4lfb11mqv" path="res://Game/Managers/inventory_manager.gd" id="2_4ntmi"]
 [ext_resource type="Script" uid="uid://dt1rcawit7yfg" path="res://Player/interaction_ray_cast.gd" id="2_btcbx"]
 [ext_resource type="Script" uid="uid://dbrt0np04ex1f" path="res://Game/Managers/weight_manager.gd" id="4_gwnis"]
+[ext_resource type="Script" uid="uid://dsk3w5lardgl5" path="res://Game/Managers/player_stat_manager.gd" id="5_k53q1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l8h54"]
 
-[node name="Player" type="CharacterBody3D" unique_id=842877921]
+[node name="Player" type="CharacterBody3D" unique_id=842877921 node_paths=PackedStringArray("player_stats")]
 script = ExtResource("1_4ntmi")
+player_stats = NodePath("Managers/PlayerStatManager")
 
 [node name="Head" type="Node3D" parent="." unique_id=497952282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6848296, 0)
@@ -34,8 +36,12 @@ shape = SubResource("CapsuleShape3D_l8h54")
 
 [node name="Managers" type="Node" parent="." unique_id=1911751187]
 
+[node name="PlayerStatManager" type="Node" parent="Managers" unique_id=1782077226]
+script = ExtResource("5_k53q1")
+
 [node name="InventoryManager" type="Node" parent="Managers" unique_id=2003678697]
 script = ExtResource("2_4ntmi")
 
-[node name="WeightManager" type="Node" parent="Managers" unique_id=1473663417]
+[node name="WeightManager" type="Node" parent="Managers" unique_id=1473663417 node_paths=PackedStringArray("player_stats")]
 script = ExtResource("4_gwnis")
+player_stats = NodePath("../PlayerStatManager")

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@export var normal_speed := 3.0
-@export var sprint_speed := 5.0
+@export var player_stats: PlayerStats
+# TODO move stats into player_stats
 @export var jump_velocity := 4.0
 @export var gravity := 0.2
 @export var mouse_sensitivty := 0.005
@@ -39,14 +39,15 @@ func move() -> void:
 		velocity.y -= gravity
 		is_sprinting = false
 	
-	var speed := normal_speed if not is_sprinting else sprint_speed
+	var base_speed := player_stats.normal_speed if not is_sprinting else player_stats.sprint_speed
+	var final_speed = base_speed * player_stats.player_speed_with_weight_modifier
 	
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
 	
 	var direction :=  transform.basis * Vector3(input_dir.x, 0, input_dir.y)
 	
-	velocity.x = direction.x * speed
-	velocity.z = direction.z * speed
+	velocity.x = direction.x * final_speed
+	velocity.z = direction.z * final_speed
 	
 	move_and_slide()
 
