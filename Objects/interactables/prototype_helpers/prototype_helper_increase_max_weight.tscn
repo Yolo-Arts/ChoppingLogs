@@ -10,7 +10,7 @@ viewport_path = NodePath("Sprite3D/SubViewport")
 
 [node name="Interactable" parent="." index="2" unique_id=1150908498]
 script = ExtResource("2_bwtw5")
-prompt = "Increase Max Weight"
+prompt = "Increase Max Weight by 5"
 
 [node name="Sprite3D" parent="." index="3" unique_id=1621228228]
 texture = SubResource("ViewportTexture_bwtw5")

@@ -44,6 +44,7 @@ offset_left = -71.0
 offset_right = 71.0
 offset_bottom = 36.0
 grow_horizontal = 2
+mouse_filter = 2
 theme_override_constants/margin_top = 10
 
 [node name="PrototypeHelperLabel" type="Label" parent="Sprite3D/SubViewport/MarginContainer" unique_id=1559570643]

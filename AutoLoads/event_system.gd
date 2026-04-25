@@ -33,10 +33,12 @@ signal WEI_update_weight_visual
 signal WEI_ask_update_weight_visual
 signal WEI_weight_maxed
 signal WEI_weight_not_maxed
+signal WEI_check_if_weight_maxed
 signal WEI_check_if_weight_will_be_maxed
 signal WEI_item_weight_too_much
 signal WEI_item_weight_not_too_much
 signal WEI_cannot_pickup_due_to_weight
+signal WEI_cannot_pickup_due_to_space
 
 # UPG -> Upgrade signals
 signal UPG_increase_inventory_size

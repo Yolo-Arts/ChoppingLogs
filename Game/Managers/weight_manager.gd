@@ -9,6 +9,8 @@ func _ready() -> void:
 	EventSystem.WEI_weight_changed.connect(update_weight)
 	EventSystem.WEI_ask_update_weight_visual.connect(ask_update_weight_visual)
 	EventSystem.WEI_check_if_weight_will_be_maxed.connect(check_if_weight_will_be_maxed)
+	EventSystem.WEI_check_if_weight_maxed.connect(check_if_weight_max)
+	EventSystem.UPG_increase_max_weight.connect(increase_max_weight)
 
 func update_weight(weight_changed: int) -> void:
 	weight += weight_changed
@@ -33,3 +35,6 @@ func check_if_weight_will_be_maxed(item_key: ItemConfig.Keys):
 		EventSystem.WEI_item_weight_too_much.emit()
 	else:
 		EventSystem.WEI_item_weight_not_too_much.emit()
+
+func increase_max_weight(increase_amount: int):
+	max_weight += increase_amount

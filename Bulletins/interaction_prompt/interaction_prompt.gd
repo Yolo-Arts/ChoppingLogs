@@ -10,13 +10,16 @@ func initialize(prompt) -> void:
 
 func _ready() -> void:
 	label.text = prompt_text
-	EventSystem.WEI_cannot_pickup_due_to_weight.connect(make_prompt_red)
+	EventSystem.WEI_cannot_pickup_due_to_weight.connect(cannot_pickup_warning.bind("Cannot pickup due to weight"))
+	EventSystem.WEI_cannot_pickup_due_to_space.connect(cannot_pickup_warning.bind("Cannot pickup due to space"))
 
-func make_prompt_red():
-	label.text = "No More Space/Weight"
+func cannot_pickup_warning(warning_text: String):
+	label.text = warning_text
+	warning_effect()
+
+func warning_effect():
 	var tween = create_tween().set_parallel(true)
 	
-
 	var color_chain = create_tween()
 	color_chain.tween_property(label, "theme_override_colors/font_color", Color.RED, 0.1)
 	color_chain.tween_property(label, "theme_override_colors/font_color", Color.WHITE, 0.3).set_delay(0.1)

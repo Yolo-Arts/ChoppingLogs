@@ -107,6 +107,48 @@ transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59
 [node name="PickuppableLog9" parent="." unique_id=472752269 instance=ExtResource("5_pkgy2")]
 transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.004575, 0.11804195, 0.35764718)
 
+[node name="PickuppableLog10" parent="." unique_id=1172458502 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.004575, 0.11804195, 0.91178036)
+
+[node name="PickuppableLog11" parent="." unique_id=483312425 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.004575, 0.11804195, 1.3913436)
+
+[node name="PickuppableLog12" parent="." unique_id=854609240 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.004575, 0.11804195, 1.8137426)
+
+[node name="PickuppableLog13" parent="." unique_id=150675522 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.004575, 0.11804195, 2.3022418)
+
+[node name="PickuppableLog14" parent="." unique_id=1266464931 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.926293, 0.11804195, -2.17548)
+
+[node name="PickuppableLog15" parent="." unique_id=1689723493 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.926293, 0.11804195, -1.7531753)
+
+[node name="PickuppableLog16" parent="." unique_id=1409057763 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.926293, 0.11804195, -1.0598433)
+
+[node name="PickuppableLog17" parent="." unique_id=1210331658 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.926293, 0.11804195, -0.6041715)
+
+[node name="PickuppableLog18" parent="." unique_id=177675057 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.926293, 0.11804195, -0.104070425)
+
+[node name="PickuppableLog19" parent="." unique_id=437543092 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.926293, 0.11804195, 0.35764718)
+
+[node name="PickuppableLog20" parent="." unique_id=944733101 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.926293, 0.11804195, 0.91178036)
+
+[node name="PickuppableLog21" parent="." unique_id=649485137 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.926293, 0.11804195, 1.3913436)
+
+[node name="PickuppableLog22" parent="." unique_id=1241774358 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.926293, 0.11804195, 1.8137426)
+
+[node name="PickuppableLog23" parent="." unique_id=1647943464 instance=ExtResource("5_pkgy2")]
+transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 8.926293, 0.11804195, 2.3022418)
+
 [node name="PickuppableLog4" parent="." unique_id=278628637 instance=ExtResource("5_pkgy2")]
 transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 3.410396, 0.11804195, -2.17548)
 
