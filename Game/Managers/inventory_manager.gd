@@ -15,6 +15,8 @@ func _enter_tree() -> void:
 	EventSystem.WEI_weight_not_maxed.connect(lock_inventory.bind(false))
 	EventSystem.WEI_item_weight_too_much.connect(check_if_item_too_heavy.bind(true))
 	EventSystem.WEI_item_weight_not_too_much.connect(check_if_item_too_heavy.bind(false))
+	
+	EventSystem.UPG_increase_inventory_size.connect(increase_inventory_size)
 
 func _ready() -> void:
 	inventory.resize(inventory_size)
@@ -74,3 +76,8 @@ func delete_item_by_index(index:int) -> void:
 	inventory[index] = null
 	EventSystem.WEI_weight_changed.emit(-weight)
 	EventSystem.INV_inventory_updated.emit(inventory)
+
+func increase_inventory_size():
+	if inventory_size < 30:
+		inventory_size += 1
+		inventory.resize(inventory_size)

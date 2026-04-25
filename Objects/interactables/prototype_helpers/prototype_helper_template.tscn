@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dq82jp8q80abv"]
+
+[ext_resource type="PackedScene" uid="uid://bsycppht5orex" path="res://Assets/Meshes/PlaceholderMeshes/coal_boulder.tscn" id="1_knmrv"]
+[ext_resource type="Script" uid="uid://7unqswfs7a8f" path="res://Objects/interactables/interactable.gd" id="2_ia5dx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ia5dx"]
+radius = 0.45334506
+
+[node name="PrototypeHelperTemplate" type="StaticBody3D" unique_id=979320369]
+
+[node name="CoalBoulder" parent="." unique_id=190270100 instance=ExtResource("1_knmrv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=506388815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31477275, 0)
+shape = SubResource("SphereShape3D_ia5dx")
+
+[node name="Interactable" type="Area3D" parent="." unique_id=1150908498]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("2_ia5dx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Interactable" unique_id=501461057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31477275, 0)
+shape = SubResource("SphereShape3D_ia5dx")

@@ -1,5 +1,6 @@
 extends Bulletin
 
+const INVENTORY_SLOT = preload("uid://cvyf6knuyqwb6")
 @onready var inventory_slot_container: GridContainer = %InventorySlotContainer
 @onready var item_name: Label = %ItemName
 @onready var item_description: Label = %ItemDescription
@@ -52,6 +53,11 @@ func hide_item_info() -> void:
 	item_weight.text = ""
 
 func update_inventory(inventory:Array) -> void:
+	# will add more inventory slots if the inventory array is larger than the count of inventory slots.
+	while inventory.size() > inventory_slot_container.get_child_count() && inventory.size() <= 30:
+		var inventory_slot = INVENTORY_SLOT.instantiate()
+		inventory_slot_container.add_child(inventory_slot)
+	
 	for i in inventory.size():
 		inventory_slot_container.get_child(i).set_item_key(inventory[i])
 

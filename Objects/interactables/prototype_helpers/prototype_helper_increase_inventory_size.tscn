@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cehnjtikyoktd"]
+
+[ext_resource type="PackedScene" uid="uid://dq82jp8q80abv" path="res://Objects/interactables/prototype_helpers/prototype_helper_template.tscn" id="1_65i7q"]
+[ext_resource type="Script" uid="uid://dnpv85i5hkmm1" path="res://Objects/interactables/prototype_helpers/interactable_inventory_size_increase.gd" id="2_ovho2"]
+
+[node name="PrototypeHelperIncreaseInventorySize" unique_id=979320369 instance=ExtResource("1_65i7q")]
+
+[node name="Interactable" parent="." index="2" unique_id=1150908498]
+script = ExtResource("2_ovho2")
+prompt = "Increase Inventory Size"
