@@ -2,9 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bsycppht5orex" path="res://Assets/Meshes/PlaceholderMeshes/coal_boulder.tscn" id="1_knmrv"]
 [ext_resource type="Script" uid="uid://7unqswfs7a8f" path="res://Objects/interactables/interactable.gd" id="2_ia5dx"]
+[ext_resource type="Theme" uid="uid://ks0hgvfqbimr" path="res://Assets/UI/theme.tres" id="3_0al2x"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ia5dx"]
 radius = 0.45334506
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ia5dx"]
+viewport_path = NodePath("Sprite3D/SubViewport")
 
 [node name="PrototypeHelperTemplate" type="StaticBody3D" unique_id=979320369]
 
@@ -22,3 +26,30 @@ script = ExtResource("2_ia5dx")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Interactable" unique_id=501461057]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31477275, 0)
 shape = SubResource("SphereShape3D_ia5dx")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1621228228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84106445, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_ia5dx")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=1198752330]
+transparent_bg = true
+size = Vector2i(512, 71)
+
+[node name="MarginContainer" type="MarginContainer" parent="Sprite3D/SubViewport" unique_id=320563032]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
+offset_right = 71.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 10
+
+[node name="PrototypeHelperLabel" type="Label" parent="Sprite3D/SubViewport/MarginContainer" unique_id=1559570643]
+layout_mode = 2
+theme = ExtResource("3_0al2x")
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 16
+text = "Placeholder"
+horizontal_alignment = 1
