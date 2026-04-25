@@ -9,6 +9,11 @@ signal BUL_destroy_all_bulletins
 signal PLA_freeze_player
 signal PLA_unfreeze_player
 
+# MON -> Money
+signal MON_add_money
+signal MON_decrease_money
+signal MON_money_updated
+
 signal STA_change_stage
 var is_transitioning := false
 
@@ -43,6 +48,8 @@ signal WEI_cannot_pickup_due_to_space
 # UPG -> Upgrade signals
 signal UPG_increase_inventory_size
 signal UPG_increase_max_weight
+
+
 
 #signal UPG_decrease_inventory_size 
 #signal UPG_decrease_max_weight

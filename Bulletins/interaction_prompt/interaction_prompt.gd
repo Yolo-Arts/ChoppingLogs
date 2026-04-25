@@ -26,11 +26,3 @@ func warning_effect():
 	
 	tween.tween_property(label, "scale", Vector2(1.3, 1.3), 0.1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.tween_property(label, "scale", Vector2(1.0, 1.0), 0.2).set_delay(0.1)
-	
-	var original_pos = label.position
-	var shake_tween = create_tween()
-	for i in range(4):
-		var intensity = 7.0 
-		var direction = 1 if i % 2 == 0 else -1
-		shake_tween.tween_property(label, "position:x", original_pos.x + (intensity * direction), 0.05)
-	shake_tween.tween_property(label, "position:x", original_pos.x, 0.05)

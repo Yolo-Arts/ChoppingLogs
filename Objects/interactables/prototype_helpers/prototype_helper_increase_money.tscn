@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d2ucx7805as0k"]
+
+[ext_resource type="PackedScene" uid="uid://dq82jp8q80abv" path="res://Objects/interactables/prototype_helpers/prototype_helper_template.tscn" id="1_0pe2g"]
+[ext_resource type="Script" uid="uid://db5j3ip6oyv2a" path="res://Objects/interactables/prototype_helpers/interactable_money_increase.gd" id="2_bp034"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bp034"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="PrototypeHelperIncreaseMoney" unique_id=979320369 instance=ExtResource("1_0pe2g")]
+
+[node name="Interactable" parent="." index="2" unique_id=1150908498]
+script = ExtResource("2_bp034")
+prompt = "Increase Money by 5"
+
+[node name="Sprite3D" parent="." index="3" unique_id=1621228228]
+texture = SubResource("ViewportTexture_bp034")
+
+[node name="PrototypeHelperLabel" parent="Sprite3D/SubViewport/MarginContainer" parent_id_path=PackedInt32Array(320563032) index="0" unique_id=1559570643]
+text = "+ Increase money"

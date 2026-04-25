@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dt1rcawit7yfg" path="res://Player/interaction_ray_cast.gd" id="2_btcbx"]
 [ext_resource type="Script" uid="uid://dbrt0np04ex1f" path="res://Game/Managers/weight_manager.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://dsk3w5lardgl5" path="res://Game/Managers/player_stat_manager.gd" id="5_k53q1"]
+[ext_resource type="Script" uid="uid://dlwds3yw0ec24" path="res://Game/Managers/money_manager.gd" id="6_fhl08"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
 
@@ -44,4 +45,8 @@ script = ExtResource("2_4ntmi")
 
 [node name="WeightManager" type="Node" parent="Managers" unique_id=1473663417 node_paths=PackedStringArray("player_stats")]
 script = ExtResource("4_gwnis")
+player_stats = NodePath("../PlayerStatManager")
+
+[node name="MoneyManager" type="Node" parent="Managers" unique_id=976647838 node_paths=PackedStringArray("player_stats")]
+script = ExtResource("6_fhl08")
 player_stats = NodePath("../PlayerStatManager")

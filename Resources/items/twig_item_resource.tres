@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://e8q6flkl3we6"]
+
+[ext_resource type="Texture2D" uid="uid://b84v064n3ax7j" path="res://Assets/Meshes/PlaceholderMeshes/meshes_TerrainTexture.png" id="1_bd34h"]
+[ext_resource type="Script" uid="uid://rrdagysicmkc" path="res://Resources/items/item_resource.gd" id="1_dn5s8"]
+
+[resource]
+script = ExtResource("1_dn5s8")
+display_name = "twig"
+icon = ExtResource("1_bd34h")
+metadata/_custom_type_script = "uid://rrdagysicmkc"
