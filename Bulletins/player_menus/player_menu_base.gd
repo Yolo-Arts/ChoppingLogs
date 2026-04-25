@@ -17,9 +17,9 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	EventSystem.PLA_freeze_player.emit()
 	EventSystem.INV_ask_update_inventory.emit()
+	EventSystem.HUD_hide_hud.emit()
 	discard_area.item_scrapped.connect(hide_item_info)
-	
-	
+
 	for inventory_slot in inventory_slot_container.get_children():
 		inventory_slot.mouse_entered.connect(show_item_info.bind(inventory_slot))
 		inventory_slot.mouse_exited.connect(hide_item_info)
@@ -72,6 +72,7 @@ func _on_close_button_pressed() -> void:
 	EventSystem.PLA_unfreeze_player.emit()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
+	EventSystem.HUD_show_hud.emit()
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("open_inventory"):

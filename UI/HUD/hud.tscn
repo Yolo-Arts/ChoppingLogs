@@ -1,6 +1,24 @@
 [gd_scene format=3 uid="uid://sm3vg43jhtca"]
 
 [ext_resource type="Texture2D" uid="uid://cesiycy40mw04" path="res://Assets/Textures/Crosshair/circle32.png" id="1_ia7gp"]
+[ext_resource type="Theme" uid="uid://ks0hgvfqbimr" path="res://Assets/UI/theme.tres" id="2_ing8j"]
+[ext_resource type="Texture2D" uid="uid://b5jpm0kqxis3q" path="res://Assets/UI/Icons/symbols_money.svg" id="3_te8l2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ing8j"]
+resource_local_to_scene = true
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 0.1328125, 0.1328125, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdh7y"]
+resource_local_to_scene = true
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 0.98531085, 0.059895813, 1)
 
 [node name="HUD" type="Control" unique_id=1722912934]
 layout_mode = 3
@@ -27,3 +45,125 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ia7gp")
 expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2052940149]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Health&Sprint&Money" type="VBoxContainer" parent="MarginContainer" unique_id=1152234848]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="ProgressBarBG" type="ColorRect" parent="MarginContainer/Health&Sprint&Money" unique_id=1237621990]
+custom_minimum_size = Vector2(350, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Health&Sprint&Money/ProgressBarBG" unique_id=2098925155]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HealthProgressBar" type="ProgressBar" parent="MarginContainer/Health&Sprint&Money/ProgressBarBG/MarginContainer" unique_id=1432544490]
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_ing8j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ing8j")
+value = 50.0
+
+[node name="ProgressBarBG2" type="ColorRect" parent="MarginContainer/Health&Sprint&Money" unique_id=1984528901]
+custom_minimum_size = Vector2(350, 30)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Health&Sprint&Money/ProgressBarBG2" unique_id=1301026048]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="SprintProgressBar" type="ProgressBar" parent="MarginContainer/Health&Sprint&Money/ProgressBarBG2/MarginContainer" unique_id=1526101241]
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_ing8j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qdh7y")
+value = 50.0
+show_percentage = false
+
+[node name="VSeparator" type="HSeparator" parent="MarginContainer/Health&Sprint&Money" unique_id=385961363]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Health&Sprint&Money" unique_id=1917605429]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Health&Sprint&Money/HBoxContainer" unique_id=128533323]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_te8l2")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Health&Sprint&Money/HBoxContainer" unique_id=1529494280]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_ing8j")
+theme_override_font_sizes/font_size = 30
+text = "Money Placeholder"
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=203863358]
+custom_minimum_size = Vector2(70, 500)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect" unique_id=400302040]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/ColorRect/MarginContainer" unique_id=800385588]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme = ExtResource("2_ing8j")
+value = 20.0
+fill_mode = 3

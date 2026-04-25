@@ -9,3 +9,8 @@ var player_speed_with_weight_modifier: float = 1.0
 @export_group("Movement")
 @export var normal_speed := 3.0
 @export var sprint_speed := 5.0
+@export var sprint_energy: float = 100.0
+
+@export_group("Stats")
+@export var health: float = 100
+@export var money: float = 0
