@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bfofyby6c7133"]
+
+[ext_resource type="PackedScene" uid="uid://byq6pxo3pg60x" path="res://Bulletins/player_menus/player_menu_base.tscn" id="1_sx572"]
+[ext_resource type="Theme" uid="uid://ks0hgvfqbimr" path="res://Assets/UI/theme.tres" id="2_a4lr5"]
+[ext_resource type="Texture2D" uid="uid://bmssns8y1t1vg" path="res://Assets/UI/Icons/symbols_sell.svg" id="3_6pqe5"]
+
+[node name="PlayerMenuWithSellArea" unique_id=494102939 instance=ExtResource("1_sx572")]
+
+[node name="SellArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(318325667) index="2" unique_id=1764990101]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_a4lr5")
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/VBoxContainer/SellArea" index="0" unique_id=174580980]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/SellArea" index="1" unique_id=1980835846]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="SellIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/SellArea/MarginContainer" index="0" unique_id=2003583375]
+modulate = Color(0.24705882, 0.16078432, 0.16078432, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_6pqe5")
