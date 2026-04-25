@@ -1,4 +1,5 @@
 extends Bulletin
+class_name PlayerMenuBase
 
 const INVENTORY_SLOT = preload("uid://cvyf6knuyqwb6")
 @onready var inventory_slot_container: GridContainer = %InventorySlotContainer

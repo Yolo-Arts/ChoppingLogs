@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dhatshjilf5m"]
+
+[ext_resource type="PackedScene" uid="uid://dq82jp8q80abv" path="res://Objects/interactables/prototype_helpers/prototype_helper_template.tscn" id="1_rkoib"]
+[ext_resource type="Script" uid="uid://qw65b0vplfqa" path="res://Objects/interactables/prototype_helpers/interactable_bulletin_sell_menu.gd" id="2_0hem7"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ebko3"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="PrototypeHelperSellMenu" unique_id=979320369 instance=ExtResource("1_rkoib")]
+
+[node name="Interactable" parent="." index="2" unique_id=1150908498]
+script = ExtResource("2_0hem7")
+prompt = "Open Sell Menu"
+
+[node name="Sprite3D" parent="." index="3" unique_id=1621228228]
+texture = SubResource("ViewportTexture_ebko3")
+
+[node name="PrototypeHelperLabel" parent="Sprite3D/SubViewport/MarginContainer" parent_id_path=PackedInt32Array(320563032) index="0" unique_id=1559570643]
+text = "Sell Menu"

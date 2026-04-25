@@ -2,10 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://byq6pxo3pg60x" path="res://Bulletins/player_menus/player_menu_base.tscn" id="1_sx572"]
 [ext_resource type="Theme" uid="uid://ks0hgvfqbimr" path="res://Assets/UI/theme.tres" id="2_a4lr5"]
+[ext_resource type="Script" uid="uid://c6wl7r85w3rbp" path="res://Bulletins/player_menus/player_menu_with_sell_area.gd" id="2_qlk5d"]
 [ext_resource type="Script" uid="uid://s2oxotbdtdib" path="res://Bulletins/player_menus/sell_area.gd" id="3_0cujw"]
 [ext_resource type="Texture2D" uid="uid://bmssns8y1t1vg" path="res://Assets/UI/Icons/symbols_sell.svg" id="3_6pqe5"]
 
 [node name="PlayerMenuWithSellArea" unique_id=494102939 instance=ExtResource("1_sx572")]
+script = ExtResource("2_qlk5d")
 
 [node name="SellArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(318325667) index="2" unique_id=1764990101]
 layout_mode = 2
