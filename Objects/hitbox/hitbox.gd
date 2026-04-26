@@ -10,4 +10,5 @@ signal register_hit
 
 func take_hit(weapon_item_resource) -> void:
 	register_hit.emit(weapon_item_resource)
-	EventSystem.SFX_play_dynamic_sfx.emit(hit_audio_key, global_position)
+	# TODO add SFX dynamic
+	#EventSystem.SFX_play_dynamic_sfx.emit(hit_audio_key, global_position)

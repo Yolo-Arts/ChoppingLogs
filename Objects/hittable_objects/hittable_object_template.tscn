@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dvujgawe74xox"]
+
+[ext_resource type="Script" uid="uid://bqsyyl173pydy" path="res://Objects/hittable_objects/hittable_object_template.gd" id="1_0pu4o"]
+[ext_resource type="PackedScene" uid="uid://d2mvbngj70nv7" path="res://Objects/hitbox/hitbox.tscn" id="2_6hl63"]
+
+[node name="HittableObjectTemplate" type="Node3D" unique_id=640084038]
+script = ExtResource("1_0pu4o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1570950279]
+
+[node name="ItemSpawnPoints" type="Node3D" parent="." unique_id=1765943128]
+
+[node name="Hitbox" parent="." unique_id=102348333 instance=ExtResource("2_6hl63")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1200180207]
+
+[connection signal="register_hit" from="Hitbox" to="." method="_on_hitbox_register_hit"]
