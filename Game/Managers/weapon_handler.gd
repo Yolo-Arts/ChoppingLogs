@@ -1,5 +1,7 @@
 extends Node3D
 
+var current_item_scene: Node3D
+
 func _enter_tree() -> void:
 	EventSystem.WEP_unlock_weapon.connect(unlock_weapon)
 
@@ -22,6 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				equip(weapon)
 
 func equip(active_weapon: Node3D) -> void:
+	current_item_scene = active_weapon
 	for child in get_children():
 		if child == active_weapon:
 			child.visible = true
@@ -35,8 +38,7 @@ func cycle_weapon(direction: int) -> void:
 	if unlocked_weapons.size() == 0: 
 		return
 	
-	var current_weapon = get_child(get_current_index())
-	var current_unlocked_index = unlocked_weapons.find(current_weapon)
+	var current_unlocked_index = unlocked_weapons.find(current_item_scene)
 	
 	var next_idx = wrapi(current_unlocked_index + direction, 0, unlocked_weapons.size())
 	equip(unlocked_weapons[next_idx])
@@ -68,3 +70,10 @@ func unlock_weapon(weapon_name: String) -> void:
 			child.unlocked = true
 			equip(child) 
 			break
+
+func try_to_use_item() -> void:
+	if current_item_scene == null:
+		return
+	
+	if current_item_scene.has_method("try_to_use"):
+		current_item_scene.try_to_use()

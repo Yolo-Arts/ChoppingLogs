@@ -8,6 +8,7 @@ extends CharacterBody3D
 
 @onready var head: Node3D = $Head
 @onready var interaction_ray_cast: RayCast3D = %InteractionRayCast
+@onready var weapon_handler: Node3D = %WeaponHandler
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -23,6 +24,9 @@ func set_freeze(freeze: bool) -> void:
 
 func _physics_process(delta: float) -> void:
 	move()
+	
+	if Input.is_action_just_pressed("left_click"):
+		weapon_handler.try_to_use_item()
 
 func _process(delta: float) -> void:
 	interaction_ray_cast.check_interaction()

@@ -1,14 +1,93 @@
 [gd_scene format=3 uid="uid://cg6gschdmf6ch"]
 
 [ext_resource type="PackedScene" uid="uid://ceak3a7e8d26m" path="res://Assets/Meshes/PlaceholderMeshes/axe.tscn" id="1_ivuuf"]
-[ext_resource type="Script" uid="uid://bkgb30l04yw5w" path="res://Objects/equippables/weapon.gd" id="1_lcbrk"]
+[ext_resource type="Script" uid="uid://ddxr31ehbflk2" path="res://Objects/equippables/axe/equippable_axe.gd" id="1_lcbrk"]
+
+[sub_resource type="Animation" id="Animation_fc4ss"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshHolder/Axe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.3, -0.5, -0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshHolder/Axe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lcbrk"]
+resource_name = "use_item"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshHolder/Axe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.35, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.3, -0.5, -0.35), Vector3(0.42, -0.45, -0.28), Vector3(0, -0.18, -0.52), Vector3(0, -0.18, -0.52), Vector3(0.3, -0.5, -0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshHolder/Axe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.35, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.2617994, 0.2617994, 0), Vector3(-0.34906584, 1.3962634, -1.3962634), Vector3(-0.34906584, 1.3962634, -1.3962634), Vector3(0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.35),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"check_hit"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fc4ss"]
+_data = {
+&"RESET": SubResource("Animation_fc4ss"),
+&"use_item": SubResource("Animation_lcbrk")
+}
 
 [node name="EquippableAxe" type="Node3D" unique_id=337480279]
 script = ExtResource("1_lcbrk")
-unlocked = true
 
 [node name="MeshHolder" type="Node3D" parent="." unique_id=2077707771]
 
 [node name="Axe" parent="MeshHolder" unique_id=2015140156 instance=ExtResource("1_ivuuf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.5, -0.35)
 layers = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1895922745]
+libraries/ = SubResource("AnimationLibrary_fc4ss")
+
+[node name="HitCheckMarker" type="Marker3D" parent="." unique_id=43078457]

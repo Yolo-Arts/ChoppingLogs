@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AxeItemResource" format=3 uid="uid://uxontmw53lq4"]
+
+[ext_resource type="Script" uid="uid://dprrhmeopbj3w" path="res://Objects/equippables/axe/axe_item_resource.gd" id="1_q3h7d"]
+
+[resource]
+script = ExtResource("1_q3h7d")
+metadata/_custom_type_script = "uid://dprrhmeopbj3w"
