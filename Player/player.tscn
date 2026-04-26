@@ -6,8 +6,10 @@
 [ext_resource type="Script" uid="uid://dbrt0np04ex1f" path="res://Game/Managers/weight_manager.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://dsk3w5lardgl5" path="res://Game/Managers/player_stat_manager.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://dlwds3yw0ec24" path="res://Game/Managers/money_manager.gd" id="6_fhl08"]
+[ext_resource type="Script" uid="uid://b5ndsxcel2j73" path="res://Game/Managers/weapon_handler.gd" id="7_00tjw"]
 [ext_resource type="PackedScene" uid="uid://cg6gschdmf6ch" path="res://Objects/equippables/axe/equippable_axe.tscn" id="7_vtle1"]
 [ext_resource type="PackedScene" uid="uid://bl41gwihorw4j" path="res://Objects/equippables/pistol/equippable_pistol.tscn" id="8_od3ui"]
+[ext_resource type="PackedScene" uid="uid://du80y7eiwdye" path="res://Objects/equippables/assault_rifle/equippable_ar.tscn" id="10_x3vf3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
 
@@ -77,8 +79,13 @@ cull_mask = 12
 fov = 70.0
 
 [node name="WeaponHandler" type="Node3D" parent="SubViewportContainer/SubViewport/WeaponCamera" unique_id=865151648]
+script = ExtResource("7_00tjw")
 
 [node name="EquippableAxe" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=337480279 instance=ExtResource("7_vtle1")]
 visible = false
 
 [node name="EquippablePistol" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=1303222648 instance=ExtResource("8_od3ui")]
+visible = false
+
+[node name="Equippable_AR" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=423434461 instance=ExtResource("10_x3vf3")]
+unlocked = false

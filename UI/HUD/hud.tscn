@@ -45,6 +45,7 @@ offset_right = 2.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("1_ia7gp")
 expand_mode = 1
 
@@ -70,6 +71,7 @@ mouse_filter = 2
 [node name="ProgressBarBG" type="ColorRect" parent="MarginContainer/Health&Sprint&Money" unique_id=1237621990]
 custom_minimum_size = Vector2(510, 40)
 layout_mode = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Health&Sprint&Money/ProgressBarBG" unique_id=2098925155]
@@ -79,6 +81,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -88,6 +91,7 @@ theme_override_constants/margin_bottom = 8
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_vertical = 1
+mouse_filter = 2
 theme = ExtResource("2_ing8j")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ing8j")
 value = 50.0
@@ -95,6 +99,7 @@ value = 50.0
 [node name="ProgressBarBG2" type="ColorRect" parent="MarginContainer/Health&Sprint&Money" unique_id=1984528901]
 custom_minimum_size = Vector2(510, 30)
 layout_mode = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Health&Sprint&Money/ProgressBarBG2" unique_id=1301026048]
@@ -104,6 +109,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -113,6 +119,7 @@ theme_override_constants/margin_bottom = 8
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_vertical = 1
+mouse_filter = 2
 theme = ExtResource("2_ing8j")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qdh7y")
 value = 50.0
@@ -121,21 +128,25 @@ show_percentage = false
 [node name="VSeparator" type="HSeparator" parent="MarginContainer/Health&Sprint&Money" unique_id=385961363]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 16
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Health&Sprint&Money" unique_id=1917605429]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 30
 
 [node name="MoneyIcon" type="TextureRect" parent="MarginContainer/Health&Sprint&Money/HBoxContainer" unique_id=128533323]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_filter = 2
 texture = ExtResource("3_te8l2")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Health&Sprint&Money/HBoxContainer" unique_id=1923315268]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_bottom = 5
 
 [node name="MoneyLabel" type="Label" parent="MarginContainer/Health&Sprint&Money/HBoxContainer/MarginContainer" unique_id=1529494280]
@@ -154,6 +165,7 @@ custom_minimum_size = Vector2(70, 500)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/WeightBarBackground" unique_id=400302040]
@@ -163,6 +175,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -173,6 +186,7 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
+mouse_filter = 2
 theme = ExtResource("2_ing8j")
 value = 20.0
 fill_mode = 3

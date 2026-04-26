@@ -50,8 +50,8 @@ signal WEI_cannot_pickup_due_to_space
 # UPG -> Upgrade signals
 signal UPG_increase_inventory_size
 signal UPG_increase_max_weight
-
-
-
 #signal UPG_decrease_inventory_size 
 #signal UPG_decrease_max_weight
+
+# WEP -> Weapon
+signal WEP_unlock_weapon

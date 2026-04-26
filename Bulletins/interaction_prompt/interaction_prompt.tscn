@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://ks0hgvfqbimr" path="res://Assets/UI/theme.tres" id="3_hi6wb"]
 
 [node name="InteractionPrompt" unique_id=494102939 instance=ExtResource("1_y6wh2")]
+mouse_filter = 2
 script = ExtResource("2_gcr63")
 
 [node name="Label" type="Label" parent="." index="0" unique_id=2129186685]

@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bl41gwihorw4j"]
 
 [ext_resource type="Texture2D" uid="uid://bt1ccmkhsgvms" path="res://Assets/Meshes/PlaceholderMeshes/gun/pew_pewfinal_color.png" id="1_0dqss"]
+[ext_resource type="Script" uid="uid://bkgb30l04yw5w" path="res://Objects/equippables/weapon.gd" id="1_dlmj6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47v0e"]
 resource_name = "pewfinal"
@@ -149,6 +150,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yxavt")
 
 [node name="EquippablePistol" type="Node3D" unique_id=1303222648]
+script = ExtResource("1_dlmj6")
+weapon_name = "Pistol"
+unlocked = true
 
 [node name="MeshHolder" type="Node3D" parent="." unique_id=1458930917]
 
@@ -157,20 +161,24 @@ transform = Transform3D(-2.1855695e-07, 0, 7.5, 0, 5, 0, -5, 0, -3.278354e-07, 0
 
 [node name="pew" type="MeshInstance3D" parent="MeshHolder/pew2" unique_id=310080474]
 transform = Transform3D(0.99151766, 0, -0.12997249, 0, 1, 0, 0.12997249, 0, 0.99151766, 0, 0, 0)
+layers = 4
 mesh = SubResource("ArrayMesh_t2r3l")
 skeleton = NodePath("")
 
 [node name="pewhaut" type="MeshInstance3D" parent="MeshHolder/pew2/pew" unique_id=1470462444]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011407852, 0.033620805, 0.00017852709)
+layers = 4
 mesh = SubResource("ArrayMesh_pt70h")
 skeleton = NodePath("")
 
 [node name="pewmagazine" type="MeshInstance3D" parent="MeshHolder/pew2/pew" unique_id=1028426819]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046448708, -0.01114133, 9.004027e-06)
+layers = 4
 mesh = SubResource("ArrayMesh_fb1r7")
 skeleton = NodePath("")
 
 [node name="pewtrigger" type="MeshInstance3D" parent="MeshHolder/pew2/pew" unique_id=1504074618]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012023926, 0.011590011, 0)
+layers = 4
 mesh = SubResource("ArrayMesh_35b3h")
 skeleton = NodePath("")
