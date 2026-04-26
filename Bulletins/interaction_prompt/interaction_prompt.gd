@@ -12,6 +12,7 @@ func _ready() -> void:
 	label.text = prompt_text
 	EventSystem.WEI_cannot_pickup_due_to_weight.connect(cannot_pickup_warning.bind("Cannot pickup due to weight"))
 	EventSystem.WEI_cannot_pickup_due_to_space.connect(cannot_pickup_warning.bind("Cannot pickup due to space"))
+	EventSystem.MON_cannot_decrease_money.connect(cannot_pickup_warning.bind("Cannot buy because money is not enough"))
 
 func cannot_pickup_warning(warning_text: String):
 	label.text = warning_text

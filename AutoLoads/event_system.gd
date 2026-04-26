@@ -11,6 +11,8 @@ signal PLA_unfreeze_player
 
 # MON -> Money
 signal MON_add_money
+signal MON_check_if_can_decrease_money
+signal MON_cannot_decrease_money
 signal MON_decrease_money
 signal MON_money_updated
 
