@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://dbrt0np04ex1f" path="res://Game/Managers/weight_manager.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://dsk3w5lardgl5" path="res://Game/Managers/player_stat_manager.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://dlwds3yw0ec24" path="res://Game/Managers/money_manager.gd" id="6_fhl08"]
+[ext_resource type="PackedScene" uid="uid://cg6gschdmf6ch" path="res://Objects/equippables/axe/equippable_axe.tscn" id="7_vtle1"]
+[ext_resource type="PackedScene" uid="uid://bl41gwihorw4j" path="res://Objects/equippables/pistol/equippable_pistol.tscn" id="8_od3ui"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
 
@@ -19,6 +21,10 @@ player_stats = NodePath("Managers/PlayerStatManager")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6848296, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=30710601]
+cull_mask = 1048571
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Head/Camera3D" unique_id=1089151762]
+remote_path = NodePath("../../../SubViewportContainer/SubViewport/WeaponCamera")
 
 [node name="InteractionRayCast" type="RayCast3D" parent="Head" unique_id=990858903]
 unique_name_in_owner = true
@@ -50,3 +56,29 @@ player_stats = NodePath("../PlayerStatManager")
 [node name="MoneyManager" type="Node" parent="Managers" unique_id=976647838 node_paths=PackedStringArray("player_stats")]
 script = ExtResource("6_fhl08")
 player_stats = NodePath("../PlayerStatManager")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1356320662]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1777370431]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1900, 1080)
+render_target_update_mode = 4
+
+[node name="WeaponCamera" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1247432603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6848296, 0)
+cull_mask = 12
+fov = 70.0
+
+[node name="WeaponHandler" type="Node3D" parent="SubViewportContainer/SubViewport/WeaponCamera" unique_id=865151648]
+
+[node name="EquippableAxe" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=337480279 instance=ExtResource("7_vtle1")]
+visible = false
+
+[node name="EquippablePistol" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=1303222648 instance=ExtResource("8_od3ui")]
