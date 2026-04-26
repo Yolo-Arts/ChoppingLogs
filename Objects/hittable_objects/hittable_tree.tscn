@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bsavf2p0xtbpw"]
+
+[ext_resource type="PackedScene" uid="uid://dvujgawe74xox" path="res://Objects/hittable_objects/hittable_object_template.tscn" id="1_ay73e"]
+[ext_resource type="Script" uid="uid://bxwywhofnn8c8" path="res://Resources/hittable_object_attributes/hittable_object_attributes.gd" id="2_up5o4"]
+[ext_resource type="PackedScene" uid="uid://d261u0cnltcnw" path="res://Assets/Meshes/PlaceholderMeshes/tree.tscn" id="3_tu62b"]
+
+[sub_resource type="Resource" id="Resource_i41j7"]
+script = ExtResource("2_up5o4")
+metadata/_custom_type_script = "uid://bxwywhofnn8c8"
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_up5o4"]
+height = 2.7314453
+radius = 0.23730469
+
+[node name="HittableTree" unique_id=640084038 instance=ExtResource("1_ay73e")]
+attributes = SubResource("Resource_i41j7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(1570950279) index="0" unique_id=1547967030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3334961, 0)
+shape = SubResource("CylinderShape3D_up5o4")
+
+[node name="CollisionShape3D" parent="Hitbox" parent_id_path=PackedInt32Array(102348333) index="0" unique_id=1200180207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3483472, 0)
+shape = SubResource("CylinderShape3D_up5o4")
+
+[node name="Tree" parent="." index="3" unique_id=1141151295 instance=ExtResource("3_tu62b")]

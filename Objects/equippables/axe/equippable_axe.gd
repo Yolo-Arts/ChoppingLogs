@@ -6,7 +6,7 @@ extends equippable_weapon
 @export var axe_resource: AxeItemResource
 
 func _ready() -> void:
-	hit_check_marker.position.z = axe_resource.range
+	hit_check_marker.position.z = -axe_resource.range
 
 func check_hit() -> void:
 	var space_state := get_world_3d().direct_space_state
@@ -14,11 +14,11 @@ func check_hit() -> void:
 	ray_query_params.collide_with_areas = true
 	ray_query_params.collide_with_bodies = false
 	ray_query_params.collision_mask = (1 << 4) # hitbox physics layer (bit shifting syntax)
+	#ray_query_params.collision_mask = 16 # hitbox physics layer (normal syntax)
 	ray_query_params.from = global_position
 	ray_query_params.to = hit_check_marker.global_position
 	
 	var result := space_state.intersect_ray(ray_query_params)
-	
 	if not result.is_empty():
 		result.collider.take_hit(axe_resource)
 

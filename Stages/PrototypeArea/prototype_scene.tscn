@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://danb05hppcof0" path="res://Stages/PrototypeArea/prototype_scene.gd" id="1_pkgy2"]
 [ext_resource type="PackedScene" uid="uid://kpy0apxyj52c" path="res://Assets/Meshes/PlaceholderMeshes/terrain.tscn" id="1_uq5sf"]
-[ext_resource type="PackedScene" uid="uid://d261u0cnltcnw" path="res://Assets/Meshes/PlaceholderMeshes/tree.tscn" id="2_i71hr"]
 [ext_resource type="PackedScene" uid="uid://dfa6w3onh1aef" path="res://Player/player.tscn" id="4_w28og"]
 [ext_resource type="PackedScene" uid="uid://dqkk3nlf7mssv" path="res://Objects/interactables/pickuppables/pickuppable_log.tscn" id="5_pkgy2"]
 [ext_resource type="PackedScene" uid="uid://cehnjtikyoktd" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_inventory_size.tscn" id="6_pb4yw"]
@@ -10,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d2ucx7805as0k" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_money.tscn" id="8_jdp5v"]
 [ext_resource type="PackedScene" uid="uid://d1go4piypvy02" path="res://Objects/interactables/prototype_helpers/prototype_helper_decrease_money.tscn" id="9_02ulf"]
 [ext_resource type="PackedScene" uid="uid://dhatshjilf5m" path="res://Objects/interactables/prototype_helpers/prototype_helper_sell_menu.tscn" id="10_3resb"]
+[ext_resource type="PackedScene" uid="uid://bsavf2p0xtbpw" path="res://Objects/hittable_objects/hittable_tree.tscn" id="11_kirhj"]
 [ext_resource type="PackedScene" uid="uid://csr8j226jp8wy" path="res://Objects/interactables/prototype_helpers/prototype_helper_unlock_assault_rifle.tscn" id="11_o6fg2"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_i71hr"]
@@ -63,12 +63,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6236157, 0.11804195, -3.38
 
 [node name="PickuppableLog3" parent="Terrain/StaticBody3D" unique_id=668516309 instance=ExtResource("5_pkgy2")]
 transform = Transform3D(-0.7879892, 0, -0.6156891, 0, 1, 0, 0.6156891, 0, -0.7879892, 4.92209, 0.11804195, 3.5470228)
-
-[node name="Tree" parent="Terrain" unique_id=1141151295 instance=ExtResource("2_i71hr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6091924, 0, 1.0772417)
-
-[node name="Tree2" parent="Terrain" unique_id=1242648789 instance=ExtResource("2_i71hr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2042365, 0, 3.6811633)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2013577727]
 environment = SubResource("Environment_pkgy2")
@@ -171,3 +165,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.310006, 0.13963562, 0.95558
 
 [node name="PrototypeHelperUnlockAssaultRifle" parent="." unique_id=275099202 instance=ExtResource("11_o6fg2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6461227, 0.13963515, -1.1734648)
+
+[node name="HittableTree" parent="." unique_id=640084038 instance=ExtResource("11_kirhj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9890594, 0.0414135, -2.559493)
+
+[node name="HittableTree2" parent="." unique_id=224386699 instance=ExtResource("11_kirhj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9890594, 0.0414135, -0.61020947)
+
+[node name="HittableTree3" parent="." unique_id=784712051 instance=ExtResource("11_kirhj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9890594, 0.0414135, 0.82417536)
+
+[node name="HittableTree4" parent="." unique_id=904786709 instance=ExtResource("11_kirhj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9890594, 0.0414135, 2.1256218)
+
+[node name="HittableTree5" parent="." unique_id=1764957927 instance=ExtResource("11_kirhj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9890594, 0.0414135, 3.6283722)

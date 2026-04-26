@@ -6,8 +6,8 @@ extends Node3D
 @onready var item_spawn_points: Node3D = $ItemSpawnPoints
 
 func _on_hitbox_register_hit(weapon_item_resource) -> void:
-	
 	current_health -= weapon_item_resource.damage
+	print(current_health)
 	
 	if current_health <= 0:
 		die()
