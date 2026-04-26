@@ -13,7 +13,7 @@ func check_hit() -> void:
 	var ray_query_params := PhysicsRayQueryParameters3D.new()
 	ray_query_params.collide_with_areas = true
 	ray_query_params.collide_with_bodies = false
-	ray_query_params.collision_mask = 8 # hitbox physics layer
+	ray_query_params.collision_mask = (1 << 4) # hitbox physics layer (bit shifting syntax)
 	ray_query_params.from = global_position
 	ray_query_params.to = hit_check_marker.global_position
 	
