@@ -11,6 +11,7 @@ func _ready() -> void:
 	
 	randomize_forest()
 	scatter_trees.build_completed.connect(_on_scatter_finished)
+	navigation_region_3d.bake_finished.connect(_on_bake_finished)
 	EventSystem.HUD_show_hud.emit()
 
 func randomize_forest() -> void:
@@ -27,7 +28,6 @@ func _on_scatter_finished() -> void:
 	await get_tree().process_frame
 	
 	navigation_region_3d.bake_navigation_mesh()
-	navigation_region_3d.bake_finished.connect(_on_bake_finished)
 
 func _on_bake_finished() -> void:
 	_is_baking = false
