@@ -20,8 +20,12 @@ func update_weight(weight_changed: int) -> void:
 	EventSystem.WEI_update_weight_visual.emit(player_stats.weight, player_stats.max_weight)
 
 func calculate_weight_modifier() -> void:
-	var weight_ratio = player_stats.weight / player_stats.max_weight
-	player_stats.player_speed_with_weight_modifier = clampf(1.0 - weight_ratio, 0.3, 1.0)
+	var weight_ratio: float = player_stats.weight / player_stats.max_weight
+	
+	var exponent := 3.0
+	var penalty = pow(weight_ratio, exponent)
+	
+	player_stats.player_speed_with_weight_modifier = clampf(1.0 - penalty, 0.3, 1.0)
 
 func ask_update_weight_visual():
 	EventSystem.WEI_update_weight_visual.emit(player_stats.weight, player_stats.max_weight)

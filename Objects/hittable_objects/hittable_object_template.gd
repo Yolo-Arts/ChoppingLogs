@@ -14,7 +14,11 @@ func _on_hitbox_register_hit(weapon_item_resource) -> void:
 
 # TODO ADD spawn for logs to drop.
 func die() -> void:
-	for child in get_children():
-		queue_free()
+	var scene_to_spawn := ItemConfig.get_pickuppable_item_scene(attributes.drop_item_key)
+	
+	for marker in item_spawn_points.get_children():
+		EventSystem.SPA_spawn_scene.emit(scene_to_spawn, marker.global_transform)
+	
+	queue_free()
 
 # TODO add a residue static body for tree stump

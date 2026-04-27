@@ -58,3 +58,4 @@ signal WEP_unlock_weapon
 
 # SPA -> Spawn
 signal SPA_spawn_vfx
+signal SPA_spawn_scene

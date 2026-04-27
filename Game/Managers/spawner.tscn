@@ -4,3 +4,5 @@
 
 [node name="Spawner" type="Node3D" unique_id=1704739753]
 script = ExtResource("1_gc8oe")
+
+[node name="ObjectHolder" type="Node3D" parent="." unique_id=481574989]

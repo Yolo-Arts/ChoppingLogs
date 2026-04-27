@@ -19,6 +19,12 @@ attributes = SubResource("Resource_i41j7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3334961, 0)
 shape = SubResource("CylinderShape3D_up5o4")
 
+[node name="Marker3D" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="0" unique_id=189463959]
+transform = Transform3D(0.9601133, 0, 0.27961117, 0.082697265, 0.9552629, -0.28396127, -0.26710218, 0.29575804, 0.91716063, -0.06715566, 0.97517157, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="1" unique_id=14671813]
+transform = Transform3D(0.80830854, -0.5887591, 0, 0.5887591, 0.80830854, 0, 0, 0, 1, 0.06852776, 1.8911817, 0)
+
 [node name="CollisionShape3D" parent="Hitbox" parent_id_path=PackedInt32Array(102348333) index="0" unique_id=1200180207]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3483472, 0)
 shape = SubResource("CylinderShape3D_up5o4")

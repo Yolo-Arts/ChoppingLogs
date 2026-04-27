@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://rxe354k8sgck"]
+
+[ext_resource type="PackedScene" uid="uid://dn0ktfrnst30q" path="res://Objects/interactables/pickuppables/rigid_pickuppable_template.tscn" id="1_im5nx"]
+[ext_resource type="PackedScene" uid="uid://bw6s6a4egoido" path="res://Assets/Meshes/PlaceholderMeshes/log.tscn" id="2_ffpwg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c30jl"]
+height = 1.0041504
+radius = 0.111816406
+
+[node name="RigidPickuppableLog" unique_id=1838406015 instance=ExtResource("1_im5nx")]
+
+[node name="Area3D" parent="." index="0" unique_id=1388930990]
+prompt = "Pickup Log"
+
+[node name="CollisionShape3D" parent="Area3D" index="0" unique_id=905938339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0015869141, 0)
+shape = SubResource("CylinderShape3D_c30jl")
+
+[node name="Log" parent="." index="1" unique_id=1790793256 instance=ExtResource("2_ffpwg")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2" unique_id=1406521737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0015869141, 0)
+shape = SubResource("CylinderShape3D_c30jl")
