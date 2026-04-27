@@ -49,6 +49,7 @@ folder_colors={
 "res://Assets/Audio/": "yellow",
 "res://AutoLoads/": "red",
 "res://Game/Config/": "red",
+"res://Particles/": "pink",
 "res://Resources/": "gray",
 "res://Shaders/": "purple"
 }

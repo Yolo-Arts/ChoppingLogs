@@ -55,3 +55,6 @@ signal UPG_increase_max_weight
 
 # WEP -> Weapon
 signal WEP_unlock_weapon
+
+# SPA -> Spawn
+signal SPA_spawn_vfx

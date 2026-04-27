@@ -21,6 +21,11 @@ func check_hit() -> void:
 	var result := space_state.intersect_ray(ray_query_params)
 	if not result.is_empty():
 		result.collider.take_hit(axe_resource)
+		
+		EventSystem.SPA_spawn_vfx.emit(
+			VFXConfig.get_vfx(result.collider.hit_particles_key),
+			Transform3D(Basis(), result.position)
+		)
 
 func try_to_use() -> void:
 	if animation_player.is_playing():

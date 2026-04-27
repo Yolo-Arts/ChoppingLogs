@@ -5,7 +5,7 @@ signal register_hit
 
 # TODO ADD VFXConfig
 @export var hit_audio_key := SFXConfig.Keys.MenuBtnPressed
-#@export var hit_particles_key := VFXConfig.Keys.HitParticlesWood
+@export var hit_particles_key := VFXConfig.Keys.HitParticlesWood
 
 
 func take_hit(weapon_item_resource) -> void:
