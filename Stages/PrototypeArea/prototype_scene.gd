@@ -7,11 +7,11 @@ var _is_baking: bool = false
 
 func _ready() -> void:
 	EventSystem.MUS_play_music.emit(MusicConfig.Keys.IslandAmbience)
-	
 	await get_tree().process_frame
 	
 	randomize_forest()
 	scatter_trees.build_completed.connect(_on_scatter_finished)
+	EventSystem.HUD_show_hud.emit()
 
 func randomize_forest() -> void:
 	if scatter_trees:
@@ -32,6 +32,7 @@ func _on_scatter_finished() -> void:
 func _on_bake_finished() -> void:
 	_is_baking = false
 	print("Bake Complete!")
+	#EventSystem.HUD_show_hud.emit()
 
 
 # TODO update navigation mesh so that it changes when a tree is destroyed.

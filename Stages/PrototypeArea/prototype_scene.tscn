@@ -60,7 +60,7 @@ stack = Array[ExtResource("5_twccb")]([SubResource("Resource_kl4xs"), SubResourc
 
 [sub_resource type="Resource" id="Resource_k6dtv"]
 script = ExtResource("12_jeert")
-size = Vector3(7.1340084, 1, 22.811382)
+size = Vector3(7.739255, 1, 4.186661)
 metadata/_custom_type_script = "uid://dt7gelvpg7877"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i71hr"]
@@ -107,7 +107,7 @@ navigation_mesh = SubResource("NavigationMesh_6ifyg")
 shape = SubResource("ConcavePolygonShape3D_i71hr")
 
 [node name="ScatterTrees" type="Node3D" parent="NavigationRegion3D" unique_id=1707205532]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5777407, 0, -7.0629635)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.556267)
 script = ExtResource("3_6ifyg")
 render_mode = 1
 modifier_stack = SubResource("Resource_s5o8u")
@@ -120,7 +120,7 @@ script = ExtResource("10_0rur4")
 path = "uid://bsavf2p0xtbpw"
 
 [node name="ScatterShape" type="Node3D" parent="NavigationRegion3D/ScatterTrees" unique_id=1488086641]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 8.139528)
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("11_1phab")
 shape = SubResource("Resource_k6dtv")
 

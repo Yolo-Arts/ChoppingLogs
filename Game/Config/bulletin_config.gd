@@ -6,6 +6,7 @@ enum Keys{
 	Inventory,
 	InteractionPrompt,
 	SellMenu,
+	WinScreen,
 }
 
 
@@ -18,5 +19,6 @@ const BULLETIN_PATHS := {
 	Keys.SettingsMenu : "res://UI/settings_menu.tscn",
 	Keys.Inventory: "res://Bulletins/player_menus/player_menu_base.tscn",
 	Keys.InteractionPrompt: "res://Bulletins/interaction_prompt/interaction_prompt.tscn",
-	Keys.SellMenu: "res://Bulletins/player_menus/player_menu_with_sell_area.tscn"
+	Keys.SellMenu: "res://Bulletins/player_menus/player_menu_with_sell_area.tscn",
+	Keys.WinScreen: "res://UI/win_screen/win_screen.tscn",
 }

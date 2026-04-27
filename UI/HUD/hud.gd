@@ -42,3 +42,4 @@ func update_tree_text():
 	
 	if tree_count < 1:
 		print("You Win!")
+		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.WinScreen)

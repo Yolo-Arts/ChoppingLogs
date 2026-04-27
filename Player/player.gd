@@ -12,6 +12,7 @@ extends CharacterBody3D
 @onready var discard_marker: Marker3D = $DiscardMarker
 
 func _ready() -> void:
+	print("Player is ready")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	EventSystem.HUD_show_hud.emit()
 	EventSystem.PLA_freeze_player.connect(set_freeze.bind(true))
