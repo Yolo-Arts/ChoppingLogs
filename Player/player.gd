@@ -9,12 +9,14 @@ extends CharacterBody3D
 @onready var head: Node3D = $Head
 @onready var interaction_ray_cast: RayCast3D = %InteractionRayCast
 @onready var weapon_handler: Node3D = %WeaponHandler
+@onready var discard_marker: Marker3D = $DiscardMarker
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	EventSystem.HUD_show_hud.emit()
 	EventSystem.PLA_freeze_player.connect(set_freeze.bind(true))
 	EventSystem.PLA_unfreeze_player.connect(set_freeze.bind(false))
+	EventSystem.SPA_send_spawn_scene_data.connect(spawn_discarded_item)
 
 func set_freeze(freeze: bool) -> void:
 	set_process(!freeze)
@@ -74,6 +76,8 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.Inventory)
 		EventSystem.WEI_ask_update_weight_visual.emit()
 
+func spawn_discarded_item(scene: PackedScene):
+	EventSystem.SPA_spawn_scene.emit(scene, discard_marker.global_transform)
 
 func _exit_tree() -> void:
 	EventSystem.HUD_hide_hud.emit()

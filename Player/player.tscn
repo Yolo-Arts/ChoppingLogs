@@ -93,3 +93,6 @@ visible = false
 
 [node name="Equippable_AR" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=423434461 instance=ExtResource("10_x3vf3")]
 unlocked = false
+
+[node name="DiscardMarker" type="Marker3D" parent="." unique_id=1930258198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8466611, -1.9982367)
