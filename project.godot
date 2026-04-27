@@ -27,7 +27,6 @@ buses/default_bus_layout="res://Resources/default_bus_layout.tres"
 
 [autoload]
 
-SoundManager="res://AutoLoads/sound_manager.tscn"
 Globals="*res://AutoLoads/Globals.gd"
 TransitionManager="*res://AutoLoads/transition_manager.tscn"
 EventSystem="*uid://8dn3brnlxu36"

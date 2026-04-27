@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func _on_play_btn_pressed() -> void:
 	process_mode = PROCESS_MODE_DISABLED
+	EventSystem.HUD_reset_hud_elements.emit()
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.MenuBtnPressed)
 	EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
 

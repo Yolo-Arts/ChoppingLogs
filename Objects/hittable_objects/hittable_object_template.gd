@@ -1,4 +1,5 @@
 extends Node3D
+class_name HittableObjectTemplate
 
 @export var attributes : HittableObjectAttributes
 
@@ -7,7 +8,6 @@ extends Node3D
 
 func _on_hitbox_register_hit(weapon_item_resource) -> void:
 	current_health -= weapon_item_resource.damage
-	print(current_health)
 	
 	if current_health <= 0:
 		die()

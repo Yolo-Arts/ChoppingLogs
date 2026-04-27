@@ -26,6 +26,7 @@ signal SFX_play_dynamic_sfx
 
 signal HUD_hide_hud
 signal HUD_show_hud
+signal HUD_reset_hud_elements
 
 # INV -> Inventory signals
 signal INV_ask_update_inventory
@@ -60,3 +61,7 @@ signal WEP_unlock_weapon
 signal SPA_spawn_vfx
 signal SPA_spawn_scene
 signal SPA_send_spawn_scene_data
+
+# TRE -> Trees
+signal TRE_tree_spawned
+signal TRE_tree_cut
