@@ -2,6 +2,38 @@
 
 [ext_resource type="PackedScene" uid="uid://ceak3a7e8d26m" path="res://Assets/Meshes/PlaceholderMeshes/axe.tscn" id="1_ivuuf"]
 [ext_resource type="Script" uid="uid://ddxr31ehbflk2" path="res://Objects/equippables/axe/equippable_axe.gd" id="1_lcbrk"]
+[ext_resource type="Material" path="res://Shaders/outline.tres" id="3_oc2ju"]
+[ext_resource type="Shader" uid="uid://dwb48c4r1j3dv" path="res://Shaders/cel-shader-base.gdshader" id="4_xprfy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vry7i"]
+render_priority = 0
+next_pass = ExtResource("3_oc2ju")
+shader = ExtResource("4_xprfy")
+shader_parameter/color = Color(0.3776042, 0.2584505, 0.14651829, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2q8fi"]
+render_priority = 0
+next_pass = ExtResource("3_oc2ju")
+shader = ExtResource("4_xprfy")
+shader_parameter/color = Color(0.3411458, 0.3411458, 0.3411458, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqur4"]
+render_priority = 0
+next_pass = ExtResource("3_oc2ju")
+shader = ExtResource("4_xprfy")
+shader_parameter/color = Color(0.3098958, 0.3022165, 0.23968504, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
 
 [sub_resource type="Animation" id="Animation_fc4ss"]
 length = 0.001
@@ -86,6 +118,9 @@ script = ExtResource("1_lcbrk")
 [node name="Axe" parent="MeshHolder" unique_id=2015140156 instance=ExtResource("1_ivuuf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.5, -0.35)
 layers = 4
+surface_material_override/0 = SubResource("ShaderMaterial_vry7i")
+surface_material_override/1 = SubResource("ShaderMaterial_2q8fi")
+surface_material_override/2 = SubResource("ShaderMaterial_bqur4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1895922745]
 libraries/ = SubResource("AnimationLibrary_fc4ss")

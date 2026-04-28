@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://d0rddbpj44icw" path="res://Objects/hittable_objects/hittable_tree.gd" id="2_up5o4"]
 [ext_resource type="Script" uid="uid://bxwywhofnn8c8" path="res://Resources/hittable_object_attributes/hittable_object_attributes.gd" id="3_i41j7"]
 [ext_resource type="PackedScene" uid="uid://d261u0cnltcnw" path="res://Assets/Meshes/PlaceholderMeshes/tree.tscn" id="3_tu62b"]
+[ext_resource type="Material" path="res://Shaders/outline.tres" id="5_1c8me"]
+[ext_resource type="Shader" uid="uid://dwb48c4r1j3dv" path="res://Shaders/cel-shader-base.gdshader" id="6_0omox"]
 
 [sub_resource type="Resource" id="Resource_1c8me"]
 script = ExtResource("3_i41j7")
@@ -13,6 +15,26 @@ metadata/_custom_type_script = "uid://bxwywhofnn8c8"
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_up5o4"]
 height = 2.7314453
 radius = 0.23730469
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f2vkp"]
+render_priority = 0
+next_pass = ExtResource("5_1c8me")
+shader = ExtResource("6_0omox")
+shader_parameter/color = Color(0.13211396, 0.6588541, 0.2061868, 1)
+shader_parameter/specular = Color(0.4, 0.4, 0.4, 0.5647059)
+shader_parameter/fresnel = Color(0.3019608, 0.3019608, 0.3019608, 0.3764706)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0omox"]
+render_priority = 0
+next_pass = ExtResource("5_1c8me")
+shader = ExtResource("6_0omox")
+shader_parameter/color = Color(0.4401042, 0.29166573, 0.08825005, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
 
 [node name="HittableTree" unique_id=640084038 groups=["Trees"] instance=ExtResource("1_ay73e")]
 script = ExtResource("2_up5o4")
@@ -34,3 +56,5 @@ shape = SubResource("CylinderShape3D_up5o4")
 
 [node name="Tree" parent="." index="3" unique_id=1141151295 instance=ExtResource("3_tu62b")]
 transform = Transform3D(1, 0, 0, 0, 2.575, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_f2vkp")
+surface_material_override/1 = SubResource("ShaderMaterial_0omox")

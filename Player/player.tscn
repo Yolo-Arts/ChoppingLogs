@@ -38,6 +38,7 @@ script = ExtResource("2_btcbx")
 
 [node name="Body" type="MeshInstance3D" parent="." unique_id=1229439208]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0174714, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_l8h54")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1661252004]
@@ -77,14 +78,13 @@ render_target_update_mode = 4
 [node name="WeaponCamera" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1247432603]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6848296, 0)
 cull_mask = 12
-fov = 70.0
+fov = 70.5
 
 [node name="WeaponHandler" type="Node3D" parent="SubViewportContainer/SubViewport/WeaponCamera" unique_id=865151648]
 unique_name_in_owner = true
 script = ExtResource("7_00tjw")
 
 [node name="EquippableAxe" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=337480279 instance=ExtResource("7_vtle1")]
-visible = false
 axe_resource = ExtResource("9_apopc")
 unlocked = true
 
@@ -92,6 +92,7 @@ unlocked = true
 visible = false
 
 [node name="Equippable_AR" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=423434461 instance=ExtResource("10_x3vf3")]
+visible = false
 unlocked = false
 
 [node name="DiscardMarker" type="Marker3D" parent="." unique_id=1930258198]
