@@ -15,6 +15,7 @@ signal MON_check_if_can_decrease_money
 signal MON_cannot_decrease_money
 signal MON_decrease_money
 signal MON_money_updated
+signal MON_sell_all_items
 
 signal STA_change_stage
 var is_transitioning := false

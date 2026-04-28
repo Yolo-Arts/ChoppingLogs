@@ -17,6 +17,7 @@ func _enter_tree() -> void:
 	EventSystem.WEI_item_weight_not_too_much.connect(check_if_item_too_heavy.bind(false))
 	
 	EventSystem.UPG_increase_inventory_size.connect(increase_inventory_size)
+	EventSystem.MON_sell_all_items.connect(sell_all_items)
 
 func _ready() -> void:
 	inventory.resize(inventory_size)
@@ -88,3 +89,10 @@ func increase_inventory_size():
 	if inventory_size < 30:
 		inventory_size += 1
 		inventory.resize(inventory_size)
+
+func sell_all_items():
+	for i in inventory.size():
+		if inventory[i] == null:
+			break
+		EventSystem.MON_add_money.emit(ItemConfig.get_item_resource(inventory[i]).sell_price)
+		delete_item_by_index(i)

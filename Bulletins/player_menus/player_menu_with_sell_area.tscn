@@ -9,26 +9,62 @@
 [node name="PlayerMenuWithSellArea" unique_id=494102939 instance=ExtResource("1_sx572")]
 script = ExtResource("2_qlk5d")
 
-[node name="SellArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(318325667) index="2" unique_id=1764990101]
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(318325667) index="2" unique_id=1453380734]
+layout_mode = 2
+size_flags_vertical = 3
+split_offsets = PackedInt32Array(391)
+split_offset = 391
+
+[node name="SellArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer" index="0" unique_id=1764990101]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_a4lr5")
 script = ExtResource("3_0cujw")
 
-[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/VBoxContainer/SellArea" index="0" unique_id=174580980]
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/SellArea" index="0" unique_id=174580980]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/SellArea" index="1" unique_id=1980835846]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/SellArea" index="1" unique_id=1980835846]
 layout_mode = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="SellIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/SellArea/MarginContainer" index="0" unique_id=2003583375]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/SellArea/MarginContainer" index="0" unique_id=44448156]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="SellIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/SellArea/MarginContainer/HBoxContainer" index="0" unique_id=2003583375]
 modulate = Color(0.24705882, 0.16078432, 0.16078432, 1)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_6pqe5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/SellArea/MarginContainer/HBoxContainer" index="1" unique_id=1538624278]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Drag to sell"
+vertical_alignment = 2
+autowrap_mode = 2
+justification_flags = 171
+
+[node name="SellIcon2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/SellArea/MarginContainer/HBoxContainer" index="2" unique_id=1127079647]
+modulate = Color(0.24705882, 0.16078432, 0.16078432, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = ExtResource("3_6pqe5")
+expand_mode = 1
+
+[node name="SellAllButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/SellArea/MarginContainer/HBoxContainer" index="3" unique_id=917847606]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sell All Items"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/SellArea/MarginContainer/HBoxContainer/SellAllButton" to="." method="_on_sell_all_button_pressed"]
