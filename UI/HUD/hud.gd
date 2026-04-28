@@ -31,10 +31,10 @@ func apply_text_effect(label: Label, color: Color):
 	tween.tween_property(label, "scale", Vector2(1.2, 1.2), 0.1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.tween_property(label, "scale", Vector2(1.0, 1.0), 0.2).set_delay(0.1)
 
-
+# TODO change it so that update_tree_text is not called everytime a tree is spawned
 func update_tree_text(tree_count: int = 0):
 	await get_tree().process_frame
-	var trees_in_scene: int = 00
+	var trees_in_scene: int = 0
 	if tree_count:
 		trees_in_scene = tree_count
 	else:
