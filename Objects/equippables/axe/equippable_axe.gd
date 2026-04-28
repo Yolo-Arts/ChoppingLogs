@@ -26,6 +26,9 @@ func check_hit() -> void:
 			VFXConfig.get_vfx(result.collider.hit_particles_key),
 			Transform3D(Basis(), result.position)
 		)
+		
+		var scene_to_spawn := VFXConfig.get_vfx(VFXConfig.Keys.HitNumbers)
+		EventSystem.SPA_spawn_vfx.emit(scene_to_spawn, Transform3D(Basis(), result.position), axe_resource.damage)
 
 func try_to_use() -> void:
 	if animation_player.is_playing():

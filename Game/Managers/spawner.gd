@@ -17,10 +17,15 @@ func spawn_scene(scene:PackedScene, tform:Transform3D, is_constructable := false
 	object.global_transform = random_tform
 	object_holder.add_child(object)
 
-func spawn_vfx(scene:PackedScene, tform:Transform3D) -> void:
+func spawn_vfx(scene:PackedScene, tform:Transform3D, damage_text = null) -> void:
 	var vfx := scene.instantiate()
 	vfx.global_transform = tform
+	
 	add_child(vfx)
+	
+	if damage_text:
+		vfx.label.text = str(damage_text)
+	
 	
 	if vfx is GPUParticles3D:
 		vfx.emitting = true
