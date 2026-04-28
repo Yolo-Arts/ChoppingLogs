@@ -33,3 +33,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3483472, 0)
 shape = SubResource("CylinderShape3D_up5o4")
 
 [node name="Tree" parent="." index="3" unique_id=1141151295 instance=ExtResource("3_tu62b")]
+transform = Transform3D(1, 0, 0, 0, 2.575, 0, 0, 0, 1, 0, 0, 0)
