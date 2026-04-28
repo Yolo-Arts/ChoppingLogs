@@ -86,7 +86,7 @@ func delete_item_by_index(index:int) -> void:
 	EventSystem.INV_inventory_updated.emit(inventory)
 
 func increase_inventory_size():
-	if inventory_size < 30:
+	if inventory_size < 60:
 		inventory_size += 1
 		inventory.resize(inventory_size)
 

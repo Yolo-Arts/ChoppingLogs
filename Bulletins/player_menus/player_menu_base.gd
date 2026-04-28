@@ -55,7 +55,7 @@ func hide_item_info() -> void:
 
 func update_inventory(inventory:Array) -> void:
 	# will add more inventory slots if the inventory array is larger than the count of inventory slots.
-	while inventory.size() > inventory_slot_container.get_child_count() && inventory.size() <= 30:
+	while inventory.size() > inventory_slot_container.get_child_count() && inventory.size() <= 60:
 		var inventory_slot = INVENTORY_SLOT.instantiate()
 		inventory_slot_container.add_child(inventory_slot)
 	
