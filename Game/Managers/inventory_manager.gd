@@ -93,6 +93,6 @@ func increase_inventory_size():
 func sell_all_items():
 	for i in inventory.size():
 		if inventory[i] == null:
-			break
+			continue
 		EventSystem.MON_add_money.emit(ItemConfig.get_item_resource(inventory[i]).sell_price)
 		delete_item_by_index(i)
