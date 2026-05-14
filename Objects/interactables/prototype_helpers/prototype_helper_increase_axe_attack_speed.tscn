@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cwhj3kuvq3prv"]
+
+[ext_resource type="PackedScene" uid="uid://dq82jp8q80abv" path="res://Objects/interactables/prototype_helpers/prototype_helper_template.tscn" id="1_2n1r5"]
+[ext_resource type="Script" uid="uid://c2ht0pnf8i4hy" path="res://Objects/interactables/prototype_helpers/interactable_axe_upgrade_axe_speed.gd" id="2_xop22"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4lwiy"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="PrototypeHelperIncreaseAttackSpeed" unique_id=979320369 instance=ExtResource("1_2n1r5")]
+
+[node name="Interactable" parent="." index="2" unique_id=1150908498]
+script = ExtResource("2_xop22")
+axe_upgrade_speed_amount = 0.02
+
+[node name="Sprite3D" parent="." index="3" unique_id=1621228228]
+texture = SubResource("ViewportTexture_4lwiy")
+
+[node name="PrototypeHelperLabel" parent="Sprite3D/SubViewport/MarginContainer" parent_id_path=PackedInt32Array(320563032) index="0" unique_id=1559570643]
+text = "Increase Axe Attack Speed"

@@ -1,5 +1,7 @@
 extends equippable_weapon
 
+@export var player_stats: PlayerStats
+
 @onready var hit_check_marker: Marker3D = $HitCheckMarker
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -34,4 +36,5 @@ func try_to_use() -> void:
 	if animation_player.is_playing():
 		return
 	
+	animation_player.speed_scale = 1 + player_stats.axe_speed_bonus
 	animation_player.play("use_item")

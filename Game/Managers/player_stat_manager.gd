@@ -14,3 +14,12 @@ var player_speed_with_weight_modifier: float = 1.0
 @export_group("Stats")
 @export var health: float = 100
 @export var money: float = 0
+
+@export_group("Axe")
+@export var axe_speed_bonus: float = 0.0
+
+func _ready() -> void:
+	EventSystem.AXE_increase_axe_speed.connect(increase_axe_speed_bonus)
+
+func increase_axe_speed_bonus(axe_bonus: float):
+	axe_speed_bonus += axe_bonus

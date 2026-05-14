@@ -84,7 +84,8 @@ fov = 70.5
 unique_name_in_owner = true
 script = ExtResource("7_00tjw")
 
-[node name="EquippableAxe" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=337480279 instance=ExtResource("7_vtle1")]
+[node name="EquippableAxe" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=337480279 node_paths=PackedStringArray("player_stats") instance=ExtResource("7_vtle1")]
+player_stats = NodePath("../../../../../Managers/PlayerStatManager")
 axe_resource = ExtResource("9_apopc")
 unlocked = true
 

@@ -9,7 +9,7 @@ func _ready() -> void:
 	var first_weapon = get_first_unlocked_weapon()
 	if first_weapon:
 		equip(first_weapon)
-	
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("next_weapon"):
