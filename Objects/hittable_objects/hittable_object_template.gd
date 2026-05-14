@@ -6,8 +6,8 @@ class_name HittableObjectTemplate
 @onready var current_health := attributes.max_health
 @onready var item_spawn_points: Node3D = $ItemSpawnPoints
 
-func _on_hitbox_register_hit(weapon_item_resource) -> void:
-	current_health -= weapon_item_resource.damage
+func _on_hitbox_register_hit(damage) -> void:
+	current_health -= damage
 	
 	if current_health <= 0:
 		die()

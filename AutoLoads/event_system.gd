@@ -57,6 +57,7 @@ signal UPG_increase_max_weight
 
 # AXE -> Axe Upgrades
 signal AXE_increase_axe_speed
+signal AXE_increase_axe_damage
 
 # WEP -> Weapon
 signal WEP_unlock_weapon
