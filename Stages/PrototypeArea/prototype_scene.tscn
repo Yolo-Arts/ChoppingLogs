@@ -119,7 +119,7 @@ metadata/_custom_type_script = "uid://pt4es15godj0"
 
 [node name="ScatterItem" type="Node3D" parent="NavigationRegion3D/ScatterTrees" unique_id=1904075941]
 script = ExtResource("10_0rur4")
-path = "uid://bsavf2p0xtbpw"
+path = "uid://cd3f3prklq5ep"
 
 [node name="ScatterShape" type="Node3D" parent="NavigationRegion3D/ScatterTrees" unique_id=1488086641]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
