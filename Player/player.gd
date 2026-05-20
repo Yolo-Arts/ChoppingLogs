@@ -29,7 +29,8 @@ func set_freeze(freeze: bool) -> void:
 func _physics_process(delta: float) -> void:
 	move()
 	
-	if Input.is_action_just_pressed("left_click"):
+	# TODO Add auto click upgrade -> Holding left click vs spamming left click.
+	if Input.is_action_pressed("left_click"):
 		weapon_handler.try_to_use_item()
 
 func _process(delta: float) -> void:
