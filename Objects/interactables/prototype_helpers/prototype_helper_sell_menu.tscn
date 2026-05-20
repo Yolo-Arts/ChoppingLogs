@@ -6,6 +6,10 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_ebko3"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0hem7"]
+height = 1.5993652
+radius = 1.3120117
+
 [node name="PrototypeHelperSellMenu" unique_id=979320369 instance=ExtResource("1_rkoib")]
 
 [node name="Interactable" parent="." index="2" unique_id=1150908498]
@@ -17,3 +21,13 @@ texture = SubResource("ViewportTexture_ebko3")
 
 [node name="PrototypeHelperLabel" parent="Sprite3D/SubViewport/MarginContainer" parent_id_path=PackedInt32Array(320563032) index="0" unique_id=1559570643]
 text = "Sell Menu"
+
+[node name="LogSellArea" type="Area3D" parent="." index="4" unique_id=1823251328]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LogSellArea" index="0" unique_id=1929450137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79919434, 0)
+shape = SubResource("CylinderShape3D_0hem7")
+debug_color = Color(0.5019608, 0.40392157, 0.08235294, 1)
+
+[connection signal="body_entered" from="LogSellArea" to="Interactable" method="_on_log_sell_area_body_entered"]

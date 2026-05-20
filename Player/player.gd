@@ -84,9 +84,7 @@ func _exit_tree() -> void:
 	EventSystem.HUD_hide_hud.emit()
 
 
-
+# For automatic log pickups
 func _on_log_collection_area_body_entered(body: Node3D) -> void:
 	if body.has_method("start_interaction"):
-		print("Started interaction")
 		body.start_interaction()
-	print(body)
