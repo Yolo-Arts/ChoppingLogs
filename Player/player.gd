@@ -12,6 +12,8 @@ class_name Player
 @onready var weapon_handler: Node3D = %WeaponHandler
 @onready var discard_marker: Marker3D = $DiscardMarker
 
+@onready var fire_slash: PackedScene = preload("res://Objects/fire_slash/fire_slash.tscn")
+
 func _ready() -> void:
 	print("Player is ready")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -32,6 +34,15 @@ func _physics_process(delta: float) -> void:
 	# TODO Add auto click upgrade -> Holding left click vs spamming left click.
 	if Input.is_action_pressed("left_click"):
 		weapon_handler.try_to_use_item()
+	
+	if Input.is_action_just_pressed("left_click"):
+		var projectile = fire_slash.instantiate()
+		get_tree().current_scene.add_child(projectile)
+		projectile.global_position = head.global_position
+		projectile.global_transform = head.global_transform
+		for child in projectile.get_children():
+			child.rotate_object_local(Vector3.RIGHT, PI)
+		#projectile.forward_direction = global_transform.basis.z
 
 func _process(delta: float) -> void:
 	interaction_ray_cast.check_interaction()

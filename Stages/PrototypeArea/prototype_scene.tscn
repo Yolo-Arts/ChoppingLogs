@@ -246,4 +246,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7073393, 0.13963515, 5.0179
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06791, 0, 1.5028238)
 
 [node name="FireSlash" parent="." unique_id=1887543961 instance=ExtResource("25_s5o8u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -37.848877)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.26275826)
