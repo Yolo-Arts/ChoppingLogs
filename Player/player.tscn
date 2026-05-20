@@ -17,9 +17,9 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l8h54"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_apopc"]
-radius = 1.3212891
+radius = 1.887207
 
-[node name="Player" type="CharacterBody3D" unique_id=842877921 node_paths=PackedStringArray("player_stats")]
+[node name="Player" type="CharacterBody3D" unique_id=842877921 node_paths=PackedStringArray("player_stats") groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_4ntmi")
 player_stats = NodePath("Managers/PlayerStatManager")
@@ -108,6 +108,6 @@ collision_mask = 33
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LogCollectionArea" unique_id=997674523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0008141, 0)
 shape = SubResource("CylinderShape3D_apopc")
-debug_color = Color(0.5026041, 0.4041325, 0.08245849, 0.41960785)
+debug_color = Color(0.5019608, 0.40392157, 0.08235294, 1)
 
 [connection signal="body_entered" from="LogCollectionArea" to="." method="_on_log_collection_area_body_entered"]
