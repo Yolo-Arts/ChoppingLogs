@@ -55,7 +55,8 @@ signal UPG_increase_max_weight
 #signal UPG_decrease_inventory_size 
 #signal UPG_decrease_max_weight
 signal UPG_increase_sell_radius
-
+signal UPG_increase_normal_speed
+signal UPG_increase_sprint_speed
 
 # AXE -> Axe Upgrades
 signal AXE_increase_axe_speed

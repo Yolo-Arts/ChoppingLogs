@@ -29,3 +29,9 @@ func increase_axe_speed_bonus(axe_bonus: float):
 
 func increase_axe_damage_bonus(axe_bonus: float):
 	axe_damage_bonus += axe_bonus
+
+func increase_player_normal_speed(normal_speed_bonus: float):
+	normal_speed += normal_speed_bonus
+
+func increase_player_sprint_speed(sprint_speed_bonus: float):
+	sprint_speed += sprint_speed_bonus
