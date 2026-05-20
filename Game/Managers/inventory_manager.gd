@@ -64,10 +64,10 @@ func add_item(item_key:ItemConfig.Keys) -> void:
 		if inventory[i] == null:
 			inventory[i] = item_key
 			break
-	
 	var weight = ItemConfig.get_item_resource(item_key).weight
 	EventSystem.WEI_weight_changed.emit(weight)
 	EventSystem.INV_inventory_updated.emit(inventory)
+	EventSystem.MON_check_if_can_sell.emit()
 
 func send_inventory() -> void:
 	EventSystem.INV_inventory_updated.emit(inventory)

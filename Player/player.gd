@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 @export var player_stats: PlayerStats
 # TODO move stats into player_stats
