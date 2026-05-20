@@ -6,8 +6,21 @@ class_name HittableObjectTemplate
 @onready var current_health := attributes.max_health
 @onready var item_spawn_points: Node3D = $ItemSpawnPoints
 
+var tween: Tween
+var base_scale: Vector3 = Vector3.ONE
+
+
 func _on_hitbox_register_hit(damage) -> void:
 	current_health -= damage
+	
+	if tween: tween.kill()
+	tween = create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	
+	tween.tween_property(self, "scale", base_scale + Vector3(0.5, 0.5, 0.5), 0.1)
+	tween.tween_property(self, "scale", base_scale, 0.1)
+	
 	
 	if current_health <= 0:
 		die()
