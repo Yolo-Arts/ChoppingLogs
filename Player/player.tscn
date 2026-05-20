@@ -16,7 +16,11 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l8h54"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_apopc"]
+radius = 1.3212891
+
 [node name="Player" type="CharacterBody3D" unique_id=842877921 node_paths=PackedStringArray("player_stats")]
+collision_layer = 2
 script = ExtResource("1_4ntmi")
 player_stats = NodePath("Managers/PlayerStatManager")
 
@@ -38,7 +42,6 @@ script = ExtResource("2_btcbx")
 
 [node name="Body" type="MeshInstance3D" parent="." unique_id=1229439208]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0174714, 0)
-visible = false
 mesh = SubResource("CapsuleMesh_l8h54")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1661252004]
@@ -98,3 +101,13 @@ unlocked = false
 
 [node name="DiscardMarker" type="Marker3D" parent="." unique_id=1930258198]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8466611, -1.9982367)
+
+[node name="LogCollectionArea" type="Area3D" parent="." unique_id=2114251293]
+collision_mask = 33
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LogCollectionArea" unique_id=997674523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0008141, 0)
+shape = SubResource("CylinderShape3D_apopc")
+debug_color = Color(0.5026041, 0.4041325, 0.08245849, 0.41960785)
+
+[connection signal="body_entered" from="LogCollectionArea" to="." method="_on_log_collection_area_body_entered"]

@@ -82,3 +82,11 @@ func spawn_discarded_item(scene: PackedScene):
 
 func _exit_tree() -> void:
 	EventSystem.HUD_hide_hud.emit()
+
+
+
+func _on_log_collection_area_body_entered(body: Node3D) -> void:
+	if body.has_method("start_interaction"):
+		print("Started interaction")
+		body.start_interaction()
+	print(body)
