@@ -13,6 +13,7 @@ class_name Player
 @onready var discard_marker: Marker3D = $DiscardMarker
 
 @onready var fire_slash: PackedScene = preload("res://Objects/fire_slash/fire_slash.tscn")
+@onready var can_fire_slash: bool = true
 
 func _ready() -> void:
 	print("Player is ready")
@@ -37,15 +38,8 @@ func _physics_process(delta: float) -> void:
 	
 	if player_stats.unlocked_fire_slash:
 		if Input.is_action_just_pressed("left_click"):
-			shoot_fire_slash()
-
-func shoot_fire_slash():
-	var projectile = fire_slash.instantiate()
-	get_tree().current_scene.add_child(projectile)
-	projectile.global_position = head.global_position
-	projectile.global_transform = head.global_transform
-	for child in projectile.get_children():
-		child.rotate_object_local(Vector3.RIGHT, PI)
+			if can_fire_slash:
+				shoot_fire_slash()
 
 func _process(delta: float) -> void:
 	interaction_ray_cast.check_interaction()
@@ -105,3 +99,18 @@ func _exit_tree() -> void:
 func _on_log_collection_area_body_entered(body: Node3D) -> void:
 	if body.has_method("start_interaction"):
 		body.start_interaction()
+
+func shoot_fire_slash():
+	var projectile = fire_slash.instantiate()
+	get_tree().current_scene.add_child(projectile)
+	projectile.global_position = head.global_position
+	projectile.global_transform = head.global_transform
+	projectile.damage = player_stats.fire_slash_damage
+	projectile.pierce_count = player_stats.fire_slash_pierce_count
+	for child in projectile.get_children():
+		child.rotate_object_local(Vector3.RIGHT, PI)
+	can_fire_slash = false
+	reset_fire_slash_cooldown()
+
+func reset_fire_slash_cooldown():
+	get_tree().create_timer(player_stats.fire_slash_cooldown, false).timeout.connect(func(): can_fire_slash = true)

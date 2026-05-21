@@ -32,7 +32,7 @@ radius = 0.5756836
 height = 6.413086
 
 [node name="FireSlash" type="Area3D" unique_id=1887543961]
-collision_mask = 17
+collision_mask = 16
 script = ExtResource("1_dwfjx")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=219537278]

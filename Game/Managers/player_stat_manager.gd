@@ -22,6 +22,10 @@ var player_speed_with_weight_modifier: float = 1.0
 
 @export_group("Fire Slash")
 @export var unlocked_fire_slash: bool = false
+@export var fire_slash_damage: float = 50.0
+@export var fire_slash_cooldown: float = 10.0
+@export var fire_slash_pierce_count: int = 1
+
 
 func _ready() -> void:
 	EventSystem.AXE_increase_axe_speed.connect(increase_axe_speed_bonus)
