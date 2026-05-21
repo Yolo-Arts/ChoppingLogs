@@ -35,14 +35,17 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("left_click"):
 		weapon_handler.try_to_use_item()
 	
-	if Input.is_action_just_pressed("left_click"):
-		var projectile = fire_slash.instantiate()
-		get_tree().current_scene.add_child(projectile)
-		projectile.global_position = head.global_position
-		projectile.global_transform = head.global_transform
-		for child in projectile.get_children():
-			child.rotate_object_local(Vector3.RIGHT, PI)
-		#projectile.forward_direction = global_transform.basis.z
+	if player_stats.unlocked_fire_slash:
+		if Input.is_action_just_pressed("left_click"):
+			shoot_fire_slash()
+
+func shoot_fire_slash():
+	var projectile = fire_slash.instantiate()
+	get_tree().current_scene.add_child(projectile)
+	projectile.global_position = head.global_position
+	projectile.global_transform = head.global_transform
+	for child in projectile.get_children():
+		child.rotate_object_local(Vector3.RIGHT, PI)
 
 func _process(delta: float) -> void:
 	interaction_ray_cast.check_interaction()

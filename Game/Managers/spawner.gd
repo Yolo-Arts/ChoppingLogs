@@ -9,13 +9,12 @@ func _enter_tree() -> void:
 func spawn_scene(scene:PackedScene, tform:Transform3D, is_constructable := false) -> void:
 	var object := scene.instantiate()
 	var random_tform = tform
-	
 	random_tform = random_tform.rotated_local(Vector3.UP, deg_to_rad(randf_range(0, 360)))
 	random_tform = random_tform.rotated_local(Vector3.RIGHT, deg_to_rad(randf_range(0, 360)))
 	random_tform = random_tform.rotated_local(Vector3.FORWARD, deg_to_rad(randf_range(0, 360)))
 	
-	object.global_transform = random_tform
 	object_holder.add_child(object)
+	object.global_transform = tform
 
 func spawn_vfx(scene:PackedScene, tform:Transform3D, damage_text = null) -> void:
 	var vfx := scene.instantiate()
