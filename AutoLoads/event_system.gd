@@ -61,10 +61,14 @@ signal UPG_increase_sprint_speed
 signal UPG_increase_fire_slash_damage
 signal UPG_increase_fire_slash_fire_rate
 signal UPG_increase_fire_slash_pierce_count
+signal UPG_increase_axe_range
 
-# AXE -> Axe Upgrades
+
+# AXE -> Axe 
 signal AXE_increase_axe_speed
 signal AXE_increase_axe_damage
+signal AXE_update_hit_marker_position
+
 
 # WEP -> Weapon
 signal WEP_unlock_weapon

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bf1yucrvp3y37"]
+
+[ext_resource type="PackedScene" uid="uid://dq82jp8q80abv" path="res://Objects/interactables/prototype_helpers/prototype_helper_template.tscn" id="1_w6tkv"]
+[ext_resource type="Script" uid="uid://dhxjcikd2sae5" path="res://Objects/interactables/prototype_helpers/interactable_axe_upgrade_axe_range.gd" id="2_wlcvx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wlcvx"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="PrototypeHelperIncreaseAxeRange" unique_id=979320369 instance=ExtResource("1_w6tkv")]
+
+[node name="Interactable" parent="." index="2" unique_id=1150908498]
+script = ExtResource("2_wlcvx")
+axe_range_increase = 1.0
+prompt = "Increase Range"
+
+[node name="Sprite3D" parent="." index="3" unique_id=1621228228]
+texture = SubResource("ViewportTexture_wlcvx")
+
+[node name="PrototypeHelperLabel" parent="Sprite3D/SubViewport/MarginContainer" parent_id_path=PackedInt32Array(320563032) index="0" unique_id=1559570643]
+text = "Increase Axe Range"

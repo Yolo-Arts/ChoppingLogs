@@ -8,7 +8,11 @@ extends equippable_weapon
 @export var axe_resource: AxeItemResource
 
 func _ready() -> void:
-	hit_check_marker.position.z = -axe_resource.range
+	hit_check_marker.position.z = -player_stats.axe_range
+	EventSystem.AXE_update_hit_marker_position.connect(update_hit_marker_position)
+
+func update_hit_marker_position():
+	hit_check_marker.position.z = -player_stats.axe_range
 
 func check_hit() -> void:
 	var space_state := get_world_3d().direct_space_state
