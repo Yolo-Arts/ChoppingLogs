@@ -151,6 +151,7 @@ left_click={
 3d_physics/layer_4="sun"
 3d_physics/layer_5="hitbox"
 3d_physics/layer_6="logs"
+3d_physics/layer_7="trees"
 3d_physics/layer_8="interactable"
 
 [rendering]

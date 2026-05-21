@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://f7e4iprhhnur"]
+
+[ext_resource type="PackedScene" uid="uid://dq82jp8q80abv" path="res://Objects/interactables/prototype_helpers/prototype_helper_template.tscn" id="1_urjix"]
+[ext_resource type="Script" uid="uid://c8uf3qryx3ttn" path="res://Objects/interactables/prototype_helpers/interactable_increase_fire_slash_fire_rate.gd" id="2_jgksn"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jgksn"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="PrototypeHelperIncreaseFireSlashFireRate" unique_id=979320369 instance=ExtResource("1_urjix")]
+
+[node name="Interactable" parent="." index="2" unique_id=1150908498]
+script = ExtResource("2_jgksn")
+fire_rate_increase = 1.0
+prompt = "Fire Rate Fire Slash"
+
+[node name="Sprite3D" parent="." index="3" unique_id=1621228228]
+texture = SubResource("ViewportTexture_jgksn")
+
+[node name="PrototypeHelperLabel" parent="Sprite3D/SubViewport/MarginContainer" parent_id_path=PackedInt32Array(320563032) index="0" unique_id=1559570643]
+text = "Fire Slash Fire Rate"

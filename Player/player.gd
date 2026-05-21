@@ -36,8 +36,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("left_click"):
 		weapon_handler.try_to_use_item()
 	
-	if player_stats.unlocked_fire_slash:
-		if Input.is_action_just_pressed("left_click"):
+		if player_stats.unlocked_fire_slash:
 			if can_fire_slash:
 				shoot_fire_slash()
 
@@ -113,4 +112,4 @@ func shoot_fire_slash():
 	reset_fire_slash_cooldown()
 
 func reset_fire_slash_cooldown():
-	get_tree().create_timer(player_stats.fire_slash_cooldown, false).timeout.connect(func(): can_fire_slash = true)
+	get_tree().create_timer(max(player_stats.fire_slash_cooldown, 0.3), false).timeout.connect(func(): can_fire_slash = true)

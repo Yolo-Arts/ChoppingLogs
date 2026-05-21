@@ -1,4 +1,5 @@
 extends RigidBody3D
+class_name PickuppableLog
 
 @onready var pickuppable_component: Pickuppable = $Area3D
 

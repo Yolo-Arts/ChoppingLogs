@@ -7,7 +7,7 @@ extends Area3D
 var hit_areas := {} 
 
 func _ready() -> void:
-	get_tree().create_timer(3.0, false).timeout.connect(queue_free)
+	get_tree().create_timer(7.0, false).timeout.connect(queue_free)
 
 func _physics_process(delta: float) -> void:
 	global_position += -global_transform.basis.z * speed * delta
@@ -37,5 +37,5 @@ func _on_area_entered(area: Area3D) -> void:
 		queue_free() 
 
 
-func _on_body_entered(_body: Node3D) -> void:
+func _on_body_entered(body: Node3D) -> void:
 	queue_free()

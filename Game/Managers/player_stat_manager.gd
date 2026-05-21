@@ -23,7 +23,7 @@ var player_speed_with_weight_modifier: float = 1.0
 @export_group("Fire Slash")
 @export var unlocked_fire_slash: bool = false
 @export var fire_slash_damage: float = 50.0
-@export var fire_slash_cooldown: float = 10.0
+@export var fire_slash_cooldown: float = 20.0
 @export var fire_slash_pierce_count: int = 1
 
 
@@ -31,6 +31,9 @@ func _ready() -> void:
 	EventSystem.AXE_increase_axe_speed.connect(increase_axe_speed_bonus)
 	EventSystem.AXE_increase_axe_damage.connect(increase_axe_damage_bonus)
 	EventSystem.WEP_unlock_fire_slash.connect(func(): unlocked_fire_slash = true, CONNECT_ONE_SHOT)
+	EventSystem.UPG_increase_fire_slash_damage.connect(func(increase): fire_slash_damage += increase)
+	EventSystem.UPG_increase_fire_slash_fire_rate.connect(func(increase): fire_slash_cooldown -= increase)
+	EventSystem.UPG_increase_fire_slash_pierce_count.connect(func(increase): fire_slash_pierce_count += increase)
 
 func increase_axe_speed_bonus(axe_bonus: float):
 	axe_speed_bonus += axe_bonus

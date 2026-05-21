@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://drqs3um5jtugk"]
+
+[ext_resource type="PackedScene" uid="uid://dq82jp8q80abv" path="res://Objects/interactables/prototype_helpers/prototype_helper_template.tscn" id="1_7w3ba"]
+[ext_resource type="Script" uid="uid://cvgo4ra56pg6x" path="res://Objects/interactables/prototype_helpers/interactable_increase_fire_slash_pierce_count.gd" id="2_vcpby"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6a1hu"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="PrototypeHelperFireSlashPierceCount" unique_id=979320369 instance=ExtResource("1_7w3ba")]
+
+[node name="Interactable" parent="." index="2" unique_id=1150908498]
+script = ExtResource("2_vcpby")
+pierce_count_increase = 1.0
+prompt = "Increase Pierce +1"
+
+[node name="Sprite3D" parent="." index="3" unique_id=1621228228]
+texture = SubResource("ViewportTexture_6a1hu")
+
+[node name="PrototypeHelperLabel" parent="Sprite3D/SubViewport/MarginContainer" parent_id_path=PackedInt32Array(320563032) index="0" unique_id=1559570643]
+text = "Fire Slash Pierce"

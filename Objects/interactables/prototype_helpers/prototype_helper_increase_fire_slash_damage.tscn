@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c557q4xh5xvwu"]
+
+[ext_resource type="PackedScene" uid="uid://dq82jp8q80abv" path="res://Objects/interactables/prototype_helpers/prototype_helper_template.tscn" id="1_ccynd"]
+[ext_resource type="Script" uid="uid://cdm5jp1hvba3m" path="res://Objects/interactables/prototype_helpers/interactable_increase_fire_slash_damage.gd" id="2_vvwl1"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vvwl1"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="PrototypeHelperIncreaseFireSlashDamage" unique_id=979320369 instance=ExtResource("1_ccynd")]
+
+[node name="Interactable" parent="." index="2" unique_id=1150908498]
+script = ExtResource("2_vvwl1")
+damage_increase = 5.0
+prompt = "Increase Fire Slash Damage"
+
+[node name="Sprite3D" parent="." index="3" unique_id=1621228228]
+texture = SubResource("ViewportTexture_vvwl1")
+
+[node name="PrototypeHelperLabel" parent="Sprite3D/SubViewport/MarginContainer" parent_id_path=PackedInt32Array(320563032) index="0" unique_id=1559570643]
+text = "Increase Fire Slash Damage"

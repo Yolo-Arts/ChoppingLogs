@@ -32,7 +32,7 @@ radius = 0.5756836
 height = 6.413086
 
 [node name="FireSlash" type="Area3D" unique_id=1887543961]
-collision_mask = 16
+collision_mask = 17
 script = ExtResource("1_dwfjx")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=219537278]
@@ -42,7 +42,7 @@ amount = 1
 lifetime = 0.02
 mesh = ExtResource("3_v1qq2")
 gravity = Vector3(0, 0, 0)
-color = Color(2.3983042, 0.6439812, 0.27987644, 1)
+color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
 
 [node name="CPUParticles3D4" type="CPUParticles3D" parent="." unique_id=1594402762]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8121053)
@@ -51,7 +51,7 @@ amount = 1
 lifetime = 0.02
 mesh = ExtResource("5_fmhom")
 gravity = Vector3(0, 0, 0)
-color = Color(2.3983042, 0.6439812, 0.27987644, 1)
+color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
 
 [node name="CPUParticles3D5" type="CPUParticles3D" parent="." unique_id=843507368]
 transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, -0.02350229, 0, -0.8121053)
@@ -60,7 +60,7 @@ amount = 1
 lifetime = 0.02
 mesh = ExtResource("5_fmhom")
 gravity = Vector3(0, 0, 0)
-color = Color(2.3983042, 0.6439812, 0.27987644, 1)
+color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
 
 [node name="CPUParticles3D3" type="CPUParticles3D" parent="." unique_id=1166113168]
 transform = Transform3D(1.952423, 0, -1.509958e-07, 0, -0.018359384, 0, 2.9480768e-07, 0, 1, 0, 0, 0.00609231)
@@ -70,7 +70,7 @@ amount = 1
 lifetime = 0.02
 mesh = ExtResource("1_54e2s")
 gravity = Vector3(0, 0, 0)
-color = Color(2.3983042, 0.6439812, 0.27987644, 1)
+color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
 
 [node name="CPUParticles3D2" type="CPUParticles3D" parent="." unique_id=1838757674]
 material_override = SubResource("ShaderMaterial_fmhom")
@@ -78,7 +78,7 @@ amount = 1
 lifetime = 0.02
 mesh = ExtResource("1_54e2s")
 gravity = Vector3(0, 0, 0)
-color = Color(2.3983042, 0.6439812, 0.27987644, 1)
+color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=87805238]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)

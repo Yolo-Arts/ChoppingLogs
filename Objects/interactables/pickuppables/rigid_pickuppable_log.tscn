@@ -9,7 +9,7 @@
 height = 1.0041504
 radius = 0.111816406
 
-[node name="RigidPickuppableLog" unique_id=1838406015 instance=ExtResource("1_im5nx")]
+[node name="RigidPickuppableLog" unique_id=1838406015 groups=["logs"] instance=ExtResource("1_im5nx")]
 collision_layer = 32
 collision_mask = 33
 script = ExtResource("2_c30jl")
