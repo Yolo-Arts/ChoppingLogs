@@ -101,6 +101,7 @@ func _exit_tree() -> void:
 
 
 # For automatic log pickups
+# TODO Check if there are logs inside this area when the sell happens.
 func _on_log_collection_area_body_entered(body: Node3D) -> void:
 	if body.has_method("start_interaction"):
 		body.start_interaction()

@@ -15,9 +15,9 @@ func _on_area_entered(area: Area3D) -> void:
 		return
 	
 	area.take_hit(10)
-	print(area.global_position)
+	#print(area.global_position)
 	var hit_transform := Transform3D(Basis(), global_position)
-	print(hit_transform)
+	#print(hit_transform)
 	EventSystem.SPA_spawn_vfx.emit(
 			VFXConfig.get_vfx(area.hit_particles_key),
 			hit_transform
@@ -29,5 +29,5 @@ func _on_area_entered(area: Area3D) -> void:
 	queue_free() 
 
 
-func _on_body_entered(body: Node3D) -> void:
+func _on_body_entered(_body: Node3D) -> void:
 	queue_free()

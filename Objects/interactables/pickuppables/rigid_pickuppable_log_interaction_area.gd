@@ -10,7 +10,7 @@ func destroy() -> void:
 	if not player_reference:
 		object.queue_free()
 		return
-	await get_tree().create_timer(0.5, false).timeout
+
 	var tween = create_tween().set_parallel(true)
 	
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)

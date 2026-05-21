@@ -26,6 +26,7 @@ var player_speed_with_weight_modifier: float = 1.0
 func _ready() -> void:
 	EventSystem.AXE_increase_axe_speed.connect(increase_axe_speed_bonus)
 	EventSystem.AXE_increase_axe_damage.connect(increase_axe_damage_bonus)
+	EventSystem.WEP_unlock_fire_slash.connect(func(): unlocked_fire_slash = true, CONNECT_ONE_SHOT)
 
 func increase_axe_speed_bonus(axe_bonus: float):
 	axe_speed_bonus += axe_bonus

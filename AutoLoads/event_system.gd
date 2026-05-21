@@ -65,6 +65,7 @@ signal AXE_increase_axe_damage
 
 # WEP -> Weapon
 signal WEP_unlock_weapon
+signal WEP_unlock_fire_slash
 
 # SPA -> Spawn
 signal SPA_spawn_vfx
