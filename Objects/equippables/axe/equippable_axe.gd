@@ -22,6 +22,9 @@ func check_hit() -> void:
 	
 	var result := space_state.intersect_ray(ray_query_params)
 	if not result.is_empty():
+		if not result.collider.has_method("take_hit"):
+			return
+		
 		var damage_calculated = (axe_resource.damage + player_stats.axe_damage_bonus) * player_stats.axe_damage_mult_bonus
 		result.collider.take_hit(damage_calculated)
 		

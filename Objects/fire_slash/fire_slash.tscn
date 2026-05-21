@@ -5,7 +5,6 @@
 [ext_resource type="Shader" uid="uid://e28pamtm3isi" path="res://Shaders/fire_slash.tres" id="1_v1qq2"]
 [ext_resource type="Texture2D" uid="uid://pbhkaqorimem" path="res://Assets/VFX/GAP_SlashElements/Gradient01.png" id="2_va1wu"]
 [ext_resource type="ArrayMesh" uid="uid://cgk540pxpu8uw" path="res://Assets/VFX/GAP_SlashElements/fire_slash.obj" id="3_v1qq2"]
-[ext_resource type="Texture2D" uid="uid://ci2anitisv5ts" path="res://Assets/VFX/GAP_SlashElements/Flare01.PNG" id="4_3exdv"]
 [ext_resource type="ArrayMesh" uid="uid://djmw3gxaakypx" path="res://Assets/VFX/GAP_SlashElements/fire_slash_inside.obj" id="5_fmhom"]
 [ext_resource type="Shader" uid="uid://hwxp1vqe3iev" path="res://Objects/fire_slash/texture_scroll.tres" id="5_htcff"]
 [ext_resource type="Texture2D" uid="uid://b0md5qfekehar" path="res://Assets/VFX/GAP_SlashElements/Noise01.png" id="6_3exdv"]
@@ -14,28 +13,6 @@
 render_priority = 0
 shader = ExtResource("1_v1qq2")
 shader_parameter/Texture2DParameter2 = ExtResource("2_va1wu")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmhom"]
-transparency = 1
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("4_3exdv")
-
-[sub_resource type="QuadMesh" id="QuadMesh_dwfjx"]
-
-[sub_resource type="Curve" id="Curve_86ql0"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_faahu"]
-
-[sub_resource type="Curve" id="Curve_l0s0m"]
-_limits = [0.0, 10.0, 0.0, 1.0]
-_data = [Vector2(0, 10), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_55gme"]
-offsets = PackedFloat32Array(0, 0.1184573, 0.28374657, 0.9807162)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.94214875, 1, 1, 1, 0.5056901, 1, 1, 1, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_va1wu"]
 render_priority = 0
@@ -51,16 +28,15 @@ shader_parameter/MainText = ExtResource("6_3exdv")
 shader_parameter/GradientTex = ExtResource("2_va1wu")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fmhom"]
-radius = 0.7260742
-height = 4.2128906
+radius = 0.5756836
+height = 6.413086
 
 [node name="FireSlash" type="Area3D" unique_id=1887543961]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -1.8607485)
+collision_mask = 17
 script = ExtResource("1_dwfjx")
-speed = null
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=219537278]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4991615, -0.8121053)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8121053)
 material_override = SubResource("ShaderMaterial_h44vy")
 amount = 1
 lifetime = 0.02
@@ -68,31 +44,8 @@ mesh = ExtResource("3_v1qq2")
 gravity = Vector3(0, 0, 0)
 color = Color(2.3983042, 0.6439812, 0.27987644, 1)
 
-[node name="CPUParticles3D4" type="CPUParticles3D" parent="CPUParticles3D" unique_id=1331121562]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.3775991)
-material_override = SubResource("StandardMaterial3D_fmhom")
-amount = 25
-lifetime = 0.02
-mesh = SubResource("QuadMesh_dwfjx")
-emission_shape = 3
-emission_box_extents = Vector3(2, 0.2, 3)
-particle_flag_align_y = true
-direction = Vector3(0, 0, -1)
-spread = 2.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 40.0
-initial_velocity_max = 60.0
-scale_amount_min = 0.1
-scale_amount_max = 0.3
-split_scale = true
-scale_curve_x = SubResource("Curve_86ql0")
-scale_curve_y = SubResource("Curve_faahu")
-scale_curve_z = SubResource("Curve_l0s0m")
-color = Color(2.3983042, 0.6439812, 0.27987644, 1)
-color_ramp = SubResource("Gradient_55gme")
-
 [node name="CPUParticles3D4" type="CPUParticles3D" parent="." unique_id=1594402762]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4991615, -0.8121053)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8121053)
 material_override = SubResource("ShaderMaterial_h44vy")
 amount = 1
 lifetime = 0.02
@@ -101,7 +54,7 @@ gravity = Vector3(0, 0, 0)
 color = Color(2.3983042, 0.6439812, 0.27987644, 1)
 
 [node name="CPUParticles3D5" type="CPUParticles3D" parent="." unique_id=843507368]
-transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, -0.02350229, 1.4991615, -0.8121053)
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, -0.02350229, 0, -0.8121053)
 material_override = SubResource("ShaderMaterial_h44vy")
 amount = 1
 lifetime = 0.02
@@ -110,7 +63,7 @@ gravity = Vector3(0, 0, 0)
 color = Color(2.3983042, 0.6439812, 0.27987644, 1)
 
 [node name="CPUParticles3D3" type="CPUParticles3D" parent="." unique_id=1166113168]
-transform = Transform3D(1.952423, 0, -1.509958e-07, 0, -0.018359384, 0, 2.9480768e-07, 0, 1, 0, 1.5132507, 0.00609231)
+transform = Transform3D(1.952423, 0, -1.509958e-07, 0, -0.018359384, 0, 2.9480768e-07, 0, 1, 0, 0, 0.00609231)
 sorting_offset = -2.0
 material_override = SubResource("ShaderMaterial_va1wu")
 amount = 1
@@ -120,7 +73,6 @@ gravity = Vector3(0, 0, 0)
 color = Color(2.3983042, 0.6439812, 0.27987644, 1)
 
 [node name="CPUParticles3D2" type="CPUParticles3D" parent="." unique_id=1838757674]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4510264, 0)
 material_override = SubResource("ShaderMaterial_fmhom")
 amount = 1
 lifetime = 0.02
@@ -129,7 +81,9 @@ gravity = Vector3(0, 0, 0)
 color = Color(2.3983042, 0.6439812, 0.27987644, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=87805238]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.4816277, 0.27190924)
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_fmhom")
+debug_color = Color(0, 0.5950001, 0.7, 1)
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

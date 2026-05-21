@@ -20,6 +20,3 @@ func display_damage():
 		.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
 	
 	tween.tween_property(self, "modulate:a", 0.0, 0.4).set_delay(0.2)
-
-func _ready() -> void:
-	display_damage()
