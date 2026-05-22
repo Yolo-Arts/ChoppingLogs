@@ -20,4 +20,4 @@ func destroy() -> void:
 	tween.tween_property(object, "global_position", target_position, 0.8)
 	tween.tween_property(object, "scale", Vector3(0.001, 0.001, 0.001), 0.8)
 
-	tween.chain().tween_callback(object.queue_free)
+	tween.chain().tween_callback(func(): ObjectPool.return_object(object))

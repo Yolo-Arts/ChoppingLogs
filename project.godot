@@ -30,6 +30,7 @@ buses/default_bus_layout="res://Resources/default_bus_layout.tres"
 Globals="*res://AutoLoads/Globals.gd"
 TransitionManager="*res://AutoLoads/transition_manager.tscn"
 EventSystem="*uid://8dn3brnlxu36"
+ObjectPool="*uid://biknfn13i40iq"
 
 [display]
 

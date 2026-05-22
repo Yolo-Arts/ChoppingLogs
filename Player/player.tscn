@@ -56,8 +56,9 @@ shape = SubResource("CapsuleShape3D_l8h54")
 
 [node name="PlayerStatManager" type="Node" parent="Managers" unique_id=1782077226]
 script = ExtResource("5_k53q1")
-fire_slash_damage = 5.0
+unlocked_fire_slash = true
 fire_slash_cooldown = 1.0
+fire_slash_pierce_count = 20
 
 [node name="InventoryManager" type="Node" parent="Managers" unique_id=2003678697]
 script = ExtResource("2_4ntmi")
