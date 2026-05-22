@@ -3,26 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://dn0ktfrnst30q" path="res://Objects/interactables/pickuppables/rigid_pickuppable_template.tscn" id="1_im5nx"]
 [ext_resource type="Script" uid="uid://brdlp5jl4y5rk" path="res://Objects/interactables/pickuppables/rigid_pickuppable_log.gd" id="2_c30jl"]
 [ext_resource type="PackedScene" uid="uid://bw6s6a4egoido" path="res://Assets/Meshes/PlaceholderMeshes/log.tscn" id="2_ffpwg"]
-[ext_resource type="Script" uid="uid://dbvbx3tk4q7fy" path="res://Objects/interactables/pickuppables/rigid_pickuppable_log_interaction_area.gd" id="3_kwps6"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_c30jl"]
 height = 1.0041504
 radius = 0.111816406
 
 [node name="RigidPickuppableLog" unique_id=1838406015 groups=["logs"] instance=ExtResource("1_im5nx")]
-collision_layer = 0
+collision_layer = 32
 script = ExtResource("2_c30jl")
 
-[node name="Area3D" parent="." index="0" unique_id=1388930990]
-script = ExtResource("3_kwps6")
-prompt = "prompt"
+[node name="Log" parent="." index="0" unique_id=1790793256 instance=ExtResource("2_ffpwg")]
 
-[node name="CollisionShape3D" parent="Area3D" index="0" unique_id=905938339]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0015869141, 0)
-shape = SubResource("CylinderShape3D_c30jl")
-
-[node name="Log" parent="." index="1" unique_id=1790793256 instance=ExtResource("2_ffpwg")]
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2" unique_id=1406521737]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="1" unique_id=1406521737]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0015869141, 0)
 shape = SubResource("CylinderShape3D_c30jl")

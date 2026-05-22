@@ -56,7 +56,8 @@ shape = SubResource("CapsuleShape3D_l8h54")
 
 [node name="PlayerStatManager" type="Node" parent="Managers" unique_id=1782077226]
 script = ExtResource("5_k53q1")
-unlocked_fire_slash = true
+normal_speed = 6.0
+sprint_speed = 12.0
 fire_slash_cooldown = 1.0
 fire_slash_pierce_count = 20
 
@@ -110,6 +111,7 @@ unlocked = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8466611, -1.9982367)
 
 [node name="LogCollectionArea" type="Area3D" parent="." unique_id=2114251293]
+collision_layer = 0
 collision_mask = 33
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LogCollectionArea" unique_id=997674523]
