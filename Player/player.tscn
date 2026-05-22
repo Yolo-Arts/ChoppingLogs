@@ -31,6 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6848296, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=30710601]
 cull_mask = 1048571
+far = 200.0
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Head/Camera3D" unique_id=1089151762]
 remote_path = NodePath("../../../SubViewportContainer/SubViewport/WeaponCamera")
