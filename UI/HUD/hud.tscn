@@ -161,6 +161,7 @@ text = "Money Placeholder"
 vertical_alignment = 1
 
 [node name="WeightBarBackground" type="ColorRect" parent="MarginContainer" unique_id=203863358]
+visible = false
 custom_minimum_size = Vector2(70, 500)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -201,3 +202,11 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "Trees Remaining: 100"
 horizontal_alignment = 2
+
+[node name="TimeLabel" type="Label" parent="MarginContainer" unique_id=1878118813]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("2_ing8j")
+text = "12:00"

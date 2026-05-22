@@ -29,6 +29,7 @@ signal SFX_play_dynamic_sfx
 signal HUD_hide_hud
 signal HUD_show_hud
 signal HUD_reset_hud_elements
+signal HUD_update_time
 
 # INV -> Inventory signals
 signal INV_ask_update_inventory

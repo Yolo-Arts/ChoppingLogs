@@ -2,6 +2,7 @@ extends Control
 
 @onready var money_label: Label = %MoneyLabel
 @onready var trees_remaining_label: Label = %TreesRemainingLabel
+@onready var time_label: Label = %TimeLabel
 
 
 func _ready() -> void:
@@ -11,6 +12,7 @@ func _ready() -> void:
 	
 	EventSystem.TRE_tree_spawned.connect(update_tree_text)
 	EventSystem.TRE_tree_cut.connect(check_if_game_won)
+	EventSystem.HUD_update_time.connect(func(new_time: String): time_label.text = new_time)
 
 func reset_hud_elements():
 	money_label.text = "$" + str(0.0)
