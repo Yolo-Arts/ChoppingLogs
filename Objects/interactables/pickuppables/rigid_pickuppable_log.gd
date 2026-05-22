@@ -6,3 +6,10 @@ class_name PickuppableLog
 func start_interaction() -> void:
 	if pickuppable_component:
 		pickuppable_component.start_interaction()
+
+func _ready() -> void:
+	sleeping_state_changed.connect(_on_sleeping_state_changed)
+
+func _on_sleeping_state_changed() -> void:
+	if sleeping:
+		freeze = true
