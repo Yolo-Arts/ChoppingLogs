@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cwqcp3oixoh4g"]
+
+[ext_resource type="PackedScene" uid="uid://bwut7i5u523rk" path="res://UI/skill_tree/skill_buttons/skill_button_template.tscn" id="1_b05r7"]
+[ext_resource type="Texture2D" uid="uid://cdcohd48x484q" path="res://Assets/skill_tree/axe/base_axe.png" id="2_2e4sg"]
+[ext_resource type="Script" uid="uid://dhvdi2u4go4ql" path="res://UI/skill_tree/skill_buttons/axe/skill_button_axe_increase_damage.gd" id="3_8tv5v"]
+
+[node name="SkillButtonAxeIncreaseDamage" unique_id=1440200605 instance=ExtResource("1_b05r7")]
+texture_normal = ExtResource("2_2e4sg")
+script = ExtResource("3_8tv5v")
+texture = null

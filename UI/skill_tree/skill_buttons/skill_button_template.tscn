@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://bwut7i5u523rk"]
 
-[ext_resource type="Texture2D" uid="uid://cgs3aoe7dwymq" path="res://icon.svg" id="1_jlyim"]
-[ext_resource type="Script" uid="uid://bjp8ws7d3nxs4" path="res://UI/skill_tree/skill_button.gd" id="2_xmwh3"]
+[ext_resource type="Texture2D" uid="uid://begc66124e45k" path="res://Assets/skill_tree/SkillTreeBackground.svg" id="1_xmwh3"]
+[ext_resource type="Script" uid="uid://bjp8ws7d3nxs4" path="res://UI/skill_tree/skill_buttons/skill_button_template.gd" id="2_xmwh3"]
 
-[node name="SkillButton" type="TextureButton" unique_id=1440200605]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rm37"]
+bg_color = Color(0, 0, 0, 0.7058824)
+corner_detail = 1
+
+[node name="SkillButtonTemplate" type="TextureButton" unique_id=1440200605]
 offset_right = 40.0
 offset_bottom = 40.0
-texture_normal = ExtResource("1_jlyim")
-stretch_mode = 0
+texture_normal = ExtResource("1_xmwh3")
 script = ExtResource("2_xmwh3")
+max_level = 5
 
 [node name="Panel" type="Panel" parent="." unique_id=1388142153]
 layout_mode = 1
@@ -18,6 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5rm37")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1228281624]
 layout_mode = 1

@@ -47,6 +47,7 @@ enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/
 folder_colors={
 "res://Assets/": "green",
 "res://Assets/Audio/": "yellow",
+"res://Assets/skill_tree/": "orange",
 "res://AutoLoads/": "red",
 "res://Game/Config/": "red",
 "res://Particles/": "pink",
