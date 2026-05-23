@@ -21,8 +21,13 @@ func _ready():
 		activate()
 	label.text = str(level) + "/" + str(max_level)
 	if get_parent() is SkillNode:
-		line_2d.add_point(global_position + size/2)
-		line_2d.add_point(get_parent().global_position + size/2)
+		line_2d.clear_points()
+		
+		var my_center = global_position + (size / 2)
+		var parent_center = get_parent().global_position + (get_parent().size / 2)
+		
+		line_2d.add_point(line_2d.to_local(my_center))
+		line_2d.add_point(line_2d.to_local(parent_center))
 
 
 func _on_pressed():
@@ -50,9 +55,12 @@ func activate():
 	panel.show_behind_parent = true
 	panel.visible = false
 	
+	line_2d.default_color = Color(1, 1, 0.24705882370472)
+	
 	var skills = get_children()
 	for skill in skills:
 		if skill is SkillNode and SkillTreeConfig.upgrades[upgrade_key] >= level_requirement_to_reveal:
+			skill.show_behind_parent = true
 			skill.visible = true
 			skill.disabled = false
 	
