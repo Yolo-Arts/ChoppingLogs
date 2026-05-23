@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bej75do6xooh8"]
+
+[ext_resource type="PackedScene" uid="uid://dq82jp8q80abv" path="res://Objects/interactables/prototype_helpers/prototype_helper_template.tscn" id="1_se1gt"]
+[ext_resource type="Script" uid="uid://bmppg53sttxhc" path="res://Objects/interactables/prototype_helpers/interactable_bulletin_skill_tree.gd" id="2_pi5n3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pi5n3"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="PrototypeHelperSkillTree" unique_id=979320369 instance=ExtResource("1_se1gt")]
+
+[node name="Interactable" parent="." index="2" unique_id=1150908498]
+script = ExtResource("2_pi5n3")
+prompt = "Open Skill Tree"
+
+[node name="Sprite3D" parent="." index="3" unique_id=1621228228]
+texture = SubResource("ViewportTexture_pi5n3")
+
+[node name="PrototypeHelperLabel" parent="Sprite3D/SubViewport/MarginContainer" parent_id_path=PackedInt32Array(320563032) index="0" unique_id=1559570643]
+text = "Skill Tree"

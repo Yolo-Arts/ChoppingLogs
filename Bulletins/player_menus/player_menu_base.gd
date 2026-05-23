@@ -76,5 +76,5 @@ func _on_close_button_pressed() -> void:
 	EventSystem.HUD_show_hud.emit()
 
 func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_action_pressed("open_inventory"):
+	if event.is_action_pressed("open_inventory") || event.is_action_pressed("close_menu"):
 		_on_close_button_pressed()
