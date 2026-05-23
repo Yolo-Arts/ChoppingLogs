@@ -33,6 +33,9 @@ func _ready():
 func _on_pressed():
 	level = min( level+1 , max_level)
 	SkillTreeConfig.upgrades[upgrade_key] += 1
+	var my_center = global_position + (size / 2)
+	
+	EventSystem.SKL_update_panning.emit(my_center)
 	activate()
 	
 	line_2d.default_color = Color(1, 1, 0.24705882370472)
