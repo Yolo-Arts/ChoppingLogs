@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cybbgsj5hfkyv" path="res://Assets/skill_tree/axe/AxeDamage2.png" id="3_nnr1a"]
 [ext_resource type="Texture2D" uid="uid://3niq60vrbjjo" path="res://Assets/skill_tree/axe/AxeDamage3.png" id="4_qeeel"]
 [ext_resource type="Texture2D" uid="uid://bi2ogxmckinvl" path="res://Assets/skill_tree/axe/AxeDamage4.png" id="6_nnr1a"]
+[ext_resource type="Script" uid="uid://dvci3m3ipvgd7" path="res://UI/skill_tree/zoom_and_pan.gd" id="7_qeeel"]
 
 [node name="SkillTree" type="Control" unique_id=3995535]
 layout_mode = 3
@@ -67,3 +68,7 @@ offset_right = -94.0
 offset_bottom = -62.0
 disabled = true
 texture = ExtResource("6_nnr1a")
+
+[node name="ZoomAndPan" type="Camera2D" parent="." unique_id=698710164]
+position = Vector2(984, 568)
+script = ExtResource("7_qeeel")
