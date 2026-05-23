@@ -9,6 +9,7 @@ mouse_filter = 2
 script = ExtResource("2_gcr63")
 
 [node name="Label" type="Label" parent="." index="0" unique_id=2129186685]
+z_index = -1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

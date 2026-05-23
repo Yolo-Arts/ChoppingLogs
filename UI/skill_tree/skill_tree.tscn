@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bi2ogxmckinvl" path="res://Assets/skill_tree/axe/AxeDamage4.png" id="6_nnr1a"]
 [ext_resource type="Script" uid="uid://dvci3m3ipvgd7" path="res://UI/skill_tree/zoom_and_pan.gd" id="7_qeeel"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
+bg_color = Color(0, 0, 0, 0.84705883)
+
 [node name="SkillTree" type="Control" unique_id=3995535]
 layout_mode = 3
 anchors_preset = 15
@@ -19,7 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_2gknk")
 
 [node name="Panel" type="Panel" parent="." unique_id=1431637610]
-z_index = -2
+z_index = -1
 custom_minimum_size = Vector2(5000, 5000)
 layout_mode = 1
 anchors_preset = 15
@@ -27,32 +30,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2gknk")
 
 [node name="SkillButtonAxeIncreaseDamage" parent="." unique_id=1440200605 instance=ExtResource("1_x45t5")]
+top_level = false
+z_index = 0
 layout_mode = 0
 offset_left = 912.0
 offset_top = 720.0
 offset_right = 1002.0
 offset_bottom = 810.0
-level_requirement_to_reveal = 5
+level_requirement_to_reveal = 1
 
 [node name="SkillButtonAxeIncreaseDamage2" parent="SkillButtonAxeIncreaseDamage" unique_id=1765592706 instance=ExtResource("1_x45t5")]
+visible = false
+top_level = false
+z_index = 0
 layout_mode = 0
 offset_top = -146.0
 offset_right = 90.0
 offset_bottom = -56.0
 disabled = true
 texture = ExtResource("2_8m241")
+upgrade_key = 1
 
 [node name="SkillButtonAxeIncreaseDamage3" parent="SkillButtonAxeIncreaseDamage/SkillButtonAxeIncreaseDamage2" unique_id=122380866 instance=ExtResource("1_x45t5")]
+visible = false
+top_level = false
+z_index = 0
 layout_mode = 0
 offset_top = -154.0
 offset_right = 90.0
 offset_bottom = -64.0
 disabled = true
 texture = ExtResource("3_nnr1a")
+upgrade_key = 2
 
 [node name="SkillButtonAxeIncreaseDamage4" parent="SkillButtonAxeIncreaseDamage/SkillButtonAxeIncreaseDamage2/SkillButtonAxeIncreaseDamage3" unique_id=972620365 instance=ExtResource("1_x45t5")]
+visible = false
+top_level = false
+z_index = 0
 layout_mode = 0
 offset_left = 3.0
 offset_top = -180.0
@@ -60,15 +77,23 @@ offset_right = 93.0
 offset_bottom = -90.0
 disabled = true
 texture = ExtResource("4_qeeel")
+upgrade_key = 3
 
 [node name="SkillButtonAxeIncreaseRange" parent="SkillButtonAxeIncreaseDamage/SkillButtonAxeIncreaseDamage2/SkillButtonAxeIncreaseDamage3/SkillButtonAxeIncreaseDamage4" unique_id=549308300 instance=ExtResource("2_h5gpr")]
+visible = false
+top_level = false
+z_index = 0
 layout_mode = 0
 offset_left = -184.0
 offset_right = -94.0
 offset_bottom = 90.0
 disabled = true
+upgrade_key = 5
 
 [node name="SkillButtonAxeIncreaseDamage5" parent="SkillButtonAxeIncreaseDamage/SkillButtonAxeIncreaseDamage2/SkillButtonAxeIncreaseDamage3/SkillButtonAxeIncreaseDamage4" unique_id=2115252831 instance=ExtResource("1_x45t5")]
+visible = false
+top_level = false
+z_index = 0
 layout_mode = 0
 offset_left = -184.0
 offset_top = -152.0
@@ -76,6 +101,7 @@ offset_right = -94.0
 offset_bottom = -62.0
 disabled = true
 texture = ExtResource("6_nnr1a")
+upgrade_key = 4
 
 [node name="ZoomAndPan" type="Camera2D" parent="." unique_id=698710164]
 position = Vector2(984, 568)

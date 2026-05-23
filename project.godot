@@ -31,6 +31,7 @@ Globals="*res://AutoLoads/Globals.gd"
 TransitionManager="*res://AutoLoads/transition_manager.tscn"
 EventSystem="*uid://8dn3brnlxu36"
 ObjectPool="*uid://biknfn13i40iq"
+SkillTreeConfig="*uid://bhetvvuc3e0v5"
 
 [display]
 
@@ -50,6 +51,7 @@ folder_colors={
 "res://Assets/skill_tree/": "orange",
 "res://AutoLoads/": "red",
 "res://Game/Config/": "red",
+"res://Objects/interactables/prototype_helpers/": "blue",
 "res://Particles/": "pink",
 "res://Resources/": "gray",
 "res://Shaders/": "purple"
