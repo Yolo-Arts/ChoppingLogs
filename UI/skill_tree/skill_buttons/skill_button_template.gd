@@ -35,7 +35,7 @@ func _on_pressed():
 	SkillTreeConfig.upgrades[upgrade_key] += 1
 	var my_center = global_position + (size / 2)
 	
-	EventSystem.SKL_update_panning.emit(my_center)
+	#EventSystem.SKL_update_panning.emit(my_center)
 	activate()
 	
 	line_2d.default_color = Color(1, 1, 0.24705882370472)
@@ -76,8 +76,20 @@ func activate():
 func _on_mouse_entered() -> void:
 	var my_center = global_position + (size / 2)
 	
-	EventSystem.SKL_update_panning.emit(my_center)
+	#EventSystem.SKL_update_panning.emit(my_center)
 	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.SkillTreeToolTip, self)
+	print(self)
 
 func _on_mouse_exited() -> void:
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.SkillTreeToolTip)
+
+
+func _gui_input(event: InputEvent) -> void:
+	if (event is InputEventMouseMotion and Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)) or \
+	   (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT):
+		var zoom_node = get_parent()
+		while zoom_node != null and zoom_node.name != "ZoomContent":
+			zoom_node = zoom_node.get_parent()
+			
+		if zoom_node:
+			zoom_node._gui_input(event)

@@ -1,6 +1,7 @@
 extends Bulletin
 
 var tracked_node: SkillNode = null
+var _flipped: bool = false 
 
 func initialize(_extra_arg = null) -> void:
 	if _extra_arg is SkillNode:
@@ -20,36 +21,48 @@ func update_position() -> void:
 		var button_pos: Vector2 = tracked_node.global_position
 		var button_size: Vector2 = tracked_node.size
 		
-		global_position.x = button_pos.x + (button_size.x / 2) - (size.x / 2)
-		global_position.y = button_pos.y - size.y - 15
+		var ideal_x = button_pos.x + (button_size.x / 2) - (size.x / 2)
+		var ideal_y = button_pos.y - size.y - 15
+		var viewport_size: Vector2 = get_viewport_rect().size
+		var margin: float = 8.0
+		var final_y: float
+
+		if ideal_y < margin:
+			final_y = button_pos.y + button_size.y + 15
+			_flipped = true
+		else:
+			final_y = ideal_y
+			_flipped = false
+
+		var final_x: float = clamp(ideal_x, margin, viewport_size.x - size.x - margin)
+		global_position = Vector2(final_x, final_y)
 
 func animate_entrance() -> void:
-	pivot_offset = Vector2(size.x / 2, size.y)
+	pivot_offset = Vector2(size.x / 2, size.y if not _flipped else 0.0)
 	scale = Vector2.ZERO
 	
 	var juice_tween = create_tween()
-	juice_tween.set_parallel(false) 
+	juice_tween.set_parallel(false)
 	
-	juice_tween.tween_property(self, "scale", Vector2(0.7, 1.4), 0.12)\
-		.set_trans(Tween.TRANS_QUAD)\
-		.set_ease(Tween.EASE_OUT)
+	var stretch_y = 1.4 if not _flipped else 1.4
+	var squash_y  = 0.6 if not _flipped else 0.6
+	
+	juice_tween.tween_property(self, "scale", Vector2(0.7, stretch_y), 0.12)\
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		
 	juice_tween.tween_property(self, "scale", Vector2(1.15, 0.85), 0.08)\
-		.set_trans(Tween.TRANS_QUAD)\
-		.set_ease(Tween.EASE_IN_OUT)
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 		
 	juice_tween.tween_property(self, "scale", Vector2(0.95, 1.05), 0.06)\
-		.set_trans(Tween.TRANS_QUAD)\
-		.set_ease(Tween.EASE_IN_OUT)
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 		
 	juice_tween.tween_property(self, "scale", Vector2.ONE, 0.06)\
-		.set_trans(Tween.TRANS_QUAD)\
-		.set_ease(Tween.EASE_IN_OUT)
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 
 func animate_exit() -> void:
-	set_process(false) 
+	set_process(false)
 	
-	pivot_offset = Vector2(size.x / 2, size.y)
+	pivot_offset = Vector2(size.x / 2, size.y if not _flipped else 0.0)
 	
 	var exit_tween = create_tween()
 	exit_tween.set_parallel(false)
