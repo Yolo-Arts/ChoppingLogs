@@ -74,6 +74,9 @@ func activate():
 
 
 func _on_mouse_entered() -> void:
+	var my_center = global_position + (size / 2)
+	
+	EventSystem.SKL_update_panning.emit(my_center)
 	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.SkillTreeToolTip, self)
 
 func _on_mouse_exited() -> void:
