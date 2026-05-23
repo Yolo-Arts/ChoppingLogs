@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cwub2xw5o104p"]
+
+[ext_resource type="PackedScene" uid="uid://bw6s6a4egoido" path="res://Assets/Meshes/PlaceholderMeshes/log.tscn" id="1_3we1i"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3we1i"]
+height = 0.99121094
+radius = 0.171875
+
+[node name="Log_Proton_Scatter_Testing" type="StaticBody3D" unique_id=1228818363]
+
+[node name="Log" parent="." unique_id=1790793256 instance=ExtResource("1_3we1i")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1139562323]
+shape = SubResource("CylinderShape3D_3we1i")

@@ -9,9 +9,9 @@ func _ready() -> void:
 	EventSystem.MUS_play_music.emit(MusicConfig.Keys.IslandAmbience)
 	await get_tree().process_frame
 	var log_scene = preload("res://Objects/interactables/pickuppables/rigid_pickuppable_log.tscn")
-	var tree_scene = preload("res://Objects/hittable_objects/hittable_tree_common_tree_1.tscn")
+	#var tree_scene = preload("res://Objects/hittable_objects/hittable_tree_common_tree_1.tscn")
 	ObjectPool.prewarm(log_scene, 2000, $Spawner/ObjectHolder)
-	ObjectPool.prewarm(tree_scene, 500, $Spawner/ObjectHolder)
+	#ObjectPool.prewarm(tree_scene, 500, $Spawner/ObjectHolder)
 	randomize_forest()
 	scatter_trees.build_completed.connect(_on_scatter_finished)
 	navigation_region_3d.bake_finished.connect(_on_bake_finished)
