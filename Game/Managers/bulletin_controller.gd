@@ -18,8 +18,13 @@ func create_bulletin(bulletin_key:BulletinConfig.Keys, _extra_arg = null) -> voi
 
 func destroy_bulletin(bulletin_key:BulletinConfig.Keys) -> void:
 	if bulletins.has(bulletin_key):
-		bulletins[bulletin_key].queue_free()
-		bulletins.erase(bulletin_key)
+		var bulletin = bulletins[bulletin_key]
+		bulletins.erase(bulletin_key) 
+		
+		if bulletin.has_method("animate_exit"):
+			bulletin.animate_exit()
+		else:
+			bulletin.queue_free()
 
 func destroy_all_bulletins() -> void:
 	for child in get_children():

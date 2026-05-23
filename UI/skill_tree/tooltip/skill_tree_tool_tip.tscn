@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://bfbonpf7cqeu1"]
+
+[ext_resource type="Texture2D" uid="uid://43phkrrmkers" path="res://Assets/skill_tree/tooltip/Rectangle 115.png" id="1_3wlpt"]
+[ext_resource type="Script" uid="uid://dvh7strnu84ff" path="res://UI/skill_tree/tooltip/skill_tree_tool_tip.gd" id="1_un6un"]
+[ext_resource type="Theme" uid="uid://ks0hgvfqbimr" path="res://Assets/UI/theme.tres" id="2_6fj08"]
+[ext_resource type="Texture2D" uid="uid://b5jpm0kqxis3q" path="res://Assets/UI/Icons/symbols_money.svg" id="3_6fj08"]
+[ext_resource type="Texture2D" uid="uid://c6fxhjymdp07i" path="res://Assets/skill_tree/tooltip/triangleV2.png" id="3_un6un"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1ekw"]
+texture = ExtResource("1_3wlpt")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 418, 178)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6fj08"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+color = Color(1, 1, 1, 1)
+thickness = 3
+
+[node name="SkillTreeToolTip" type="Control" unique_id=1454779285]
+z_index = 5
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_un6un")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=857850523]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -367.0
+offset_right = 300.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -6
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=2043751932]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_k1ekw")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel" unique_id=765211003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Panel/MarginContainer" unique_id=1011057323]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=324809108]
+layout_mode = 2
+size_flags_vertical = 2
+theme = ExtResource("2_6fj08")
+theme_override_font_sizes/font_size = 24
+text = "Title"
+horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=1898487270]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_6fj08")
+
+[node name="Label2" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=1662512787]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_6fj08")
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Description of the upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=1008694613]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxLine_6fj08")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=1632219700]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 101
+
+[node name="Label3" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1356441597]
+custom_minimum_size = Vector2(0, 39.885)
+layout_mode = 2
+theme = ExtResource("2_6fj08")
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "LV 0 / 10"
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1361574190]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.5529412, 0.18039216, 0.1882353, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/ColorRect" unique_id=1998950645]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/ColorRect/HBoxContainer" unique_id=50887074]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_6fj08")
+expand_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/ColorRect/HBoxContainer" unique_id=1355674310]
+custom_minimum_size = Vector2(0, 37.505)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_6fj08")
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "$0 / $10"
+vertical_alignment = 2
+
+[node name="Triangle" type="TextureRect" parent="VBoxContainer" unique_id=1591670013]
+layout_mode = 2
+texture = ExtResource("3_un6un")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="." unique_id=2105261648]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "x"
+horizontal_alignment = 1
+vertical_alignment = 1

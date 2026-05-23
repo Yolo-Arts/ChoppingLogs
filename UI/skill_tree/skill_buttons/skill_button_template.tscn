@@ -35,6 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
@@ -54,4 +55,6 @@ show_behind_parent = true
 width = 5.0
 default_color = Color(0.3411458, 0.3411458, 0.3411458, 1)
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

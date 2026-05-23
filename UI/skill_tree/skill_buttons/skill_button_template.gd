@@ -71,3 +71,10 @@ func activate():
 		print("reached max level")
 		self_modulate = Color(1, 1, 0.24705882370472)
 		disabled = true
+
+
+func _on_mouse_entered() -> void:
+	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.SkillTreeToolTip, self)
+
+func _on_mouse_exited() -> void:
+	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.SkillTreeToolTip)
