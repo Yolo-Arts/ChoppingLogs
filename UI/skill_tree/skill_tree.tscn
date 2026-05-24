@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://c7myg8bwyreda" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage_1.tres" id="7_xtb7d"]
 [ext_resource type="Resource" uid="uid://dkob00qd75pxl" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage_2.tres" id="8_1n7m1"]
 [ext_resource type="Resource" uid="uid://bt7i43t6qjrwb" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage_5.tres" id="8_3rodt"]
+[ext_resource type="Resource" uid="uid://o0okwuy0lsdq" path="res://Resources/skilltree/Axe/AxeDamage/axe_range_1.tres" id="9_xtb7d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
 bg_color = Color(0, 0, 0, 0.84705883)
@@ -90,14 +91,13 @@ layout_mode = 0
 offset_left = -296.0
 offset_right = -206.0
 offset_bottom = 90.0
-skill_data = ExtResource("8_1n7m1")
+skill_data = ExtResource("9_xtb7d")
 
 [node name="AxeRange2" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1" unique_id=1610700208 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -264.0
 offset_right = -174.0
 offset_bottom = 90.0
-skill_data = ExtResource("8_1n7m1")
 
 [node name="FireSlash" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1/AxeRange2" unique_id=280070737 instance=ExtResource("6_2gknk")]
 layout_mode = 0

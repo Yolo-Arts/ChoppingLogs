@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://o0okwuy0lsdq"]
+
+[ext_resource type="Script" uid="uid://0ehivno670p5" path="res://Resources/skilltree/Axe/AxeDamage/axe_range.gd" id="1_mtmpu"]
+[ext_resource type="Texture2D" uid="uid://cniqcoidk2eyf" path="res://Assets/skill_tree/axe/AxeRange.png" id="2_mtmpu"]
+
+[resource]
+script = ExtResource("1_mtmpu")
+upgrade_name = "Axe Range 1"
+upgrade_key = 5
+texture = ExtResource("2_mtmpu")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
