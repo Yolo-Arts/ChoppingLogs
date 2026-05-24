@@ -53,7 +53,10 @@ offset_top = 720.0
 offset_right = 1002.0
 offset_bottom = 810.0
 mouse_default_cursor_shape = 0
+stat_increase = 5.0
 level_requirement_to_reveal = 1
+upgrade_name = "Axe Upgrade 1"
+description = "Increase Axe Damage by 5"
 
 [node name="SkillButtonAxeIncreaseDamage2" parent="SubViewport/ZoomContent/SkillButtonAxeIncreaseDamage" unique_id=1765592706 instance=ExtResource("1_x45t5")]
 visible = false
@@ -67,6 +70,10 @@ mouse_default_cursor_shape = 0
 disabled = true
 texture = ExtResource("2_8m241")
 upgrade_key = 1
+stat_increase = 10.0
+upgrade_cost = 30
+upgrade_name = "Axe Damage 2"
+description = "Increase Axe damage by 10"
 
 [node name="SkillButtonAxeIncreaseDamage3" parent="SubViewport/ZoomContent/SkillButtonAxeIncreaseDamage/SkillButtonAxeIncreaseDamage2" unique_id=122380866 instance=ExtResource("1_x45t5")]
 visible = false
@@ -80,6 +87,11 @@ mouse_default_cursor_shape = 0
 disabled = true
 texture = ExtResource("3_nnr1a")
 upgrade_key = 2
+stat_increase = 20.0
+upgrade_cost = 150
+upgrade_name = "Axe Damage 3"
+description = "Increase Axe damage by 20"
+price_increase_mult_per_level = 1.1
 
 [node name="SkillButtonAxeIncreaseDamage4" parent="SubViewport/ZoomContent/SkillButtonAxeIncreaseDamage/SkillButtonAxeIncreaseDamage2/SkillButtonAxeIncreaseDamage3" unique_id=972620365 instance=ExtResource("1_x45t5")]
 visible = false
@@ -106,6 +118,7 @@ offset_bottom = 90.0
 mouse_default_cursor_shape = 0
 disabled = true
 upgrade_key = 5
+upgrade_name = "Axe Range"
 
 [node name="SkillButtonAxeIncreaseDamage5" parent="SubViewport/ZoomContent/SkillButtonAxeIncreaseDamage/SkillButtonAxeIncreaseDamage2/SkillButtonAxeIncreaseDamage3/SkillButtonAxeIncreaseDamage4" unique_id=2115252831 instance=ExtResource("1_x45t5")]
 visible = false
