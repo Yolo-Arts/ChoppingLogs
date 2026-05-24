@@ -77,7 +77,8 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 7
 
-[node name="Label" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=324809108]
+[node name="UpgradeName" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=324809108]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 2
 theme = ExtResource("2_6fj08")
@@ -91,14 +92,16 @@ size_flags_vertical = 2
 mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_6fj08")
 
-[node name="Label2" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=1662512787]
+[node name="UpgradeDescription" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=1662512787]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_6fj08")
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 16
-text = "Description of the upgrade"
+text = "Description of the upgrade
+Description must not be longer than 3 lines or else it will deform the tooltip."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -116,7 +119,8 @@ size_flags_vertical = 10
 mouse_filter = 2
 theme_override_constants/separation = 101
 
-[node name="Label3" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1356441597]
+[node name="UpgradeLevel" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1356441597]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 39.885)
 layout_mode = 2
 theme = ExtResource("2_6fj08")
@@ -143,7 +147,8 @@ mouse_filter = 2
 theme_override_constants/separation = 19
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/ColorRect/HBoxContainer" unique_id=50887074]
+[node name="UpgradeCurrency" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/ColorRect/HBoxContainer" unique_id=50887074]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -152,7 +157,8 @@ mouse_filter = 2
 texture = ExtResource("3_6fj08")
 expand_mode = 2
 
-[node name="Label4" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/ColorRect/HBoxContainer" unique_id=1355674310]
+[node name="UpgradeCost" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/ColorRect/HBoxContainer" unique_id=1355674310]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 37.505)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -168,21 +174,3 @@ layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("3_un6un")
 stretch_mode = 3
-
-[node name="Label" type="Label" parent="." unique_id=2105261648]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "x"
-horizontal_alignment = 1
-vertical_alignment = 1

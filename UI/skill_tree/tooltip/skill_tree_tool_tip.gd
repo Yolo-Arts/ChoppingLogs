@@ -1,5 +1,11 @@
 extends Bulletin
 
+@onready var upgrade_name: Label = %UpgradeName
+@onready var upgrade_description: Label = %UpgradeDescription
+@onready var upgrade_level: Label = %UpgradeLevel
+@onready var upgrade_currency: TextureRect = %UpgradeCurrency
+@onready var upgrade_cost: Label = %UpgradeCost
+
 var tracked_node: SkillNode = null
 var _flipped: bool = false 
 
@@ -10,11 +16,31 @@ func initialize(_extra_arg = null) -> void:
 		if not is_node_ready():
 			await ready
 		
+		setup_tooltip_content()
+		
 		update_position()
 		animate_entrance()
 
 func _process(_delta: float) -> void:
 	update_position()
+	update_dynamic_content()
+
+func setup_tooltip_content() -> void:
+	if is_instance_valid(tracked_node):
+		upgrade_name.text = tracked_node.upgrade_name
+		upgrade_description.text = tracked_node.description
+		
+		update_dynamic_content()
+
+func update_dynamic_content() -> void:
+	if is_instance_valid(tracked_node):
+		upgrade_level.text = "Level: %d / %d" % [tracked_node.level, tracked_node.max_level]
+		
+		if tracked_node.level >= tracked_node.max_level:
+			upgrade_cost.text = "MAX"
+		else:
+			var calculated_cost = tracked_node.upgrade_cost * pow(tracked_node.price_increase_mult_per_level, tracked_node.level)
+			upgrade_cost.text = str(int(calculated_cost))
 
 func update_position() -> void:
 	if is_instance_valid(tracked_node) and tracked_node.is_visible_in_tree():
@@ -44,8 +70,7 @@ func animate_entrance() -> void:
 	var juice_tween = create_tween()
 	juice_tween.set_parallel(false)
 	
-	var stretch_y = 1.4 if not _flipped else 1.4
-	var squash_y  = 0.6 if not _flipped else 0.6
+	var stretch_y = 1.4 
 	
 	juice_tween.tween_property(self, "scale", Vector2(0.7, stretch_y), 0.12)\
 		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)

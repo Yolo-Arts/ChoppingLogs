@@ -2,24 +2,25 @@ extends TextureButton
 class_name SkillNode
  
 @onready var panel = $Panel
-@onready var label = %Label
 @onready var line_2d = $Line2D
 
 @export var upgrade_key: SkillTreeConfig.Keys
 @export var max_level: int
 @export var stat_increase: float
+@export var upgrade_cost: int = 10
 @export var level_requirement_to_reveal: int = 3
+@export var upgrade_name: String = "Upgrade Name"
+@export_multiline var description: String = "Description of the upgrade \nDescription must not be longer than 3 lines or else it will deform the tooltip."
+@export var price_increase_mult_per_level: float = 1.5
 
 var level : int = 0:
 	set(value):
 		level = value
-		label.text = str(level) + "/" + str(max_level)
 
 func _ready():
 	level = SkillTreeConfig.upgrades[upgrade_key] 
 	if level > 0:
 		activate()
-	label.text = str(level) + "/" + str(max_level)
 	if get_parent() is SkillNode:
 		line_2d.clear_points()
 		
@@ -78,7 +79,6 @@ func _on_mouse_entered() -> void:
 	
 	#EventSystem.SKL_update_panning.emit(my_center)
 	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.SkillTreeToolTip, self)
-	print(self)
 
 func _on_mouse_exited() -> void:
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.SkillTreeToolTip)
