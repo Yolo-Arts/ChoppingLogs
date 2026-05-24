@@ -7,4 +7,3 @@
 [node name="SkillButtonAxeIncreaseDamage" unique_id=1440200605 instance=ExtResource("1_b05r7")]
 texture_normal = ExtResource("2_2e4sg")
 script = ExtResource("3_8tv5v")
-texture = null

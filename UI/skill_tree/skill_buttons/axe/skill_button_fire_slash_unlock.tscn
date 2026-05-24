@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bs10ae4726ltf"]
+
+[ext_resource type="PackedScene" uid="uid://bwut7i5u523rk" path="res://UI/skill_tree/skill_buttons/skill_button_template.tscn" id="1_vqmp2"]
+[ext_resource type="Texture2D" uid="uid://rgb3tof426ad" path="res://Assets/skill_tree/axe/FireSlash/FireSlashUnlock.png" id="2_bxptu"]
+
+[node name="SkillButtonFireSlashUnlock" unique_id=1440200605 instance=ExtResource("1_vqmp2")]
+texture_normal = ExtResource("2_bxptu")

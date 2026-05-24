@@ -8,14 +8,11 @@ bg_color = Color(0, 0, 0, 0.7058824)
 corner_detail = 1
 
 [node name="SkillButtonTemplate" type="TextureButton" unique_id=1440200605]
-show_behind_parent = true
-z_index = 3
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_xmwh3")
 script = ExtResource("2_xmwh3")
-max_level = 5
 
 [node name="Panel" type="Panel" parent="." unique_id=1388142153]
 z_index = 3

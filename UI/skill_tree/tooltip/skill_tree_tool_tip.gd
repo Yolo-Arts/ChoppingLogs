@@ -26,20 +26,20 @@ func _process(_delta: float) -> void:
 	update_dynamic_content()
 
 func setup_tooltip_content() -> void:
-	if is_instance_valid(tracked_node):
-		upgrade_name.text = tracked_node.upgrade_name
-		upgrade_description.text = tracked_node.description
-		
+	if is_instance_valid(tracked_node) and tracked_node.skill_data:
+		upgrade_name.text = tracked_node.skill_data.upgrade_name
+		upgrade_description.text = tracked_node.skill_data.description
 		update_dynamic_content()
 
 func update_dynamic_content() -> void:
-	if is_instance_valid(tracked_node):
-		upgrade_level.text = "Level: %d / %d" % [tracked_node.level, tracked_node.max_level]
+	if is_instance_valid(tracked_node) and tracked_node.skill_data:
+		var data = tracked_node.skill_data
+		upgrade_level.text = "Level: %d / %d" % [tracked_node.level, data.max_level]
 		
-		if tracked_node.level >= tracked_node.max_level:
+		if tracked_node.level >= data.max_level:
 			upgrade_cost.text = "MAX"
 		else:
-			var calculated_cost = tracked_node.upgrade_cost * pow(tracked_node.price_increase_mult_per_level, tracked_node.level)
+			var calculated_cost = data.upgrade_cost * pow(data.price_increase_mult_per_level, tracked_node.level)
 			upgrade_cost.text = str(int(calculated_cost))
 
 func update_position() -> void:

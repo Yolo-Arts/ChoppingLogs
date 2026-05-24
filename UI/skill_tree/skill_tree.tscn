@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://djos4mu7jffe7"]
 
 [ext_resource type="Script" uid="uid://dn7px7e8dndxv" path="res://UI/skill_tree/skill_tree.gd" id="1_2gknk"]
-[ext_resource type="PackedScene" uid="uid://cwqcp3oixoh4g" path="res://UI/skill_tree/skill_buttons/axe/skill_button_axe_increase_damage.tscn" id="1_x45t5"]
-[ext_resource type="Texture2D" uid="uid://csy7aujtijov4" path="res://Assets/skill_tree/axe/AxeDamage1.png" id="2_8m241"]
-[ext_resource type="PackedScene" uid="uid://j8rrsc1qyd7n" path="res://UI/skill_tree/skill_buttons/axe/skill_button_axe_increase_range.tscn" id="2_h5gpr"]
-[ext_resource type="Texture2D" uid="uid://cybbgsj5hfkyv" path="res://Assets/skill_tree/axe/AxeDamage2.png" id="3_nnr1a"]
 [ext_resource type="Script" uid="uid://c21kv16obv3x" path="res://UI/skill_tree/zoom_content.gd" id="3_xtb7d"]
-[ext_resource type="Texture2D" uid="uid://3niq60vrbjjo" path="res://Assets/skill_tree/axe/AxeDamage3.png" id="4_qeeel"]
-[ext_resource type="Texture2D" uid="uid://bi2ogxmckinvl" path="res://Assets/skill_tree/axe/AxeDamage4.png" id="6_nnr1a"]
+[ext_resource type="PackedScene" uid="uid://bwut7i5u523rk" path="res://UI/skill_tree/skill_buttons/skill_button_template.tscn" id="6_2gknk"]
+[ext_resource type="Resource" uid="uid://cbi2vr247xsu3" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage_3.tres" id="6_xtb7d"]
+[ext_resource type="Resource" uid="uid://d1hy8xxexskva" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage_4.tres" id="7_1n7m1"]
+[ext_resource type="Resource" uid="uid://c7myg8bwyreda" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage_1.tres" id="7_xtb7d"]
+[ext_resource type="Resource" uid="uid://dkob00qd75pxl" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage_2.tres" id="8_1n7m1"]
+[ext_resource type="Resource" uid="uid://bt7i43t6qjrwb" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage_5.tres" id="8_3rodt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
 bg_color = Color(0, 0, 0, 0.84705883)
@@ -37,6 +37,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1544.0
+offset_top = -1960.0
+offset_right = 1556.0
+offset_bottom = 1960.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -44,92 +48,91 @@ grow_vertical = 2
 layout_mode = 2
 script = ExtResource("3_xtb7d")
 
-[node name="SkillButtonAxeIncreaseDamage" parent="SubViewport/ZoomContent" unique_id=1440200605 instance=ExtResource("1_x45t5")]
-show_behind_parent = false
-z_index = 0
+[node name="AxeDamage1" parent="SubViewport/ZoomContent" unique_id=2095844285 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_left = 912.0
-offset_top = 720.0
-offset_right = 1002.0
-offset_bottom = 810.0
-mouse_default_cursor_shape = 0
-stat_increase = 5.0
-level_requirement_to_reveal = 1
-upgrade_name = "Axe Upgrade 1"
-description = "Increase Axe Damage by 5"
+offset_left = 2464.0
+offset_top = 2688.0
+offset_right = 2554.0
+offset_bottom = 2778.0
+skill_data = ExtResource("7_xtb7d")
 
-[node name="SkillButtonAxeIncreaseDamage2" parent="SubViewport/ZoomContent/SkillButtonAxeIncreaseDamage" unique_id=1765592706 instance=ExtResource("1_x45t5")]
-visible = false
-show_behind_parent = false
-z_index = 0
+[node name="AxeDamage2" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1487470350 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_top = -146.0
+offset_top = -216.0
 offset_right = 90.0
-offset_bottom = -56.0
-mouse_default_cursor_shape = 0
-disabled = true
-texture = ExtResource("2_8m241")
-upgrade_key = 1
-stat_increase = 10.0
-upgrade_cost = 30
-upgrade_name = "Axe Damage 2"
-description = "Increase Axe damage by 10"
+offset_bottom = -126.0
+skill_data = ExtResource("8_1n7m1")
 
-[node name="SkillButtonAxeIncreaseDamage3" parent="SubViewport/ZoomContent/SkillButtonAxeIncreaseDamage/SkillButtonAxeIncreaseDamage2" unique_id=122380866 instance=ExtResource("1_x45t5")]
-visible = false
-show_behind_parent = false
-z_index = 0
+[node name="SkillButtonTemplate3" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2" unique_id=1440200605 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_top = -154.0
+offset_top = -224.0
 offset_right = 90.0
-offset_bottom = -64.0
-mouse_default_cursor_shape = 0
-disabled = true
-texture = ExtResource("3_nnr1a")
-upgrade_key = 2
-stat_increase = 20.0
-upgrade_cost = 150
-upgrade_name = "Axe Damage 3"
-description = "Increase Axe damage by 20"
-price_increase_mult_per_level = 1.1
+offset_bottom = -134.0
+skill_data = ExtResource("6_xtb7d")
 
-[node name="SkillButtonAxeIncreaseDamage4" parent="SubViewport/ZoomContent/SkillButtonAxeIncreaseDamage/SkillButtonAxeIncreaseDamage2/SkillButtonAxeIncreaseDamage3" unique_id=972620365 instance=ExtResource("1_x45t5")]
-visible = false
-show_behind_parent = false
-z_index = 0
+[node name="SkillButtonTemplate4" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3" unique_id=1941970848 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_left = 3.0
-offset_top = -180.0
-offset_right = 93.0
-offset_bottom = -90.0
-mouse_default_cursor_shape = 0
-disabled = true
-texture = ExtResource("4_qeeel")
-upgrade_key = 3
+offset_top = -272.0
+offset_right = 90.0
+offset_bottom = -182.0
+skill_data = ExtResource("7_1n7m1")
 
-[node name="SkillButtonAxeIncreaseRange" parent="SubViewport/ZoomContent/SkillButtonAxeIncreaseDamage/SkillButtonAxeIncreaseDamage2/SkillButtonAxeIncreaseDamage3/SkillButtonAxeIncreaseDamage4" unique_id=549308300 instance=ExtResource("2_h5gpr")]
-visible = false
-show_behind_parent = false
-z_index = 0
+[node name="AxeDamage5" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4" unique_id=663032941 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -184.0
+offset_top = -248.0
 offset_right = -94.0
+offset_bottom = -158.0
+skill_data = ExtResource("8_3rodt")
+
+[node name="AxeRange1" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4" unique_id=1137976199 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -296.0
+offset_right = -206.0
 offset_bottom = 90.0
-mouse_default_cursor_shape = 0
-disabled = true
-upgrade_key = 5
-upgrade_name = "Axe Range"
+skill_data = ExtResource("8_1n7m1")
 
-[node name="SkillButtonAxeIncreaseDamage5" parent="SubViewport/ZoomContent/SkillButtonAxeIncreaseDamage/SkillButtonAxeIncreaseDamage2/SkillButtonAxeIncreaseDamage3/SkillButtonAxeIncreaseDamage4" unique_id=2115252831 instance=ExtResource("1_x45t5")]
-visible = false
-show_behind_parent = false
-z_index = 0
+[node name="AxeRange2" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1" unique_id=1610700208 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_left = -184.0
-offset_top = -152.0
-offset_right = -94.0
-offset_bottom = -62.0
-mouse_default_cursor_shape = 0
-disabled = true
-texture = ExtResource("6_nnr1a")
-upgrade_key = 4
+offset_left = -264.0
+offset_right = -174.0
+offset_bottom = 90.0
+skill_data = ExtResource("8_1n7m1")
+
+[node name="FireSlash" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1/AxeRange2" unique_id=280070737 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -160.0
+offset_top = -176.0
+offset_right = -70.0
+offset_bottom = -86.0
+skill_data = ExtResource("8_1n7m1")
+
+[node name="FireSlashDamage" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1/AxeRange2/FireSlash" unique_id=131047561 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -208.0
+offset_right = 90.0
+offset_bottom = -118.0
+skill_data = ExtResource("8_1n7m1")
+
+[node name="FireSlashRate" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1/AxeRange2/FireSlash" unique_id=591565523 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 200.0
+offset_top = -208.0
+offset_right = 290.0
+offset_bottom = -118.0
+skill_data = ExtResource("8_1n7m1")
+
+[node name="FireSlashPierceUnlock" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1/AxeRange2/FireSlash" unique_id=1617670860 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -192.0
+offset_top = -208.0
+offset_right = -102.0
+offset_bottom = -118.0
+skill_data = ExtResource("8_1n7m1")
+
+[node name="FireSlashPierce" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1/AxeRange2/FireSlash/FireSlashPierceUnlock" unique_id=1569693821 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -216.0
+offset_right = 90.0
+offset_bottom = -126.0
+skill_data = ExtResource("8_1n7m1")

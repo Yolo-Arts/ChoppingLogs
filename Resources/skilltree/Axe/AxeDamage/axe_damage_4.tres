@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://d1hy8xxexskva"]
+
+[ext_resource type="Script" uid="uid://djy4dnijlbw0e" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage.gd" id="1_mkn4i"]
+[ext_resource type="Texture2D" uid="uid://3niq60vrbjjo" path="res://Assets/skill_tree/axe/AxeDamage3.png" id="2_mkn4i"]
+
+[resource]
+script = ExtResource("1_mkn4i")
+upgrade_name = "Axe Damage 4"
+upgrade_key = 3
+texture = ExtResource("2_mkn4i")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
