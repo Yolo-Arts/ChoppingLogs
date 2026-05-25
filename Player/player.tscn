@@ -56,13 +56,17 @@ shape = SubResource("CapsuleShape3D_l8h54")
 
 [node name="PlayerStatManager" type="Node" parent="Managers" unique_id=1782077226]
 script = ExtResource("5_k53q1")
+max_weight = 50.0
 normal_speed = 6.0
 sprint_speed = 12.0
+axe_speed_bonus = 5.0
+axe_range = 10.0
 fire_slash_cooldown = 1.0
 fire_slash_pierce_count = 20
 
 [node name="InventoryManager" type="Node" parent="Managers" unique_id=2003678697]
 script = ExtResource("2_4ntmi")
+inventory_size = 70
 
 [node name="WeightManager" type="Node" parent="Managers" unique_id=1473663417 node_paths=PackedStringArray("player_stats")]
 script = ExtResource("4_gwnis")

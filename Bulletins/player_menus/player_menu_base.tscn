@@ -99,6 +99,201 @@ layout_mode = 2
 [node name="InventorySlot5" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="4" unique_id=1064731414 instance=ExtResource("2_6cxy2")]
 layout_mode = 2
 
+[node name="InventorySlot6" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="5" unique_id=1819250841 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="6" unique_id=19996082 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="7" unique_id=2004182723 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="8" unique_id=1854768407 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="9" unique_id=1198576898 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="10" unique_id=1966158775 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="11" unique_id=1972160721 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="12" unique_id=700583306 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="13" unique_id=236185774 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="14" unique_id=1086669094 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="15" unique_id=1327789109 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot17" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="16" unique_id=1111914187 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot18" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="17" unique_id=70310523 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot19" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="18" unique_id=1374801941 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot20" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="19" unique_id=891871144 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot21" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="20" unique_id=1820292481 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot22" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="21" unique_id=1522613547 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot23" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="22" unique_id=339043849 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot24" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="23" unique_id=239866002 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot25" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="24" unique_id=1108071430 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot26" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="25" unique_id=1059512833 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot27" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="26" unique_id=1949132487 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot28" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="27" unique_id=1605078811 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot29" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="28" unique_id=860793064 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot30" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="29" unique_id=1964259009 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot31" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="30" unique_id=1273628908 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot32" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="31" unique_id=1390673452 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot33" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="32" unique_id=778169358 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot34" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="33" unique_id=673509773 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot35" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="34" unique_id=1555044976 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot36" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="35" unique_id=510984546 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot37" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="36" unique_id=421564550 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot38" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="37" unique_id=1660500550 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot39" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="38" unique_id=1846228140 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot40" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="39" unique_id=1496736080 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot41" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="40" unique_id=2118583557 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot42" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="41" unique_id=172823645 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot43" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="42" unique_id=595360833 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot44" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="43" unique_id=2138277367 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot45" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="44" unique_id=1927469154 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot46" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="45" unique_id=2057720730 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot47" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="46" unique_id=1932303880 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot48" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="47" unique_id=691111429 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot49" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="48" unique_id=2066157503 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot50" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="49" unique_id=724375153 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot51" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="50" unique_id=671314969 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot52" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="51" unique_id=1176802784 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot53" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="52" unique_id=1118101047 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot54" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="53" unique_id=796481384 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot55" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="54" unique_id=244740008 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot56" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="55" unique_id=576336315 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot57" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="56" unique_id=1061073909 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot58" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="57" unique_id=1887261692 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot59" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="58" unique_id=552894722 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot60" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="59" unique_id=1495585299 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot61" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="60" unique_id=1562291812 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot62" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="61" unique_id=1751691721 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot63" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="62" unique_id=1637252078 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot64" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="63" unique_id=156309672 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot65" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="64" unique_id=381611280 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot66" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="65" unique_id=52106187 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot67" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="66" unique_id=1008232314 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot68" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="67" unique_id=352798361 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot69" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="68" unique_id=696320472 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
+[node name="InventorySlot70" parent="MarginContainer/HBoxContainer/Backpack/Panel/MarginContainer/ScrollContainer/InventorySlotContainer" index="69" unique_id=43684359 instance=ExtResource("2_6cxy2")]
+layout_mode = 2
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" index="1" unique_id=1165421930]
 layout_mode = 2
 

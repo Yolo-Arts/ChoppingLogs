@@ -10,6 +10,10 @@ func get_object(scene: PackedScene) -> Node:
 		var obj = _pools[path].pop_back()
 		obj.visible = true
 		obj.process_mode = Node.PROCESS_MODE_INHERIT
+		
+		if obj.has_method("reset_from_pool"):
+			obj.reset_from_pool()
+			
 		return obj
 	
 	var obj := scene.instantiate()

@@ -1,6 +1,6 @@
 extends Node
 
-var inventory_size := 5
+@export var inventory_size := 5
 var inventory := []
 
 var can_add_to_inventory: bool = true # for max weight
@@ -86,7 +86,7 @@ func delete_item_by_index(index:int) -> void:
 	EventSystem.INV_inventory_updated.emit(inventory)
 
 func increase_inventory_size():
-	if inventory_size < 60:
+	if inventory_size < 500:
 		inventory_size += 1
 		inventory.resize(inventory_size)
 
