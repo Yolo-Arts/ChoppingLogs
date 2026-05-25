@@ -9,8 +9,8 @@ render_priority = 0
 next_pass = ExtResource("2_kepcy")
 shader = ExtResource("3_3whk7")
 shader_parameter/color = Color(0.11197919, 0.11197919, 0.11197919, 1)
-shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
-shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0)
+shader_parameter/fresnel = Color(0.013020813, 0.013020813, 0.013020813, 0.3019608)
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 
@@ -19,8 +19,8 @@ render_priority = 0
 next_pass = ExtResource("2_kepcy")
 shader = ExtResource("3_3whk7")
 shader_parameter/color = Color(0.42352942, 0.27450982, 0.101960786, 1)
-shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
-shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0)
+shader_parameter/fresnel = Color(0.15364581, 0.15364581, 0.15364581, 0.13333334)
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 
@@ -29,8 +29,8 @@ render_priority = 0
 next_pass = ExtResource("2_kepcy")
 shader = ExtResource("3_3whk7")
 shader_parameter/color = Color(0.5254902, 0.3764706, 0.20392157, 1)
-shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
-shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0)
+shader_parameter/fresnel = Color(0.21960784, 0.21960784, 0.21960784, 0.5019608)
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 
@@ -72,3 +72,17 @@ surface_material_override/3 = SubResource("ShaderMaterial_3whk7")
 
 [node name="AnimationPlayer" parent="." index="1" unique_id=92771905]
 autoplay = &"Walk"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2" unique_id=1138031406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12649038, 0.8564425, 0.1392552)
+light_color = Color(0.296875, 1, 0, 1)
+light_energy = 1.126
+light_size = 0.787
+omni_range = 0.145
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." index="3" unique_id=335321529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09502958, 0.8564425, 0.1392552)
+light_color = Color(0.296875, 1, 0, 1)
+light_energy = 1.126
+light_size = 0.787
+omni_range = 0.145
