@@ -23,9 +23,16 @@
 [ext_resource type="Resource" uid="uid://k6c1gcbdu0ve" path="res://Resources/skilltree/Axe/AxeDamage/jump_height.tres" id="21_27nor"]
 [ext_resource type="Resource" uid="uid://khvu6thof5f6" path="res://Resources/skilltree/Axe/AxeDamage/sprint_length_1.tres" id="22_2ddyc"]
 [ext_resource type="Resource" uid="uid://cu3uy0a4gn5n5" path="res://Resources/skilltree/Axe/AxeDamage/sprint_length_2.tres" id="23_6edkr"]
+[ext_resource type="Shader" uid="uid://cw83ncdeyxqne" path="res://Shaders/red_vignette.gdshader" id="24_2ddyc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
 bg_color = Color(0, 0, 0, 0.84705883)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6edkr"]
+shader = ExtResource("24_2ddyc")
+shader_parameter/vignette_intensity = 1.335
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
 
 [node name="SkillTree" type="Control" unique_id=3995535]
 layout_mode = 3
@@ -257,3 +264,13 @@ offset_left = -224.0
 offset_right = -134.0
 offset_bottom = 90.0
 skill_data = ExtResource("23_6edkr")
+
+[node name="Vignette" type="ColorRect" parent="." unique_id=1526985475]
+material = SubResource("ShaderMaterial_6edkr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
