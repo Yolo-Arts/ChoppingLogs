@@ -5,6 +5,7 @@ extends Node
 func _ready() -> void:
 	EventSystem.MON_add_money.connect(add_money)
 	EventSystem.MON_decrease_money.connect(check_if_balance_will_not_go_below_zero)
+	EventSystem.MON_get_player_money = func() -> float: return player_stats.money
 
 func add_money(money_to_add: float):
 	player_stats.money += money_to_add

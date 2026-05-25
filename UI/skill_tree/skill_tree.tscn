@@ -24,6 +24,9 @@
 [ext_resource type="Resource" uid="uid://khvu6thof5f6" path="res://Resources/skilltree/Axe/AxeDamage/sprint_length_1.tres" id="22_2ddyc"]
 [ext_resource type="Resource" uid="uid://cu3uy0a4gn5n5" path="res://Resources/skilltree/Axe/AxeDamage/sprint_length_2.tres" id="23_6edkr"]
 [ext_resource type="Shader" uid="uid://cw83ncdeyxqne" path="res://Shaders/red_vignette.gdshader" id="24_2ddyc"]
+[ext_resource type="Texture2D" uid="uid://begc66124e45k" path="res://Assets/skill_tree/SkillTreeBackground.svg" id="25_fjpjg"]
+[ext_resource type="Texture2D" uid="uid://b5jpm0kqxis3q" path="res://Assets/UI/Icons/symbols_money.svg" id="26_gj7ge"]
+[ext_resource type="Theme" uid="uid://ks0hgvfqbimr" path="res://Assets/UI/theme.tres" id="27_gj7ge"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
 bg_color = Color(0, 0, 0, 0.84705883)
@@ -33,6 +36,13 @@ shader = ExtResource("24_2ddyc")
 shader_parameter/vignette_intensity = 1.335
 shader_parameter/vignette_opacity = 0.5
 shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xsv4x"]
+texture = ExtResource("25_fjpjg")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
 
 [node name="SkillTree" type="Control" unique_id=3995535]
 layout_mode = 3
@@ -265,3 +275,62 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1441185329]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=845419251]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=2092466966]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xsv4x")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel" unique_id=1596190481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=430853326]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="MoneyIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer" unique_id=231021426]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+texture = ExtResource("26_gj7ge")
+expand_mode = 1
+
+[node name="MoneyLabel" type="Label" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer" unique_id=2025638333]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("27_gj7ge")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "$ 100"
+horizontal_alignment = 2
+vertical_alignment = 2

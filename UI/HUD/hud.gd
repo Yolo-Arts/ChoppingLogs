@@ -8,7 +8,9 @@ extends Control
 func _ready() -> void:
 	EventSystem.HUD_reset_hud_elements.connect(reset_hud_elements)
 	EventSystem.MON_money_updated.connect(update_text)
-	money_label.text = "$" + str(0.0)
+	EventSystem.MON_cannot_decrease_money.connect(func():
+		update_text(EventSystem.MON_get_player_money.call(), Color.RED)
+	)
 	
 	EventSystem.TRE_tree_spawned.connect(update_tree_text)
 	EventSystem.TRE_tree_cut.connect(check_if_game_won)

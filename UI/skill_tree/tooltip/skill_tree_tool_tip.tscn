@@ -129,14 +129,15 @@ theme_override_font_sizes/font_size = 16
 text = "LV 0 / 10"
 vertical_alignment = 2
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1361574190]
+[node name="CanBuyRect" type="ColorRect" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1361574190]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 color = Color(0.5529412, 0.18039216, 0.1882353, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/ColorRect" unique_id=1998950645]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/CanBuyRect" unique_id=1998950645]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -147,7 +148,7 @@ mouse_filter = 2
 theme_override_constants/separation = 19
 alignment = 1
 
-[node name="UpgradeCurrency" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/ColorRect/HBoxContainer" unique_id=50887074]
+[node name="UpgradeCurrency" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/CanBuyRect/HBoxContainer" unique_id=50887074]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
@@ -157,7 +158,7 @@ mouse_filter = 2
 texture = ExtResource("3_6fj08")
 expand_mode = 2
 
-[node name="UpgradeCost" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/ColorRect/HBoxContainer" unique_id=1355674310]
+[node name="UpgradeCost" type="Label" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/CanBuyRect/HBoxContainer" unique_id=1355674310]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 37.505)
 layout_mode = 2

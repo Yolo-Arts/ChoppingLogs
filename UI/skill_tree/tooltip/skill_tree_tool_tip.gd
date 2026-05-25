@@ -5,6 +5,7 @@ extends Bulletin
 @onready var upgrade_level: Label = %UpgradeLevel
 @onready var upgrade_currency: TextureRect = %UpgradeCurrency
 @onready var upgrade_cost: Label = %UpgradeCost
+@onready var can_buy_rect: ColorRect = %CanBuyRect
 
 var tracked_node: SkillNode = null
 var _flipped: bool = false 
@@ -37,10 +38,16 @@ func update_dynamic_content() -> void:
 		upgrade_level.text = "Level: %d / %d" % [tracked_node.level, data.max_level]
 		
 		if tracked_node.level >= data.max_level:
+			can_buy_rect.color = Color("9d923cff")
 			upgrade_cost.text = "MAX"
 		else:
-			var calculated_cost = data.upgrade_cost * pow(data.price_increase_mult_per_level, tracked_node.level)
+			var calculated_cost = int(data.upgrade_cost * pow(data.price_increase_mult_per_level, tracked_node.level))
 			upgrade_cost.text = str(int(calculated_cost))
+			
+			if EventSystem.MON_get_player_money.call() < calculated_cost:
+				can_buy_rect.color = Color("8d2e30ff")
+			else:
+				can_buy_rect.color = Color("32633bff")
 
 func update_position() -> void:
 	if is_instance_valid(tracked_node) and tracked_node.is_visible_in_tree():
