@@ -3,8 +3,8 @@ extends Node
 @export var inventory_size := 5
 var inventory := []
 
-var can_add_to_inventory: bool = true # for max weight
-var item_too_heavy :bool = false # for specific weight check
+var can_add_to_inventory: bool = true 
+var item_too_heavy :bool = false 
 
 func _enter_tree() -> void:
 	EventSystem.INV_ask_update_inventory.connect(send_inventory)
@@ -91,8 +91,27 @@ func increase_inventory_size():
 		inventory.resize(inventory_size)
 
 func sell_all_items():
+	var total_money_earned := 0
+	var total_weight_removed := 0.0
+	var items_sold := false
+
 	for i in inventory.size():
 		if inventory[i] == null:
 			continue
-		EventSystem.MON_add_money.emit(ItemConfig.get_item_resource(inventory[i]).sell_price)
-		delete_item_by_index(i)
+			
+		var item_key = inventory[i]
+		var item_res = ItemConfig.get_item_resource(item_key)
+		
+		if item_res:
+			total_money_earned += item_res.sell_price
+			total_weight_removed += item_res.weight
+		
+		inventory[i] = null 
+		items_sold = true
+
+	if not items_sold:
+		return
+		
+	EventSystem.MON_add_money.emit(total_money_earned)
+	EventSystem.WEI_weight_changed.emit(-total_weight_removed)
+	EventSystem.INV_inventory_updated.emit(inventory)
