@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dsss5jrtw6rxn"]
+
+[ext_resource type="PackedScene" uid="uid://0tyqlfribsii" path="res://enemies/deer_enemy/deer_mesh.tscn" id="1_n6w00"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n6w00"]
+radius = 0.3017578
+height = 0.9824219
+
+[node name="DeerEnemy" type="CharacterBody3D" unique_id=703245006]
+
+[node name="basic Enemy" parent="." unique_id=922083736 instance=ExtResource("1_n6w00")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=75635211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50878906, 0)
+shape = SubResource("CapsuleShape3D_n6w00")
