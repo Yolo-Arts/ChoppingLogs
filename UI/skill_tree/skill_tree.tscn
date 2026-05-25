@@ -67,6 +67,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ZoomContent" type="Control" parent="SubViewport" unique_id=896806015]
+unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("3_xtb7d")
 
@@ -82,7 +83,6 @@ skill_data = ExtResource("7_xtb7d")
 visible = false
 layout_mode = 0
 offset_top = -216.0
-offset_right = 90.0
 offset_bottom = -126.0
 skill_data = ExtResource("8_1n7m1")
 
@@ -90,7 +90,6 @@ skill_data = ExtResource("8_1n7m1")
 visible = false
 layout_mode = 0
 offset_top = -224.0
-offset_right = 90.0
 offset_bottom = -134.0
 skill_data = ExtResource("6_xtb7d")
 
@@ -98,7 +97,6 @@ skill_data = ExtResource("6_xtb7d")
 visible = false
 layout_mode = 0
 offset_top = -272.0
-offset_right = 90.0
 offset_bottom = -182.0
 skill_data = ExtResource("7_1n7m1")
 
@@ -143,7 +141,6 @@ visible = false
 layout_mode = 0
 offset_left = -296.0
 offset_right = -206.0
-offset_bottom = 90.0
 skill_data = ExtResource("9_xtb7d")
 
 [node name="AxeRange2" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeRange1" unique_id=1610700208 instance=ExtResource("6_2gknk")]
@@ -151,7 +148,6 @@ visible = false
 layout_mode = 0
 offset_left = -264.0
 offset_right = -174.0
-offset_bottom = 90.0
 skill_data = ExtResource("10_1n7m1")
 
 [node name="FireSlash" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeRange1/AxeRange2" unique_id=280070737 instance=ExtResource("6_2gknk")]
@@ -167,7 +163,6 @@ skill_data = ExtResource("11_7y20i")
 visible = false
 layout_mode = 0
 offset_top = -208.0
-offset_right = 90.0
 offset_bottom = -118.0
 skill_data = ExtResource("12_04fv4")
 
@@ -193,7 +188,6 @@ skill_data = ExtResource("14_khc8y")
 visible = false
 layout_mode = 0
 offset_top = -216.0
-offset_right = 90.0
 offset_bottom = -126.0
 skill_data = ExtResource("15_04fv4")
 
@@ -229,7 +223,6 @@ visible = false
 layout_mode = 0
 offset_left = -248.0
 offset_right = -158.0
-offset_bottom = 90.0
 skill_data = ExtResource("19_crf34")
 
 [node name="SprintSpeed2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=1067747414 instance=ExtResource("6_2gknk")]
@@ -237,14 +230,12 @@ visible = false
 layout_mode = 0
 offset_left = -264.0
 offset_right = -174.0
-offset_bottom = 90.0
 skill_data = ExtResource("20_bh5uq")
 
 [node name="JumpHeight" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=133819581 instance=ExtResource("6_2gknk")]
 visible = false
 layout_mode = 0
 offset_top = -216.0
-offset_right = 90.0
 offset_bottom = -126.0
 skill_data = ExtResource("21_27nor")
 
@@ -262,7 +253,6 @@ visible = false
 layout_mode = 0
 offset_left = -224.0
 offset_right = -134.0
-offset_bottom = 90.0
 skill_data = ExtResource("23_6edkr")
 
 [node name="Vignette" type="ColorRect" parent="." unique_id=1526985475]
@@ -274,3 +264,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
