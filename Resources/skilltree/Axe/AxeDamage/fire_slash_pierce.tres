@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://bayefhfb37ljd"]
+
+[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_5lwwc"]
+[ext_resource type="Texture2D" uid="uid://cce3se1kx2dv2" path="res://Assets/skill_tree/axe/FireSlash/FireSlashPierce.png" id="2_xeikg"]
+
+[resource]
+script = ExtResource("1_5lwwc")
+upgrade_name = "Intense blaze"
+upgrade_key = 11
+texture = ExtResource("2_xeikg")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"

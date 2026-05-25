@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://dlwi82cy1gxt5"]
+
+[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_hhht5"]
+[ext_resource type="Texture2D" uid="uid://oxukvrqrb7cb" path="res://Assets/skill_tree/axe/FireSlash/FireSlashDamage.png" id="2_dytuf"]
+
+[resource]
+script = ExtResource("1_hhht5")
+upgrade_name = "Fire Slash Damage"
+upgrade_key = 9
+texture = ExtResource("2_dytuf")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"

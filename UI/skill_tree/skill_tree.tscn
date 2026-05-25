@@ -8,7 +8,21 @@
 [ext_resource type="Resource" uid="uid://c7myg8bwyreda" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage_1.tres" id="7_xtb7d"]
 [ext_resource type="Resource" uid="uid://dkob00qd75pxl" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage_2.tres" id="8_1n7m1"]
 [ext_resource type="Resource" uid="uid://bt7i43t6qjrwb" path="res://Resources/skilltree/Axe/AxeDamage/axe_damage_5.tres" id="8_3rodt"]
+[ext_resource type="Resource" uid="uid://cpnvjjjmvp02v" path="res://Resources/skilltree/Axe/AxeDamage/axe_crit_chance.tres" id="9_af5db"]
 [ext_resource type="Resource" uid="uid://o0okwuy0lsdq" path="res://Resources/skilltree/Axe/AxeDamage/axe_range_1.tres" id="9_xtb7d"]
+[ext_resource type="Resource" uid="uid://d0bcggwo5j84s" path="res://Resources/skilltree/Axe/AxeDamage/axe_range_2.tres" id="10_1n7m1"]
+[ext_resource type="Resource" uid="uid://cqxx45be03hph" path="res://Resources/skilltree/Axe/AxeDamage/axe_crit_damage_1.tres" id="10_8hoxv"]
+[ext_resource type="Resource" uid="uid://c14mse0vseuog" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_unlock.tres" id="11_7y20i"]
+[ext_resource type="Resource" uid="uid://dlwi82cy1gxt5" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_damage.tres" id="12_04fv4"]
+[ext_resource type="Resource" uid="uid://bxbvit3lixre0" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_rate.tres" id="13_04fv4"]
+[ext_resource type="Resource" uid="uid://ww6csj3pm5h8" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_pierce_unlock.tres" id="14_khc8y"]
+[ext_resource type="Resource" uid="uid://bayefhfb37ljd" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_pierce.tres" id="15_04fv4"]
+[ext_resource type="Resource" uid="uid://b7piea5kkgyh3" path="res://Resources/skilltree/Axe/AxeDamage/axe_speed_1.tres" id="16_khc8y"]
+[ext_resource type="Resource" uid="uid://bx3gvntp2rsru" path="res://Resources/skilltree/Axe/AxeDamage/sprint_speed_1.tres" id="19_crf34"]
+[ext_resource type="Resource" uid="uid://dugkp1peqpny6" path="res://Resources/skilltree/Axe/AxeDamage/sprint_speed_2.tres" id="20_bh5uq"]
+[ext_resource type="Resource" uid="uid://k6c1gcbdu0ve" path="res://Resources/skilltree/Axe/AxeDamage/jump_height.tres" id="21_27nor"]
+[ext_resource type="Resource" uid="uid://khvu6thof5f6" path="res://Resources/skilltree/Axe/AxeDamage/sprint_length_1.tres" id="22_2ddyc"]
+[ext_resource type="Resource" uid="uid://cu3uy0a4gn5n5" path="res://Resources/skilltree/Axe/AxeDamage/sprint_length_2.tres" id="23_6edkr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
 bg_color = Color(0, 0, 0, 0.84705883)
@@ -58,6 +72,7 @@ offset_bottom = 2778.0
 skill_data = ExtResource("7_xtb7d")
 
 [node name="AxeDamage2" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1487470350 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -216.0
 offset_right = 90.0
@@ -65,20 +80,23 @@ offset_bottom = -126.0
 skill_data = ExtResource("8_1n7m1")
 
 [node name="SkillButtonTemplate3" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2" unique_id=1440200605 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -224.0
 offset_right = 90.0
 offset_bottom = -134.0
 skill_data = ExtResource("6_xtb7d")
 
-[node name="SkillButtonTemplate4" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3" unique_id=1941970848 instance=ExtResource("6_2gknk")]
+[node name="AxeDamage4" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3" unique_id=1941970848 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -272.0
 offset_right = 90.0
 offset_bottom = -182.0
 skill_data = ExtResource("7_1n7m1")
 
-[node name="AxeDamage5" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4" unique_id=663032941 instance=ExtResource("6_2gknk")]
+[node name="AxeDamage5" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4" unique_id=663032941 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -184.0
 offset_top = -248.0
@@ -86,53 +104,156 @@ offset_right = -94.0
 offset_bottom = -158.0
 skill_data = ExtResource("8_3rodt")
 
-[node name="AxeRange1" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4" unique_id=1137976199 instance=ExtResource("6_2gknk")]
+[node name="AxeCritChance" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeDamage5" unique_id=2016965560 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 176.0
+offset_top = -184.0
+offset_right = 266.0
+offset_bottom = -94.0
+skill_data = ExtResource("9_af5db")
+
+[node name="AxeCritDamage1" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeDamage5/AxeCritChance" unique_id=1221529575 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 176.0
+offset_top = -192.0
+offset_right = 266.0
+offset_bottom = -102.0
+skill_data = ExtResource("10_8hoxv")
+
+[node name="AxeCritDamage2" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeDamage5/AxeCritChance/AxeCritDamage1" unique_id=138679085 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 184.0
+offset_top = -176.0
+offset_right = 274.0
+offset_bottom = -86.0
+skill_data = ExtResource("10_8hoxv")
+
+[node name="AxeRange1" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4" unique_id=1137976199 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -296.0
 offset_right = -206.0
 offset_bottom = 90.0
 skill_data = ExtResource("9_xtb7d")
 
-[node name="AxeRange2" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1" unique_id=1610700208 instance=ExtResource("6_2gknk")]
+[node name="AxeRange2" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeRange1" unique_id=1610700208 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -264.0
 offset_right = -174.0
 offset_bottom = 90.0
+skill_data = ExtResource("10_1n7m1")
 
-[node name="FireSlash" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1/AxeRange2" unique_id=280070737 instance=ExtResource("6_2gknk")]
+[node name="FireSlash" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeRange1/AxeRange2" unique_id=280070737 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -160.0
 offset_top = -176.0
 offset_right = -70.0
 offset_bottom = -86.0
-skill_data = ExtResource("8_1n7m1")
+skill_data = ExtResource("11_7y20i")
 
-[node name="FireSlashDamage" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1/AxeRange2/FireSlash" unique_id=131047561 instance=ExtResource("6_2gknk")]
+[node name="FireSlashDamage" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeRange1/AxeRange2/FireSlash" unique_id=131047561 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -208.0
 offset_right = 90.0
 offset_bottom = -118.0
-skill_data = ExtResource("8_1n7m1")
+skill_data = ExtResource("12_04fv4")
 
-[node name="FireSlashRate" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1/AxeRange2/FireSlash" unique_id=591565523 instance=ExtResource("6_2gknk")]
+[node name="FireSlashRate" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeRange1/AxeRange2/FireSlash" unique_id=591565523 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 200.0
 offset_top = -208.0
 offset_right = 290.0
 offset_bottom = -118.0
-skill_data = ExtResource("8_1n7m1")
+skill_data = ExtResource("13_04fv4")
 
-[node name="FireSlashPierceUnlock" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1/AxeRange2/FireSlash" unique_id=1617670860 instance=ExtResource("6_2gknk")]
+[node name="FireSlashPierceUnlock" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeRange1/AxeRange2/FireSlash" unique_id=1617670860 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -192.0
 offset_top = -208.0
 offset_right = -102.0
 offset_bottom = -118.0
-skill_data = ExtResource("8_1n7m1")
+skill_data = ExtResource("14_khc8y")
 
-[node name="FireSlashPierce" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/SkillButtonTemplate4/AxeRange1/AxeRange2/FireSlash/FireSlashPierceUnlock" unique_id=1569693821 instance=ExtResource("6_2gknk")]
+[node name="FireSlashPierce" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeRange1/AxeRange2/FireSlash/FireSlashPierceUnlock" unique_id=1569693821 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -216.0
 offset_right = 90.0
 offset_bottom = -126.0
-skill_data = ExtResource("8_1n7m1")
+skill_data = ExtResource("15_04fv4")
+
+[node name="AxeSpeed1" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4" unique_id=397992881 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 176.0
+offset_top = -176.0
+offset_right = 266.0
+offset_bottom = -86.0
+skill_data = ExtResource("16_khc8y")
+
+[node name="AxeSpeed2" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeSpeed1" unique_id=1816275961 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 184.0
+offset_top = -184.0
+offset_right = 274.0
+offset_bottom = -94.0
+skill_data = ExtResource("16_khc8y")
+
+[node name="AxeSpeed3" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/SkillButtonTemplate3/AxeDamage4/AxeSpeed1/AxeSpeed2" unique_id=744273423 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 160.0
+offset_top = -160.0
+offset_right = 250.0
+offset_bottom = -70.0
+skill_data = ExtResource("16_khc8y")
+
+[node name="SprintSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1524854648 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = -248.0
+offset_right = -158.0
+offset_bottom = 90.0
+skill_data = ExtResource("19_crf34")
+
+[node name="SprintSpeed2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=1067747414 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = -264.0
+offset_right = -174.0
+offset_bottom = 90.0
+skill_data = ExtResource("20_bh5uq")
+
+[node name="JumpHeight" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=133819581 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_top = -216.0
+offset_right = 90.0
+offset_bottom = -126.0
+skill_data = ExtResource("21_27nor")
+
+[node name="SprintLength1" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=1096809234 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = -264.0
+offset_top = -216.0
+offset_right = -174.0
+offset_bottom = -126.0
+skill_data = ExtResource("22_2ddyc")
+
+[node name="SprintLength2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintLength1" unique_id=1951128766 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = -224.0
+offset_right = -134.0
+offset_bottom = 90.0
+skill_data = ExtResource("23_6edkr")

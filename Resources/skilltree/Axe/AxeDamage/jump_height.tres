@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://k6c1gcbdu0ve"]
+
+[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_gm4ns"]
+[ext_resource type="Texture2D" uid="uid://cuf7ckh1ddivc" path="res://Assets/skill_tree/PlayerMovement/JumpHeight.png" id="2_y6qwh"]
+
+[resource]
+script = ExtResource("1_gm4ns")
+upgrade_key = 20
+texture = ExtResource("2_y6qwh")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"

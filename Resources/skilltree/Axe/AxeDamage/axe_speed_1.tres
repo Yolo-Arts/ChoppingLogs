@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://b7piea5kkgyh3"]
+
+[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_fgqhf"]
+[ext_resource type="Texture2D" uid="uid://7r7i7un5k5dt" path="res://Assets/skill_tree/axe/AxeSpeed/AxeSpeed1.png" id="2_sbuy6"]
+
+[resource]
+script = ExtResource("1_fgqhf")
+upgrade_name = "Axe Speed 1"
+upgrade_key = 15
+texture = ExtResource("2_sbuy6")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"

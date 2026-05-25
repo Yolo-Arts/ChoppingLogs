@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://ww6csj3pm5h8"]
+
+[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_lwbvq"]
+[ext_resource type="Texture2D" uid="uid://ba4mxfef4xixq" path="res://Assets/skill_tree/axe/FireSlash/FireSlashPierceUnlock.png" id="2_4q05j"]
+
+[resource]
+script = ExtResource("1_lwbvq")
+upgrade_name = "Piercing Flames"
+upgrade_key = 10
+texture = ExtResource("2_4q05j")
+max_level = 1
+level_requirement_to_reveal = 1
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"

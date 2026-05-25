@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://dugkp1peqpny6"]
+
+[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_d0sby"]
+[ext_resource type="Texture2D" uid="uid://qtsne1a4b4s3" path="res://Assets/skill_tree/PlayerMovement/SprintSpeed2.png" id="2_fv5of"]
+
+[resource]
+script = ExtResource("1_d0sby")
+upgrade_name = "Sprint Speed 2"
+upgrade_key = 19
+texture = ExtResource("2_fv5of")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"

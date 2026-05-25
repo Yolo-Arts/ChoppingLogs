@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://c14mse0vseuog"]
+
+[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_aps0u"]
+[ext_resource type="Texture2D" uid="uid://rgb3tof426ad" path="res://Assets/skill_tree/axe/FireSlash/FireSlashUnlock.png" id="2_tdq8l"]
+
+[resource]
+script = ExtResource("1_aps0u")
+upgrade_name = "Fire Slash"
+upgrade_key = 7
+texture = ExtResource("2_tdq8l")
+max_level = 1
+level_requirement_to_reveal = 1
+description = "Harness the power of fire!"
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
