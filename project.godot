@@ -163,11 +163,6 @@ close_menu={
 3d_physics/layer_7="trees"
 3d_physics/layer_8="interactable"
 
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
-
 [shader_globals]
 
 diffuse_curve={
