@@ -129,7 +129,7 @@ data = PackedVector3Array(142.68019, -5, -142.6848, 150, -5, -150, 150, -5, -142
 
 [sub_resource type="Resource" id="Resource_7thjy"]
 script = ExtResource("6_s5o8u")
-amount = 2000
+amount = 1000
 reference_frame = 1
 
 [sub_resource type="Resource" id="Resource_6npn2"]
@@ -263,7 +263,7 @@ unique_name_in_owner = true
 environment = SubResource("Environment_grbyp")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1906963384]
-transform = Transform3D(-0.86602527, 0.48296288, -0.12940949, 0, -0.25881898, -0.9659255, -0.5, -0.8365161, 0.2241438, -274.6944, 8.685556, 0)
+transform = Transform3D(-0.86602527, 0.48296285, -0.12940949, 0, -0.25881898, -0.9659255, -0.5, -0.8365161, 0.2241438, -274.6944, 8.685556, 0)
 layers = 8
 light_color = Color(0.99607843, 1, 0.7294118, 1)
 shadow_enabled = true
@@ -316,6 +316,7 @@ shape = SubResource("Resource_k6dtv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.725843)
 visible = false
 script = ExtResource("3_6ifyg")
+enabled = false
 render_mode = 1
 modifier_stack = SubResource("Resource_45xq0")
 Performance/use_chunks = true
@@ -494,6 +495,6 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("11_1phab")
 shape = SubResource("Resource_uussw")
 
-[node name="ScatterOutput" type="Marker3D" parent="ProtonScatter" unique_id=1856858601]
+[node name="ScatterOutput" type="Marker3D" parent="ProtonScatter" unique_id=831613756]
 
-[node name="ScatterItem" type="Node3D" parent="ProtonScatter/ScatterOutput" unique_id=384920743]
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter/ScatterOutput" unique_id=335406515]
