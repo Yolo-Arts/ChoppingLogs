@@ -26,6 +26,7 @@ func display_damage(dmg: Damage) -> void:
 	# Set color to yellow on crit
 	if label and dmg.crit:	# check if label exists + crit.
 		apply_text_effect(label, Color.YELLOW)
+		label.text = str(dmg.dmg) + "!"
 
 	var tween = create_tween()
 	tween.set_parallel(true)
