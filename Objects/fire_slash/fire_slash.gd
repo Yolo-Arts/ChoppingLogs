@@ -1,7 +1,7 @@
 extends Area3D
 
 @export var speed := 20.0
-@export var damage := 50
+var damage :Damage
 @export var pierce_count := 1
 
 var hit_areas := {} 
@@ -22,7 +22,7 @@ func _on_area_entered(area: Area3D) -> void:
 	
 	hit_areas[area] = true
 	
-	area.take_hit(damage)
+	area.take_hit(damage.dmg)
 	
 	var hit_transform := Transform3D(Basis(), global_position)
 	EventSystem.SPA_spawn_vfx.emit(

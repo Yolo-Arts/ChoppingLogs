@@ -104,7 +104,10 @@ func shoot_fire_slash():
 	get_tree().current_scene.add_child(projectile)
 	projectile.global_position = head.global_position
 	projectile.global_transform = head.global_transform
-	projectile.damage = player_stats.fire_slash_damage
+	var damage_calculated : Damage = fire_slash_damage_calculation()
+	
+	#projectile.damage = player_stats.fire_slash_damage
+	projectile.damage = damage_calculated
 	projectile.pierce_count = player_stats.fire_slash_pierce_count
 	for child in projectile.get_children():
 		child.rotate_object_local(Vector3.RIGHT, PI)
@@ -113,3 +116,13 @@ func shoot_fire_slash():
 
 func reset_fire_slash_cooldown():
 	get_tree().create_timer(max(player_stats.fire_slash_cooldown, 0.3), false).timeout.connect(func(): can_fire_slash = true)
+
+func fire_slash_damage_calculation() -> Damage:
+	# Calculate crit damage
+	var crit_damage = 0;
+	var crit = false
+	if (randf_range(0.0, 100.0) <= player_stats.axe_crit_chance):								# check crit damage chance
+		crit = true
+		crit_damage = player_stats.fire_slash_damage * (player_stats.axe_crit_damage/100.0)		# calculate crit damage 
+	var base_damage = player_stats.fire_slash_damage + player_stats.axe_damage_bonus			# calculate axe base + bonus damage
+	return Damage.new(base_damage * player_stats.axe_damage_mult_bonus + crit_damage, crit)		# return damage object.

@@ -25,6 +25,9 @@ collision_layer = 2
 collision_mask = 65
 script = ExtResource("1_4ntmi")
 player_stats = NodePath("Managers/PlayerStatManager")
+jump_velocity = null
+gravity = null
+mouse_sensitivty = null
 
 [node name="Head" type="Node3D" parent="." unique_id=497952282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6848296, 0)
