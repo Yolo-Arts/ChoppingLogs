@@ -14,6 +14,18 @@ func _ready() -> void:
 func update_hit_marker_position():
 	hit_check_marker.position.z = -player_stats.axe_range
 
+# This function calculates the damage output of the player.
+func player_damage_calculation() -> Damage:
+	# Calculate crit damage
+	var crit_damage = 0;
+	var crit = false
+	if (randf_range(0.0, 100.0) <= player_stats.axe_crit_chance):								# check crit damage chance
+		crit = true
+		crit_damage = axe_resource.damage * (player_stats.axe_crit_damage/100.0)				# calculate crit damage 
+	var base_damage = axe_resource.damage + player_stats.axe_damage_bonus						# calculate axe base + bonus damage
+	return Damage.new(base_damage * player_stats.axe_damage_mult_bonus + crit_damage, crit)		# return damage object.
+	# return base_damage * player_stats.axe_damage_mult_bonus + crit_damage	# return fully calculated damage
+
 func check_hit() -> void:
 	var space_state := get_world_3d().direct_space_state
 	var ray_query_params := PhysicsRayQueryParameters3D.new()
@@ -29,9 +41,11 @@ func check_hit() -> void:
 		if not result.collider.has_method("take_hit"):
 			return
 		
-		var damage_calculated = (axe_resource.damage + player_stats.axe_damage_bonus) * player_stats.axe_damage_mult_bonus
-		result.collider.take_hit(damage_calculated)
-		
+		# Calculate player damage.
+		var damage_calculated : Damage
+		damage_calculated = player_damage_calculation()
+		result.collider.take_hit(damage_calculated.dmg)
+
 		EventSystem.SPA_spawn_vfx.emit(
 			VFXConfig.get_vfx(result.collider.hit_particles_key),
 			Transform3D(Basis(), result.position)
