@@ -20,15 +20,20 @@ func spawn_scene(scene:PackedScene, tform:Transform3D, is_constructable := false
 		
 	object.global_transform = random_tform
 
-func spawn_vfx(scene:PackedScene, tform:Transform3D, damage_text = null) -> void:
+func spawn_vfx(scene:PackedScene, tform:Transform3D, damage: Damage = null) -> void:
 	var vfx := scene.instantiate()
 	add_child(vfx)
 	
 	vfx.global_transform = tform
 	
-	if damage_text:
-		vfx.label.text = str(damage_text)
-		vfx.display_damage() 
+	if damage:
+		vfx.label.text = str(damage.dmg)
+		vfx.display_damage(damage)
+		# garbage collector should free refcounted.
+
+	# if damage_text:
+	# 	vfx.label.text = str(damage_text)
+	# 	vfx.display_damage() 
 	
 	
 	if vfx is GPUParticles3D:

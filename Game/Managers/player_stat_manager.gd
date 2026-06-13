@@ -20,6 +20,9 @@ var player_speed_with_weight_modifier: float = 1.0
 @export var axe_damage_bonus: float = 0.0
 @export var axe_damage_mult_bonus: float = 1.0
 @export var axe_range: float = 1.5
+# TODO: Set initial values for crit chance/dmg
+@export var axe_crit_chance: float = 0.0	# this is percent, i.e. 100 -> 100%.
+@export var axe_crit_damage: float = 0.0
 
 @export_group("Fire Slash")
 @export var unlocked_fire_slash: bool = false
@@ -39,6 +42,8 @@ func _ready() -> void:
 		axe_range += increase
 		EventSystem.AXE_update_hit_marker_position.emit()
 	)
+	EventSystem.UPG_increase_crit_chance.connect(increase_player_crit_chance)
+	EventSystem.UPG_increase_crit_damage.connect(increase_player_crit_damage)
 
 func increase_axe_speed_bonus(axe_bonus: float):
 	axe_speed_bonus += axe_bonus
@@ -51,3 +56,11 @@ func increase_player_normal_speed(normal_speed_bonus: float):
 
 func increase_player_sprint_speed(sprint_speed_bonus: float):
 	sprint_speed += sprint_speed_bonus
+
+func increase_player_crit_chance(crit_chance: float):
+	axe_crit_chance += crit_chance
+	print(axe_crit_chance)
+
+func increase_player_crit_damage(crit_dmg: float):
+	axe_crit_damage += crit_dmg
+	print(axe_crit_damage)

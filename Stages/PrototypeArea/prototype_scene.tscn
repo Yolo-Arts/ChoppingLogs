@@ -36,6 +36,8 @@
 [ext_resource type="ArrayMesh" uid="uid://bgh3jqi8w6m7f" path="res://Assets/Meshes/PlaceholderMeshes/log.tres" id="33_6kx5t"]
 [ext_resource type="PackedScene" uid="uid://bej75do6xooh8" path="res://Objects/interactables/prototype_helpers/prototype_helper_skill_tree.tscn" id="33_7gpa7"]
 [ext_resource type="PackedScene" uid="uid://bw6s6a4egoido" path="res://Assets/Meshes/PlaceholderMeshes/log.tscn" id="34_grbyp"]
+[ext_resource type="PackedScene" uid="uid://ldlcuvdbiu3c" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_crit_chance.tscn" id="37_6npn2"]
+[ext_resource type="PackedScene" uid="uid://cd6vvqgc6guom" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_crit_damage.tscn" id="38_te1uh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6kx5t"]
 sky_top_color = Color(0.3254902, 0.8784314, 1, 1)
@@ -495,6 +497,12 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("11_1phab")
 shape = SubResource("Resource_uussw")
 
-[node name="ScatterOutput" type="Marker3D" parent="ProtonScatter" unique_id=831613756]
+[node name="ScatterOutput" type="Marker3D" parent="ProtonScatter" unique_id=106257549]
 
-[node name="ScatterItem" type="Node3D" parent="ProtonScatter/ScatterOutput" unique_id=335406515]
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter/ScatterOutput" unique_id=770523219]
+
+[node name="PrototypeHelperIncreaseCritChance" parent="." unique_id=1670249850 instance=ExtResource("37_6npn2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283.3795, 0.13963515, -4.7661295)
+
+[node name="PrototypeHelperIncreaseCritDamage" parent="." unique_id=75468278 instance=ExtResource("38_te1uh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283.05823, 0.13963515, -6.7483716)
