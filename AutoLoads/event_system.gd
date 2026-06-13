@@ -66,7 +66,8 @@ signal UPG_increase_fire_slash_damage
 signal UPG_increase_fire_slash_fire_rate
 signal UPG_increase_fire_slash_pierce_count
 signal UPG_increase_axe_range
-
+signal UPG_increase_crit_chance
+signal UPG_increase_crit_damage
 
 # AXE -> Axe 
 signal AXE_increase_axe_speed
