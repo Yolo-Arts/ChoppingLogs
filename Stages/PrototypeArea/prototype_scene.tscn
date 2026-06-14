@@ -390,7 +390,7 @@ mesh = SubResource("PlaneMesh_w28og")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -274.6944, 0, -7)
 
 [node name="Player" parent="." unique_id=842877921 instance=ExtResource("4_w28og")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -277.32947, 15.673737, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -277.32947, 1.5697479, 0)
 
 [node name="PickuppableLogs" type="Node3D" parent="." unique_id=333574750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.6944, 0, 0)

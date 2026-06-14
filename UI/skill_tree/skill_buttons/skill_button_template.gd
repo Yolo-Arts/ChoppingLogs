@@ -52,6 +52,9 @@ func _on_pressed() -> void:
 	EventSystem.MON_decrease_money.emit(calculated_cost)
 	level = min(level + 1, skill_data.max_level)
 	SkillTreeConfig.upgrades[skill_data.upgrade_key] += 1
+	
+	#SaveManager.save_upgrades()
+	
 	skill_data.apply_upgrade()
 	activate()
 	line_2d.default_color = Color(1, 1, 0.24705882, 1)
