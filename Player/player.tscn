@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3yf4t2bsel87" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Script" uid="uid://c40f4lfb11mqv" path="res://Game/Managers/inventory_manager.gd" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://c4ww0aq4amjxg" path="res://Player/head.gd" id="2_5htga"]
 [ext_resource type="Script" uid="uid://dt1rcawit7yfg" path="res://Player/interaction_ray_cast.gd" id="2_btcbx"]
 [ext_resource type="Script" uid="uid://dbrt0np04ex1f" path="res://Game/Managers/weight_manager.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://dsk3w5lardgl5" path="res://Game/Managers/player_stat_manager.gd" id="5_k53q1"]
@@ -27,14 +28,19 @@ script = ExtResource("1_4ntmi")
 player_stats = NodePath("Managers/PlayerStatManager")
 
 [node name="Head" type="Node3D" parent="." unique_id=497952282]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6848296, 0)
+script = ExtResource("2_5htga")
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=30710601]
+[node name="CameraTiltNode" type="Node3D" parent="Head" unique_id=1789145618]
+
+[node name="Camera3D" type="Camera3D" parent="Head/CameraTiltNode" unique_id=30710601]
+unique_name_in_owner = true
 cull_mask = 1048571
 far = 200.0
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Head/Camera3D" unique_id=1089151762]
-remote_path = NodePath("../../../SubViewportContainer/SubViewport/WeaponCamera")
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Head/CameraTiltNode/Camera3D" unique_id=1089151762]
+remote_path = NodePath("../../../../SubViewportContainer/SubViewport/WeaponCamera")
 
 [node name="InteractionRayCast" type="RayCast3D" parent="Head" unique_id=990858903]
 unique_name_in_owner = true

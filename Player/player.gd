@@ -8,7 +8,6 @@ class_name Player
 @export var gravity := 0.5
 @export var mouse_sensitivty := 0.005
 
-@onready var head: Node3D = $Head
 @onready var interaction_ray_cast: RayCast3D = %InteractionRayCast
 @onready var weapon_handler: Node3D = %WeaponHandler
 @onready var discard_marker: Marker3D = $DiscardMarker
@@ -19,6 +18,8 @@ class_name Player
 @export var acceleration := 10.0
 @export var air_acceleration := 40.0
 @export var friction := 10.0
+@onready var head: CameraController = %Head
+
 
 func _ready() -> void:
 	print("Player is ready")
@@ -48,7 +49,18 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	interaction_ray_cast.check_interaction()
 
+var was_on_floor: bool = true
+
 func move(delta: float) -> void:
+	var is_on_ground := is_on_floor()
+	
+	if was_on_floor and not is_on_ground:
+		head.play_tilt(head.tilt_up, 0.1, 0.5)
+	elif not was_on_floor and is_on_ground:
+		head.play_tilt(head.tilt_down, 0.1, 0.2)
+		
+	was_on_floor = is_on_ground
+	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = jump_velocity
 
@@ -82,12 +94,8 @@ func move(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		look_around(event.relative)
-
-func look_around(relative: Vector2) -> void:
-	rotate_y(-relative.x * mouse_sensitivty)
-	head.rotate_x(-relative.y * mouse_sensitivty)
-	head.rotation_degrees.x = clampf(head.rotation_degrees.x, -90, 90)
+		rotate_y(-event.relative.x * mouse_sensitivty)
+		head.look_around(event.relative)
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
