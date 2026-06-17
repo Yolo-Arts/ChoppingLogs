@@ -3,6 +3,9 @@ extends Node
 @onready var scatter_trees: ProtonScatter = $NavigationRegion3D/ScatterTrees
 @onready var navigation_region_3d: NavigationRegion3D = $NavigationRegion3D
 
+## Debug option to disable/enable skill tree resetting
+@export var reset_upgrades: bool = true
+
 var _is_baking: bool = false
 
 func _ready() -> void:
@@ -15,6 +18,8 @@ func _ready() -> void:
 	randomize_forest()
 	scatter_trees.build_completed.connect(_on_scatter_finished)
 	navigation_region_3d.bake_finished.connect(_on_bake_finished)
+	if reset_upgrades:
+		SaveManager.reset_upgrades()
 	EventSystem.HUD_show_hud.emit()
 
 func randomize_forest() -> void:

@@ -1,5 +1,8 @@
 extends Node
 
+func _ready() -> void:
+	SaveManager.call_deferred("load_upgrades")
+
 enum Keys {
 	AXE_DAMAGE_1,
 	AXE_DAMAGE_2,

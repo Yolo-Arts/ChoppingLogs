@@ -342,7 +342,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8354187, 0.1396361, 1.87369
 [node name="ScatterTrees" type="Node3D" parent="NavigationRegion3D" unique_id=1707205532]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.725843)
 script = ExtResource("3_6ifyg")
-enabled = false
 render_mode = 1
 modifier_stack = SubResource("Resource_18tru")
 Performance/use_chunks = true
@@ -391,7 +390,7 @@ mesh = SubResource("PlaneMesh_w28og")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -274.6944, 0, -7)
 
 [node name="Player" parent="." unique_id=842877921 instance=ExtResource("4_w28og")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -277.32947, 15.673737, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -277.32947, 1.5697479, 0)
 
 [node name="PickuppableLogs" type="Node3D" parent="." unique_id=333574750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.6944, 0, 0)
@@ -542,9 +541,9 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("11_1phab")
 shape = SubResource("Resource_uussw")
 
-[node name="ScatterOutput" type="Marker3D" parent="ProtonScatter" unique_id=744467469]
+[node name="ScatterOutput" type="Marker3D" parent="ProtonScatter" unique_id=1378007639]
 
-[node name="ScatterItem" type="Node3D" parent="ProtonScatter/ScatterOutput" unique_id=1060104785]
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter/ScatterOutput" unique_id=2089884374]
 
 [node name="PrototypeHelperIncreaseCritChance" parent="." unique_id=1670249850 instance=ExtResource("37_6npn2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283.3795, 0.13963515, -4.7661295)
@@ -563,6 +562,7 @@ shape = SubResource("ConcavePolygonShape3D_s0pcj")
 [node name="ScatterTrees3" type="Node3D" parent="." unique_id=467698780]
 transform = Transform3D(-0.9934188, 0, -0.11453842, 0, 1, 0, 0.11453842, 0, -0.9934188, -469.1437, 0, -2.907671)
 script = ExtResource("3_6ifyg")
+enabled = false
 render_mode = 1
 modifier_stack = SubResource("Resource_r4cb5")
 Performance/use_chunks = true
