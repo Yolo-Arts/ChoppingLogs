@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://daslwbn4o17jw"]
+
+[ext_resource type="PackedScene" uid="uid://dvujgawe74xox" path="res://Objects/hittable_objects/hittable_object_template.tscn" id="1_lprck"]
+[ext_resource type="Script" uid="uid://cjslhnj5j80u6" path="res://Objects/hittable_objects/hittable_tree_of_infinity.gd" id="2_bq5va"]
+[ext_resource type="Script" uid="uid://bxwywhofnn8c8" path="res://Resources/hittable_object_attributes/hittable_object_attributes.gd" id="3_7j0am"]
+[ext_resource type="PackedScene" uid="uid://vds6hvocuxan" path="res://Assets/Meshes/Common Tree/common_tree_3.tscn" id="4_img0o"]
+
+[sub_resource type="Resource" id="Resource_img0o"]
+script = ExtResource("3_7j0am")
+max_health = 100000000
+regeneration = 200000.0
+metadata/_custom_type_script = "uid://bxwywhofnn8c8"
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_up5o4"]
+height = 2.7314453
+radius = 0.103
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_img0o"]
+transparency = 1
+albedo_color = Color(0.4745098, 0, 0.7137255, 0.21568628)
+
+[node name="HittableTreeOfInfinity" unique_id=640084038 groups=["Trees"] instance=ExtResource("1_lprck")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+script = ExtResource("2_bq5va")
+attributes = SubResource("Resource_img0o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(1570950279) index="0" unique_id=1547967030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3334961, 0)
+shape = SubResource("CylinderShape3D_up5o4")
+
+[node name="Marker3D" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="0" unique_id=189463959]
+transform = Transform3D(0.9601133, 0, 0.27961117, 0.082697265, 0.9552629, -0.28396127, -0.26710218, 0.29575804, 0.91716063, -0.06715566, 0.97517157, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="1" unique_id=14671813]
+transform = Transform3D(0.80830854, -0.5887591, 0, 0.5887591, 0.80830854, 0, 0, 0, 1, 0.06852776, 1.8911817, 0)
+
+[node name="Marker3D3" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="2" unique_id=1211418110]
+transform = Transform3D(0.9601132, 0, 0.27961117, 0.08269726, 0.95526284, -0.28396124, -0.26710215, 0.295758, 0.9171606, -0.06715566, 0.97517145, 0)
+
+[node name="Marker3D4" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="3" unique_id=1085521907]
+transform = Transform3D(0.9601132, 0, 0.27961117, 0.08269726, 0.95526284, -0.28396124, -0.26710215, 0.295758, 0.9171606, -0.06715566, 0.97517145, 0)
+
+[node name="Marker3D5" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="4" unique_id=419188599]
+transform = Transform3D(0.9601132, 0, 0.27961117, 0.08269726, 0.95526284, -0.28396124, -0.26710215, 0.295758, 0.9171606, -0.06715566, 0.97517145, 0)
+
+[node name="Marker3D6" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="5" unique_id=1217569788]
+transform = Transform3D(0.9601132, 0, 0.27961117, 0.08269726, 0.95526284, -0.28396124, -0.26710215, 0.295758, 0.9171606, -0.06715566, 0.97517145, 0)
+
+[node name="CollisionShape3D" parent="Hitbox" parent_id_path=PackedInt32Array(102348333) index="0" unique_id=1200180207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3483472, 0)
+shape = SubResource("CylinderShape3D_up5o4")
+
+[node name="CommonTree_3" parent="." index="3" unique_id=1025467605 instance=ExtResource("4_img0o")]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0, 0)
+material_overlay = SubResource("StandardMaterial3D_img0o")
