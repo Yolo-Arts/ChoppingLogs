@@ -25,9 +25,6 @@ collision_layer = 2
 collision_mask = 65
 script = ExtResource("1_4ntmi")
 player_stats = NodePath("Managers/PlayerStatManager")
-jump_velocity = null
-gravity = null
-mouse_sensitivty = null
 
 [node name="Head" type="Node3D" parent="." unique_id=497952282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6848296, 0)
@@ -60,8 +57,6 @@ shape = SubResource("CapsuleShape3D_l8h54")
 [node name="PlayerStatManager" type="Node" parent="Managers" unique_id=1782077226]
 script = ExtResource("5_k53q1")
 max_weight = 5000.0
-normal_speed = 6.0
-sprint_speed = 12.0
 axe_speed_bonus = 5.0
 axe_crit_chance = 50.0
 axe_crit_damage = 50.0
