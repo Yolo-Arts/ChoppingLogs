@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_img0o"]
 script = ExtResource("3_7j0am")
 max_health = 100000000
-regeneration = 200000.0
+regeneration = 200000
 metadata/_custom_type_script = "uid://bxwywhofnn8c8"
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_up5o4"]
@@ -23,6 +23,8 @@ albedo_color = Color(0.4745098, 0, 0.7137255, 0.21568628)
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 script = ExtResource("2_bq5va")
 attributes = SubResource("Resource_img0o")
+
+[node name="RegenTimer" type="Timer" parent="." index="0" unique_id=2124076234]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(1570950279) index="0" unique_id=1547967030]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3334961, 0)
@@ -50,6 +52,6 @@ transform = Transform3D(0.9601132, 0, 0.27961117, 0.08269726, 0.95526284, -0.283
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3483472, 0)
 shape = SubResource("CylinderShape3D_up5o4")
 
-[node name="CommonTree_3" parent="." index="3" unique_id=1025467605 instance=ExtResource("4_img0o")]
+[node name="CommonTree_3" parent="." index="4" unique_id=1025467605 instance=ExtResource("4_img0o")]
 transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0, 0)
 material_overlay = SubResource("StandardMaterial3D_img0o")
