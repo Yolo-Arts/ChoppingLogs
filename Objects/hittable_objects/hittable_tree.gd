@@ -1,4 +1,4 @@
-extends HittableObjectTemplate
+class_name HittableTree extends HittableObjectTemplate
 @onready var hitbox: Area3D = $Hitbox
 
 func _ready() -> void:

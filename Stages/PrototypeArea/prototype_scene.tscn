@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://ldlcuvdbiu3c" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_crit_chance.tscn" id="37_6npn2"]
 [ext_resource type="PackedScene" uid="uid://cd6vvqgc6guom" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_crit_damage.tscn" id="38_te1uh"]
 [ext_resource type="PackedScene" uid="uid://dbu55a5tbmno7" path="res://Assets/Meshes/PlaceholderMeshes/mapTest.tscn" id="39_te1uh"]
+[ext_resource type="PackedScene" uid="uid://daslwbn4o17jw" path="res://Objects/hittable_objects/hittable_tree_of_infinity.tscn" id="40_s0pcj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6kx5t"]
 sky_top_color = Color(0.3254902, 0.8784314, 1, 1)
@@ -578,3 +579,6 @@ path = "uid://cd3f3prklq5ep"
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("11_1phab")
 shape = SubResource("Resource_mmbja")
+
+[node name="HittableTreeOfInfinity" parent="." unique_id=1224164139 instance=ExtResource("40_s0pcj")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -248.74333, 7.2027617, -8.889364)

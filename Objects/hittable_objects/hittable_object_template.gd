@@ -9,7 +9,7 @@ class_name HittableObjectTemplate
 var tween: Tween
 var base_scale: Vector3 = Vector3.ONE
 
-
+#TODO:Add healing feedback?
 func _on_hitbox_register_hit(damage) -> void:
 	current_health -= damage
 	

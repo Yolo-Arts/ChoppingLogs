@@ -9,6 +9,7 @@ enum Keys{
 	WinScreen,
 	SkillTree,
 	SkillTreeToolTip,
+	BossHpBar
 }
 
 
@@ -25,4 +26,5 @@ const BULLETIN_PATHS := {
 	Keys.WinScreen: "res://UI/win_screen/win_screen.tscn",
 	Keys.SkillTree: "res://UI/skill_tree/skill_tree.tscn",
 	Keys.SkillTreeToolTip: "res://UI/skill_tree/tooltip/skill_tree_tool_tip.tscn",
+	Keys.BossHpBar: "res://Bulletins/boss_health_bar/boss_health_bar.tscn"
 }
