@@ -5,6 +5,7 @@ func _ready() -> void:
 
 func die() -> void:
 	super()
+	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.WinScreen)
 	
 func _process(delta: float) -> void:
 	regen(delta)
