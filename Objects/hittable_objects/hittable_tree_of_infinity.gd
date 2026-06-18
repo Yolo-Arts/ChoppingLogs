@@ -49,7 +49,7 @@ func regen(delta : float) -> void:
 	current_health = clamp(current_health + attributes.regeneration, 0, attributes.max_health)
 	health_changed.emit(current_health)
 
-	time_accumulation = (time_accumulation - REGEN_TICK_TIME)
-	if current_health >= attributes.max_health:
+	time_accumulation -= REGEN_TICK_TIME
+	if current_health >= attributes.max_health:#remove this for constant regen timer
 		time_accumulation = 0
 #endregion
