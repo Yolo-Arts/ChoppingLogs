@@ -3,17 +3,23 @@ class_name Player
 
 @export var player_stats: PlayerStats
 # TODO move stats into player_stats
-@export var jump_velocity := 4.0
-@export var gravity := 0.2
+@export var jump_velocity := 10.0
+# max jump velocity will be 25
+@export var gravity := 0.5
 @export var mouse_sensitivty := 0.005
 
-@onready var head: Node3D = $Head
 @onready var interaction_ray_cast: RayCast3D = %InteractionRayCast
 @onready var weapon_handler: Node3D = %WeaponHandler
 @onready var discard_marker: Marker3D = $DiscardMarker
 
 @onready var fire_slash: PackedScene = preload("res://Objects/fire_slash/fire_slash.tscn")
 @onready var can_fire_slash: bool = true
+
+@export var acceleration := 10.0
+@export var air_acceleration := 40.0
+@export var friction := 10.0
+@onready var head: CameraController = %Head
+
 
 func _ready() -> void:
 	print("Player is ready")
@@ -30,7 +36,7 @@ func set_freeze(freeze: bool) -> void:
 	set_process_input(!freeze)
 
 func _physics_process(delta: float) -> void:
-	move()
+	move(delta)
 	
 	# TODO Add auto click upgrade -> Holding left click vs spamming left click.
 	if Input.is_action_pressed("left_click"):
@@ -43,38 +49,53 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	interaction_ray_cast.check_interaction()
 
-func move() -> void:
-	var is_sprinting: bool
+var was_on_floor: bool = true
+
+func move(delta: float) -> void:
+	var is_on_ground := is_on_floor()
 	
-	if is_on_floor():
-		is_sprinting = Input.is_action_pressed("sprint")
+	if was_on_floor and not is_on_ground:
+		head.play_tilt(head.tilt_up, 0.1, 0.5)
+	elif not was_on_floor and is_on_ground:
+		head.play_tilt(head.tilt_down, 0.1, 0.2)
 		
-		if Input.is_action_just_pressed("jump"):
-			velocity.y = jump_velocity
-	else:
+	was_on_floor = is_on_ground
+	
+	if is_on_floor() and Input.is_action_just_pressed("jump"):
+		velocity.y = jump_velocity
+
+	if not is_on_floor():
 		velocity.y -= gravity
-		is_sprinting = false
-	
-	var base_speed := player_stats.normal_speed if not is_sprinting else player_stats.sprint_speed
-	var final_speed = base_speed * player_stats.player_speed_with_weight_modifier
-	
+
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
-	
-	var direction :=  transform.basis * Vector3(input_dir.x, 0, input_dir.y)
-	
-	velocity.x = direction.x * final_speed
-	velocity.z = direction.z * final_speed
-	
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
+	var is_sprinting := Input.is_action_pressed("sprint")
+	var base_speed := player_stats.sprint_speed if is_sprinting else player_stats.normal_speed
+	var target_speed := base_speed * player_stats.player_speed_with_weight_modifier
+
+	if is_on_floor():
+		if direction.length() > 0:
+			velocity.x = lerp(velocity.x, direction.x * target_speed, acceleration * delta)
+			velocity.z = lerp(velocity.z, direction.z * target_speed, acceleration * delta)
+		else:
+			velocity.x = lerp(velocity.x, 0.0, friction * delta)
+			velocity.z = lerp(velocity.z, 0.0, friction * delta)
+	else:
+		var current_horizontal_speed := Vector2(velocity.x, velocity.z).length()
+		var air_speed_cap = max(current_horizontal_speed, target_speed)
+		if direction.length() > 0:
+			velocity.x += direction.x * air_acceleration * delta
+			velocity.z += direction.z * air_acceleration * delta
+			var horizontal := Vector2(velocity.x, velocity.z).limit_length(air_speed_cap)
+			velocity.x = horizontal.x
+			velocity.z = horizontal.y
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		look_around(event.relative)
-
-func look_around(relative: Vector2) -> void:
-	rotate_y(-relative.x * mouse_sensitivty)
-	head.rotate_x(-relative.y * mouse_sensitivty)
-	head.rotation_degrees.x = clampf(head.rotation_degrees.x, -90, 90)
+		rotate_y(-event.relative.x * mouse_sensitivty)
+		head.look_around(event.relative)
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):

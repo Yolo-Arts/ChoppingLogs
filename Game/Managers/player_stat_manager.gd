@@ -7,8 +7,13 @@ class_name PlayerStats
 var player_speed_with_weight_modifier: float = 1.0
 
 @export_group("Movement")
-@export var normal_speed := 3.0
-@export var sprint_speed := 5.0
+# min level settings
+#@export var normal_speed := 2.0
+#@export var sprint_speed := 4.0
+# max level settings
+@export var normal_speed := 4.0
+@export var sprint_speed := 16.0
+
 @export var sprint_energy: float = 100.0
 
 @export_group("Stats")
@@ -29,6 +34,7 @@ var player_speed_with_weight_modifier: float = 1.0
 @export var fire_slash_damage: float = 50.0
 @export var fire_slash_cooldown: float = 20.0
 @export var fire_slash_pierce_count: int = 1
+
 
 
 func _ready() -> void:
