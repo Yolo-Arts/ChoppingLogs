@@ -14,7 +14,7 @@ regeneration = 200000
 metadata/_custom_type_script = "uid://bxwywhofnn8c8"
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pux45"]
-height = 2.7314453
+height = 2.803711
 radius = 0.103
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_feujs"]
@@ -63,13 +63,14 @@ shader_parameter/uv_offset = Vector2(0, 0)
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 script = ExtResource("2_bq5va")
 hp_bar_draw_dist = 1000.0
-hp_bar_destroy_dist = 2000.0
+hp_bar_destroy_dist = 1500.0
 attributes = SubResource("Resource_jx7t2")
 
 [node name="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(1570950279) index="0" unique_id=1547967030]
 shape = SubResource("CylinderShape3D_pux45")
 
 [node name="CollisionShape3D" parent="Hitbox" parent_id_path=PackedInt32Array(102348333) index="0" unique_id=1200180207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3122144, 0)
 shape = SubResource("CylinderShape3D_pux45")
 
 [node name="CommonTree_3" parent="." index="3" unique_id=1025467605 instance=ExtResource("4_img0o")]
