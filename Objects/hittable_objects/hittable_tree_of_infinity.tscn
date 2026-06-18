@@ -22,6 +22,8 @@ albedo_color = Color(0.4745098, 0, 0.7137255, 0.21568628)
 [node name="HittableTreeOfInfinity" unique_id=640084038 groups=["Trees"] instance=ExtResource("1_lprck")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 script = ExtResource("2_bq5va")
+hp_bar_draw_dist = 1000.0
+hp_bar_destroy_dist = 2000.0
 attributes = SubResource("Resource_img0o")
 
 [node name="RegenTimer" type="Timer" parent="." index="0" unique_id=2124076234]
@@ -29,24 +31,6 @@ attributes = SubResource("Resource_img0o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(1570950279) index="0" unique_id=1547967030]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3334961, 0)
 shape = SubResource("CylinderShape3D_up5o4")
-
-[node name="Marker3D" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="0" unique_id=189463959]
-transform = Transform3D(0.9601133, 0, 0.27961117, 0.082697265, 0.9552629, -0.28396127, -0.26710218, 0.29575804, 0.91716063, -0.06715566, 0.97517157, 0)
-
-[node name="Marker3D2" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="1" unique_id=14671813]
-transform = Transform3D(0.80830854, -0.5887591, 0, 0.5887591, 0.80830854, 0, 0, 0, 1, 0.06852776, 1.8911817, 0)
-
-[node name="Marker3D3" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="2" unique_id=1211418110]
-transform = Transform3D(0.9601132, 0, 0.27961117, 0.08269726, 0.95526284, -0.28396124, -0.26710215, 0.295758, 0.9171606, -0.06715566, 0.97517145, 0)
-
-[node name="Marker3D4" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="3" unique_id=1085521907]
-transform = Transform3D(0.9601132, 0, 0.27961117, 0.08269726, 0.95526284, -0.28396124, -0.26710215, 0.295758, 0.9171606, -0.06715566, 0.97517145, 0)
-
-[node name="Marker3D5" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="4" unique_id=419188599]
-transform = Transform3D(0.9601132, 0, 0.27961117, 0.08269726, 0.95526284, -0.28396124, -0.26710215, 0.295758, 0.9171606, -0.06715566, 0.97517145, 0)
-
-[node name="Marker3D6" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="5" unique_id=1217569788]
-transform = Transform3D(0.9601132, 0, 0.27961117, 0.08269726, 0.95526284, -0.28396124, -0.26710215, 0.295758, 0.9171606, -0.06715566, 0.97517145, 0)
 
 [node name="CollisionShape3D" parent="Hitbox" parent_id_path=PackedInt32Array(102348333) index="0" unique_id=1200180207]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3483472, 0)
