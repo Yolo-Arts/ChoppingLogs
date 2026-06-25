@@ -17,7 +17,11 @@ radius = 0.23730469
 script = ExtResource("2_up5o4")
 attributes = SubResource("Resource_1c8me")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(1570950279) index="0" unique_id=1547967030]
+[node name="StaticBody3D" parent="." index="0" unique_id=1570950279]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1547967030]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3334961, 0)
 shape = SubResource("CylinderShape3D_up5o4")
 

@@ -1595,7 +1595,7 @@ metadata/_custom_type_script = "uid://pt4es15godj0"
 [node name="ScatterItem" type="Node3D" parent="ScatterTrees7" unique_id=478385223]
 script = ExtResource("8_ewj05")
 lod_merge_angle = 0.0
-path = "uid://cd3f3prklq5ep"
+path = "uid://8xiwjd03ys4v"
 
 [node name="ScatterShape" type="Node3D" parent="ScatterTrees7" unique_id=206811683]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
