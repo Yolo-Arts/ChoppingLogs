@@ -383,99 +383,99 @@ transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59
 [node name="PickuppableLog4" parent="PickuppableLogs" unique_id=278628637 instance=ExtResource("5_pkgy2")]
 transform = Transform3D(0.59714925, 0, -0.80213016, 0, 1, 0, 0.80213016, 0, 0.59714925, 3.410396, 0.11804195, -2.17548)
 
-[node name="PrototypeHelpers" type="Node3D" parent="." unique_id=1303137489]
+[node name="PrototypeHelpersOnTheIsland" type="Node3D" parent="." unique_id=1303137489]
 
-[node name="PrototypeHelperIncreaseFireSlashDamage" parent="PrototypeHelpers" unique_id=1219418399 instance=ExtResource("16_jpb4y")]
+[node name="PrototypeHelperIncreaseFireSlashDamage" parent="PrototypeHelpersOnTheIsland" unique_id=1219418399 instance=ExtResource("16_jpb4y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -277.5264, 0.13963515, -6.08251)
 
-[node name="PrototypeHelperIncreaseFireSlashFireRate" parent="PrototypeHelpers" unique_id=1282952687 instance=ExtResource("17_0rur4")]
+[node name="PrototypeHelperIncreaseFireSlashFireRate" parent="PrototypeHelpersOnTheIsland" unique_id=1282952687 instance=ExtResource("17_0rur4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -279.59308, 0.13963515, -4.38258)
 
-[node name="PrototypeHelperIncreaseInventorySize" parent="PrototypeHelpers" unique_id=972544354 instance=ExtResource("6_pb4yw")]
+[node name="PrototypeHelperIncreaseInventorySize" parent="PrototypeHelpersOnTheIsland" unique_id=972544354 instance=ExtResource("6_pb4yw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269.6944, 0, -4)
 
-[node name="PrototypeHelperIncrease_Max_Weight" parent="PrototypeHelpers" unique_id=1854175241 instance=ExtResource("7_7yfsk")]
+[node name="PrototypeHelperIncrease_Max_Weight" parent="PrototypeHelpersOnTheIsland" unique_id=1854175241 instance=ExtResource("7_7yfsk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -268.00577, 0.13963515, -3.207336)
 
-[node name="PrototypeHelperIncreaseMoney" parent="PrototypeHelpers" unique_id=2033220718 instance=ExtResource("8_jdp5v")]
+[node name="PrototypeHelperIncreaseMoney" parent="PrototypeHelpersOnTheIsland" unique_id=2033220718 instance=ExtResource("8_jdp5v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.59262, 0, -4)
 
-[node name="PrototypeHelperIncreaseMoney2" parent="PrototypeHelpers" unique_id=398834036 instance=ExtResource("9_02ulf")]
+[node name="PrototypeHelperIncreaseMoney2" parent="PrototypeHelpersOnTheIsland" unique_id=398834036 instance=ExtResource("9_02ulf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.7877, 0.13963515, -3.859744)
 
-[node name="PrototypeHelperSellMenu" parent="PrototypeHelpers" unique_id=596257892 instance=ExtResource("10_3resb")]
+[node name="PrototypeHelperSellMenu" parent="PrototypeHelpersOnTheIsland" unique_id=596257892 instance=ExtResource("10_3resb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -271.3844, 0.13963562, 0.9555826)
 
-[node name="PrototypeHelperUnlockAssaultRifle" parent="PrototypeHelpers" unique_id=275099202 instance=ExtResource("11_o6fg2")]
+[node name="PrototypeHelperUnlockAssaultRifle" parent="PrototypeHelpersOnTheIsland" unique_id=275099202 instance=ExtResource("11_o6fg2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -278.3405, 0.13963515, -1.1734648)
 
-[node name="PrototypeHelperIncreaseAxeAttackDamage" parent="PrototypeHelpers" unique_id=580177661 instance=ExtResource("23_yslmy")]
+[node name="PrototypeHelperIncreaseAxeAttackDamage" parent="PrototypeHelpersOnTheIsland" unique_id=580177661 instance=ExtResource("23_yslmy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -267.98706, 0.13963515, 5.0179944)
 
-[node name="PrototypeHelperIncreaseSellRadius" parent="PrototypeHelpers" unique_id=390946140 instance=ExtResource("24_twccb")]
+[node name="PrototypeHelperIncreaseSellRadius" parent="PrototypeHelpersOnTheIsland" unique_id=390946140 instance=ExtResource("24_twccb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -278.7623, 0, 1.5028238)
 
-[node name="PrototypeHelperUnlockFireSlash" parent="PrototypeHelpers" unique_id=570215774 instance=ExtResource("26_qmt6l")]
+[node name="PrototypeHelperUnlockFireSlash" parent="PrototypeHelpersOnTheIsland" unique_id=570215774 instance=ExtResource("26_qmt6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -277.86035, 0.1396361, -2.8711147)
 
-[node name="PrototypeHelperFireSlashPierceCount" parent="PrototypeHelpers" unique_id=128869997 instance=ExtResource("29_0rur4")]
+[node name="PrototypeHelperFireSlashPierceCount" parent="PrototypeHelpersOnTheIsland" unique_id=128869997 instance=ExtResource("29_0rur4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -279.25574, 0.13963705, -6.641534)
 
-[node name="PrototypeHelperSkillTree" parent="PrototypeHelpers" unique_id=1906919366 instance=ExtResource("33_7gpa7")]
+[node name="PrototypeHelperSkillTree" parent="PrototypeHelpersOnTheIsland" unique_id=1906919366 instance=ExtResource("33_7gpa7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -271.03876, 0.13963324, -0.85643625)
 
-[node name="PrototypeHelperIncreaseCritChance" parent="PrototypeHelpers" unique_id=1670249850 instance=ExtResource("37_6npn2")]
+[node name="PrototypeHelperIncreaseCritChance" parent="PrototypeHelpersOnTheIsland" unique_id=1670249850 instance=ExtResource("37_6npn2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283.3795, 0.13963515, -4.7661295)
 
-[node name="PrototypeHelperIncreaseCritDamage" parent="PrototypeHelpers" unique_id=75468278 instance=ExtResource("38_te1uh")]
+[node name="PrototypeHelperIncreaseCritDamage" parent="PrototypeHelpersOnTheIsland" unique_id=75468278 instance=ExtResource("38_te1uh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283.05823, 0.13963515, -6.7483716)
 
-[node name="PrototypeHelpers2" type="Node3D" parent="." unique_id=1441189763]
+[node name="PrototypeHelpers2OnTheMap" type="Node3D" parent="." unique_id=1441189763]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.34161, -2.6482544, -295.0777)
 
-[node name="PrototypeHelperIncreaseFireSlashDamage" parent="PrototypeHelpers2" unique_id=1852633620 instance=ExtResource("16_jpb4y")]
+[node name="PrototypeHelperIncreaseFireSlashDamage" parent="PrototypeHelpers2OnTheMap" unique_id=1852633620 instance=ExtResource("16_jpb4y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -277.5264, 0.13963515, -6.08251)
 
-[node name="PrototypeHelperIncreaseFireSlashFireRate" parent="PrototypeHelpers2" unique_id=2037466506 instance=ExtResource("17_0rur4")]
+[node name="PrototypeHelperIncreaseFireSlashFireRate" parent="PrototypeHelpers2OnTheMap" unique_id=2037466506 instance=ExtResource("17_0rur4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -279.59308, 0.13963515, -4.38258)
 
-[node name="PrototypeHelperIncreaseInventorySize" parent="PrototypeHelpers2" unique_id=1649259408 instance=ExtResource("6_pb4yw")]
+[node name="PrototypeHelperIncreaseInventorySize" parent="PrototypeHelpers2OnTheMap" unique_id=1649259408 instance=ExtResource("6_pb4yw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269.6944, 0, -4)
 
-[node name="PrototypeHelperIncrease_Max_Weight" parent="PrototypeHelpers2" unique_id=1158651129 instance=ExtResource("7_7yfsk")]
+[node name="PrototypeHelperIncrease_Max_Weight" parent="PrototypeHelpers2OnTheMap" unique_id=1158651129 instance=ExtResource("7_7yfsk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -268.00577, 0.13963515, -3.207336)
 
-[node name="PrototypeHelperIncreaseMoney" parent="PrototypeHelpers2" unique_id=1694314376 instance=ExtResource("8_jdp5v")]
+[node name="PrototypeHelperIncreaseMoney" parent="PrototypeHelpers2OnTheMap" unique_id=1694314376 instance=ExtResource("8_jdp5v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.59262, 0, -4)
 
-[node name="PrototypeHelperIncreaseMoney2" parent="PrototypeHelpers2" unique_id=1663538663 instance=ExtResource("9_02ulf")]
+[node name="PrototypeHelperIncreaseMoney2" parent="PrototypeHelpers2OnTheMap" unique_id=1663538663 instance=ExtResource("9_02ulf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.7877, 0.13963515, -3.859744)
 
-[node name="PrototypeHelperSellMenu" parent="PrototypeHelpers2" unique_id=506264732 instance=ExtResource("10_3resb")]
+[node name="PrototypeHelperSellMenu" parent="PrototypeHelpers2OnTheMap" unique_id=506264732 instance=ExtResource("10_3resb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -271.3844, 0.13963562, 0.9555826)
 
-[node name="PrototypeHelperUnlockAssaultRifle" parent="PrototypeHelpers2" unique_id=1578941207 instance=ExtResource("11_o6fg2")]
+[node name="PrototypeHelperUnlockAssaultRifle" parent="PrototypeHelpers2OnTheMap" unique_id=1578941207 instance=ExtResource("11_o6fg2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -278.3405, 0.13963515, -1.1734648)
 
-[node name="PrototypeHelperIncreaseAxeAttackDamage" parent="PrototypeHelpers2" unique_id=1537141571 instance=ExtResource("23_yslmy")]
+[node name="PrototypeHelperIncreaseAxeAttackDamage" parent="PrototypeHelpers2OnTheMap" unique_id=1537141571 instance=ExtResource("23_yslmy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -267.98706, 0.13963515, 5.0179944)
 
-[node name="PrototypeHelperIncreaseSellRadius" parent="PrototypeHelpers2" unique_id=1277639960 instance=ExtResource("24_twccb")]
+[node name="PrototypeHelperIncreaseSellRadius" parent="PrototypeHelpers2OnTheMap" unique_id=1277639960 instance=ExtResource("24_twccb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -278.7623, 0, 1.5028238)
 
-[node name="PrototypeHelperUnlockFireSlash" parent="PrototypeHelpers2" unique_id=1216289018 instance=ExtResource("26_qmt6l")]
+[node name="PrototypeHelperUnlockFireSlash" parent="PrototypeHelpers2OnTheMap" unique_id=1216289018 instance=ExtResource("26_qmt6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -277.86035, 0.1396361, -2.8711147)
 
-[node name="PrototypeHelperFireSlashPierceCount" parent="PrototypeHelpers2" unique_id=498409850 instance=ExtResource("29_0rur4")]
+[node name="PrototypeHelperFireSlashPierceCount" parent="PrototypeHelpers2OnTheMap" unique_id=498409850 instance=ExtResource("29_0rur4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -279.25574, 0.13963705, -6.641534)
 
-[node name="PrototypeHelperSkillTree" parent="PrototypeHelpers2" unique_id=14274681 instance=ExtResource("33_7gpa7")]
+[node name="PrototypeHelperSkillTree" parent="PrototypeHelpers2OnTheMap" unique_id=14274681 instance=ExtResource("33_7gpa7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -271.03876, 0.13963324, -0.85643625)
 
-[node name="PrototypeHelperIncreaseCritChance" parent="PrototypeHelpers2" unique_id=1687838737 instance=ExtResource("37_6npn2")]
+[node name="PrototypeHelperIncreaseCritChance" parent="PrototypeHelpers2OnTheMap" unique_id=1687838737 instance=ExtResource("37_6npn2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283.3795, 0.13963515, -4.7661295)
 
-[node name="PrototypeHelperIncreaseCritDamage" parent="PrototypeHelpers2" unique_id=111256488 instance=ExtResource("38_te1uh")]
+[node name="PrototypeHelperIncreaseCritDamage" parent="PrototypeHelpers2OnTheMap" unique_id=111256488 instance=ExtResource("38_te1uh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283.05823, 0.13963515, -6.7483716)
 
 [node name="Spawner" parent="." unique_id=1704739753 instance=ExtResource("12_kirhj")]

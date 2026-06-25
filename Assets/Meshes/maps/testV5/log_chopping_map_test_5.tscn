@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://b36jvlea11owf" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="10_oggsf"]
 [ext_resource type="PackedScene" uid="uid://dhatshjilf5m" path="res://Objects/interactables/prototype_helpers/prototype_helper_sell_menu.tscn" id="17_3606b"]
 [ext_resource type="ArrayOccluder3D" uid="uid://d3ncr5urldrry" path="res://Assets/Meshes/maps/testV5/log_chopping_map_test_5.occ" id="18_3r07f"]
+[ext_resource type="PackedScene" uid="uid://cuyict4tlaq2p" path="res://Objects/interactables/prototype_helpers/prototype_helper_go_back_to_base.tscn" id="18_m755s"]
 
 [sub_resource type="Resource" id="Resource_3r07f"]
 script = ExtResource("4_m755s")
@@ -2051,6 +2052,9 @@ shape = SubResource("ConcavePolygonShape3D_5ntgt")
 
 [node name="PrototypeHelperSellMenu" parent="." unique_id=979320369 instance=ExtResource("17_3606b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.198656, 0.45954978, -20.832642)
+
+[node name="PrototypeHelperGoBackToBase" parent="." unique_id=198554789 instance=ExtResource("18_m755s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7997608, 0.45954978, -20.832642)
 
 [node name="PrototypeHelperSellMenu2" parent="." unique_id=506439506 instance=ExtResource("17_3606b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.9552, 0.45954978, -78.360176)
