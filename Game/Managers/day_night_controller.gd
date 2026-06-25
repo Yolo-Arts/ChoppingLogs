@@ -1,7 +1,8 @@
 extends Node
 
-@export var startTime: float = 6.0
-@export var dayLengthInSeconds: float = 96.0
+@export var countdownDuration: float = 60.0
+@export var startHour: float = 6.0         
+@export var endHour: float = 22.0          
 
 @export_group("Sun Light")
 @export var sun_light: DirectionalLight3D
@@ -34,28 +35,43 @@ var top_colors: Array[Color] = []
 var horizon_colors: Array[Color] = []
 var sun_colors: Array[Color] = []
 
+var time_remaining: float
+var is_timer_over: bool = false
+
 func _ready() -> void:
 	top_colors = [morningColorTop, dayColorTop, afternoonColorTop, nightColorTop]
 	horizon_colors = [morningColorHorizon, dayColorHorizon, afternoonColorHorizon, nightColorHorizon]
 	sun_colors = [morningSunColor, daySunColor, afternoonSunColor, nightSunColor] 
 	
-	_setup_duration()
-	_set_initial_time()
-
-func _setup_duration() -> void:
-	var duration_multiplier = dayLengthInSeconds / 24.0
-	animation_player.speed_scale = 1.0 / duration_multiplier
-
-func _set_initial_time() -> void:
+	time_remaining = countdownDuration
+	
+	# Start the animation but keep it paused; we will drive its position manually
 	animation_player.play("day_and_night")
-	animation_player.seek(startTime, true)
-
-func _process(_delta: float) -> void:
+	animation_player.pause()
+	
 	_update_sky_cycle()
 	_update_time_label()
 
+func _process(delta: float) -> void:
+	if is_timer_over:
+		return
+
+	if time_remaining > 0:
+		time_remaining -= delta
+		if time_remaining <= 0:
+			time_remaining = 0
+			is_timer_over = true
+			end_day()
+		
+		_update_sky_cycle()
+		_update_time_label()
+
 func _update_sky_cycle() -> void:
-	var current_time = animation_player.current_animation_position
+	var progress = 1.0 - (time_remaining / countdownDuration)
+	
+	var current_time = lerp(startHour, endHour, progress)
+	
+	animation_player.seek(current_time, true)
 	
 	var idx_current = 0
 	var idx_next = 0
@@ -99,26 +115,17 @@ func _update_world_lighting(current_time: float, horizon_color: Color) -> void:
 	if current_time > 20.0 or current_time < 6.0:
 		# Night time: 
 		sun_light.light_energy = lerp(sun_light.light_energy, 0.1, 0.1)
-		#sun_light.light_color = nightColorHorizon
 	else:
 		# Day time: 
 		sun_light.light_energy = lerp(sun_light.light_energy, 1.0, 0.1)
-		#sun_light.light_color = horizon_color
 	sun_light.light_color = horizon_color
 
 func _update_time_label() -> void:
-	var current_time = animation_player.current_animation_position
+	var minutes: int = int(time_remaining) / 60
+	var seconds: int = int(time_remaining) % 60
 	
-	var hours: int = int(current_time)
-	var minutes: int = int((current_time - hours) * 60)
-	
-	var period: String = "AM"
-	if hours >= 12:
-		period = "PM"
-	
-	var hours_12: int = hours % 12
-	if hours_12 == 0:
-		hours_12 = 12 
-		
-	var new_time = "%d:%02d %s" % [hours_12, minutes, period]
+	var new_time = "%d:%02d" % [minutes, seconds]
 	EventSystem.HUD_update_time.emit(new_time)
+
+func end_day() -> void:
+	print("Day is over!")

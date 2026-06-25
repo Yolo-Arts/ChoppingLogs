@@ -238,7 +238,6 @@ shadow_enabled = true
 
 [node name="DayNightController" type="Node" parent="." unique_id=1206687905 node_paths=PackedStringArray("sun_light")]
 script = ExtResource("2_jeert")
-dayLengthInSeconds = 192.0
 sun_light = NodePath("../Sun")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DayNightController" unique_id=651528313]
