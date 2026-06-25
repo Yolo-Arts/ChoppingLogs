@@ -60,7 +60,7 @@ shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 
 [node name="HittableTreeOfInfinity" unique_id=640084038 instance=ExtResource("1_img0o")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 30, 0, 0, 0, 100, 0, 0, 0)
 script = ExtResource("2_bq5va")
 hp_bar_draw_dist = 1000.0
 hp_bar_destroy_dist = 1500.0

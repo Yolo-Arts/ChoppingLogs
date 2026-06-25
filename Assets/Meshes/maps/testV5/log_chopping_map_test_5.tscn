@@ -53,7 +53,7 @@ curve = SubResource("Curve3D_3606b")
 
 [sub_resource type="Resource" id="Resource_ewj05"]
 script = ExtResource("4_m755s")
-amount = 2000
+amount = 3000
 reference_frame = 1
 
 [sub_resource type="Resource" id="Resource_ekk76"]
@@ -78,16 +78,55 @@ ray_offset = 5.0
 script = ExtResource("2_3606b")
 stack = Array[ExtResource("3_3r07f")]([SubResource("Resource_ewj05"), SubResource("Resource_ekk76"), SubResource("Resource_oggsf"), SubResource("Resource_04qk4")])
 
-[sub_resource type="Curve3D" id="Curve3D_il3dl"]
+[sub_resource type="Curve3D" id="Curve3D_m755s"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 25.278606, -1.1444092e-05, -82.05543, 0, 0, 0, 0, 0, 0, 32.193504, -1.1444092e-05, 37.083565, 0, 0, 0, 0, 0, 0, 86.18628, -1.1444092e-05, 83.74316, 0, 0, 0, 0, 0, 0, 119.12232, -1.1444092e-05, -60.828518, 0, 0, 0, 0, 0, 0, 69.10508, -1.1444092e-05, -151.02136, 0, 0, 0, 0, 0, 0, 55.478977, -1.1444092e-05, -152.17409),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 25.278606, -1.1444092e-05, -82.05543, 0, 0, 0, 0, 0, 0, 32.193504, -1.1444092e-05, 37.083565, 0, 0, 0, 0, 0, 0, 117.52898, 9.536743e-06, 97.69601, 0, 0, 0, 0, 0, 0, 91.43362, 9.536743e-06, -81.38304, 0, 0, 0, 0, 0, 0, 102.97817, 9.536743e-06, -83.746254, 0, 0, 0, 0, 0, 0, 101.43466, 9.536743e-06, -108.75541, 0, 0, 0, 0, 0, 0, 68.763245, 9.536743e-06, -142.64973, 0, 0, 0, 0, 0, 0, 54.15021, 9.536743e-06, -138.01674),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 6
+point_count = 8
 
 [sub_resource type="Resource" id="Resource_tvdwm"]
 script = ExtResource("10_oggsf")
-curve = SubResource("Curve3D_il3dl")
+curve = SubResource("Curve3D_m755s")
+
+[sub_resource type="Resource" id="Resource_l6b4c"]
+script = ExtResource("4_m755s")
+amount = 1000
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_m2qp3"]
+script = ExtResource("5_8h8vu")
+rotation = Vector3(5, 360, 5)
+scale = Vector3(2.5, 1, 2.5)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_0j60r"]
+script = ExtResource("6_il3dl")
+offset_step = 3.0010000000000048
+use_computeshader = false
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_gmebr"]
+script = ExtResource("7_tvdwm")
+ray_direction = Vector3(0, -5, 0)
+ray_length = 20.0
+ray_offset = 5.0
+max_slope = 45.0
+
+[sub_resource type="Resource" id="Resource_fe3ac"]
+script = ExtResource("2_3606b")
+stack = Array[ExtResource("3_3r07f")]([SubResource("Resource_l6b4c"), SubResource("Resource_m2qp3"), SubResource("Resource_0j60r"), SubResource("Resource_gmebr")])
+
+[sub_resource type="Curve3D" id="Curve3D_60fxa"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 33.92961, 4.7683716e-06, -15.712275, 0, 0, 0, 0, 0, 0, 38.92613, 4.7683716e-06, 39.099083, 0, 0, 0, 0, 0, 0, 79.897575, -5.340576e-05, 68.64279, 0, 0, 0, 0, 0, 0, 84.22789, -5.340576e-05, 73.30758, 0, 0, 0, 0, 0, 0, 100.54984, -5.340576e-05, 45.3188, 0, 0, 0, 0, 0, 0, 102.0488, 4.7683716e-06, -37.870052, 0, 0, 0, 0, 0, 0, 105.04671, 4.7683716e-06, -118.337776, 0, 0, 0, 0, 0, 0, 85.893394, 4.7683716e-06, -121.44765, 0, 0, 0, 0, 0, 0, 45.088505, 4.7683716e-06, -23.098196, 0, 0, 0, 0, 0, 0, 54.91498, -5.340576e-05, -9.492542, 0, 0, 0, 0, 0, 0, 73.069, -5.340576e-05, 3.3356519, 0, 0, 0, 0, 0, 0, 74.90106, -5.340576e-05, 35.600487, 0, 0, 0, 0, 0, 0, 73.73521, -5.340576e-05, 60.47939, 0, 0, 0, 0, 0, 0, 54.08223, -5.340576e-05, -4.4390182),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 14
+
+[sub_resource type="Resource" id="Resource_fsbo1"]
+script = ExtResource("10_oggsf")
+curve = SubResource("Curve3D_60fxa")
 
 [sub_resource type="Resource" id="Resource_2ebru"]
 script = ExtResource("4_m755s")
@@ -126,6 +165,44 @@ point_count = 9
 [sub_resource type="Resource" id="Resource_joufj"]
 script = ExtResource("10_oggsf")
 curve = SubResource("Curve3D_avyj8")
+
+[sub_resource type="Resource" id="Resource_8silf"]
+script = ExtResource("4_m755s")
+amount = 500
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_i4rjv"]
+script = ExtResource("5_8h8vu")
+rotation = Vector3(5, 360, 5)
+scale = Vector3(2.5, 0.5, 2.5)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_urlua"]
+script = ExtResource("6_il3dl")
+offset_step = 3.0010000000000048
+use_computeshader = false
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_va2kx"]
+script = ExtResource("7_tvdwm")
+ray_direction = Vector3(0, -5, 0)
+ray_length = 15.0
+ray_offset = 5.0
+
+[sub_resource type="Resource" id="Resource_0akyu"]
+script = ExtResource("2_3606b")
+stack = Array[ExtResource("3_3r07f")]([SubResource("Resource_8silf"), SubResource("Resource_i4rjv"), SubResource("Resource_urlua"), SubResource("Resource_va2kx")])
+
+[sub_resource type="Curve3D" id="Curve3D_1k2ol"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 22.254879, -1.9073486e-05, -191.77203, 0, 0, 0, 0, 0, 0, 29.325327, -1.9073486e-05, -149.66197, 0, 0, 0, 0, 0, 0, 60.532814, -1.9073486e-05, -234.64084, 0, 0, 0, 0, 0, 0, 47.367157, -1.9073486e-05, -242.79729, 0, 0, 0, 0, 0, 0, 23.392653, -1.9073486e-05, -194.42761),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Resource" id="Resource_kobc1"]
+script = ExtResource("10_oggsf")
+curve = SubResource("Curve3D_1k2ol")
 
 [sub_resource type="Resource" id="Resource_yh4bb"]
 script = ExtResource("4_m755s")
@@ -1470,7 +1547,7 @@ script = ExtResource("9_ekk76")
 shape = SubResource("Resource_o2dv4")
 
 [node name="ScatterTrees2" type="Node3D" parent="." unique_id=1385404027]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.85743, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8968468, 0)
 script = ExtResource("1_oaea7")
 render_mode = 1
 modifier_stack = SubResource("Resource_mchky")
@@ -1488,8 +1565,27 @@ transform = Transform3D(1.8517749, 0, -2.364464e-08, 0, 0.7933832, 0, 5.5187147e
 script = ExtResource("9_ekk76")
 shape = SubResource("Resource_tvdwm")
 
+[node name="ScatterTrees10" type="Node3D" parent="." unique_id=1973536863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.447796, 0)
+script = ExtResource("1_oaea7")
+render_mode = 1
+modifier_stack = SubResource("Resource_fe3ac")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://pt4es15godj0"
+
+[node name="ScatterItem" type="Node3D" parent="ScatterTrees10" unique_id=307815156]
+script = ExtResource("8_ewj05")
+lod_merge_angle = 0.0
+path = "uid://cixmj3omok1sd"
+
+[node name="ScatterShape" type="Node3D" parent="ScatterTrees10" unique_id=320832579]
+transform = Transform3D(1.8517749, 0, -2.364464e-08, 0, 0.7933832, 0, 5.5187147e-08, 0, 0.7933831, 0, 0, 0)
+script = ExtResource("9_ekk76")
+shape = SubResource("Resource_fsbo1")
+
 [node name="ScatterTrees3" type="Node3D" parent="." unique_id=1201884262]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.85743, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.886368, 0)
 script = ExtResource("1_oaea7")
 render_mode = 1
 modifier_stack = SubResource("Resource_u33ad")
@@ -1506,6 +1602,25 @@ path = "uid://cixmj3omok1sd"
 transform = Transform3D(1.8517749, 0, -2.364464e-08, 0, 0.7933832, 0, 5.5187147e-08, 0, 0.7933831, 0, 0, 0)
 script = ExtResource("9_ekk76")
 shape = SubResource("Resource_joufj")
+
+[node name="ScatterTrees4" type="Node3D" parent="." unique_id=293667375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.755142, 0)
+script = ExtResource("1_oaea7")
+render_mode = 1
+modifier_stack = SubResource("Resource_0akyu")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://pt4es15godj0"
+
+[node name="ScatterItem" type="Node3D" parent="ScatterTrees4" unique_id=1840975322]
+script = ExtResource("8_ewj05")
+lod_merge_angle = 0.0
+path = "uid://0i8q6oxo74n8"
+
+[node name="ScatterShape" type="Node3D" parent="ScatterTrees4" unique_id=1135278645]
+transform = Transform3D(1.8517749, 0, -2.364464e-08, 0, 0.7933832, 0, 5.5187147e-08, 0, 0.7933831, 0, 0, 0)
+script = ExtResource("9_ekk76")
+shape = SubResource("Resource_kobc1")
 
 [node name="ScatterTrees9" type="Node3D" parent="." unique_id=825018772]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.85743, 0)

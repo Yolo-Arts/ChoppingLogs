@@ -305,7 +305,7 @@ shape = SubResource("Resource_j0ds4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5001936, 0.13963562, 3.3701801)
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=582853822]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.6944, -3.0475616, 0)
+transform = Transform3D(1.8767056, 0, 0, 0, 1, 0, 0, 0, 2.3238485, -274.6944, -9.047562, 0)
 layers = 256
 mesh = SubResource("PlaneMesh_w28og")
 
@@ -503,7 +503,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -408.14996, -3.3727942, -275.
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -248.74333, 7.2027617, -8.889364)
 
 [node name="HittableTreeOfInfinity2" parent="." unique_id=756079416 instance=ExtResource("40_s0pcj")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -585.1039, 7.2027617, -352.93045)
+transform = Transform3D(100, 0, 0, 0, 50, 0, 0, 0, 100, -585.1039, 7.2027617, -352.93045)
 
 [node name="Player" parent="." unique_id=842877921 instance=ExtResource("4_w28og")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -403.9511, 36.057793, -295.46252)
