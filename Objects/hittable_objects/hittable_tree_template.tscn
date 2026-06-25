@@ -10,7 +10,7 @@ max_health = 20
 metadata/_custom_type_script = "uid://bxwywhofnn8c8"
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_up5o4"]
-height = 2.7314453
+height = 7.5302734
 radius = 0.23730469
 
 [node name="HittableTreeTemplate" unique_id=640084038 groups=["Trees"] instance=ExtResource("1_ay73e")]
