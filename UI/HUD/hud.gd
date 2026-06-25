@@ -42,10 +42,8 @@ func update_tree_text(tree_count: int = 0):
 	if tree_count:
 		trees_in_scene = tree_count
 	else:
-		print("Tree count uninitialised")
 		trees_in_scene = get_tree().get_nodes_in_group("Trees").size()
 		
-	print(trees_in_scene)
 	trees_remaining_label.text = "Trees Remaining: " + str(trees_in_scene)
 	apply_text_effect(trees_remaining_label, Color.YELLOW)
 	

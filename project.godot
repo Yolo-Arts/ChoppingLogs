@@ -164,6 +164,10 @@ close_menu={
 3d_physics/layer_7="trees"
 3d_physics/layer_8="interactable"
 
+[rendering]
+
+occlusion_culling/use_occlusion_culling=true
+
 [shader_globals]
 
 diffuse_curve={
