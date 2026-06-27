@@ -1,6 +1,6 @@
 extends Node
 
-@export var countdownDuration: float = 20.0
+@export var countdownDuration: float = 40.0
 @export var startHour: float = 6.0         
 @export var endHour: float = 22.0          
 
@@ -125,7 +125,7 @@ func _update_time_label() -> void:
 	var seconds: int = int(time_remaining) % 60
 	
 	var new_time = "%d:%02d" % [minutes, seconds]
-	EventSystem.HUD_update_time.emit(new_time)
+	EventSystem.HUD_update_time.emit(new_time, int(time_remaining))
 
 func end_day() -> void:
 	print("Day is over!")

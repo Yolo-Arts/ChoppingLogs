@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	EventSystem.TRE_tree_spawned.connect(update_tree_text)
 	EventSystem.TRE_tree_cut.connect(check_if_game_won)
-	EventSystem.HUD_update_time.connect(func(new_time: String): time_label.text = new_time)
+	EventSystem.HUD_update_time.connect(_on_time_updated)
 	EventSystem.QUO_update_quota_text.connect(update_quota_text)
 
 func reset_hud_elements():
@@ -61,3 +61,38 @@ func check_if_game_won():
 		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.WinScreen)
 	else:
 		update_tree_text(tree_count)
+
+var _time_pop_tween: Tween
+var _last_seconds_left: int = -1
+
+func _on_time_updated(new_time: String, seconds_left: int) -> void:
+	time_label.text = new_time
+
+	var target_color: Color = Color.WHITE
+	var target_scale: Vector2 = Vector2.ONE
+
+	if seconds_left <= 10:
+		target_color = Color.RED
+		target_scale = Vector2(1.3, 1.3)
+	elif seconds_left <= 30:
+		target_color = Color.ORANGE
+		target_scale = Vector2(1.15, 1.15)
+
+	time_label.modulate = target_color
+
+	if seconds_left != _last_seconds_left:
+		_last_seconds_left = seconds_left
+
+		if seconds_left <= 30:
+			time_label.pivot_offset = time_label.size / 2
+
+			if _time_pop_tween and _time_pop_tween.is_valid():
+				_time_pop_tween.kill()
+
+			_time_pop_tween = create_tween().set_parallel(true)
+			_time_pop_tween.tween_property(time_label, "scale", target_scale * 1.2, 0.05)\
+				.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+			_time_pop_tween.chain().tween_property(time_label, "scale", target_scale, 0.15)\
+				.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+		else:
+			time_label.scale = Vector2.ONE
