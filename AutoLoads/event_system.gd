@@ -93,3 +93,4 @@ var QUO_check_quota: Callable
 var QUO_get_quota_amount: Callable
 signal QUO_update_quota_text
 signal QUO_increase_quota_amount
+signal QUO_reset_quota

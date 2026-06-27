@@ -1,6 +1,6 @@
 extends Node
 
-@export var countdownDuration: float = 60.0
+@export var countdownDuration: float = 20.0
 @export var startHour: float = 6.0         
 @export var endHour: float = 22.0          
 
@@ -129,3 +129,9 @@ func _update_time_label() -> void:
 
 func end_day() -> void:
 	print("Day is over!")
+	var met_quota = EventSystem.QUO_check_quota.call()
+	print("Met quota:", met_quota)
+	if met_quota:
+		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PlaceholderDayEnd)
+	else:
+		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.LoseScreen)

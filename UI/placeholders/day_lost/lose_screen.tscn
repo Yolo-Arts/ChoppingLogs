@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bfr0s5i4kek4"]
+
+[ext_resource type="Script" uid="uid://lxa7it1b53y6" path="res://UI/placeholders/day_lost/lose_screen.gd" id="1_5jbei"]
+[ext_resource type="Theme" uid="uid://ks0hgvfqbimr" path="res://Assets/UI/theme.tres" id="1_tatu1"]
+
+[node name="LoseScreen" type="Control" unique_id=308190624]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5jbei")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=759243745]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VSplitContainer" parent="MarginContainer" unique_id=1424032386]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 36
+split_offsets = PackedInt32Array(-275, 0)
+split_offset = -275
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1017658038]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_tatu1")
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1727844237]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_tatu1")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer/Panel" unique_id=988234526]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -50.5
+offset_right = 96.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 18
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/Panel/MarginContainer" unique_id=1805733023]
+layout_mode = 2
+theme = ExtResource("1_tatu1")
+text = "Quota NOT met :("
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=337302046]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_tatu1")
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/PanelContainer2" unique_id=957764431]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_tatu1")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer2/Panel" unique_id=1007744803]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -50.5
+offset_right = 96.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 18
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer2/Panel/MarginContainer" unique_id=69489306]
+layout_mode = 2
+theme = ExtResource("1_tatu1")
+text = "You LOSE! 
+You did not chop enough trees."
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=496295848]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="PlayAgainButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1938490313]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Restart Game"
+
+[node name="BackToMenuButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1798630261]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back to Menu"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
