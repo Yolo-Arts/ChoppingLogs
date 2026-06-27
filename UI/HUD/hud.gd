@@ -3,6 +3,7 @@ extends Control
 @onready var money_label: Label = %MoneyLabel
 @onready var trees_remaining_label: Label = %TreesRemainingLabel
 @onready var time_label: Label = %TimeLabel
+@onready var quota_amount: Label = %QuotaAmount
 
 
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _ready() -> void:
 	EventSystem.TRE_tree_spawned.connect(update_tree_text)
 	EventSystem.TRE_tree_cut.connect(check_if_game_won)
 	EventSystem.HUD_update_time.connect(func(new_time: String): time_label.text = new_time)
+	EventSystem.QUO_update_quota_text.connect(update_quota_text)
 
 func reset_hud_elements():
 	money_label.text = "$" + str(0.0)
@@ -22,6 +24,9 @@ func reset_hud_elements():
 func update_text(money: float, color: Color):
 	money_label.text = "$" + str(money)
 	apply_text_effect(money_label, color)
+
+func update_quota_text() -> void:
+	quota_amount.text = "Quota: $" + str(EventSystem.QUO_get_quota_amount.call())
 
 func apply_text_effect(label: Label, color: Color):
 	var tween = create_tween().set_parallel(true)

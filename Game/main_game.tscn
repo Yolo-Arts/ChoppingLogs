@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://hi3sg4yx2a50" path="res://Game/Managers/hud_controller.gd" id="2_dj6w8"]
 [ext_resource type="Script" uid="uid://bgp1cbwstmloy" path="res://Game/Managers/music_controller.gd" id="3_1iqn0"]
 [ext_resource type="Script" uid="uid://cjpfi8480l5h1" path="res://Game/Managers/sfx_controller.gd" id="4_o2gyw"]
+[ext_resource type="PackedScene" uid="uid://d0f4k1imyxjx5" path="res://Game/Managers/quota_controller.tscn" id="7_1evyo"]
 
 [node name="MainGame" type="Node" unique_id=35583829]
 
@@ -28,3 +29,5 @@ script = ExtResource("3_1iqn0")
 
 [node name="SfxController" type="Node" parent="." unique_id=1201352419]
 script = ExtResource("4_o2gyw")
+
+[node name="QuotaController" parent="." unique_id=39112106 instance=ExtResource("7_1evyo")]

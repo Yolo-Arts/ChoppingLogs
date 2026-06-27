@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d0f4k1imyxjx5"]
+
+[ext_resource type="Script" uid="uid://cwkcbcachvnp6" path="res://Game/Managers/quota_controller.gd" id="1_rnnox"]
+
+[node name="QuotaController" type="Node" unique_id=39112106]
+script = ExtResource("1_rnnox")
