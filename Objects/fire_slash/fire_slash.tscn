@@ -14,10 +14,26 @@ render_priority = 0
 shader = ExtResource("1_v1qq2")
 shader_parameter/Texture2DParameter2 = ExtResource("2_va1wu")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fmhom"]
+gravity = Vector3(0, 0, 0)
+color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dwfjx"]
+gravity = Vector3(0, 0, 0)
+color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_86ql0"]
+gravity = Vector3(0, 0, 0)
+color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_va1wu"]
 render_priority = 0
 shader = ExtResource("1_v1qq2")
 shader_parameter/Texture2DParameter2 = ExtResource("2_va1wu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_faahu"]
+gravity = Vector3(0, 0, 0)
+color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fmhom"]
 render_priority = 0
@@ -27,6 +43,10 @@ shader_parameter/Vector2Parameter = Vector2(0, -3)
 shader_parameter/MainText = ExtResource("6_3exdv")
 shader_parameter/GradientTex = ExtResource("2_va1wu")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l0s0m"]
+gravity = Vector3(0, 0, 0)
+color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fmhom"]
 radius = 0.5756836
 height = 6.413086
@@ -35,50 +55,50 @@ height = 6.413086
 collision_mask = 17
 script = ExtResource("1_dwfjx")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=219537278]
+[node name="CPUParticles3D" type="GPUParticles3D" parent="." unique_id=2130155180]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8121053)
 material_override = SubResource("ShaderMaterial_h44vy")
 amount = 1
 lifetime = 0.02
-mesh = ExtResource("3_v1qq2")
-gravity = Vector3(0, 0, 0)
-color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_fmhom")
+draw_pass_1 = ExtResource("3_v1qq2")
 
-[node name="CPUParticles3D4" type="CPUParticles3D" parent="." unique_id=1594402762]
+[node name="CPUParticles3D4" type="GPUParticles3D" parent="." unique_id=1577344709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8121053)
 material_override = SubResource("ShaderMaterial_h44vy")
 amount = 1
 lifetime = 0.02
-mesh = ExtResource("5_fmhom")
-gravity = Vector3(0, 0, 0)
-color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_dwfjx")
+draw_pass_1 = ExtResource("5_fmhom")
 
-[node name="CPUParticles3D5" type="CPUParticles3D" parent="." unique_id=843507368]
+[node name="CPUParticles3D5" type="GPUParticles3D" parent="." unique_id=1939754682]
 transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, -0.02350229, 0, -0.8121053)
 material_override = SubResource("ShaderMaterial_h44vy")
 amount = 1
 lifetime = 0.02
-mesh = ExtResource("5_fmhom")
-gravity = Vector3(0, 0, 0)
-color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_86ql0")
+draw_pass_1 = ExtResource("5_fmhom")
 
-[node name="CPUParticles3D3" type="CPUParticles3D" parent="." unique_id=1166113168]
+[node name="CPUParticles3D3" type="GPUParticles3D" parent="." unique_id=1069185145]
 transform = Transform3D(1.952423, 0, -1.509958e-07, 0, -0.018359384, 0, 2.9480768e-07, 0, 1, 0, 0, 0.00609231)
 sorting_offset = -2.0
 material_override = SubResource("ShaderMaterial_va1wu")
 amount = 1
 lifetime = 0.02
-mesh = ExtResource("1_54e2s")
-gravity = Vector3(0, 0, 0)
-color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_faahu")
+draw_pass_1 = ExtResource("1_54e2s")
 
-[node name="CPUParticles3D2" type="CPUParticles3D" parent="." unique_id=1838757674]
+[node name="CPUParticles3D2" type="GPUParticles3D" parent="." unique_id=142160582]
 material_override = SubResource("ShaderMaterial_fmhom")
 amount = 1
 lifetime = 0.02
-mesh = ExtResource("1_54e2s")
-gravity = Vector3(0, 0, 0)
-color = Color(2.3983328, 0.6348788, 0.28218782, 0.23921569)
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_l0s0m")
+draw_pass_1 = ExtResource("1_54e2s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=87805238]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
