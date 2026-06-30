@@ -2,12 +2,32 @@
 
 [ext_resource type="Shader" uid="uid://whc3xvmgjd25" path="res://Shaders/gaussianBlur.gdshader" id="1_k1q3y"]
 [ext_resource type="Script" uid="uid://jfk5filh83k" path="res://UI/pause_screen.gd" id="1_pqas3"]
+[ext_resource type="Shader" uid="uid://cw83ncdeyxqne" path="res://Shaders/red_vignette.gdshader" id="3_4pmby"]
+[ext_resource type="Theme" uid="uid://b6i7mrm1os0yh" path="res://UI/PauseMenu.tres" id="4_a5oyk"]
+[ext_resource type="Shader" uid="uid://dhxex4f6dx2b5" path="res://Shaders/pause_screen.gdshader" id="5_675ql"]
+[ext_resource type="Texture2D" uid="uid://dpfu4qf0hist0" path="res://Assets/UI/Icons/SelectionPauseMenu.png" id="5_fd26k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p4nw2"]
 shader = ExtResource("1_k1q3y")
-shader_parameter/blur_amount = 2.5
-shader_parameter/mix_amount = 0.5
+shader_parameter/blur_amount = 2.50000021375
+shader_parameter/mix_amount = 0.2610000123975
 shader_parameter/color_over = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7u4m4"]
+shader = ExtResource("3_4pmby")
+shader_parameter/vignette_intensity = 1.215
+shader_parameter/vignette_opacity = 0.6730000319675
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cf1dr"]
+shader = ExtResource("5_675ql")
+shader_parameter/speed = 8.3610003971475
+shader_parameter/amplitude = 0.0450000021375
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p52lk"]
+shader = ExtResource("5_675ql")
+shader_parameter/speed = 8.3610003971475
+shader_parameter/amplitude = 0.078000003705
 
 [node name="PauseScreen" type="Control" unique_id=608497350]
 process_mode = 3
@@ -28,6 +48,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Vignette" type="ColorRect" parent="." unique_id=173471046]
+material = SubResource("ShaderMaterial_7u4m4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=271093209]
 layout_mode = 1
 anchors_preset = 4
@@ -37,49 +66,107 @@ offset_top = -33.5
 offset_right = 62.0
 offset_bottom = 33.5
 grow_vertical = 2
-theme_override_constants/margin_left = 95
+theme_override_constants/margin_left = 180
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=439499695]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1439781125]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=837894680]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
-
-[node name="Panel" type="Panel" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1219787686]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=944545004]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=944545004]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="PausedLbl" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=872154798]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=185819042]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_constants/separation = 25
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1624963820]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 73
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=749085543]
+layout_mode = 2
+theme_override_constants/h_separation = 46
+theme_override_constants/v_separation = 41
+columns = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/GridContainer" unique_id=1094828918]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 73
+
+[node name="PausedLbl" type="Label" parent="MarginContainer/GridContainer" unique_id=872154798]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_a5oyk")
+theme_override_font_sizes/font_size = 150
 text = "PAUSED"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2140729573]
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/GridContainer" unique_id=58659695]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+theme_override_constants/separation = 73
 
-[node name="ResumeBtn" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=508827634]
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/GridContainer" unique_id=270934285]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 73
+
+[node name="ContinueIcon" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=1294581528]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_cf1dr")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_fd26k")
+
+[node name="ResumeBtn" type="Button" parent="MarginContainer/GridContainer" unique_id=508827634]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = " Resume "
+size_flags_horizontal = 0
+theme = ExtResource("4_a5oyk")
+theme_override_font_sizes/font_size = 128
+text = "Continue"
 
-[node name="OptionsBtn" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1848149179]
+[node name="SettingsIcon" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=1958968408]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_p52lk")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_fd26k")
+
+[node name="OptionsBtn" type="Button" parent="MarginContainer/GridContainer" unique_id=1848149179]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = " Options "
+size_flags_horizontal = 0
+theme = ExtResource("4_a5oyk")
+theme_override_font_sizes/font_size = 128
+text = "Settings"
 
-[node name="MainMenuBtn" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1709640474]
+[node name="ExitIcon" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=871746045]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_p52lk")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_fd26k")
+
+[node name="MainMenuBtn" type="Button" parent="MarginContainer/GridContainer" unique_id=1709640474]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = " Main Menu "
+size_flags_horizontal = 0
+theme = ExtResource("4_a5oyk")
+theme_override_font_sizes/font_size = 128
+text = "Exit"
+
+[connection signal="mouse_entered" from="MarginContainer/GridContainer/ResumeBtn" to="." method="_on_resume_btn_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/GridContainer/ResumeBtn" to="." method="_on_resume_btn_mouse_exited"]
+[connection signal="mouse_entered" from="MarginContainer/GridContainer/OptionsBtn" to="." method="_on_options_btn_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/GridContainer/OptionsBtn" to="." method="_on_options_btn_mouse_exited"]
+[connection signal="mouse_entered" from="MarginContainer/GridContainer/MainMenuBtn" to="." method="_on_main_menu_btn_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/GridContainer/MainMenuBtn" to="." method="_on_main_menu_btn_mouse_exited"]
