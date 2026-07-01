@@ -58,26 +58,26 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=140087767]
+[node name="ResultsContainer" type="PanelContainer" parent="MarginContainer" unique_id=140087767]
 custom_minimum_size = Vector2(900, 900)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_j0io5")
 
-[node name="SettingsTitleContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1279827888]
+[node name="SettingsTitleContainer" type="MarginContainer" parent="MarginContainer/ResultsContainer" unique_id=1279827888]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/margin_top = -86
 
-[node name="DetailsPanel" type="Panel" parent="MarginContainer/PanelContainer/SettingsTitleContainer" unique_id=2062407031]
+[node name="DetailsPanel" type="Panel" parent="MarginContainer/ResultsContainer/SettingsTitleContainer" unique_id=2062407031]
 custom_minimum_size = Vector2(700, 90)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j0io5")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/SettingsTitleContainer/DetailsPanel" unique_id=1416764836]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ResultsContainer/SettingsTitleContainer/DetailsPanel" unique_id=1416764836]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,7 +86,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 13
 
-[node name="StatsForDayXLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsTitleContainer/DetailsPanel/MarginContainer" unique_id=1330549208]
+[node name="StatsForDayXLabel" type="Label" parent="MarginContainer/ResultsContainer/SettingsTitleContainer/DetailsPanel/MarginContainer" unique_id=1330549208]
 layout_mode = 2
 theme = ExtResource("1_j0io5")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -94,29 +94,29 @@ theme_override_font_sizes/font_size = 48
 text = "Stats for Day x"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1452182418]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ResultsContainer" unique_id=1452182418]
 layout_mode = 2
 theme_override_constants/separation = 27
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=2134868319]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=2134868319]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 13
 
-[node name="QuotaProgressContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1542223791]
+[node name="QuotaProgressContainer" type="VBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=1542223791]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/QuotaProgressContainer" unique_id=1347950099]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer/QuotaProgressContainer" unique_id=1347950099]
 layout_mode = 2
 
-[node name="QuotaLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/QuotaProgressContainer/HBoxContainer" unique_id=1260574677]
+[node name="QuotaLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/QuotaProgressContainer/HBoxContainer" unique_id=1260574677]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 32
 text = "Quota:"
 
-[node name="QutoaPercentage" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/QuotaProgressContainer/HBoxContainer" unique_id=818917484]
+[node name="QutoaPercentage" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/QuotaProgressContainer/HBoxContainer" unique_id=818917484]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -124,7 +124,7 @@ theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 32
 text = "100%"
 
-[node name="QuotaProgressBar" type="ProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer/QuotaProgressContainer" unique_id=1672725017]
+[node name="QuotaProgressBar" type="ProgressBar" parent="MarginContainer/ResultsContainer/VBoxContainer/QuotaProgressContainer" unique_id=1672725017]
 modulate = Color(0.09803922, 0.90588236, 0.3137255, 1)
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
@@ -132,12 +132,12 @@ theme = ExtResource("1_j0io5")
 value = 30.14
 show_percentage = false
 
-[node name="DetailsPanel" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1532535304]
+[node name="DetailsPanel" type="Panel" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=1532535304]
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j0io5")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel" unique_id=1833863319]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel" unique_id=1833863319]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -149,11 +149,11 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer" unique_id=467395217]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer" unique_id=467395217]
 layout_mode = 2
 theme_override_constants/separation = 19
 
-[node name="DetailsTitle" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=321837461]
+[node name="DetailsTitle" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=321837461]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("1_j0io5")
@@ -162,23 +162,23 @@ theme_override_font_sizes/font_size = 48
 text = "Details"
 horizontal_alignment = 1
 
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=1886841189]
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=1886841189]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="HBoxContainer" type="GridContainer" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=1137798272]
+[node name="HBoxContainer" type="GridContainer" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=1137798272]
 layout_mode = 2
 theme_override_constants/v_separation = 20
 columns = 2
 
-[node name="TreesCutLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1372370150]
+[node name="TreesCutLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1372370150]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Tree's Cut"
 
-[node name="TreesCutCountLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=264138727]
+[node name="TreesCutCountLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=264138727]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -186,13 +186,13 @@ theme_override_font_sizes/font_size = 32
 text = "143"
 horizontal_alignment = 2
 
-[node name="TodaysRevenueLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=84786345]
+[node name="TodaysRevenueLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=84786345]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Today's Revenue"
 
-[node name="TodaysRevenueNumberLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=809617605]
+[node name="TodaysRevenueNumberLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=809617605]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -200,13 +200,13 @@ theme_override_font_sizes/font_size = 32
 text = "$8,900"
 horizontal_alignment = 2
 
-[node name="QuotaLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=376258611]
+[node name="QuotaLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=376258611]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Quota"
 
-[node name="QuotaNumberLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1078943975]
+[node name="QuotaNumberLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1078943975]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -214,23 +214,23 @@ theme_override_font_sizes/font_size = 32
 text = "-$2,228"
 horizontal_alignment = 2
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=676478159]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=676478159]
 layout_mode = 2
 theme_override_constants/separation = 18
 theme_override_styles/separator = SubResource("StyleBoxLine_j0io5")
 
-[node name="HBoxContainer2" type="GridContainer" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=1745176429]
+[node name="HBoxContainer2" type="GridContainer" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=1745176429]
 layout_mode = 2
 theme_override_constants/v_separation = 20
 columns = 2
 
-[node name="TreesCutLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1733189618]
+[node name="TreesCutLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1733189618]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Balance"
 
-[node name="TreesCutCountLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=796729257]
+[node name="TreesCutCountLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=796729257]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -238,13 +238,13 @@ theme_override_font_sizes/font_size = 32
 text = "$6678"
 horizontal_alignment = 2
 
-[node name="TodaysRevenueLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=596092588]
+[node name="TodaysRevenueLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=596092588]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Prestige Points Earned"
 
-[node name="TodaysRevenueNumberLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2111601791]
+[node name="TodaysRevenueNumberLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2111601791]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -252,19 +252,19 @@ theme_override_font_sizes/font_size = 32
 text = "178p"
 horizontal_alignment = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=354291234]
+[node name="ButtonsContainer" type="HBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=354291234]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 70
 
-[node name="ContinueButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1441616487]
+[node name="ContinueButton" type="Button" parent="MarginContainer/ResultsContainer/VBoxContainer/ButtonsContainer" unique_id=1441616487]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_n4wge")
 theme_override_font_sizes/font_size = 48
 text = "Press To Continue"
 
-[node name="BackToMenu" type="TextureButton" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=2022499057]
+[node name="BackToMenu" type="TextureButton" parent="MarginContainer/ResultsContainer/VBoxContainer/ButtonsContainer" unique_id=2022499057]
 layout_mode = 2
 texture_normal = ExtResource("3_gj08v")
 texture_pressed = ExtResource("4_k5toj")
