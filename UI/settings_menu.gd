@@ -5,6 +5,15 @@ extends Bulletin
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
 
+@onready var settings_container: PanelContainer = %SettingsContainer
+@onready var settings_title_container: MarginContainer = %SettingsTitleContainer
+@onready var close_select_icon: TextureRect = %CloseSelectIcon
+@onready var reset_select_icon: TextureRect = %ResetSelectIcon
+@onready var save_select_icon: TextureRect = %SaveSelectIcon
+@onready var close_btn: Button = %CloseBtn
+@onready var reset_defaults_btn: Button = %ResetDefaultsBtn
+@onready var save_settings_btn: Button = %SaveSettingsBtn
+
 var user_prefs: UserPrefs
 var open_pause_menu_after_closing = false
 
@@ -29,6 +38,19 @@ func _ready() -> void:
 		sfx_slider.value = user_prefs.sfx_volume
 	
 	populate_resolutions()
+	
+	close_select_icon.modulate.a = 0
+	reset_select_icon.modulate.a = 0
+	save_select_icon.modulate.a = 0
+	settings_title_container.modulate.a = 0
+	settings_title_container.pivot_offset.x = settings_container.size.x / 2
+	
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(settings_container, "scale", Vector2.ONE, 0.5).from(Vector2.ZERO)
+	tween.tween_property(settings_title_container, "scale", Vector2.ONE, 0.4).from(Vector2.ZERO)
+	tween.parallel().tween_property(settings_title_container, "modulate:a", 1, 0.4)
 
 func populate_resolutions() -> void:
 	resolution_selector.clear()
@@ -100,3 +122,39 @@ func _on_resolution_selector_item_selected(index: int) -> void:
 	DisplayServer.window_set_position(window_pos)
 	
 	user_prefs.resolution_str = res_text
+
+
+func _on_close_btn_mouse_entered() -> void:
+	var tween = create_tween()
+	tween.tween_property(close_btn, "scale", Vector2(1.1, 1.1), 0.1)
+	close_select_icon.modulate.a = 1
+
+
+func _on_reset_defaults_btn_mouse_entered() -> void:
+	var tween = create_tween()
+	tween.tween_property(reset_defaults_btn, "scale", Vector2(1.1, 1.1), 0.1)
+	reset_select_icon.modulate.a = 1
+
+
+func _on_save_settings_btn_mouse_entered() -> void:
+	var tween = create_tween()
+	tween.tween_property(save_settings_btn, "scale", Vector2(1.1, 1.1), 0.1)
+	save_select_icon.modulate.a = 1
+
+
+func _on_close_btn_mouse_exited() -> void:
+	var tween = create_tween()
+	tween.tween_property(close_btn, "scale", Vector2.ONE, 0.1)
+	close_select_icon.modulate.a = 0
+
+
+func _on_reset_defaults_btn_mouse_exited() -> void:
+	var tween = create_tween()
+	tween.tween_property(reset_defaults_btn, "scale", Vector2.ONE, 0.1)
+	reset_select_icon.modulate.a = 0
+
+
+func _on_save_settings_btn_mouse_exited() -> void:
+	var tween = create_tween()
+	tween.tween_property(save_settings_btn, "scale", Vector2.ONE, 0.1)
+	save_select_icon.modulate.a = 0

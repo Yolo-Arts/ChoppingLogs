@@ -2,12 +2,38 @@
 
 [ext_resource type="Script" uid="uid://du1avlrimx8tk" path="res://UI/settings_menu.gd" id="1_77no7"]
 [ext_resource type="Shader" uid="uid://whc3xvmgjd25" path="res://Shaders/gaussianBlur.gdshader" id="2_jkv84"]
+[ext_resource type="Theme" uid="uid://b6i7mrm1os0yh" path="res://UI/PauseMenu.tres" id="3_0adsa"]
+[ext_resource type="Shader" uid="uid://cw83ncdeyxqne" path="res://Shaders/red_vignette.gdshader" id="3_80a2v"]
+[ext_resource type="Shader" uid="uid://dhxex4f6dx2b5" path="res://Shaders/pause_screen.gdshader" id="4_mn6w0"]
+[ext_resource type="Texture2D" uid="uid://kam72hsf7bsy" path="res://Assets/UI/Icons/SelectionIconSmall.png" id="5_jqcb0"]
+[ext_resource type="Texture2D" uid="uid://dyj5gpji268o" path="res://Assets/UI/theme/panel_light_brown.png" id="7_jqcb0"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0adsa"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bh3j5"]
 shader = ExtResource("2_jkv84")
-shader_parameter/blur_amount = 2.5
-shader_parameter/mix_amount = 0.5
+shader_parameter/blur_amount = 2.50000021375
+shader_parameter/mix_amount = 0.2610000123975
 shader_parameter/color_over = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mn6w0"]
+shader = ExtResource("3_80a2v")
+shader_parameter/vignette_intensity = 1.215
+shader_parameter/vignette_opacity = 0.6730000319675
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ngv6"]
+shader = ExtResource("4_mn6w0")
+shader_parameter/speed = 8.3610003971475
+shader_parameter/amplitude = 0.0450000021375
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ngv6"]
+texture = ExtResource("7_jqcb0")
+texture_margin_left = 100.0
+texture_margin_top = 45.0
+texture_margin_right = 100.0
+texture_margin_bottom = 34.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 698, 151)
 
 [node name="SettingsMenu" type="Control" unique_id=2129446040]
 process_mode = 3
@@ -20,8 +46,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_77no7")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=128800599]
-material = SubResource("ShaderMaterial_0adsa")
+[node name="Blur" type="ColorRect" parent="." unique_id=13213646]
+material = SubResource("ShaderMaterial_bh3j5")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,140 +55,274 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1413402330]
+[node name="Vignette" type="ColorRect" parent="." unique_id=1111176383]
+material = SubResource("ShaderMaterial_mn6w0")
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -358.0
-offset_top = -252.0
-offset_right = 358.0
-offset_bottom = 252.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer" unique_id=128127818]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Panel" unique_id=186689825]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1617694004]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -276.0
-offset_right = 276.0
-offset_bottom = 258.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 109
+theme_override_constants/margin_bottom = 64
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Panel/VBoxContainer" unique_id=586008946]
+[node name="OptionsBackContainer" type="GridContainer" parent="MarginContainer" unique_id=1509848041]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/h_separation = 23
+theme_override_constants/v_separation = 30
+columns = 2
+
+[node name="CloseSelectIcon" type="TextureRect" parent="MarginContainer/OptionsBackContainer" unique_id=1223925611]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8ngv6")
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/margin_top = 30
+size_flags_vertical = 0
+texture = ExtResource("5_jqcb0")
+stretch_mode = 2
 
-[node name="OptionsTitle" type="Label" parent="PanelContainer/Panel/VBoxContainer/MarginContainer" unique_id=121406686]
+[node name="CloseBtn" type="Button" parent="MarginContainer/OptionsBackContainer" unique_id=1790599544]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Options"
+size_flags_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_0adsa")
+theme_override_font_sizes/font_size = 48
+text = " Close"
+alignment = 0
 
-[node name="TopSeperator" type="HSeparator" parent="PanelContainer/Panel/VBoxContainer" unique_id=794498178]
+[node name="ResetSelectIcon" type="TextureRect" parent="MarginContainer/OptionsBackContainer" unique_id=294806512]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8ngv6")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_jqcb0")
+stretch_mode = 2
+
+[node name="ResetDefaultsBtn" type="Button" parent="MarginContainer/OptionsBackContainer" unique_id=1492862174]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_0adsa")
+theme_override_font_sizes/font_size = 48
+text = " Reset Defaults "
+alignment = 0
+
+[node name="SaveSelectIcon" type="TextureRect" parent="MarginContainer/OptionsBackContainer" unique_id=6029108]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8ngv6")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_jqcb0")
+stretch_mode = 2
+
+[node name="SaveSettingsBtn" type="Button" parent="MarginContainer/OptionsBackContainer" unique_id=387430187]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_0adsa")
+theme_override_font_sizes/font_size = 48
+text = " Save Settings "
+alignment = 0
+
+[node name="SettingsContainer" type="PanelContainer" parent="MarginContainer" unique_id=1413402330]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1200, 850)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("3_0adsa")
+
+[node name="SettingsTitleContainer" type="MarginContainer" parent="MarginContainer/SettingsContainer" unique_id=586008946]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_top = -140
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/SettingsContainer/SettingsTitleContainer" unique_id=1905619165]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_8ngv6")
+
+[node name="OptionsTitle" type="Label" parent="MarginContainer/SettingsContainer/SettingsTitleContainer/PanelContainer" unique_id=121406686]
+layout_mode = 2
+theme = ExtResource("3_0adsa")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 96
+text = "Settings"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/SettingsContainer" unique_id=2025436670]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/SettingsContainer/MarginContainer" unique_id=186689825]
+layout_mode = 2
+
+[node name="TopSeperator" type="HSeparator" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer" unique_id=794498178]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="TopSeperator2" type="HSeparator" parent="PanelContainer/Panel/VBoxContainer" unique_id=414772498]
+[node name="AudioLabelTitle" type="Label" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer" unique_id=1731402746]
 layout_mode = 2
-theme_override_constants/separation = 30
+size_flags_horizontal = 4
+theme = ExtResource("3_0adsa")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "Audio"
+horizontal_alignment = 1
 
-[node name="OptionsContainer" type="GridContainer" parent="PanelContainer/Panel/VBoxContainer" unique_id=725174025]
+[node name="Panel" type="Panel" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer" unique_id=128127818]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel" unique_id=1459533138]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="OptionsContainer" type="GridContainer" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=725174025]
 layout_mode = 2
 theme_override_constants/v_separation = 30
 columns = 3
 
-[node name="MusicLabel" type="Label" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=1822630746]
+[node name="MusicLabel" type="Label" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer" unique_id=1822630746]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("3_0adsa")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
 text = "Music"
 
-[node name="VSeparator" type="VSeparator" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=1420684041]
-layout_mode = 2
-theme_override_constants/separation = 30
-
-[node name="MusicSlider" type="HSlider" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=1154025234]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-mouse_default_cursor_shape = 6
-max_value = 1.0
-step = 0.05
-value = 0.8
-
-[node name="SFXLabel" type="Label" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=430768669]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "SFX"
-
-[node name="VSeparator2" type="VSeparator" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=991139976]
-layout_mode = 2
-
-[node name="SFXSlider" type="HSlider" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=832692617]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-mouse_default_cursor_shape = 6
-max_value = 1.0
-step = 0.05
-value = 0.8
-
-[node name="SFXLabel2" type="Label" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=1702839736]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Resolution"
-
-[node name="VSeparator3" type="VSeparator" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=627106145]
-layout_mode = 2
-
-[node name="ResolutionSelector" type="OptionButton" parent="PanelContainer/Panel/VBoxContainer/OptionsContainer" unique_id=1584301784]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="BottomSeperator" type="HSeparator" parent="PanelContainer/Panel/VBoxContainer" unique_id=947347240]
-layout_mode = 2
-theme_override_constants/separation = 30
-
-[node name="BottomSeperator2" type="HSeparator" parent="PanelContainer/Panel/VBoxContainer" unique_id=1009826066]
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer" unique_id=1420684041]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/separation = 60
-
-[node name="OptionsBackContainer" type="HBoxContainer" parent="PanelContainer/Panel/VBoxContainer" unique_id=1164706461]
-layout_mode = 2
-size_flags_horizontal = 4
+theme = ExtResource("3_0adsa")
 theme_override_constants/separation = 30
 
-[node name="CloseBtn" type="Button" parent="PanelContainer/Panel/VBoxContainer/OptionsBackContainer" unique_id=1790599544]
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer" unique_id=1154025234]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 2
-mouse_default_cursor_shape = 2
-text = " Close"
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_default_cursor_shape = 6
+theme = ExtResource("3_0adsa")
+max_value = 1.0
+step = 0.05
+value = 0.8
 
-[node name="ResetDefaultsBtn" type="Button" parent="PanelContainer/Panel/VBoxContainer/OptionsBackContainer" unique_id=1492862174]
+[node name="SFXLabel" type="Label" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer" unique_id=430768669]
 layout_mode = 2
-size_flags_horizontal = 10
-mouse_default_cursor_shape = 2
-text = " Reset Defaults "
+theme = ExtResource("3_0adsa")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "SFX"
 
-[node name="SaveSettingsBtn" type="Button" parent="PanelContainer/Panel/VBoxContainer/OptionsBackContainer" unique_id=387430187]
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer" unique_id=991139976]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-text = " Save Settings "
+theme = ExtResource("3_0adsa")
+theme_override_constants/separation = 266
 
-[connection signal="value_changed" from="PanelContainer/Panel/VBoxContainer/OptionsContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="PanelContainer/Panel/VBoxContainer/OptionsContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="item_selected" from="PanelContainer/Panel/VBoxContainer/OptionsContainer/ResolutionSelector" to="." method="_on_resolution_selector_item_selected"]
-[connection signal="pressed" from="PanelContainer/Panel/VBoxContainer/OptionsBackContainer/CloseBtn" to="." method="_on_close_btn_pressed"]
-[connection signal="pressed" from="PanelContainer/Panel/VBoxContainer/OptionsBackContainer/ResetDefaultsBtn" to="." method="_on_reset_defaults_btn_pressed"]
-[connection signal="pressed" from="PanelContainer/Panel/VBoxContainer/OptionsBackContainer/SaveSettingsBtn" to="." method="_on_save_settings_btn_pressed"]
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer" unique_id=832692617]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_default_cursor_shape = 6
+theme = ExtResource("3_0adsa")
+max_value = 1.0
+step = 0.05
+value = 0.8
+
+[node name="BottomSeperator" type="HSeparator" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer" unique_id=947347240]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="BottomSeperator2" type="HSeparator" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer" unique_id=1478949100]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="DisplayLabelTitle" type="Label" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer" unique_id=1608512620]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_0adsa")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "Display"
+horizontal_alignment = 1
+
+[node name="Panel2" type="Panel" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer" unique_id=1469895725]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel2" unique_id=62419279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel2/MarginContainer" unique_id=1591896060]
+layout_mode = 2
+split_offsets = PackedInt32Array(326)
+split_offset = 326
+
+[node name="ResolutionLabel" type="Label" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel2/MarginContainer/HSplitContainer" unique_id=1702839736]
+layout_mode = 2
+theme = ExtResource("3_0adsa")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Resolution"
+
+[node name="ResolutionSelector" type="OptionButton" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel2/MarginContainer/HSplitContainer" unique_id=1584301784]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_0adsa")
+
+[connection signal="mouse_entered" from="MarginContainer/OptionsBackContainer/CloseBtn" to="." method="_on_close_btn_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/OptionsBackContainer/CloseBtn" to="." method="_on_close_btn_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/OptionsBackContainer/CloseBtn" to="." method="_on_close_btn_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/OptionsBackContainer/ResetDefaultsBtn" to="." method="_on_reset_defaults_btn_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/OptionsBackContainer/ResetDefaultsBtn" to="." method="_on_reset_defaults_btn_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/OptionsBackContainer/ResetDefaultsBtn" to="." method="_on_reset_defaults_btn_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/OptionsBackContainer/SaveSettingsBtn" to="." method="_on_save_settings_btn_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/OptionsBackContainer/SaveSettingsBtn" to="." method="_on_save_settings_btn_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/OptionsBackContainer/SaveSettingsBtn" to="." method="_on_save_settings_btn_pressed"]
+[connection signal="value_changed" from="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="item_selected" from="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel2/MarginContainer/HSplitContainer/ResolutionSelector" to="." method="_on_resolution_selector_item_selected"]
