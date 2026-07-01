@@ -87,6 +87,7 @@ signal SPA_send_spawn_scene_data
 # TRE -> Trees
 signal TRE_tree_spawned
 signal TRE_tree_cut
+var TRE_get_tree_cut_amount: Callable
 
 # QUO -> Quota
 var QUO_check_quota: Callable

@@ -7,9 +7,12 @@ extends Node
 @export var reset_upgrades: bool = true
 
 var _is_baking: bool = false
+var trees_cut = 0
 
 func _ready() -> void:
 	EventSystem.MUS_play_music.emit(MusicConfig.Keys.IslandAmbience)
+	EventSystem.TRE_get_tree_cut_amount = func(): return trees_cut
+	EventSystem.TRE_tree_cut.connect(func(): trees_cut += 1)
 	await get_tree().process_frame
 	var log_scene = preload("res://Objects/interactables/pickuppables/rigid_pickuppable_log.tscn")
 	#var tree_scene = preload("res://Objects/hittable_objects/hittable_tree_common_tree_1.tscn")

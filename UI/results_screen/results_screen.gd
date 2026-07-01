@@ -17,8 +17,6 @@ extends Bulletin
 @onready var continue_button: Button = %ContinueButton
 @onready var back_to_menu: TextureButton = %BackToMenu
 
-var quota = 500
-
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	EventSystem.HUD_hide_hud.emit()
@@ -58,29 +56,32 @@ func animate_stats():
 	
 	tween.tween_interval(0.25)
 	
+	var trees_cut = EventSystem.TRE_get_tree_cut_amount.call()
+	var quota = EventSystem.QUO_get_quota_amount.call()
+	var todays_revenue = EventSystem.MON_get_player_money.call()
+	
 	# Hard coded tweens
-	#FIXLATER the values are purely visual
-	tween.tween_method(set_label_number.bind(trees_cut_count_lbl), 0, 143, 0.5)
+	tween.tween_method(set_label_number.bind(trees_cut_count_lbl), 0, trees_cut, 0.5)
 	tween.parallel().tween_property(trees_cut_count_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
 	
-	tween.tween_method(set_label_number.bind(quota_number_lbl), 0, -2228, 0.5)
+	tween.tween_method(set_label_number.bind(quota_number_lbl), 0, -quota, 0.5)
 	tween.parallel().tween_property(quota_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
 	
-	tween.tween_method(set_label_number.bind(todays_revenue_number_lbl), 0, 8900, 0.5)
+	tween.tween_method(set_label_number.bind(todays_revenue_number_lbl), 0, todays_revenue, 0.5)
 	tween.parallel().tween_property(todays_revenue_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
 	
-	tween.tween_method(set_label_number.bind(balance_number_lbl), 0, 8900 - 2228, 0.5)
+	tween.tween_method(set_label_number.bind(balance_number_lbl), 0, todays_revenue - quota, 0.5)
 	tween.parallel().tween_property(balance_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
 	
-	tween.tween_method(set_label_number.bind(prestige_points_number_lbl), 0, 178, 0.5)
+	tween.tween_method(set_label_number.bind(prestige_points_number_lbl), 0, int(todays_revenue / 50), 0.5)
 	tween.parallel().tween_property(prestige_points_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
