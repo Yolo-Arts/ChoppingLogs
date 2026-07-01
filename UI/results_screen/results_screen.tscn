@@ -107,41 +107,92 @@ horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ResultsContainer" unique_id=1452182418]
 layout_mode = 2
-theme_override_constants/separation = 27
+theme_override_constants/separation = -2
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=2134868319]
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=1886841189]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/separation = 13
+theme_override_constants/separation = 48
 
-[node name="QuotaProgressContainer" type="VBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=1542223791]
+[node name="QuotaLbl2" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=633494567]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("1_j0io5")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 32
+text = "Quota:"
+
+[node name="ProgressBarHSplitContainer" type="HSplitContainer" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=1943790709]
+unique_name_in_owner = true
+layout_mode = 2
+split_offsets = PackedInt32Array(-360)
+split_offset = -360
+
+[node name="QuotaProgressContainer" type="VBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer/ProgressBarHSplitContainer" unique_id=1542223791]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer/ProgressBarHSplitContainer/QuotaProgressContainer" unique_id=1347950099]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer/QuotaProgressContainer" unique_id=1347950099]
-layout_mode = 2
-
-[node name="QuotaLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/QuotaProgressContainer/HBoxContainer" unique_id=1260574677]
+[node name="QuotaLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/ProgressBarHSplitContainer/QuotaProgressContainer/HBoxContainer" unique_id=1260574677]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 32
 text = "Quota:"
 
-[node name="QutoaPercentage" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/QuotaProgressContainer/HBoxContainer" unique_id=818917484]
+[node name="QuotaPercentage" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/ProgressBarHSplitContainer/QuotaProgressContainer/HBoxContainer" unique_id=818917484]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 32
-text = "100%"
+text = "0%"
 
-[node name="QuotaProgressBar" type="ProgressBar" parent="MarginContainer/ResultsContainer/VBoxContainer/QuotaProgressContainer" unique_id=1672725017]
-modulate = Color(0.09803922, 0.90588236, 0.3137255, 1)
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer/ProgressBarHSplitContainer/QuotaProgressContainer" unique_id=413723852]
+layout_mode = 2
+
+[node name="QuotaProgressBar" type="ProgressBar" parent="MarginContainer/ResultsContainer/VBoxContainer/ProgressBarHSplitContainer/QuotaProgressContainer/HBoxContainer2" unique_id=1672725017]
+unique_name_in_owner = true
+modulate = Color(0.90588236, 0.51458335, 0.09803922, 1)
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("1_j0io5")
-value = 30.14
 show_percentage = false
+
+[node name="OverflowContainer" type="VBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer/ProgressBarHSplitContainer" unique_id=999964929]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuotaOverflowPercentage" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/ProgressBarHSplitContainer/OverflowContainer" unique_id=643842887]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 32
+text = "0%"
+
+[node name="QuotaOverflowProgressBar" type="ProgressBar" parent="MarginContainer/ResultsContainer/VBoxContainer/ProgressBarHSplitContainer/OverflowContainer" unique_id=1802301707]
+unique_name_in_owner = true
+modulate = Color(0.09803922, 0.90588236, 0.3137255, 1)
+custom_minimum_size = Vector2(32.64, 80)
+layout_mode = 2
+theme = ExtResource("1_j0io5")
+value = 100.0
+show_percentage = false
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=1370760964]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 24
 
 [node name="DetailsPanel" type="Panel" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=1532535304]
 custom_minimum_size = Vector2(0, 500)
@@ -173,7 +224,7 @@ theme_override_font_sizes/font_size = 48
 text = "Details"
 horizontal_alignment = 1
 
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=1886841189]
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=1284244936]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 8
@@ -280,6 +331,11 @@ layout_mode = 2
 theme_override_constants/separation = 18
 theme_override_styles/separator = SubResource("StyleBoxLine_j0io5")
 
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=1063927710]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 24
+
 [node name="ButtonsContainer" type="HBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=354291234]
 layout_mode = 2
 size_flags_vertical = 3
@@ -299,6 +355,11 @@ layout_mode = 2
 texture_normal = ExtResource("3_gj08v")
 texture_pressed = ExtResource("4_k5toj")
 texture_hover = ExtResource("5_fq6vg")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer" unique_id=861489096]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_top = 105
 
 [node name="Shaker" type="Node" parent="." unique_id=1628977636 node_paths=PackedStringArray("target_node")]
 script = ExtResource("8_fq6vg")
