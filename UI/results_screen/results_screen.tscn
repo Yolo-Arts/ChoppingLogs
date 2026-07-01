@@ -1,0 +1,271 @@
+[gd_scene format=3 uid="uid://dipojkqxlnho3"]
+
+[ext_resource type="Shader" uid="uid://whc3xvmgjd25" path="res://Shaders/gaussianBlur.gdshader" id="1_gj08v"]
+[ext_resource type="Theme" uid="uid://b6i7mrm1os0yh" path="res://UI/PauseMenu.tres" id="1_j0io5"]
+[ext_resource type="Theme" uid="uid://dst5lcl75c180" path="res://UI/ResultsScreen.tres" id="2_n4wge"]
+[ext_resource type="Texture2D" uid="uid://di10l6ujs7x58" path="res://Assets/UI/Icons/Exit.png" id="3_gj08v"]
+[ext_resource type="Texture2D" uid="uid://juhd3ygwvmx3" path="res://Assets/UI/Icons/Exit_Pressed.png" id="4_k5toj"]
+[ext_resource type="Texture2D" uid="uid://xwwqkgxcr7ep" path="res://Assets/UI/Icons/Exit_Hover.png" id="5_fq6vg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5toj"]
+shader = ExtResource("1_gj08v")
+shader_parameter/blur_amount = 2.50000021375
+shader_parameter/mix_amount = 0.2610000123975
+shader_parameter/color_over = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0io5"]
+bg_color = Color(0.4862745, 0.34901962, 0.07058824, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 34
+corner_radius_top_right = 34
+corner_radius_bottom_right = 34
+corner_radius_bottom_left = 34
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_j0io5"]
+color = Color(0.23529412, 0.16470589, 0.019607844, 1)
+thickness = 3
+
+[node name="ResultsScreen" type="Control" unique_id=2093610872]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blur" type="ColorRect" parent="." unique_id=788991309]
+material = SubResource("ShaderMaterial_k5toj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1859466471]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=140087767]
+custom_minimum_size = Vector2(900, 900)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_j0io5")
+
+[node name="SettingsTitleContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1279827888]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_top = -86
+
+[node name="DetailsPanel" type="Panel" parent="MarginContainer/PanelContainer/SettingsTitleContainer" unique_id=2062407031]
+custom_minimum_size = Vector2(700, 90)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j0io5")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/SettingsTitleContainer/DetailsPanel" unique_id=1416764836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 13
+
+[node name="StatsForDayXLabel" type="Label" parent="MarginContainer/PanelContainer/SettingsTitleContainer/DetailsPanel/MarginContainer" unique_id=1330549208]
+layout_mode = 2
+theme = ExtResource("1_j0io5")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Stats for Day x"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1452182418]
+layout_mode = 2
+theme_override_constants/separation = 27
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=2134868319]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="QuotaProgressContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1542223791]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/QuotaProgressContainer" unique_id=1347950099]
+layout_mode = 2
+
+[node name="QuotaLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/QuotaProgressContainer/HBoxContainer" unique_id=1260574677]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 32
+text = "Quota:"
+
+[node name="QutoaPercentage" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/QuotaProgressContainer/HBoxContainer" unique_id=818917484]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 32
+text = "100%"
+
+[node name="QuotaProgressBar" type="ProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer/QuotaProgressContainer" unique_id=1672725017]
+modulate = Color(0.09803922, 0.90588236, 0.3137255, 1)
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme = ExtResource("1_j0io5")
+value = 30.14
+show_percentage = false
+
+[node name="DetailsPanel" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1532535304]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j0io5")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel" unique_id=1833863319]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer" unique_id=467395217]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="DetailsTitle" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=321837461]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_j0io5")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Details"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=1886841189]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer" type="GridContainer" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=1137798272]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="TreesCutLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1372370150]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Tree's Cut"
+
+[node name="TreesCutCountLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=264138727]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "143"
+horizontal_alignment = 2
+
+[node name="TodaysRevenueLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=84786345]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Today's Revenue"
+
+[node name="TodaysRevenueNumberLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=809617605]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "$8,900"
+horizontal_alignment = 2
+
+[node name="QuotaLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=376258611]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Quota"
+
+[node name="QuotaNumberLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1078943975]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "-$2,228"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=676478159]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxLine_j0io5")
+
+[node name="HBoxContainer2" type="GridContainer" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer" unique_id=1745176429]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="TreesCutLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1733189618]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Balance"
+
+[node name="TreesCutCountLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=796729257]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "$6678"
+horizontal_alignment = 2
+
+[node name="TodaysRevenueLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=596092588]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Prestige Points Earned"
+
+[node name="TodaysRevenueNumberLbl" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2111601791]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "178p"
+horizontal_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=354291234]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 70
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1441616487]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_n4wge")
+theme_override_font_sizes/font_size = 48
+text = "Press To Continue"
+
+[node name="BackToMenu" type="TextureButton" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=2022499057]
+layout_mode = 2
+texture_normal = ExtResource("3_gj08v")
+texture_pressed = ExtResource("4_k5toj")
+texture_hover = ExtResource("5_fq6vg")
