@@ -210,8 +210,9 @@ theme_override_constants/margin_bottom = 32
 
 [node name="OptionsContainer" type="GridContainer" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=725174025]
 layout_mode = 2
+theme_override_constants/h_separation = 29
 theme_override_constants/v_separation = 30
-columns = 3
+columns = 4
 
 [node name="MusicLabel" type="Label" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer" unique_id=1822630746]
 layout_mode = 2
@@ -226,6 +227,17 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme = ExtResource("3_0adsa")
 theme_override_constants/separation = 30
+
+[node name="MusicPercentLabel" type="Label" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer" unique_id=3291736]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("3_0adsa")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "5%"
+horizontal_alignment = 2
 
 [node name="MusicSlider" type="HSlider" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer" unique_id=1154025234]
 unique_name_in_owner = true
@@ -249,7 +261,17 @@ text = "SFX"
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme = ExtResource("3_0adsa")
-theme_override_constants/separation = 266
+theme_override_constants/separation = 55
+
+[node name="SFXPercentLabel" type="Label" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer" unique_id=1323717165]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("3_0adsa")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "50%"
+horizontal_alignment = 2
 
 [node name="SFXSlider" type="HSlider" parent="MarginContainer/SettingsContainer/MarginContainer/VBoxContainer/Panel/MarginContainer/OptionsContainer" unique_id=832692617]
 unique_name_in_owner = true

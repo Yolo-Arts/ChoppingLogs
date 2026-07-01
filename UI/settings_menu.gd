@@ -13,6 +13,8 @@ extends Bulletin
 @onready var close_btn: Button = %CloseBtn
 @onready var reset_defaults_btn: Button = %ResetDefaultsBtn
 @onready var save_settings_btn: Button = %SaveSettingsBtn
+@onready var music_percent_label: Label = %MusicPercentLabel
+@onready var sfx_percent_label: Label = %SFXPercentLabel
 
 var user_prefs: UserPrefs
 var open_pause_menu_after_closing = false
@@ -34,8 +36,10 @@ func _ready() -> void:
 	
 	if music_slider:
 		music_slider.value = user_prefs.music_volume
+		music_percent_label.text = str(int(music_slider.value * 100)) + "%"
 	if sfx_slider:
 		sfx_slider.value = user_prefs.sfx_volume
+		sfx_percent_label.text = str(int(sfx_slider.value * 100)) + "%"
 	
 	populate_resolutions()
 	
@@ -74,12 +78,14 @@ func _on_music_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(MUSIC_BUS_ID, value < .05)
 	user_prefs.music_volume = value
+	music_percent_label.text = str(int(music_slider.value * 100)) + "%"
 
 func _on_sfx_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(SFX_BUS_ID, value < .05)
 	user_prefs.sfx_volume = value
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UISFXTest)
+	sfx_percent_label.text = str(int(sfx_slider.value * 100)) + "%"
 
 func _on_reset_defaults_btn_pressed() -> void:
 	music_slider.value = 0.8
