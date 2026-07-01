@@ -12,6 +12,7 @@ enum Keys{
 	BossHpBar,
 	PlaceholderDayEnd,
 	LoseScreen,
+	ResultsScreen,
 }
 
 
@@ -31,4 +32,5 @@ const BULLETIN_PATHS := {
 	Keys.BossHpBar: "res://Bulletins/boss_health_bar/boss_health_bar.tscn",
 	Keys.PlaceholderDayEnd: "res://UI/placeholders/day_end/placeholder_day_end.tscn",
 	Keys.LoseScreen: "res://UI/placeholders/day_lost/lose_screen.tscn",
+	Keys.ResultsScreen: "res://UI/results_screen/results_screen.tscn"
 }
