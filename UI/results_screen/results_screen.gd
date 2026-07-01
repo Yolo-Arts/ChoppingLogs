@@ -60,7 +60,6 @@ func animate_stats():
 	var quota = EventSystem.QUO_get_quota_amount.call()
 	var todays_revenue = EventSystem.MON_get_player_money.call()
 	
-	# Hard coded tweens
 	tween.tween_method(set_label_number.bind(trees_cut_count_lbl), 0, trees_cut, 0.5)
 	tween.parallel().tween_property(trees_cut_count_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
@@ -90,7 +89,18 @@ func animate_stats():
 	
 
 func set_label_number(number: int, label: Label) -> void:
-	label.set_text(str(number))
+	match label:
+		trees_cut_count_lbl:
+			label.set_text(str(number) + " trees cut")
+		quota_number_lbl, todays_revenue_number_lbl, balance_number_lbl:
+			if number < 0:
+				label.set_text("-$" + str(abs(number)))
+			else:
+				label.set_text("$" + str(number))
+		prestige_points_number_lbl:
+			label.set_text(str(number) + "p")
+		_:
+			label.set_text(str(number))
 
 func transition_buttons():
 	var tween: Tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
