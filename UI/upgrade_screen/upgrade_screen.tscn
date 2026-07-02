@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dcvo540aqa4dh" path="res://UI/upgrade_screen/upgrade_screen.gd" id="1_pbu2f"]
 [ext_resource type="Theme" uid="uid://b6i7mrm1os0yh" path="res://UI/PauseMenu.tres" id="2_fwohg"]
 [ext_resource type="Texture2D" uid="uid://c4yl1rk2vmk1o" path="res://Assets/Logo/TempLogo.svg" id="3_fwohg"]
+[ext_resource type="Texture2D" uid="uid://b5jpm0kqxis3q" path="res://Assets/UI/Icons/symbols_money.svg" id="4_0851q"]
 [ext_resource type="Theme" uid="uid://bwoykxxeqv1fe" path="res://UI/upgrade_screen/upgrade_screen.tres" id="5_1aqid"]
 [ext_resource type="Theme" uid="uid://dst5lcl75c180" path="res://UI/ResultsScreen.tres" id="5_bhfgd"]
 [ext_resource type="Texture2D" uid="uid://wwrau8nxuen7" path="res://Assets/UI/Icons/upgrade_icon/Axe Speed.png" id="7_1xhds"]
@@ -34,7 +35,31 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
+bg_color = Color(0.10980392, 0.77254903, 0.3764706, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0851q"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uggwf"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.9401042, 0.9401042, 0.9401042, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -87,13 +112,60 @@ theme = ExtResource("2_fwohg")
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="UpgradeTitle" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer" unique_id=1965535880]
+[node name="HeaderContainer2" type="HBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer" unique_id=664987424]
 layout_mode = 2
+
+[node name="UpgradeTitle" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/HeaderContainer2" unique_id=1965535880]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "Upgrades"
+horizontal_alignment = 1
+
+[node name="MoneyPanel" type="Panel" parent="MarginContainer/UpgradesContainer/VBoxContainer/HeaderContainer2" unique_id=2071372280]
+clip_contents = true
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/HeaderContainer2/MoneyPanel" unique_id=286246578]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/HeaderContainer2/MoneyPanel/MarginContainer" unique_id=100648741]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="PlayerMoney" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/HeaderContainer2/MoneyPanel/MarginContainer/HBoxContainer" unique_id=1042854642]
+custom_minimum_size = Vector2(50, 49)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
 theme = ExtResource("2_fwohg")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
-text = "Upgrades"
-horizontal_alignment = 1
+text = "$630,000"
+horizontal_alignment = 2
+clip_text = true
+
+[node name="MoneyIcon" type="TextureRect" parent="MarginContainer/UpgradesContainer/VBoxContainer/HeaderContainer2/MoneyPanel/MarginContainer/HBoxContainer" unique_id=929673235]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_0851q")
+expand_mode = 1
 
 [node name="ChopDamagePanel" type="Panel" parent="MarginContainer/UpgradesContainer/VBoxContainer" unique_id=1821330036]
 custom_minimum_size = Vector2(1190, 100)
@@ -514,3 +586,33 @@ size_flags_horizontal = 8
 theme = ExtResource("5_1aqid")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bhfgd")
 text = "$60"
+
+[node name="BuyQuantityHBoxContainer" type="HBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer" unique_id=1897432166]
+layout_mode = 2
+theme_override_constants/separation = 39
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/BuyQuantityHBoxContainer" unique_id=1470712861]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_top = 8
+
+[node name="BuyingLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/BuyQuantityHBoxContainer/MarginContainer" unique_id=1298711558]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Buying: "
+
+[node name="BuyQuantityButton" type="Button" parent="MarginContainer/UpgradesContainer/VBoxContainer/BuyQuantityHBoxContainer" unique_id=1049685859]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+theme = ExtResource("5_1aqid")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0851q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0851q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uggwf")
+text = "MAX"
