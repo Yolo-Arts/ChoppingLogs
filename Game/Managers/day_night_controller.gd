@@ -131,7 +131,8 @@ func end_day() -> void:
 	print("Day is over!")
 	var met_quota = EventSystem.QUO_check_quota.call()
 	print("Met quota:", met_quota)
-	if met_quota:
-		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PlaceholderDayEnd)
-	else:
-		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.LoseScreen)
+	#if met_quota:
+		#EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PlaceholderDayEnd)
+	#else:
+		#EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.LoseScreen)
+	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.ResultsScreen)

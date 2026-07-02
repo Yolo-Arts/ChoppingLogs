@@ -137,7 +137,7 @@ func fill_quota_progress_bar():
 	var overflow_amount = todays_revenue - quota
 	
 	var bar_tween: Tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
-	bar_tween.tween_property(quota_progress_bar, "value", quota, 2.5).from(0)
+	bar_tween.tween_property(quota_progress_bar, "value", todays_revenue, 2.5).from(0)
 	
 	if overflow_amount > 0:
 		var total_amount = quota + overflow_amount
@@ -166,10 +166,17 @@ func transition_buttons():
 
 func _on_continue_button_pressed() -> void:
 	get_tree().paused = false
-	EventSystem.QUO_increase_quota_amount.emit()
+	
+	var met_quota = EventSystem.QUO_check_quota.call()
+	if met_quota:
+		EventSystem.QUO_increase_quota_amount.emit()
+	else:
+		EventSystem.QUO_reset_quota.emit()
+	
 	EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.ResultsScreen)
+
 
 func _on_back_to_menu_pressed() -> void:
 	get_tree().paused = false

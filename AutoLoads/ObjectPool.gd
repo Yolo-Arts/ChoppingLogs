@@ -23,7 +23,8 @@ func get_object(scene: PackedScene) -> Node:
 func return_object(obj: Node) -> void:
 	var path: String = _scene_paths.get(obj, "")
 	if path.is_empty():
-		obj.queue_free()  
+		if obj:
+			obj.queue_free()  
 		return
 	
 	obj.visible = false
