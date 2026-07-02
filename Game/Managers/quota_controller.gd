@@ -3,10 +3,12 @@ extends Node
 @export var quota_base: int = 50
 @export var quota: int = 50
 @export var quota_level: float = 1.0
+@export var day: int = 1
 
 func _ready() -> void:
 	EventSystem.QUO_increase_quota_amount.connect(update_quota_amount)
 	EventSystem.QUO_reset_quota.connect(reset_quota)
+	EventSystem.QUO_get_day_number = func() -> int: return day
 	print("Quota is: ", quota)
 	EventSystem.QUO_get_quota_amount = func(): return quota
 	EventSystem.QUO_update_quota_text.emit()
@@ -19,6 +21,7 @@ func _ready() -> void:
 
 func update_quota_amount():
 	quota_level += 0.2
+	day += 1
 	quota = pow(quota_base, quota_level)
 	EventSystem.QUO_update_quota_text.emit()
 	print("Quota is: ", quota)
@@ -26,6 +29,7 @@ func update_quota_amount():
 func reset_quota():
 	quota_base = 50
 	quota_level = 1.0
+	day = 1
 	quota = quota_base
 	EventSystem.QUO_update_quota_text.emit()
 	print("Quota is: ", quota)

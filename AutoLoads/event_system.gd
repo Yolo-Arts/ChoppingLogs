@@ -92,6 +92,7 @@ var TRE_get_tree_cut_amount: Callable
 # QUO -> Quota
 var QUO_check_quota: Callable
 var QUO_get_quota_amount: Callable
+var QUO_get_day_number
 signal QUO_update_quota_text
 signal QUO_increase_quota_amount
 signal QUO_reset_quota

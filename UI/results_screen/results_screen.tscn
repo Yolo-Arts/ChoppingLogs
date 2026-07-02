@@ -98,6 +98,7 @@ grow_vertical = 2
 theme_override_constants/margin_top = 13
 
 [node name="StatsForDayXLabel" type="Label" parent="MarginContainer/ResultsContainer/SettingsTitleContainer/DetailsPanel/MarginContainer" unique_id=1330549208]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_j0io5")
 theme_override_colors/font_color = Color(1, 1, 1, 1)

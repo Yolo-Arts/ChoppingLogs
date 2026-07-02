@@ -22,11 +22,14 @@ extends Bulletin
 @onready var quota_overflow_percentage: Label = %QuotaOverflowPercentage
 @onready var quota_overflow_progress_bar: ProgressBar = %QuotaOverflowProgressBar
 @onready var progress_bar_h_split_container: HSplitContainer = %ProgressBarHSplitContainer
+@onready var stats_for_day_x_label: Label = %StatsForDayXLabel
 
 var trees_cut = EventSystem.TRE_get_tree_cut_amount.call()
 var quota = EventSystem.QUO_get_quota_amount.call()
 var todays_revenue = EventSystem.MON_get_player_money.call()
 var progress_bar_width = 818
+var prestige_price = 50
+
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -37,6 +40,8 @@ func _ready() -> void:
 	hide_buttons()
 	quota_overflow_progress_bar.visible = false
 	overflow_container.visible = false
+	
+	stats_for_day_x_label.text = "Stats For Day " + str(EventSystem.QUO_get_day_number.call())
 	
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
@@ -92,7 +97,7 @@ func animate_stats():
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
 	
-	tween.tween_method(set_label_number.bind(prestige_points_number_lbl), 0, int(todays_revenue / 50), 0.5)
+	tween.tween_method(set_label_number.bind(prestige_points_number_lbl), 0, int(todays_revenue / prestige_price), 0.5)
 	tween.parallel().tween_property(prestige_points_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
