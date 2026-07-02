@@ -90,11 +90,9 @@ func close_menu() -> void:
 
 func chop_damage_buy_button_pressed():
 	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.ChopDamage)
-	EventSystem.AXE_increase_axe_damage.emit(1)
 
 func axe_speed_buy_button_pressed():
 	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.AxeSpeed)
-	EventSystem.AXE_increase_axe_speed.emit(0.2)
 
 func sprint_stamina_buy_button_pressed():
 	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.SprintStamina)

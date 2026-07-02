@@ -1,6 +1,6 @@
 extends Node
 
-@export var inventory_size := 5
+@export var player_stats: PlayerStats
 var inventory := []
 
 var can_add_to_inventory: bool = true 
@@ -16,12 +16,11 @@ func _enter_tree() -> void:
 	EventSystem.WEI_item_weight_too_much.connect(check_if_item_too_heavy.bind(true))
 	EventSystem.WEI_item_weight_not_too_much.connect(check_if_item_too_heavy.bind(false))
 	
-	EventSystem.UPG_increase_inventory_size.connect(increase_inventory_size)
+	EventSystem.UPG_upgrade_updated.connect(_on_upgrade_updated)
 	EventSystem.MON_sell_all_items.connect(sell_all_items)
 
 func _ready() -> void:
-	inventory.resize(inventory_size)
-	#inventory[0] = ItemConfig.Keys.Log
+	inventory.resize(player_stats.inventory_size)
 
 func lock_inventory(weight_maxed: bool):
 	can_add_to_inventory = !weight_maxed
@@ -51,12 +50,9 @@ func try_to_pickup_item(item_key:ItemConfig.Keys, destroy_pickuppable:Callable) 
 
 func get_free_slots() -> int:
 	var free_slots := 0
-	#print(inventory)
 	for slot in inventory:
 		if slot == null:
 			free_slots += 1
-	#print("Free slots: ", free_slots)
-	
 	return free_slots
 
 func add_item(item_key:ItemConfig.Keys) -> void:
@@ -85,10 +81,12 @@ func delete_item_by_index(index:int) -> void:
 	EventSystem.WEI_weight_changed.emit(-weight)
 	EventSystem.INV_inventory_updated.emit(inventory)
 
-func increase_inventory_size():
-	if inventory_size < 500:
-		inventory_size += 1
-		inventory.resize(inventory_size)
+func _on_upgrade_updated(upgrade_key: UpgradeConfig.Keys, _new_level: int) -> void:
+	if upgrade_key == UpgradeConfig.Keys.BackPack:
+		if player_stats.inventory_size < 500:
+			inventory.resize(player_stats.inventory_size)
+			EventSystem.INV_inventory_updated.emit(inventory)
+			print("Inventory successfully expanded to: ", inventory.size())
 
 func sell_all_items():
 	var total_money_earned := 0
