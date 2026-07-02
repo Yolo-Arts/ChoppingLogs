@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://mmgvlaw8itl" path="res://Assets/UI/Icons/upgrade_icon/Sprint Stamina.png" id="8_0851q"]
 [ext_resource type="Texture2D" uid="uid://d1jse36utmtob" path="res://Assets/UI/Icons/upgrade_icon/Sprint Speed.png" id="9_uggwf"]
 [ext_resource type="Texture2D" uid="uid://dcw3xjsix842l" path="res://Assets/UI/Icons/upgrade_icon/Back Pack Space.png" id="10_w8vvm"]
+[ext_resource type="Texture2D" uid="uid://bji7ldx0dk8wo" path="res://Assets/UI/Icons/CloseButton/Close_Button.png" id="12_w8vvm"]
+[ext_resource type="Texture2D" uid="uid://dkr5de5l650wb" path="res://Assets/UI/Icons/CloseButton/Close_Button_Hover.png" id="13_pnr4g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6wctd"]
 shader = ExtResource("1_0vyij")
@@ -67,6 +69,7 @@ corner_radius_bottom_left = 10
 corner_detail = 5
 
 [node name="UpgradeScreen" type="Control" unique_id=2022360457]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,6 +79,7 @@ grow_vertical = 2
 script = ExtResource("1_pbu2f")
 
 [node name="Blur" type="ColorRect" parent="." unique_id=1034322207]
+unique_name_in_owner = true
 material = SubResource("ShaderMaterial_6wctd")
 layout_mode = 1
 anchors_preset = 15
@@ -102,6 +106,7 @@ theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
 [node name="UpgradesContainer" type="PanelContainer" parent="MarginContainer" unique_id=1992367564]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(1300, 770)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -147,7 +152,8 @@ theme_override_constants/margin_bottom = 8
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="PlayerMoney" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/HeaderContainer2/MoneyPanel/MarginContainer/HBoxContainer" unique_id=1042854642]
+[node name="PlayerMoneyLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/HeaderContainer2/MoneyPanel/MarginContainer/HBoxContainer" unique_id=1042854642]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 49)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -616,3 +622,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0851q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0851q")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uggwf")
 text = "MAX"
+
+[node name="CloseMenuButton" type="TextureButton" parent="MarginContainer" unique_id=2118637617]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("12_w8vvm")
+texture_pressed = ExtResource("12_w8vvm")
+texture_hover = ExtResource("13_pnr4g")
+
+[connection signal="pressed" from="MarginContainer/CloseMenuButton" to="." method="_on_close_menu_button_pressed"]

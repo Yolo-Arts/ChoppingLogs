@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bolmbxrohop2y"]
+
+[ext_resource type="PackedScene" uid="uid://dq82jp8q80abv" path="res://Objects/interactables/prototype_helpers/prototype_helper_template.tscn" id="1_2cxnr"]
+[ext_resource type="Script" uid="uid://dcrwrfuh401p3" path="res://Objects/interactables/prototype_helpers/interactable_upgrade_screen.gd" id="2_ii4c0"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ii4c0"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="PrototypeHelperUpgradeScreen" unique_id=979320369 instance=ExtResource("1_2cxnr")]
+
+[node name="Interactable" parent="." index="2" unique_id=1150908498]
+script = ExtResource("2_ii4c0")
+prompt = "Upgrade Screen"
+
+[node name="Sprite3D" parent="." index="3" unique_id=1621228228]
+texture = SubResource("ViewportTexture_ii4c0")
+
+[node name="PrototypeHelperLabel" parent="Sprite3D/SubViewport/MarginContainer" parent_id_path=PackedInt32Array(320563032) index="0" unique_id=1559570643]
+text = "Upgrade Screen"

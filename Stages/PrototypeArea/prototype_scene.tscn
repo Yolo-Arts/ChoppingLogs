@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://drqs3um5jtugk" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_fire_slash_pierce_count.tscn" id="29_0rur4"]
 [ext_resource type="ArrayMesh" uid="uid://bgh3jqi8w6m7f" path="res://Assets/Meshes/PlaceholderMeshes/log.tres" id="33_6kx5t"]
 [ext_resource type="PackedScene" uid="uid://bej75do6xooh8" path="res://Objects/interactables/prototype_helpers/prototype_helper_skill_tree.tscn" id="33_7gpa7"]
+[ext_resource type="PackedScene" uid="uid://bolmbxrohop2y" path="res://Objects/interactables/prototype_helpers/prototype_helper_upgrade_screen.tscn" id="34_s0pcj"]
 [ext_resource type="PackedScene" uid="uid://ldlcuvdbiu3c" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_crit_chance.tscn" id="37_6npn2"]
 [ext_resource type="PackedScene" uid="uid://cd6vvqgc6guom" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_crit_damage.tscn" id="38_te1uh"]
 [ext_resource type="PackedScene" uid="uid://cyc4xn25gqd5j" path="res://Assets/Meshes/maps/testV5/log_chopping_map_test_5.tscn" id="39_18tru"]
@@ -238,7 +239,7 @@ shadow_enabled = true
 
 [node name="DayNightController" type="Node" parent="." unique_id=1206687905 node_paths=PackedStringArray("sun_light")]
 script = ExtResource("2_jeert")
-countdownDuration = 10.0
+countdownDuration = 10000.0
 sun_light = NodePath("../Sun")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DayNightController" unique_id=651528313]
@@ -479,6 +480,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283.3795, 0.13963515, -4.766
 
 [node name="PrototypeHelperIncreaseCritDamage" parent="PrototypeHelpers2OnTheMap" unique_id=111256488 instance=ExtResource("38_te1uh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283.05823, 0.13963515, -6.7483716)
+
+[node name="PrototypeHelperUpgradeScreen" parent="PrototypeHelpers2OnTheMap" unique_id=139572133 instance=ExtResource("34_s0pcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275.5866, 0, 0)
 
 [node name="Spawner" parent="." unique_id=1704739753 instance=ExtResource("12_kirhj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.6944, 0, 0)
