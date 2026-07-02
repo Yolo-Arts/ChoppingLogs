@@ -27,6 +27,7 @@ func _ready() -> void:
 	
 	player_money_label.text = "$" + str(player_money)
 	
+	setup_ui()
 	menu_transition_in()
 	
 	chop_damage_buy_button.pressed.connect(chop_damage_buy_button_pressed)
@@ -36,6 +37,13 @@ func _ready() -> void:
 	backpack_size_buy_button.pressed.connect(backpack_size_buy_button_pressed)
 	
 	EventSystem.UPG_upgrade_updated.connect(update_ui)
+
+func setup_ui():
+	chop_damage_level_label.text = "lvl" + str(UpgradeConfig.upgrades[UpgradeConfig.Keys.ChopDamage]) + "/" + str(UpgradeConfig.max_level[UpgradeConfig.Keys.ChopDamage])
+	axe_speed_level_label.text = "lvl" + str(UpgradeConfig.upgrades[UpgradeConfig.Keys.AxeSpeed]) + "/" + str(UpgradeConfig.max_level[UpgradeConfig.Keys.AxeSpeed])
+	sprint_stamina_level_label.text = "lvl" + str(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintStamina]) + "/" + str(UpgradeConfig.max_level[UpgradeConfig.Keys.SprintStamina])
+	sprint_speed_level_label.text = "lvl" + str(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed]) + "/" + str(UpgradeConfig.max_level[UpgradeConfig.Keys.SprintSpeed])
+	backpack_level_label.text = "lvl" + str(UpgradeConfig.upgrades[UpgradeConfig.Keys.BackPack]) + "/" + str(UpgradeConfig.max_level[UpgradeConfig.Keys.BackPack])
 
 func update_ui(upgrade_key: UpgradeConfig.Keys, new_level: int):
 	match upgrade_key:
