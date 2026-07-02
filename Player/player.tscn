@@ -66,7 +66,6 @@ max_weight = 5000.0
 axe_range = 20.0
 axe_crit_chance = 50.0
 axe_crit_damage = 50.0
-unlocked_fire_slash = true
 fire_slash_damage = 500.0
 fire_slash_cooldown = 1.0
 fire_slash_pierce_count = 20

@@ -68,6 +68,8 @@ signal UPG_increase_fire_slash_pierce_count
 signal UPG_increase_axe_range
 signal UPG_increase_crit_chance
 signal UPG_increase_crit_damage
+signal UPG_upgrade_requested(upgrade_key: UpgradeConfig.Keys) 
+signal UPG_upgrade_updated(upgrade_key: UpgradeConfig.Keys, new_level: int)
 
 # AXE -> Axe 
 signal AXE_increase_axe_speed

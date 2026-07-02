@@ -1,8 +1,19 @@
 extends Bulletin
 @onready var blur: ColorRect = %Blur
+@onready var upgrades_controller: Node = %UpgradesController
 @onready var close_menu_button: TextureButton = $MarginContainer/CloseMenuButton
 @onready var upgrades_container: PanelContainer = %UpgradesContainer
 @onready var player_money_label: Label = %PlayerMoneyLabel
+@onready var chop_damage_buy_button: Button = %ChopDamageBuyButton
+@onready var axe_speed_buy_button: Button = %AxeSpeedBuyButton
+@onready var sprint_stamina_buy_button: Button = %SprintStaminaBuyButton
+@onready var sprint_speed_buy_button: Button = %SprintSpeedBuyButton
+@onready var backpack_size_buy_button: Button = %BackpackSizeBuyButton
+@onready var chop_damage_level_label: Label = %ChopDamageLevelLabel
+@onready var axe_speed_level_label: Label = %AxeSpeedLevelLabel
+@onready var sprint_stamina_level_label: Label = %SprintStaminaLevelLabel
+@onready var sprint_speed_level_label: Label = %SprintSpeedLevelLabel
+@onready var backpack_level_label: Label = %BackpackLevelLabel
 
 var player_money = EventSystem.MON_get_player_money.call()
 
@@ -16,6 +27,31 @@ func _ready() -> void:
 	
 	player_money_label.text = "$" + str(player_money)
 	
+	menu_transition_in()
+	
+	chop_damage_buy_button.pressed.connect(chop_damage_buy_button_pressed)
+	axe_speed_buy_button.pressed.connect(axe_speed_buy_button_pressed)
+	sprint_stamina_buy_button.pressed.connect(sprint_stamina_buy_button_pressed)
+	sprint_speed_buy_button.pressed.connect(sprint_speed_buy_button_pressed)
+	backpack_size_buy_button.pressed.connect(backpack_size_buy_button_pressed)
+	
+	EventSystem.UPG_upgrade_updated.connect(update_ui)
+
+func update_ui(upgrade_key: UpgradeConfig.Keys, new_level: int):
+	match upgrade_key:
+		0:
+			chop_damage_level_label.text = "lvl" + str(new_level) + "/" + str(UpgradeConfig.max_level[upgrade_key])
+		1:
+			axe_speed_level_label.text = "lvl" + str(new_level) + "/" + str(UpgradeConfig.max_level[upgrade_key])
+		2:
+			sprint_stamina_level_label.text = "lvl" + str(new_level) + "/" + str(UpgradeConfig.max_level[upgrade_key])
+		3:
+			sprint_speed_level_label.text = "lvl" + str(new_level) + "/" + str(UpgradeConfig.max_level[upgrade_key])
+		4: 
+			backpack_level_label.text = "lvl" + str(new_level) + "/" + str(UpgradeConfig.max_level[upgrade_key])
+
+
+func menu_transition_in():
 	entrance_tween = create_tween()
 	entrance_tween.set_trans(Tween.TRANS_BACK)
 	entrance_tween.set_ease(Tween.EASE_OUT)
@@ -51,3 +87,20 @@ func close_menu() -> void:
 	#SaveManager.save_upgrades()
 	get_tree().paused = false
 	menu_transition_out()
+
+func chop_damage_buy_button_pressed():
+	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.ChopDamage)
+	EventSystem.AXE_increase_axe_damage.emit(1)
+
+func axe_speed_buy_button_pressed():
+	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.AxeSpeed)
+	EventSystem.AXE_increase_axe_speed.emit(0.2)
+
+func sprint_stamina_buy_button_pressed():
+	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.SprintStamina)
+
+func sprint_speed_buy_button_pressed():
+	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.SprintSpeed)
+
+func backpack_size_buy_button_pressed():
+	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.BackPack)

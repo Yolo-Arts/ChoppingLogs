@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://whc3xvmgjd25" path="res://Shaders/gaussianBlur.gdshader" id="1_0vyij"]
 [ext_resource type="Script" uid="uid://dcvo540aqa4dh" path="res://UI/upgrade_screen/upgrade_screen.gd" id="1_pbu2f"]
 [ext_resource type="Theme" uid="uid://b6i7mrm1os0yh" path="res://UI/PauseMenu.tres" id="2_fwohg"]
+[ext_resource type="PackedScene" uid="uid://brq32xhtxyg3b" path="res://Game/Managers/upgrades_controller.tscn" id="2_pnr4g"]
 [ext_resource type="Texture2D" uid="uid://c4yl1rk2vmk1o" path="res://Assets/Logo/TempLogo.svg" id="3_fwohg"]
 [ext_resource type="Texture2D" uid="uid://b5jpm0kqxis3q" path="res://Assets/UI/Icons/symbols_money.svg" id="4_0851q"]
 [ext_resource type="Theme" uid="uid://bwoykxxeqv1fe" path="res://UI/upgrade_screen/upgrade_screen.tres" id="5_1aqid"]
@@ -77,6 +78,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pbu2f")
+
+[node name="UpgradesController" parent="." unique_id=1613013721 instance=ExtResource("2_pnr4g")]
+unique_name_in_owner = true
 
 [node name="Blur" type="ColorRect" parent="." unique_id=1034322207]
 unique_name_in_owner = true
@@ -232,6 +236,7 @@ theme_override_font_sizes/font_size = 20
 text = "2->3 Damage"
 
 [node name="ChopDamageLevelLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1584007568]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme = ExtResource("2_fwohg")
@@ -250,6 +255,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_txjar")
 show_percentage = false
 
 [node name="ChopDamageBuyButton" type="Button" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer" unique_id=565726311]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(220, 60)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -316,6 +322,7 @@ theme_override_font_sizes/font_size = 20
 text = "2->3 Damage"
 
 [node name="AxeSpeedLevelLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=282521345]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme = ExtResource("2_fwohg")
@@ -334,6 +341,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_txjar")
 show_percentage = false
 
 [node name="AxeSpeedBuyButton" type="Button" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer" unique_id=1347271927]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(220, 60)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -400,6 +408,7 @@ theme_override_font_sizes/font_size = 20
 text = "2->3 Damage"
 
 [node name="SprintStaminaLevelLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=920636934]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme = ExtResource("2_fwohg")
@@ -418,6 +427,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_txjar")
 show_percentage = false
 
 [node name="SprintStaminaBuyButton" type="Button" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer" unique_id=1588126035]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(220, 60)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -484,6 +494,7 @@ theme_override_font_sizes/font_size = 20
 text = "2->3 Damage"
 
 [node name="SprintSpeedLevelLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=142533704]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme = ExtResource("2_fwohg")
@@ -502,6 +513,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_txjar")
 show_percentage = false
 
 [node name="SprintSpeedBuyButton" type="Button" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer" unique_id=701901571]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(220, 60)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -568,6 +580,7 @@ theme_override_font_sizes/font_size = 20
 text = "2->3 Damage"
 
 [node name="BackpackLevelLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1693488777]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme = ExtResource("2_fwohg")
@@ -586,6 +599,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_txjar")
 show_percentage = false
 
 [node name="BackpackSizeBuyButton" type="Button" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer" unique_id=1826000542]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(220, 60)
 layout_mode = 2
 size_flags_horizontal = 8
