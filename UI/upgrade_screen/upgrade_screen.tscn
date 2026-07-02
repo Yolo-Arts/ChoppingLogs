@@ -1,0 +1,516 @@
+[gd_scene format=3 uid="uid://dxllnjr1074rf"]
+
+[ext_resource type="Shader" uid="uid://whc3xvmgjd25" path="res://Shaders/gaussianBlur.gdshader" id="1_0vyij"]
+[ext_resource type="Script" uid="uid://dcvo540aqa4dh" path="res://UI/upgrade_screen/upgrade_screen.gd" id="1_pbu2f"]
+[ext_resource type="Theme" uid="uid://b6i7mrm1os0yh" path="res://UI/PauseMenu.tres" id="2_fwohg"]
+[ext_resource type="Texture2D" uid="uid://c4yl1rk2vmk1o" path="res://Assets/Logo/TempLogo.svg" id="3_fwohg"]
+[ext_resource type="Theme" uid="uid://bwoykxxeqv1fe" path="res://UI/upgrade_screen/upgrade_screen.tres" id="5_1aqid"]
+[ext_resource type="Theme" uid="uid://dst5lcl75c180" path="res://UI/ResultsScreen.tres" id="5_bhfgd"]
+[ext_resource type="Texture2D" uid="uid://wwrau8nxuen7" path="res://Assets/UI/Icons/upgrade_icon/Axe Speed.png" id="7_1xhds"]
+[ext_resource type="Texture2D" uid="uid://mmgvlaw8itl" path="res://Assets/UI/Icons/upgrade_icon/Sprint Stamina.png" id="8_0851q"]
+[ext_resource type="Texture2D" uid="uid://d1jse36utmtob" path="res://Assets/UI/Icons/upgrade_icon/Sprint Speed.png" id="9_uggwf"]
+[ext_resource type="Texture2D" uid="uid://dcw3xjsix842l" path="res://Assets/UI/Icons/upgrade_icon/Back Pack Space.png" id="10_w8vvm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6wctd"]
+shader = ExtResource("1_0vyij")
+shader_parameter/blur_amount = 2.50000021375
+shader_parameter/mix_amount = 0.2610000123975
+shader_parameter/color_over = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txjar"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhfgd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[node name="UpgradeScreen" type="Control" unique_id=2022360457]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pbu2f")
+
+[node name="Blur" type="ColorRect" parent="." unique_id=1034322207]
+material = SubResource("ShaderMaterial_6wctd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -348.33325
+offset_top = -198.0
+offset_right = 348.33325
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1340408535]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(1980, 1080)
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="UpgradesContainer" type="PanelContainer" parent="MarginContainer" unique_id=1992367564]
+custom_minimum_size = Vector2(1300, 770)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_fwohg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/UpgradesContainer" unique_id=1444826018]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="UpgradeTitle" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer" unique_id=1965535880]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Upgrades"
+horizontal_alignment = 1
+
+[node name="ChopDamagePanel" type="Panel" parent="MarginContainer/UpgradesContainer/VBoxContainer" unique_id=1821330036]
+custom_minimum_size = Vector2(1190, 100)
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel" unique_id=1288145691]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer" unique_id=1929567791]
+layout_mode = 2
+split_offsets = PackedInt32Array(77, 420, 532)
+split_offset = 77
+
+[node name="UpgradeIcon" type="TextureRect" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer" unique_id=806142125]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_fwohg")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer" unique_id=1576973582]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_top = 16
+
+[node name="UpgradeLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer/MarginContainer" unique_id=1035966409]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Chop Damage"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer" unique_id=432682058]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1429270865]
+layout_mode = 2
+
+[node name="ChopDamageStatIncreaseLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=205587340]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "2->3 Damage"
+
+[node name="ChopDamageLevelLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1584007568]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Lvl3/20"
+horizontal_alignment = 2
+
+[node name="ChopDamageProgressBar" type="ProgressBar" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2049221795]
+custom_minimum_size = Vector2(370, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("5_bhfgd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_txjar")
+show_percentage = false
+
+[node name="ChopDamageBuyButton" type="Button" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer" unique_id=565726311]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("5_1aqid")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bhfgd")
+text = "$60"
+
+[node name="AxeSpeedPanel" type="Panel" parent="MarginContainer/UpgradesContainer/VBoxContainer" unique_id=580211109]
+custom_minimum_size = Vector2(1190, 100)
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel" unique_id=2100793826]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2" unique_id=645441646]
+layout_mode = 2
+split_offsets = PackedInt32Array(77, 420, 532)
+split_offset = 77
+
+[node name="UpgradeIcon" type="TextureRect" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer" unique_id=1091383228]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("7_1xhds")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer" unique_id=1353215176]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_top = 16
+
+[node name="AxeSpeedUpgradeLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer/MarginContainer" unique_id=798924149]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Axe Speed"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer" unique_id=354018675]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer/VBoxContainer" unique_id=532450377]
+layout_mode = 2
+
+[node name="AxeSpeedStatIncreaseLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2044812809]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "2->3 Damage"
+
+[node name="AxeSpeedLevelLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=282521345]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Lvl3/20"
+horizontal_alignment = 2
+
+[node name="AxeSpeedProgressBar" type="ProgressBar" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer/VBoxContainer" unique_id=1192054227]
+custom_minimum_size = Vector2(370, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("5_bhfgd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_txjar")
+show_percentage = false
+
+[node name="AxeSpeedBuyButton" type="Button" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer" unique_id=1347271927]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("5_1aqid")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bhfgd")
+text = "$60"
+
+[node name="SprintStaminaPanel" type="Panel" parent="MarginContainer/UpgradesContainer/VBoxContainer" unique_id=1489728352]
+custom_minimum_size = Vector2(1190, 100)
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel" unique_id=1932026999]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3" unique_id=1938408168]
+layout_mode = 2
+split_offsets = PackedInt32Array(77, 420, 532)
+split_offset = 77
+
+[node name="UpgradeIcon" type="TextureRect" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer" unique_id=1443372467]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("8_0851q")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer" unique_id=898295757]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_top = 16
+
+[node name="SprintStaminaUpgradeLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer/MarginContainer" unique_id=1865682367]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Sprint Stamina"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer" unique_id=1450881431]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer/VBoxContainer" unique_id=2089455794]
+layout_mode = 2
+
+[node name="SprintSpeedStatIncreaseLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1105011724]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "2->3 Damage"
+
+[node name="SprintStaminaLevelLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=920636934]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Lvl3/20"
+horizontal_alignment = 2
+
+[node name="SprintStaminaProgressBar" type="ProgressBar" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer/VBoxContainer" unique_id=932849645]
+custom_minimum_size = Vector2(370, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("5_bhfgd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_txjar")
+show_percentage = false
+
+[node name="SprintStaminaBuyButton" type="Button" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer" unique_id=1588126035]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("5_1aqid")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bhfgd")
+text = "$60"
+
+[node name="SprintSpeedPanel" type="Panel" parent="MarginContainer/UpgradesContainer/VBoxContainer" unique_id=2085247722]
+custom_minimum_size = Vector2(1190, 100)
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel" unique_id=1942442129]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4" unique_id=1623306541]
+layout_mode = 2
+split_offsets = PackedInt32Array(77, 420, 532)
+split_offset = 77
+
+[node name="UpgradeIcon" type="TextureRect" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer" unique_id=460621582]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("9_uggwf")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer" unique_id=621706413]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_top = 16
+
+[node name="SprintSpeedUpgradeLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer/MarginContainer" unique_id=1779252977]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Sprint Speed"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer" unique_id=1239922957]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer/VBoxContainer" unique_id=209565940]
+layout_mode = 2
+
+[node name="SprintSpeedStatIncreaseLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1699188457]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "2->3 Damage"
+
+[node name="SprintSpeedLevelLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=142533704]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Lvl3/20"
+horizontal_alignment = 2
+
+[node name="SprintSpeedProgressBar" type="ProgressBar" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer/VBoxContainer" unique_id=998845587]
+custom_minimum_size = Vector2(370, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("5_bhfgd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_txjar")
+show_percentage = false
+
+[node name="SprintSpeedBuyButton" type="Button" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer" unique_id=701901571]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("5_1aqid")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bhfgd")
+text = "$60"
+
+[node name="BackpackSizePanel" type="Panel" parent="MarginContainer/UpgradesContainer/VBoxContainer" unique_id=1805501483]
+custom_minimum_size = Vector2(1190, 100)
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel" unique_id=1676959522]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5" unique_id=1553081188]
+layout_mode = 2
+split_offsets = PackedInt32Array(77, 420, 532)
+split_offset = 77
+
+[node name="UpgradeIcon" type="TextureRect" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer" unique_id=1606892220]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("10_w8vvm")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer" unique_id=1150684771]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_top = 16
+
+[node name="BackpackUpgradeLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer/MarginContainer" unique_id=548951569]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Backpack Space"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer" unique_id=2084894363]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer/VBoxContainer" unique_id=842008127]
+layout_mode = 2
+
+[node name="BackpackStatIncreaseLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=508114927]
+layout_mode = 2
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "2->3 Damage"
+
+[node name="BackpackLevelLabel" type="Label" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1693488777]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_fwohg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Lvl3/20"
+horizontal_alignment = 2
+
+[node name="BackpackProgressBar" type="ProgressBar" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer/VBoxContainer" unique_id=990641235]
+custom_minimum_size = Vector2(370, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("5_bhfgd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_txjar")
+show_percentage = false
+
+[node name="BackpackSizeBuyButton" type="Button" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer" unique_id=1826000542]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("5_1aqid")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bhfgd")
+text = "$60"

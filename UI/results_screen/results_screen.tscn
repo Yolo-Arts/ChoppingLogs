@@ -357,11 +357,6 @@ texture_normal = ExtResource("3_gj08v")
 texture_pressed = ExtResource("4_k5toj")
 texture_hover = ExtResource("5_fq6vg")
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer" unique_id=861489096]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/margin_top = 105
-
 [node name="Shaker" type="Node" parent="." unique_id=1628977636 node_paths=PackedStringArray("target_node")]
 script = ExtResource("8_fq6vg")
 target_node = NodePath("..")
