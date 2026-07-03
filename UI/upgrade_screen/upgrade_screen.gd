@@ -187,18 +187,23 @@ func close_menu() -> void:
 	menu_transition_out()
 
 func chop_damage_buy_button_pressed() -> void:
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.ChopDamage)
 
 func axe_speed_buy_button_pressed() -> void:
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.AxeSpeed)
 
 func sprint_stamina_buy_button_pressed() -> void:
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.SprintStamina)
 
 func sprint_speed_buy_button_pressed() -> void:
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.SprintSpeed)
 
 func backpack_size_buy_button_pressed() -> void:
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.BackPack)
 
 func animate_progress_bar(bar: Range) -> void:
