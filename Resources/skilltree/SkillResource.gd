@@ -6,11 +6,11 @@ class_name SkillResource
 @export var texture: Texture2D
 
 @export_group("Levels & Scaling")
-@export var max_level: int = 5
+@export var max_level: int = 1
 @export var stat_increase: float = 1.0
 @export var upgrade_cost: int = 10
 @export var price_increase_mult_per_level: float = 1.5
-@export var level_requirement_to_reveal: int = 3
+@export var level_requirement_to_reveal: int = 1
 
 @export_group("Description")
 @export_multiline var description: String = "Description of the upgrade."

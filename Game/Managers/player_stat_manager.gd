@@ -7,7 +7,7 @@ class_name PlayerStats
 @export var base_normal_speed: float = 4.0
 @export var base_sprint_speed: float = 16.0
 @export var base_axe_damage_bonus: float = 1.0
-@export var base_axe_speed_bonus: float = 5.0
+@export var base_axe_speed_bonus: float = 1.0
 
 @export_group("Weight")
 @export var weight : float = 0
@@ -46,7 +46,8 @@ var max_weight : float:
 	get: return base_max_weight
 
 func get_axe_damage_at_level(lvl: int) -> float:
-	return base_axe_damage_bonus + (lvl * (1 * (
+	return base_axe_damage_bonus + (lvl * (1 * 
+	(
 		(SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_1] * 2) \
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_2] * 3) \
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_3] * 5) \
@@ -57,7 +58,7 @@ func get_axe_damage_at_level(lvl: int) -> float:
 	)))
 
 func get_axe_speed_at_level(lvl: int) -> float:
-	return base_axe_speed_bonus + (lvl * 0.1)
+	return base_axe_speed_bonus + (lvl * 0.2)
 
 func get_normal_speed_at_level(lvl: int) -> float:
 	return base_normal_speed + (lvl * 0.4)
