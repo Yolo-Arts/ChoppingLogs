@@ -89,7 +89,6 @@ func setup_ui():
 				if is_maxed:
 					set_button_maxed(backpack_size_buy_button)
 
-
 func setup_progress_bars():
 	chop_damage_progress_bar.max_value = UpgradeConfig.max_level[UpgradeConfig.Keys.ChopDamage]
 	axe_speed_progress_bar.max_value = UpgradeConfig.max_level[UpgradeConfig.Keys.AxeSpeed]
