@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dxeeba7abcf54"]
+
+[ext_resource type="Script" uid="uid://dsk3w5lardgl5" path="res://Game/Managers/player_stat_manager.gd" id="1_4qq58"]
+
+[node name="PlayerStatManager" type="Node" unique_id=743444273]
+script = ExtResource("1_4qq58")
+axe_range = 5.0

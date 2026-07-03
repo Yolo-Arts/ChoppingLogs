@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://c40f4lfb11mqv" path="res://Game/Managers/inventory_manager.gd" id="2_4ntmi"]
 [ext_resource type="Script" uid="uid://c4ww0aq4amjxg" path="res://Player/head.gd" id="2_5htga"]
 [ext_resource type="Script" uid="uid://dt1rcawit7yfg" path="res://Player/interaction_ray_cast.gd" id="2_btcbx"]
+[ext_resource type="PackedScene" uid="uid://dxeeba7abcf54" path="res://Player/player_stat_manager.tscn" id="4_5htga"]
 [ext_resource type="Script" uid="uid://dbrt0np04ex1f" path="res://Game/Managers/weight_manager.gd" id="4_gwnis"]
-[ext_resource type="Script" uid="uid://dsk3w5lardgl5" path="res://Game/Managers/player_stat_manager.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://dlwds3yw0ec24" path="res://Game/Managers/money_manager.gd" id="6_fhl08"]
 [ext_resource type="Script" uid="uid://b5ndsxcel2j73" path="res://Game/Managers/weapon_handler.gd" id="7_00tjw"]
 [ext_resource type="PackedScene" uid="uid://cg6gschdmf6ch" path="res://Objects/equippables/axe/equippable_axe.tscn" id="7_vtle1"]
@@ -60,9 +60,7 @@ shape = SubResource("CapsuleShape3D_l8h54")
 
 [node name="Managers" type="Node" parent="." unique_id=1911751187]
 
-[node name="PlayerStatManager" type="Node" parent="Managers" unique_id=1782077226]
-script = ExtResource("5_k53q1")
-axe_range = 5.0
+[node name="PlayerStatManager" parent="Managers" unique_id=743444273 instance=ExtResource("4_5htga")]
 
 [node name="InventoryManager" type="Node" parent="Managers" unique_id=2003678697 node_paths=PackedStringArray("player_stats")]
 script = ExtResource("2_4ntmi")

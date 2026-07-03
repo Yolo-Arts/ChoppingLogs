@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://whc3xvmgjd25" path="res://Shaders/gaussianBlur.gdshader" id="1_0vyij"]
 [ext_resource type="Script" uid="uid://dcvo540aqa4dh" path="res://UI/upgrade_screen/upgrade_screen.gd" id="1_pbu2f"]
 [ext_resource type="Theme" uid="uid://b6i7mrm1os0yh" path="res://UI/PauseMenu.tres" id="2_fwohg"]
+[ext_resource type="PackedScene" uid="uid://dxeeba7abcf54" path="res://Player/player_stat_manager.tscn" id="2_ouq7d"]
 [ext_resource type="PackedScene" uid="uid://brq32xhtxyg3b" path="res://Game/Managers/upgrades_controller.tscn" id="2_pnr4g"]
 [ext_resource type="Texture2D" uid="uid://c4yl1rk2vmk1o" path="res://Assets/Logo/TempLogo.svg" id="3_fwohg"]
 [ext_resource type="Texture2D" uid="uid://b5jpm0kqxis3q" path="res://Assets/UI/Icons/symbols_money.svg" id="4_0851q"]
@@ -67,6 +68,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pbu2f")
+
+[node name="PlayerStatManager" parent="." unique_id=743444273 instance=ExtResource("2_ouq7d")]
+unique_name_in_owner = true
 
 [node name="UpgradesController" parent="." unique_id=1613013721 instance=ExtResource("2_pnr4g")]
 unique_name_in_owner = true
