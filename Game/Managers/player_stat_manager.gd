@@ -6,7 +6,7 @@ class_name PlayerStats
 @export var base_max_weight: float = 5000.0
 @export var base_normal_speed: float = 4.0
 @export var base_sprint_speed: float = 16.0
-@export var base_axe_damage_bonus: float = 15.0
+@export var base_axe_damage_bonus: float = 1.0
 @export var base_axe_speed_bonus: float = 5.0
 
 @export_group("Weight")
@@ -27,26 +27,37 @@ var player_speed_with_weight_modifier: float = 1.0
 @export var fire_slash_cooldown: float = 20.0
 @export var fire_slash_pierce_count: int = 1
 
-var inventory_size: int:
-	get: return get_inventory_size_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.BackPack])
-
-var max_weight : float:
-	get: return base_max_weight
-
-var normal_speed: float:
-	get: return get_normal_speed_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed])
-
-var sprint_speed: float:
-	get: return get_sprint_speed_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed])
-
 var axe_damage_bonus: float:
 	get: return get_axe_damage_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.ChopDamage])
 
 var axe_speed_bonus: float:
 	get: return get_axe_speed_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.AxeSpeed])
 
-func get_inventory_size_at_level(lvl: int) -> int:
-	return base_inventory_size + (lvl * 1)
+var sprint_speed: float:
+	get: return get_sprint_speed_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed])
+
+var normal_speed: float:
+	get: return get_normal_speed_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed])
+
+var inventory_size: int:
+	get: return get_inventory_size_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.BackPack])
+
+var max_weight : float:
+	get: return base_max_weight
+
+func get_axe_damage_at_level(lvl: int) -> float:
+	return base_axe_damage_bonus + (lvl * (1 * (
+		(SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_1] * 2) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_2] * 3) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_3] * 5) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_4] * 10) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_5] * 30) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_6] * 50) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_7] * 400) 
+	)))
+
+func get_axe_speed_at_level(lvl: int) -> float:
+	return base_axe_speed_bonus + (lvl * 0.1)
 
 func get_normal_speed_at_level(lvl: int) -> float:
 	return base_normal_speed + (lvl * 0.4)
@@ -54,11 +65,8 @@ func get_normal_speed_at_level(lvl: int) -> float:
 func get_sprint_speed_at_level(lvl: int) -> float:
 	return base_sprint_speed + (lvl * 2.4)
 
-func get_axe_damage_at_level(lvl: int) -> float:
-	return base_axe_damage_bonus + (lvl * 10.0)
-
-func get_axe_speed_at_level(lvl: int) -> float:
-	return base_axe_speed_bonus + (lvl * 0.1)
+func get_inventory_size_at_level(lvl: int) -> int:
+	return base_inventory_size + (lvl * 1)
 
 func _ready() -> void:
 	EventSystem.WEP_unlock_fire_slash.connect(func(): unlocked_fire_slash = true, CONNECT_ONE_SHOT)

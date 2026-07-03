@@ -239,7 +239,7 @@ func refresh_stat_labels() -> void:
 		chop_damage_stat_increase_label.text = "%d Damage (MAX)" % int(current_dmg)
 	else:
 		var next_dmg = player_stat_manager.get_axe_damage_at_level(chop_lvl + 1)
-		update_stat_increase_label(chop_damage_stat_increase_label, current_dmg, next_dmg, "Damage")
+		update_stat_increase_label(chop_damage_stat_increase_label, current_dmg, next_dmg, "DMG")
 	
 	var axe_lvl = UpgradeConfig.upgrades[UpgradeConfig.Keys.AxeSpeed]
 	var axe_max = UpgradeConfig.max_level[UpgradeConfig.Keys.AxeSpeed]
