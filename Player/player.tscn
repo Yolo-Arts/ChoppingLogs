@@ -62,7 +62,6 @@ shape = SubResource("CapsuleShape3D_l8h54")
 
 [node name="PlayerStatManager" type="Node" parent="Managers" unique_id=1782077226]
 script = ExtResource("5_k53q1")
-inventory_size = 5
 axe_range = 5.0
 
 [node name="InventoryManager" type="Node" parent="Managers" unique_id=2003678697 node_paths=PackedStringArray("player_stats")]
