@@ -1,6 +1,6 @@
 extends Node
 
-const UPGRADES_FILE_PATH: String = "user://skill_tree_upgrades.json"
+const UPGRADES_FILE_PATH: String = "user://skill_tree_upgrades_test.json"
 
 const ENCRYPTION_PASSWORD: String = "jaIAOSDjn1327SaKL_jds0YuPKjL4dz*wdja"
 

@@ -13,6 +13,20 @@ class_name PlayerStats
 @export var weight : float = 0
 var player_speed_with_weight_modifier: float = 1.0
 
+@export_group("Stats")
+@export var health: float = 100
+@export var money: float = 0
+@export var axe_damage_mult_bonus: float = 1.0
+@export var axe_range: float = 1.5
+@export var axe_crit_chance: float = 0.0	
+@export var axe_crit_damage: float = 0.0
+
+@export_group("Fire Slash")
+@export var unlocked_fire_slash: bool = false
+@export var fire_slash_damage: float = 50.0
+@export var fire_slash_cooldown: float = 20.0
+@export var fire_slash_pierce_count: int = 1
+
 var inventory_size: int:
 	get: return get_inventory_size_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.BackPack])
 
@@ -30,21 +44,6 @@ var axe_damage_bonus: float:
 
 var axe_speed_bonus: float:
 	get: return get_axe_speed_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.AxeSpeed])
-
-@export_group("Stats")
-@export var health: float = 100
-@export var money: float = 0
-
-@export var axe_damage_mult_bonus: float = 1.0
-@export var axe_range: float = 1.5
-@export var axe_crit_chance: float = 0.0	
-@export var axe_crit_damage: float = 0.0
-
-@export_group("Fire Slash")
-@export var unlocked_fire_slash: bool = false
-@export var fire_slash_damage: float = 50.0
-@export var fire_slash_cooldown: float = 20.0
-@export var fire_slash_pierce_count: int = 1
 
 func get_inventory_size_at_level(lvl: int) -> int:
 	return base_inventory_size + (lvl * 1)

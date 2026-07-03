@@ -61,6 +61,8 @@ func _ready() -> void:
 	EventSystem.UPG_upgrade_updated.connect(update_ui)
 
 func setup_ui():
+	UpgradeConfig.update_max_levels()
+	
 	chop_damage_level_label.text = "lvl %d/%d" % [UpgradeConfig.upgrades[UpgradeConfig.Keys.ChopDamage], UpgradeConfig.max_level[UpgradeConfig.Keys.ChopDamage]]
 	axe_speed_level_label.text = "lvl %d/%d" % [UpgradeConfig.upgrades[UpgradeConfig.Keys.AxeSpeed], UpgradeConfig.max_level[UpgradeConfig.Keys.AxeSpeed]]
 	sprint_stamina_level_label.text = "lvl %d/%d" % [UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintStamina], UpgradeConfig.max_level[UpgradeConfig.Keys.SprintStamina]]

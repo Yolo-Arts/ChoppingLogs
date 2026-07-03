@@ -226,6 +226,7 @@ height = 20.0
 
 [node name="PrototypeScene" type="Node" unique_id=870475367]
 script = ExtResource("1_pkgy2")
+reset_upgrades = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1487685097]
 unique_name_in_owner = true

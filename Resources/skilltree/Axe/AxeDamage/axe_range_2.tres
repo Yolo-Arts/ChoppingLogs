@@ -1,7 +1,7 @@
 [gd_resource type="Resource" format=3 uid="uid://d0bcggwo5j84s"]
 
 [ext_resource type="Script" uid="uid://0ehivno670p5" path="res://Resources/skilltree/Axe/AxeDamage/axe_range.gd" id="1_12ej7"]
-[ext_resource type="Texture2D" uid="uid://gdkak8chb0g4" path="res://Assets/skill_tree/axe/AxeRange2.png" id="2_12ej7"]
+[ext_resource type="Texture2D" uid="uid://dypimsx5s1x8y" path="res://Assets/skill_tree/axe/AxeRange/AxeRange02.png" id="2_12ej7"]
 
 [resource]
 script = ExtResource("1_12ej7")
