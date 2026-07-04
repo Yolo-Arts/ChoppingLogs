@@ -26,36 +26,27 @@
 [ext_resource type="Texture2D" uid="uid://fo1x1vetrrsc" path="res://Assets/skill_tree/axe/AxeCritRate/AxeCritRate01.png" id="18_eeitg"]
 [ext_resource type="Texture2D" uid="uid://4ogru11tqoii" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed01.png" id="18_gx7re"]
 [ext_resource type="Texture2D" uid="uid://dpau2qi6a262a" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage08.png" id="18_kffl4"]
-[ext_resource type="Texture2D" uid="uid://u7fanbepr11c" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease01.png" id="18_mq7u6"]
 [ext_resource type="Texture2D" uid="uid://b7jkqwb2c6ehb" path="res://Assets/skill_tree/axe/AxeCritRate/AxeCritRate02.png" id="19_1ny6p"]
-[ext_resource type="Texture2D" uid="uid://c5qopuyvcpkd8" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease02.png" id="19_5p7h3"]
 [ext_resource type="Texture2D" uid="uid://dnjrkg7o1xlri" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed02.png" id="19_amre3"]
 [ext_resource type="Resource" uid="uid://bx3gvntp2rsru" path="res://Resources/skilltree/Axe/AxeDamage/sprint_speed_1.tres" id="19_crf34"]
 [ext_resource type="Texture2D" uid="uid://80rb4mqcvga0" path="res://Assets/skill_tree/axe/AxeCritRate/AxeCritRate03.png" id="20_0pky4"]
 [ext_resource type="Texture2D" uid="uid://cj655n43idyi7" path="res://Assets/skill_tree/axe/AxeCritRate/AxeCritRate05.png" id="20_1ny6p"]
 [ext_resource type="Resource" uid="uid://dugkp1peqpny6" path="res://Resources/skilltree/Axe/AxeDamage/sprint_speed_2.tres" id="20_bh5uq"]
-[ext_resource type="Texture2D" uid="uid://cj2hjtkoaf140" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease03.png" id="20_efb0u"]
 [ext_resource type="Texture2D" uid="uid://bmg11artyqldv" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed03.png" id="20_fm8dc"]
 [ext_resource type="Texture2D" uid="uid://dv3ufu5a8us8f" path="res://Assets/skill_tree/axe/AxeCritRate/AxeCritRate04.png" id="20_ux5mw"]
 [ext_resource type="Resource" uid="uid://k6c1gcbdu0ve" path="res://Resources/skilltree/Axe/AxeDamage/jump_height.tres" id="21_27nor"]
 [ext_resource type="Texture2D" uid="uid://bp5q5os11as4h" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed04.png" id="21_utaip"]
-[ext_resource type="Texture2D" uid="uid://cdvv5xdd2e3hc" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease04.png" id="21_vld6h"]
 [ext_resource type="Resource" uid="uid://khvu6thof5f6" path="res://Resources/skilltree/Axe/AxeDamage/sprint_length_1.tres" id="22_2ddyc"]
-[ext_resource type="Texture2D" uid="uid://drd2pfbevbd4f" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease05.png" id="22_3kj7e"]
 [ext_resource type="Texture2D" uid="uid://fsnag8s87n0g" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed05.png" id="22_tcfgv"]
 [ext_resource type="Texture2D" uid="uid://cqcftsy4wy2ta" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed06.png" id="23_05uoc"]
 [ext_resource type="Resource" uid="uid://cu3uy0a4gn5n5" path="res://Resources/skilltree/Axe/AxeDamage/sprint_length_2.tres" id="23_6edkr"]
-[ext_resource type="Texture2D" uid="uid://b8qvhqfwlc23" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease06.png" id="23_t64jv"]
 [ext_resource type="Shader" uid="uid://cw83ncdeyxqne" path="res://Shaders/red_vignette.gdshader" id="24_2ddyc"]
-[ext_resource type="Texture2D" uid="uid://cjw317eptbtce" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease07.png" id="24_vdq88"]
 [ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="24_xsv4x"]
 [ext_resource type="Texture2D" uid="uid://bey8sem7ewmtu" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed07.png" id="24_yp8gp"]
 [ext_resource type="Texture2D" uid="uid://begc66124e45k" path="res://Assets/skill_tree/SkillTreeBackground.svg" id="25_fjpjg"]
-[ext_resource type="Texture2D" uid="uid://433kwjgv5t5t" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease08.png" id="25_lfd44"]
 [ext_resource type="Texture2D" uid="uid://3hvkbkvmhbxa" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed08.png" id="25_uoit0"]
 [ext_resource type="Texture2D" uid="uid://ctsc4neuvapn" path="res://Assets/skill_tree/Inventory/InventorySizeMaxLevel/InvetorySizeMaxLevel01.png" id="26_amre3"]
 [ext_resource type="Texture2D" uid="uid://b5jpm0kqxis3q" path="res://Assets/UI/Icons/symbols_money.svg" id="26_gj7ge"]
-[ext_resource type="Texture2D" uid="uid://b8epiig1otm1k" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease09.png" id="26_rqgbt"]
 [ext_resource type="Texture2D" uid="uid://bqrt4b2lxtwra" path="res://Assets/skill_tree/Inventory/InventorySizeMaxLevel/InvetorySizeMaxLevel02.png" id="27_fm8dc"]
 [ext_resource type="Theme" uid="uid://ks0hgvfqbimr" path="res://Assets/UI/theme.tres" id="27_gj7ge"]
 [ext_resource type="Texture2D" uid="uid://br12ymg1djtea" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel01.png" id="27_v6pny"]
@@ -76,6 +67,15 @@
 [ext_resource type="Texture2D" uid="uid://bb8mda7t4flsc" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel04.png" id="33_ph2hn"]
 [ext_resource type="Texture2D" uid="uid://6hkbuwk1doph" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel05.png" id="34_7jxhf"]
 [ext_resource type="Texture2D" uid="uid://byhc75p51avth" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel06.png" id="35_6fw87"]
+[ext_resource type="Resource" uid="uid://be8kf3wa5wmgu" path="res://Resources/skilltree/Timer/inc_time_1.tres" id="47_0pky4"]
+[ext_resource type="Resource" uid="uid://dk3wfrbvxn4vt" path="res://Resources/skilltree/Timer/inc_time_2.tres" id="48_0pky4"]
+[ext_resource type="Resource" uid="uid://bp3wpq7814mxo" path="res://Resources/skilltree/Timer/inc_time_3.tres" id="49_0pky4"]
+[ext_resource type="Resource" uid="uid://by7cjnv7c2dix" path="res://Resources/skilltree/Timer/inc_time_4.tres" id="50_0pky4"]
+[ext_resource type="Resource" uid="uid://vbq8mhfjb4pw" path="res://Resources/skilltree/Timer/inc_time_5.tres" id="51_0pky4"]
+[ext_resource type="Resource" uid="uid://cbo2ge7xbh7sp" path="res://Resources/skilltree/Timer/inc_time_6.tres" id="52_0pky4"]
+[ext_resource type="Resource" uid="uid://b4m1d4qdacomk" path="res://Resources/skilltree/Timer/inc_time_7.tres" id="53_0pky4"]
+[ext_resource type="Resource" uid="uid://ch7pivww81w75" path="res://Resources/skilltree/Timer/inc_time_8.tres" id="54_0pky4"]
+[ext_resource type="Resource" uid="uid://ddnvpfx4edbek" path="res://Resources/skilltree/Timer/inc_time_9.tres" id="55_0pky4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
 bg_color = Color(0, 0, 0, 0.84705883)
@@ -368,51 +368,6 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 script = ExtResource("24_xsv4x")
 upgrade_key = 31
 texture = ExtResource("35_6fw87")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_fjpjg"]
-script = ExtResource("24_xsv4x")
-texture = ExtResource("18_mq7u6")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_d8ioi"]
-script = ExtResource("24_xsv4x")
-texture = ExtResource("19_5p7h3")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_5j8f4"]
-script = ExtResource("24_xsv4x")
-texture = ExtResource("20_efb0u")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_4bvpn"]
-script = ExtResource("24_xsv4x")
-texture = ExtResource("21_vld6h")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_v6pny"]
-script = ExtResource("24_xsv4x")
-texture = ExtResource("22_3kj7e")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_mnncb"]
-script = ExtResource("24_xsv4x")
-texture = ExtResource("23_t64jv")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_usaod"]
-script = ExtResource("24_xsv4x")
-texture = ExtResource("24_vdq88")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_21wj6"]
-script = ExtResource("24_xsv4x")
-texture = ExtResource("25_lfd44")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_wn3og"]
-script = ExtResource("24_xsv4x")
-texture = ExtResource("26_rqgbt")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_hx5fe"]
@@ -835,55 +790,55 @@ offset_left = -160.0
 offset_top = 152.0
 offset_right = -70.0
 offset_bottom = 242.0
-skill_data = SubResource("Resource_fjpjg")
+skill_data = ExtResource("47_0pky4")
 
 [node name="TimeIncrease2" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease" unique_id=1783867083 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -168.0
 offset_right = -78.0
-skill_data = SubResource("Resource_d8ioi")
+skill_data = ExtResource("48_0pky4")
 
 [node name="TimeIncrease3" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease/TimeIncrease2" unique_id=729432846 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -160.0
 offset_right = -70.0
-skill_data = SubResource("Resource_5j8f4")
+skill_data = ExtResource("49_0pky4")
 
 [node name="TimeIncrease4" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease/TimeIncrease2/TimeIncrease3" unique_id=1115240805 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -136.0
 offset_right = -46.0
-skill_data = SubResource("Resource_4bvpn")
+skill_data = ExtResource("50_0pky4")
 
 [node name="TimeIncrease5" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease/TimeIncrease2/TimeIncrease3/TimeIncrease4" unique_id=101806743 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -160.0
 offset_right = -70.0
-skill_data = SubResource("Resource_v6pny")
+skill_data = ExtResource("51_0pky4")
 
 [node name="TimeIncrease6" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease/TimeIncrease2/TimeIncrease3/TimeIncrease4/TimeIncrease5" unique_id=288972836 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -160.0
 offset_right = -70.0
-skill_data = SubResource("Resource_mnncb")
+skill_data = ExtResource("52_0pky4")
 
 [node name="TimeIncrease7" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease/TimeIncrease2/TimeIncrease3/TimeIncrease4/TimeIncrease5/TimeIncrease6" unique_id=725342427 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -176.0
 offset_right = -86.0
-skill_data = SubResource("Resource_usaod")
+skill_data = ExtResource("53_0pky4")
 
 [node name="TimeIncrease8" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease/TimeIncrease2/TimeIncrease3/TimeIncrease4/TimeIncrease5/TimeIncrease6/TimeIncrease7" unique_id=290337365 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -184.0
 offset_right = -94.0
-skill_data = SubResource("Resource_21wj6")
+skill_data = ExtResource("54_0pky4")
 
 [node name="TimeIncrease9" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease/TimeIncrease2/TimeIncrease3/TimeIncrease4/TimeIncrease5/TimeIncrease6/TimeIncrease7/TimeIncrease8" unique_id=1754953891 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -184.0
 offset_right = -94.0
-skill_data = SubResource("Resource_wn3og")
+skill_data = ExtResource("55_0pky4")
 
 [node name="AxeDamageMaxLevel0" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=133172710 instance=ExtResource("6_2gknk")]
 layout_mode = 0

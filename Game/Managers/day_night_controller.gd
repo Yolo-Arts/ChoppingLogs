@@ -121,6 +121,7 @@ func _update_world_lighting(current_time: float, horizon_color: Color) -> void:
 	sun_light.light_color = horizon_color
 
 func _update_time_label() -> void:
+	@warning_ignore("integer_division")#purposely truncated
 	var minutes: int = int(time_remaining) / 60
 	var seconds: int = int(time_remaining) % 60
 	
