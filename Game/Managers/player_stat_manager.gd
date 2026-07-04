@@ -61,7 +61,7 @@ var max_weight : float:
 	get: return base_max_weight
 
 func get_axe_damage_at_level(lvl: int) -> float:
-	return base_axe_damage_bonus + (lvl * (1 * 
+	return base_axe_damage_bonus + (lvl * max(1, (1 * 
 	(
 		(SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_1] * 2) \
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_2] * 3) \
@@ -70,7 +70,7 @@ func get_axe_damage_at_level(lvl: int) -> float:
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_5] * 30) \
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_6] * 50) \
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_7] * 400) 
-	)))
+	))))
 
 func get_axe_speed_at_level(lvl: int) -> float:
 	return base_axe_speed_bonus + (lvl * 0.2)

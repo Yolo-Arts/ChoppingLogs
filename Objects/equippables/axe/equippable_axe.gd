@@ -25,7 +25,7 @@ func player_damage_calculation() -> Damage:
 		#crit_damage = axe_resource.damage * (player_stats.axe_crit_damage/100.0)				# calculate crit damage 
 		crit_damage = base_damage * (player_stats.axe_crit_damage / 100.0)
 	var final_damage = (base_damage * player_stats.axe_damage_mult_bonus) + crit_damage
-	print("Final Damage: ", final_damage)
+	#print("Final Damage: ", final_damage)
 	return Damage.new(final_damage, crit)		# return damage object.
 	# return base_damage * player_stats.axe_damage_mult_bonus + crit_damage	# return fully calculated damage
 

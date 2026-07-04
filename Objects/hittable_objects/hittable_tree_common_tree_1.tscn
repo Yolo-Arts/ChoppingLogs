@@ -34,6 +34,15 @@ shader_parameter/uv_offset = Vector2(0, 0)
 [node name="HittableTree_CommonTree_1" unique_id=640084038 instance=ExtResource("1_xklyl")]
 attributes = SubResource("Resource_hopfl")
 
+[node name="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(1570950279) index="0" unique_id=1547967030]
+transform = Transform3D(1.5599618, 0, 0, 0, 1, 0, 0, 0, 1.50967, 0, 1.3334961, 0.06382084)
+
+[node name="ItemSpawnPoints" parent="." index="1" unique_id=1765943128]
+transform = Transform3D(1.5599618, 0, 0, 0, 1, 0, 0, 0, 1.50967, 0, 0, 0.06382084)
+
+[node name="Hitbox" parent="." index="2" unique_id=102348333]
+transform = Transform3D(1.5599618, 0, 0, 0, 1, 0, 0, 0, 1.50967, 0, 0, 0.06382084)
+
 [node name="CommonTree_2" parent="." index="3" unique_id=1094452780 instance=ExtResource("2_xklyl")]
 transform = Transform3D(338.9, 0, 0, 0, -1.481379e-05, 338.9, 0, -338.9, -1.481379e-05, 0, 0, 0)
 lod_bias = 0.001
