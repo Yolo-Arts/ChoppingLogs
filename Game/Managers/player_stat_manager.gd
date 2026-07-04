@@ -18,8 +18,23 @@ var player_speed_with_weight_modifier: float = 1.0
 @export var money: float = 0
 @export var axe_damage_mult_bonus: float = 1.0
 @export var axe_range: float = 1.5
-@export var axe_crit_chance: float = 0.0	
-@export var axe_crit_damage: float = 0.0
+@export var axe_crit_chance: float = 0.0:
+	get:
+		return (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_CHANCE_1] * 10.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_CHANCE_2] * 2.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_CHANCE_3] * 5.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_CHANCE_4] * 10.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_CHANCE_5] * 10.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_CHANCE_6] * 10.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_CHANCE_7] * 10.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_CHANCE_8] * 10.0) 
+@export var axe_crit_damage: float = 100.0:
+	get:
+		return 100 + (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_DAMAGE_1] * 5.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_DAMAGE_2] * 10.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_DAMAGE_3] * 25.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_DAMAGE_4] * 50.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_DAMAGE_5] * 100.0) 
 
 @export_group("Fire Slash")
 @export var unlocked_fire_slash: bool = false
@@ -87,14 +102,14 @@ func _ready() -> void:
 		axe_range += increase
 		EventSystem.AXE_update_hit_marker_position.emit()
 	)
-	EventSystem.UPG_increase_crit_chance.connect(increase_player_crit_chance)
-	EventSystem.UPG_increase_crit_damage.connect(increase_player_crit_damage)
+	#EventSystem.UPG_increase_crit_chance.connect(increase_player_crit_chance)
+	#EventSystem.UPG_increase_crit_damage.connect(increase_player_crit_damage)
 
 
-func increase_player_crit_chance(crit_chance: float):
-	axe_crit_chance += crit_chance
-	print(axe_crit_chance)
-
-func increase_player_crit_damage(crit_dmg: float):
-	axe_crit_damage += crit_dmg
-	print(axe_crit_damage)
+#func increase_player_crit_chance(crit_chance: float):
+	#axe_crit_chance += crit_chance
+	#print(axe_crit_chance)
+#
+#func increase_player_crit_damage(crit_dmg: float):
+	#axe_crit_damage += crit_dmg
+	#print(axe_crit_damage)

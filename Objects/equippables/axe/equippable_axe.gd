@@ -19,11 +19,14 @@ func player_damage_calculation() -> Damage:
 	# Calculate crit damage
 	var crit_damage = 0;
 	var crit = false
+	var base_damage = axe_resource.damage + player_stats.axe_damage_bonus						# calculate axe base + bonus damage
 	if (randf_range(0.0, 100.0) <= player_stats.axe_crit_chance):								# check crit damage chance
 		crit = true
-		crit_damage = axe_resource.damage * (player_stats.axe_crit_damage/100.0)				# calculate crit damage 
-	var base_damage = axe_resource.damage + player_stats.axe_damage_bonus						# calculate axe base + bonus damage
-	return Damage.new(base_damage * player_stats.axe_damage_mult_bonus + crit_damage, crit)		# return damage object.
+		#crit_damage = axe_resource.damage * (player_stats.axe_crit_damage/100.0)				# calculate crit damage 
+		crit_damage = base_damage * (player_stats.axe_crit_damage / 100.0)
+	var final_damage = (base_damage * player_stats.axe_damage_mult_bonus) + crit_damage
+	print("Final Damage: ", final_damage)
+	return Damage.new(final_damage, crit)		# return damage object.
 	# return base_damage * player_stats.axe_damage_mult_bonus + crit_damage	# return fully calculated damage
 
 func check_hit() -> void:
