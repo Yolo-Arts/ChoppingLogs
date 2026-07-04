@@ -92,6 +92,7 @@ enum Keys {
 	INC_TIME_7,
 	INC_TIME_8,
 	INC_TIME_9,
+	TIME_TREES
 }
 
 func populate_initial_upgrades() -> void:

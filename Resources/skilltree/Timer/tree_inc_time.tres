@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://b7t22mon42cgb"]
+
+[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_0pe31"]
+[ext_resource type="Texture2D" uid="uid://b8epiig1otm1k" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease09.png" id="2_f83ci"]
+
+[resource]
+script = ExtResource("1_0pe31")
+upgrade_name = "Time Trees"
+upgrade_key = 85
+texture = ExtResource("2_f83ci")
+upgrade_cost = 1
+description = "Cutting a tree increases the remaining time until quota by 0.1s."
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"

@@ -102,6 +102,11 @@ func _ready() -> void:
 		axe_range += increase
 		EventSystem.AXE_update_hit_marker_position.emit()
 	)
+	
+	EventSystem.TRE_tree_cut.connect(func(): 
+		if SkillTreeConfig.upgrades[SkillTreeConfig.Keys.TIME_TREES] > 0:
+			EventSystem.HUD_change_countdown.emit(0.1) #TODO: Refactor once skill tree system is more solidified.
+	)
 	#EventSystem.UPG_increase_crit_chance.connect(increase_player_crit_chance)
 	#EventSystem.UPG_increase_crit_damage.connect(increase_player_crit_damage)
 

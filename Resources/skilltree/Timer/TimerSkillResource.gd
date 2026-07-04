@@ -1,4 +1,4 @@
-class_name TimerSkillResource extends SkillResource
+class_name TimerSkillResource extends SkillResource#TODO: Timer skills + Time Trees costs.
 
 @export_group("Timing")
 @export var _add_time_immediately: bool = true#easy switch to update time immediately or only on respawn
