@@ -1,6 +1,7 @@
 extends Node
 
-@onready var hud: Control = %HUD
+#@onready var hud: Control = %HUD
+@onready var hud: Control = %HUD_V2
 
 func _enter_tree() -> void:
 	EventSystem.HUD_hide_hud.connect(hide_hud)

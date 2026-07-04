@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://yw6bqmltbj36"]
+
+[ext_resource type="Script" uid="uid://hywo1pydyobt" path="res://UI/HUD_V2/hud_v_2.gd" id="1_6nis1"]
+[ext_resource type="Theme" uid="uid://b6i7mrm1os0yh" path="res://UI/PauseMenu.tres" id="1_ms7x3"]
+[ext_resource type="Theme" uid="uid://cm7h205sbnr7x" path="res://UI/HUD_V2/HUD.tres" id="2_abbx7"]
+[ext_resource type="Texture2D" uid="uid://cw4pi6mk2gfkc" path="res://Assets/UI/Icons/log.png" id="3_nxmkm"]
+[ext_resource type="Texture2D" uid="uid://dmbqc1wu422w1" path="res://Assets/UI/Icons/PrestigePoint.png" id="4_weevo"]
+[ext_resource type="Texture2D" uid="uid://mmgvlaw8itl" path="res://Assets/UI/Icons/upgrade_icon/Sprint Stamina.png" id="5_weevo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ms7x3"]
+bg_color = Color(0.36, 0.25344002, 0.22680001, 0.24705882)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.84313726, 0.33333334, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nis1"]
+bg_color = Color(0.23529412, 0.16470589, 0.019607844, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yrs7"]
+bg_color = Color(0.4862745, 0.34901962, 0.07058824, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[node name="HUD_V2" type="Control" unique_id=1163280902]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6nis1")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1063554217]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TopLeft" type="VBoxContainer" parent="MarginContainer" unique_id=376534477]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="DayLabel" type="Label" parent="MarginContainer/TopLeft" unique_id=1587078023]
+layout_mode = 2
+theme = ExtResource("1_ms7x3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 24
+text = "Day 3"
+
+[node name="MoneyLabel" type="Label" parent="MarginContainer/TopLeft" unique_id=504371413]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("1_ms7x3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 48
+text = "$5000"
+vertical_alignment = 1
+
+[node name="QuotaAmount" type="Label" parent="MarginContainer/TopLeft" unique_id=788873509]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_ms7x3")
+theme_override_colors/font_color = Color(0.9882353, 0.21960784, 0.3254902, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 32
+text = "/ $7500"
+
+[node name="TopMiddleContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1540845279]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="DayEndsIn" type="Label" parent="MarginContainer/TopMiddleContainer" unique_id=1089475240]
+layout_mode = 2
+theme = ExtResource("1_ms7x3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 24
+text = "Day Ends In"
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/TopMiddleContainer" unique_id=1346263155]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("1_ms7x3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 40
+text = "09:59"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopRightContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1527834400]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="LogStoragePanel" type="Panel" parent="MarginContainer/TopRightContainer" unique_id=398468723]
+custom_minimum_size = Vector2(380, 64)
+layout_mode = 2
+theme = ExtResource("2_abbx7")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TopRightContainer/LogStoragePanel" unique_id=1621192080]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 17
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TopRightContainer/LogStoragePanel/MarginContainer" unique_id=1786845485]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TopRightContainer/LogStoragePanel/MarginContainer/HBoxContainer" unique_id=855337900]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/margin_bottom = 1
+
+[node name="InventorySize" type="Label" parent="MarginContainer/TopRightContainer/LogStoragePanel/MarginContainer/HBoxContainer/MarginContainer" unique_id=454531691]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme = ExtResource("1_ms7x3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "100,000/100,000"
+horizontal_alignment = 2
+
+[node name="LogIcon" type="TextureRect" parent="MarginContainer/TopRightContainer/LogStoragePanel/MarginContainer/HBoxContainer" unique_id=1702332002]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_nxmkm")
+stretch_mode = 2
+
+[node name="PrestigePanel" type="Panel" parent="MarginContainer/TopRightContainer" unique_id=521880814]
+custom_minimum_size = Vector2(380, 64)
+layout_mode = 2
+theme = ExtResource("2_abbx7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ms7x3")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/TopRightContainer/PrestigePanel" unique_id=1025487397]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 17
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TopRightContainer/PrestigePanel/MarginContainer2" unique_id=1025697672]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TopRightContainer/PrestigePanel/MarginContainer2/HBoxContainer" unique_id=681629624]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/margin_bottom = 1
+
+[node name="PrestigePoints" type="Label" parent="MarginContainer/TopRightContainer/PrestigePanel/MarginContainer2/HBoxContainer/MarginContainer" unique_id=1290428690]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme = ExtResource("1_ms7x3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "1500"
+horizontal_alignment = 2
+
+[node name="PrestigeIcon" type="TextureRect" parent="MarginContainer/TopRightContainer/PrestigePanel/MarginContainer2/HBoxContainer" unique_id=1198681092]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_weevo")
+stretch_mode = 2
+
+[node name="BottomMiddleContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2050005058]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/BottomMiddleContainer" unique_id=855996317]
+layout_mode = 2
+texture = ExtResource("5_weevo")
+stretch_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/BottomMiddleContainer" unique_id=268110170]
+custom_minimum_size = Vector2(480, 20)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_6nis1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5yrs7")
+value = 46.08
+show_percentage = false
