@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://vbq8mhfjb4pw"]
+[gd_resource type="Resource" script_class="TimerSkillResource" format=3 uid="uid://vbq8mhfjb4pw"]
 
-[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_gouc2"]
+[ext_resource type="Script" uid="uid://b4nhvaulpqed0" path="res://Resources/skilltree/Timer/TimerSkillResource.gd" id="1_gouc2"]
 [ext_resource type="Texture2D" uid="uid://drd2pfbevbd4f" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease05.png" id="2_gouc2"]
 
 [resource]
