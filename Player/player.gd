@@ -103,9 +103,9 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		if EventSystem.is_transitioning == false:
 			EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PauseMenu)
 	
-	if event.is_action_pressed("open_inventory"):
-		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.Inventory)
-		EventSystem.WEI_ask_update_weight_visual.emit()
+	#if event.is_action_pressed("open_inventory"):
+		#EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.Inventory)
+		#EventSystem.WEI_ask_update_weight_visual.emit()
 
 func spawn_discarded_item(scene: PackedScene):
 	EventSystem.SPA_spawn_scene.emit(scene, discard_marker.global_transform)
