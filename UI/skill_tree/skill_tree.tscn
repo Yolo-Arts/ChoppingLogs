@@ -42,19 +42,29 @@
 [ext_resource type="Texture2D" uid="uid://begc66124e45k" path="res://Assets/skill_tree/SkillTreeBackground.svg" id="25_fjpjg"]
 [ext_resource type="Texture2D" uid="uid://433kwjgv5t5t" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease08.png" id="25_lfd44"]
 [ext_resource type="Texture2D" uid="uid://3hvkbkvmhbxa" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed08.png" id="25_uoit0"]
+[ext_resource type="Texture2D" uid="uid://ctsc4neuvapn" path="res://Assets/skill_tree/Inventory/InventorySizeMaxLevel/InvetorySizeMaxLevel01.png" id="26_amre3"]
 [ext_resource type="Texture2D" uid="uid://b5jpm0kqxis3q" path="res://Assets/UI/Icons/symbols_money.svg" id="26_gj7ge"]
 [ext_resource type="Texture2D" uid="uid://b8epiig1otm1k" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease09.png" id="26_rqgbt"]
+[ext_resource type="Texture2D" uid="uid://bqrt4b2lxtwra" path="res://Assets/skill_tree/Inventory/InventorySizeMaxLevel/InvetorySizeMaxLevel02.png" id="27_fm8dc"]
 [ext_resource type="Theme" uid="uid://ks0hgvfqbimr" path="res://Assets/UI/theme.tres" id="27_gj7ge"]
 [ext_resource type="Texture2D" uid="uid://br12ymg1djtea" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel01.png" id="27_v6pny"]
 [ext_resource type="Texture2D" uid="uid://s7ajmx3itncw" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel02.png" id="28_mnncb"]
+[ext_resource type="Texture2D" uid="uid://cvyhielws0yjp" path="res://Assets/skill_tree/Inventory/InventorySizeMaxLevel/InvetorySizeMaxLevel03.png" id="28_utaip"]
 [ext_resource type="Texture2D" uid="uid://dnyqxu4xgfpr6" path="res://Assets/skill_tree/axe/AxeRange/AxeRange03.png" id="29_t64jv"]
+[ext_resource type="Texture2D" uid="uid://bnvus3ubrk3di" path="res://Assets/skill_tree/Inventory/InventorySizeMaxLevel/InvetorySizeMaxLevel04.png" id="29_tcfgv"]
 [ext_resource type="Texture2D" uid="uid://cfjhcevwlnesw" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel03.png" id="29_usaod"]
+[ext_resource type="Texture2D" uid="uid://du2nywrpr0deq" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel01.png" id="30_05uoc"]
 [ext_resource type="Texture2D" uid="uid://bwf3hgtn4ht64" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel04.png" id="30_21wj6"]
 [ext_resource type="Texture2D" uid="uid://6dek8efsaefs" path="res://Assets/skill_tree/axe/AxeRange/AxeRange04.png" id="30_vdq88"]
 [ext_resource type="Texture2D" uid="uid://crtkt4no3dsah" path="res://Assets/skill_tree/axe/AxeRange/AxeRange05.png" id="31_lfd44"]
 [ext_resource type="Texture2D" uid="uid://c7okrxts1yfvq" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel05.png" id="31_wn3og"]
+[ext_resource type="Texture2D" uid="uid://bds4gf466wf35" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel02.png" id="31_yp8gp"]
 [ext_resource type="Texture2D" uid="uid://bd7tduhhn3aoo" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel06.png" id="32_dcdam"]
+[ext_resource type="Texture2D" uid="uid://b725ljwemy0sr" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel03.png" id="32_uoit0"]
 [ext_resource type="Texture2D" uid="uid://dm0e5bhwfquax" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel07.png" id="33_3hptt"]
+[ext_resource type="Texture2D" uid="uid://bb8mda7t4flsc" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel04.png" id="33_ph2hn"]
+[ext_resource type="Texture2D" uid="uid://6hkbuwk1doph" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel05.png" id="34_7jxhf"]
+[ext_resource type="Texture2D" uid="uid://byhc75p51avth" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel06.png" id="35_6fw87"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
 bg_color = Color(0, 0, 0, 0.84705883)
@@ -175,6 +185,72 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_mq7u6"]
 script = ExtResource("24_xsv4x")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_8i8nj"]
+script = ExtResource("24_xsv4x")
+upgrade_key = 22
+texture = ExtResource("26_amre3")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_jthqg"]
+script = ExtResource("24_xsv4x")
+upgrade_key = 23
+texture = ExtResource("27_fm8dc")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_vl3os"]
+script = ExtResource("24_xsv4x")
+upgrade_key = 24
+texture = ExtResource("28_utaip")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_eeitg"]
+script = ExtResource("24_xsv4x")
+upgrade_key = 25
+texture = ExtResource("29_tcfgv")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_ux5mw"]
+script = ExtResource("24_xsv4x")
+upgrade_key = 26
+texture = ExtResource("30_05uoc")
+max_level = 4
+level_requirement_to_reveal = 4
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_0pky4"]
+script = ExtResource("24_xsv4x")
+upgrade_key = 27
+texture = ExtResource("31_yp8gp")
+max_level = 3
+level_requirement_to_reveal = 3
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_b7xoe"]
+script = ExtResource("24_xsv4x")
+upgrade_key = 28
+texture = ExtResource("32_uoit0")
+max_level = 2
+level_requirement_to_reveal = 2
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_sbry8"]
+script = ExtResource("24_xsv4x")
+upgrade_key = 29
+texture = ExtResource("33_ph2hn")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_hbeh4"]
+script = ExtResource("24_xsv4x")
+upgrade_key = 30
+texture = ExtResource("34_7jxhf")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_5ujn8"]
+script = ExtResource("24_xsv4x")
+upgrade_key = 31
+texture = ExtResource("35_6fw87")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_fjpjg"]
@@ -339,30 +415,35 @@ offset_bottom = 2778.0
 skill_data = SubResource("Resource_uoit0")
 
 [node name="AxeDamage2" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1487470350 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -216.0
 offset_bottom = -126.0
 skill_data = SubResource("Resource_yp8gp")
 
 [node name="AxeDamage3" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2" unique_id=1440200605 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -224.0
 offset_bottom = -134.0
 skill_data = SubResource("Resource_ph2hn")
 
 [node name="AxeDamage4" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3" unique_id=1941970848 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -200.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_7jxhf")
 
 [node name="AxeCritChance" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4" unique_id=2016965560 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 208.0
 offset_right = 298.0
 skill_data = ExtResource("9_af5db")
 
 [node name="AxeCritDamage1" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance" unique_id=1221529575 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 176.0
 offset_top = -192.0
@@ -371,78 +452,91 @@ offset_bottom = -102.0
 skill_data = ExtResource("10_8hoxv")
 
 [node name="AxeCritDamage2" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance/AxeCritDamage1" unique_id=138679085 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 184.0
 offset_right = 274.0
 skill_data = ExtResource("10_8hoxv")
 
 [node name="AxeCritDamage3" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance/AxeCritDamage1/AxeCritDamage2" unique_id=783958739 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 176.0
 offset_right = 266.0
 skill_data = ExtResource("10_8hoxv")
 
 [node name="AxeCritDamage4" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance/AxeCritDamage1/AxeCritDamage2/AxeCritDamage3" unique_id=1963978188 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 184.0
 offset_right = 274.0
 skill_data = ExtResource("10_8hoxv")
 
 [node name="AxeCritDamage5" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance/AxeCritDamage1/AxeCritDamage2/AxeCritDamage3/AxeCritDamage4" unique_id=1055280151 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 200.0
 offset_right = 290.0
 skill_data = ExtResource("10_8hoxv")
 
 [node name="AxeCritChance2" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance" unique_id=1552355854 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 184.0
 offset_right = 274.0
 skill_data = ExtResource("9_af5db")
 
 [node name="AxeCritChance3" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance/AxeCritChance2" unique_id=882965806 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 176.0
 offset_right = 266.0
 skill_data = ExtResource("9_af5db")
 
 [node name="AxeCritChance4" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance/AxeCritChance2/AxeCritChance3" unique_id=1351275874 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 168.0
 offset_right = 258.0
 skill_data = ExtResource("9_af5db")
 
 [node name="AxeCritChance5" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance/AxeCritChance2/AxeCritChance3/AxeCritChance4" unique_id=1624048224 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 192.0
 offset_right = 282.0
 skill_data = ExtResource("9_af5db")
 
 [node name="AxeCritChance6" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance/AxeCritChance2/AxeCritChance3/AxeCritChance4/AxeCritChance5" unique_id=798713980 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 200.0
 offset_right = 290.0
 skill_data = ExtResource("9_af5db")
 
 [node name="AxeCritChance7" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance/AxeCritChance2/AxeCritChance3/AxeCritChance4/AxeCritChance5/AxeCritChance6" unique_id=2078664441 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 216.0
 offset_right = 306.0
 skill_data = ExtResource("9_af5db")
 
 [node name="AxeCritChance8" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeCritChance/AxeCritChance2/AxeCritChance3/AxeCritChance4/AxeCritChance5/AxeCritChance6/AxeCritChance7" unique_id=194349590 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 200.0
 offset_right = 290.0
 skill_data = ExtResource("9_af5db")
 
 [node name="AxeDamage5" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4" unique_id=663032941 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -192.0
 offset_bottom = -102.0
 skill_data = SubResource("Resource_6fw87")
 
 [node name="SprintSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1524854648 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -720.0
 offset_top = 472.0
@@ -451,18 +545,21 @@ offset_bottom = 562.0
 skill_data = ExtResource("19_crf34")
 
 [node name="SprintSpeed2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=1067747414 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -264.0
 offset_right = -174.0
 skill_data = ExtResource("20_bh5uq")
 
 [node name="JumpHeight" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=133819581 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -216.0
 offset_bottom = -126.0
 skill_data = ExtResource("21_27nor")
 
 [node name="SprintLength1" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=1096809234 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -264.0
 offset_top = -216.0
@@ -471,12 +568,14 @@ offset_bottom = -126.0
 skill_data = ExtResource("22_2ddyc")
 
 [node name="SprintLength2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintLength1" unique_id=1951128766 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -224.0
 offset_right = -134.0
 skill_data = ExtResource("23_6edkr")
 
 [node name="AxeSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=397992881 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 192.0
 offset_top = -208.0
@@ -485,90 +584,183 @@ offset_bottom = -118.0
 skill_data = SubResource("Resource_khday")
 
 [node name="AxeSpeed2" parent="SubViewport/ZoomContent/AxeDamage1/AxeSpeed1" unique_id=1816275961 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 216.0
 offset_right = 306.0
 skill_data = SubResource("Resource_ui4la")
 
 [node name="AxeSpeed3" parent="SubViewport/ZoomContent/AxeDamage1/AxeSpeed1/AxeSpeed2" unique_id=744273423 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 168.0
 offset_right = 258.0
 skill_data = SubResource("Resource_hv2oo")
 
 [node name="AxeSpeed4" parent="SubViewport/ZoomContent/AxeDamage1/AxeSpeed1/AxeSpeed2/AxeSpeed3" unique_id=2120016078 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 176.0
 offset_right = 266.0
 skill_data = SubResource("Resource_gp51s")
 
 [node name="AxeSpeed5" parent="SubViewport/ZoomContent/AxeDamage1/AxeSpeed1/AxeSpeed2/AxeSpeed3/AxeSpeed4" unique_id=2108275970 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 192.0
 offset_right = 282.0
 skill_data = SubResource("Resource_vbdoe")
 
 [node name="AxeSpeed6" parent="SubViewport/ZoomContent/AxeDamage1/AxeSpeed1/AxeSpeed2/AxeSpeed3/AxeSpeed4/AxeSpeed5" unique_id=1342239280 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 192.0
 offset_right = 282.0
 skill_data = SubResource("Resource_qeb7a")
 
 [node name="AxeSpeed7" parent="SubViewport/ZoomContent/AxeDamage1/AxeSpeed1/AxeSpeed2/AxeSpeed3/AxeSpeed4/AxeSpeed5/AxeSpeed6" unique_id=1164885923 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 216.0
 offset_right = 306.0
 skill_data = SubResource("Resource_kffl4")
 
 [node name="AxeSpeed8" parent="SubViewport/ZoomContent/AxeDamage1/AxeSpeed1/AxeSpeed2/AxeSpeed3/AxeSpeed4/AxeSpeed5/AxeSpeed6/AxeSpeed7" unique_id=587257845 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 200.0
 offset_right = 290.0
 skill_data = SubResource("Resource_1ny6p")
 
 [node name="LogSellPrice" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1651355479 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 192.0
 offset_right = 282.0
 skill_data = SubResource("Resource_5qrow")
 
 [node name="LogSellPrice2" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice" unique_id=1299244631 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 224.0
 offset_right = 314.0
 skill_data = SubResource("Resource_fdcij")
 
 [node name="LogSellPrice3" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/LogSellPrice2" unique_id=96364808 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 160.0
 offset_right = 250.0
 skill_data = SubResource("Resource_ks8sc")
 
 [node name="LogSellPrice4" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/LogSellPrice2/LogSellPrice3" unique_id=1514044545 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 176.0
 offset_right = 266.0
 skill_data = SubResource("Resource_n4osh")
 
 [node name="LogSellPrice5" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/LogSellPrice2/LogSellPrice3/LogSellPrice4" unique_id=2061812783 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 192.0
 offset_right = 282.0
 skill_data = SubResource("Resource_24tbn")
 
 [node name="LogSellPrice6" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/LogSellPrice2/LogSellPrice3/LogSellPrice4/LogSellPrice5" unique_id=577059002 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 200.0
 offset_right = 290.0
 skill_data = SubResource("Resource_n8ekf")
 
 [node name="LogSellPrice7" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/LogSellPrice2/LogSellPrice3/LogSellPrice4/LogSellPrice5/LogSellPrice6" unique_id=876985564 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 192.0
 offset_right = 282.0
 skill_data = SubResource("Resource_mq7u6")
 
+[node name="InventoryMaxLevel" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1359269755 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 192.0
+offset_top = 264.0
+offset_right = 282.0
+offset_bottom = 354.0
+skill_data = SubResource("Resource_8i8nj")
+
+[node name="InventoryMaxLevel2" parent="SubViewport/ZoomContent/AxeDamage1/InventoryMaxLevel" unique_id=1720319175 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 188.0
+offset_top = 8.0
+offset_right = 278.0
+offset_bottom = 98.0
+skill_data = SubResource("Resource_jthqg")
+
+[node name="InventoryMaxLevel3" parent="SubViewport/ZoomContent/AxeDamage1/InventoryMaxLevel/InventoryMaxLevel2" unique_id=906924569 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 196.0
+offset_top = 8.0
+offset_right = 286.0
+offset_bottom = 98.0
+skill_data = SubResource("Resource_vl3os")
+
+[node name="InventoryMaxLevel4" parent="SubViewport/ZoomContent/AxeDamage1/InventoryMaxLevel/InventoryMaxLevel2/InventoryMaxLevel3" unique_id=771677758 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_right = 290.0
+skill_data = SubResource("Resource_eeitg")
+
+[node name="InventorySlotsPerLevel" parent="SubViewport/ZoomContent/AxeDamage1/InventoryMaxLevel" unique_id=376572306 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 188.0
+offset_top = 208.0
+offset_right = 278.0
+offset_bottom = 298.0
+skill_data = SubResource("Resource_ux5mw")
+
+[node name="InventorySlotsPerLevel2" parent="SubViewport/ZoomContent/AxeDamage1/InventoryMaxLevel/InventorySlotsPerLevel" unique_id=1851272505 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_right = 290.0
+skill_data = SubResource("Resource_0pky4")
+
+[node name="InventorySlotsPerLevel3" parent="SubViewport/ZoomContent/AxeDamage1/InventoryMaxLevel/InventorySlotsPerLevel/InventorySlotsPerLevel2" unique_id=793214726 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_right = 290.0
+skill_data = SubResource("Resource_b7xoe")
+
+[node name="InventorySlotsPerLevel4" parent="SubViewport/ZoomContent/AxeDamage1/InventoryMaxLevel/InventorySlotsPerLevel/InventorySlotsPerLevel2/InventorySlotsPerLevel3" unique_id=481615244 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_right = 290.0
+skill_data = SubResource("Resource_sbry8")
+
+[node name="InventorySlotsPerLevel5" parent="SubViewport/ZoomContent/AxeDamage1/InventoryMaxLevel/InventorySlotsPerLevel/InventorySlotsPerLevel2/InventorySlotsPerLevel3/InventorySlotsPerLevel4" unique_id=402565503 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_right = 290.0
+skill_data = SubResource("Resource_hbeh4")
+
+[node name="InventorySlotsPerLevel6" parent="SubViewport/ZoomContent/AxeDamage1/InventoryMaxLevel/InventorySlotsPerLevel/InventorySlotsPerLevel2/InventorySlotsPerLevel3/InventorySlotsPerLevel4/InventorySlotsPerLevel5" unique_id=17988715 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_right = 290.0
+skill_data = SubResource("Resource_5ujn8")
+
 [node name="TimeIncrease" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1998524099 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -160.0
 offset_top = 152.0
@@ -625,6 +817,7 @@ offset_right = -94.0
 skill_data = SubResource("Resource_wn3og")
 
 [node name="AxeDamageMaxLevel0" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=133172710 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -160.0
 offset_top = -160.0
@@ -633,42 +826,49 @@ offset_bottom = -70.0
 skill_data = SubResource("Resource_hx5fe")
 
 [node name="AxeDamageMaxLevel1" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamageMaxLevel0" unique_id=439181984 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -168.0
 offset_right = -78.0
 skill_data = SubResource("Resource_gx7re")
 
 [node name="AxeDamageMaxLevel2" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamageMaxLevel0/AxeDamageMaxLevel1" unique_id=1612349189 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -160.0
 offset_right = -70.0
 skill_data = SubResource("Resource_amre3")
 
 [node name="AxeDamageMaxLevel3" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamageMaxLevel0/AxeDamageMaxLevel1/AxeDamageMaxLevel2" unique_id=643091006 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -136.0
 offset_right = -46.0
 skill_data = SubResource("Resource_fm8dc")
 
 [node name="AxeDamageMaxLevel4" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamageMaxLevel0/AxeDamageMaxLevel1/AxeDamageMaxLevel2/AxeDamageMaxLevel3" unique_id=1039590808 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -160.0
 offset_right = -70.0
 skill_data = SubResource("Resource_utaip")
 
 [node name="AxeDamageMaxLevel5" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamageMaxLevel0/AxeDamageMaxLevel1/AxeDamageMaxLevel2/AxeDamageMaxLevel3/AxeDamageMaxLevel4" unique_id=1025497118 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -160.0
 offset_right = -70.0
 skill_data = SubResource("Resource_tcfgv")
 
 [node name="AxeDamageMaxLevel6" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamageMaxLevel0/AxeDamageMaxLevel1/AxeDamageMaxLevel2/AxeDamageMaxLevel3/AxeDamageMaxLevel4/AxeDamageMaxLevel5" unique_id=242809052 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -176.0
 offset_right = -86.0
 skill_data = SubResource("Resource_05uoc")
 
 [node name="AxeRange1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1041027934 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -160.0
 offset_top = -400.0
@@ -677,30 +877,35 @@ offset_bottom = -310.0
 skill_data = ExtResource("9_xtb7d")
 
 [node name="AxeRange2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1" unique_id=2063436650 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -168.0
 offset_right = -78.0
 skill_data = ExtResource("10_1n7m1")
 
 [node name="AxeRange3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2" unique_id=1516830785 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -160.0
 offset_right = -70.0
 skill_data = SubResource("Resource_rqgbt")
 
 [node name="AxeRange4" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3" unique_id=1125142501 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -136.0
 offset_right = -46.0
 skill_data = SubResource("Resource_dcdam")
 
 [node name="AxeRange5" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/AxeRange4" unique_id=1870019126 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -160.0
 offset_right = -70.0
 skill_data = SubResource("Resource_3hptt")
 
 [node name="FireSlash" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2" unique_id=280070737 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -152.0
 offset_top = -184.0
@@ -709,12 +914,14 @@ offset_bottom = -94.0
 skill_data = ExtResource("11_7y20i")
 
 [node name="FireSlashDamage" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlash" unique_id=131047561 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -208.0
 offset_bottom = -118.0
 skill_data = ExtResource("12_04fv4")
 
 [node name="FireSlashRate" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlash" unique_id=591565523 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = 200.0
 offset_top = -208.0
@@ -723,6 +930,7 @@ offset_bottom = -118.0
 skill_data = ExtResource("13_04fv4")
 
 [node name="FireSlashPierceUnlock" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlash" unique_id=1617670860 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_left = -192.0
 offset_top = -208.0
@@ -731,6 +939,7 @@ offset_bottom = -118.0
 skill_data = ExtResource("14_khc8y")
 
 [node name="FireSlashPierce" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlash/FireSlashPierceUnlock" unique_id=1569693821 instance=ExtResource("6_2gknk")]
+visible = false
 layout_mode = 0
 offset_top = -216.0
 offset_bottom = -126.0

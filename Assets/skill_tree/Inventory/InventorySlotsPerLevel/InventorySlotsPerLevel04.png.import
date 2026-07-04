@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0f3fnsjlegy"
-path="res://.godot/imported/InventorySize3.png-aa4d86bb23f1e7c900d5c4e1b81ac293.ctex"
+uid="uid://bb8mda7t4flsc"
+path="res://.godot/imported/InventorySlotsPerLevel04.png-e80c14733063b8f1f779f2a67783e1c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/skill_tree/Inventory/InventorySize3.png"
-dest_files=["res://.godot/imported/InventorySize3.png-aa4d86bb23f1e7c900d5c4e1b81ac293.ctex"]
+source_file="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel04.png"
+dest_files=["res://.godot/imported/InventorySlotsPerLevel04.png-e80c14733063b8f1f779f2a67783e1c2.ctex"]
 
 [params]
 

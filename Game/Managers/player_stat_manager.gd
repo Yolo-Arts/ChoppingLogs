@@ -67,7 +67,15 @@ func get_sprint_speed_at_level(lvl: int) -> float:
 	return base_sprint_speed + (lvl * 2.4)
 
 func get_inventory_size_at_level(lvl: int) -> int:
-	return base_inventory_size + (lvl * 1)
+	return base_inventory_size + (lvl * max(1, (1 * 
+	(
+		(SkillTreeConfig.upgrades[SkillTreeConfig.Keys.INVENTORY_SLOTS_PER_LEVEL_1] * 1) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.INVENTORY_SLOTS_PER_LEVEL_2] * 2) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.INVENTORY_SLOTS_PER_LEVEL_3] * 5) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.INVENTORY_SLOTS_PER_LEVEL_4] * 10) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.INVENTORY_SLOTS_PER_LEVEL_4] * 20) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.INVENTORY_SLOTS_PER_LEVEL_4] * 50) \
+	))))
 
 func _ready() -> void:
 	EventSystem.WEP_unlock_fire_slash.connect(func(): unlocked_fire_slash = true, CONNECT_ONE_SHOT)
