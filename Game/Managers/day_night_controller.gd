@@ -1,6 +1,6 @@
 extends Node
 
-@export var countdownDuration: float = 40.0
+@export var baseCountdownDuration: float = 40.0
 @export var startHour: float = 6.0         
 @export var endHour: float = 22.0          
 
@@ -35,6 +35,7 @@ var top_colors: Array[Color] = []
 var horizon_colors: Array[Color] = []
 var sun_colors: Array[Color] = []
 
+var countdownDuration: float
 var time_remaining: float
 var is_timer_over: bool = false
 
@@ -43,7 +44,10 @@ func _ready() -> void:
 	horizon_colors = [morningColorHorizon, dayColorHorizon, afternoonColorHorizon, nightColorHorizon]
 	sun_colors = [morningSunColor, daySunColor, afternoonSunColor, nightSunColor] 
 	
+	countdownDuration = calc_countdown()
 	time_remaining = countdownDuration
+	
+	EventSystem.HUD_change_countdown.connect(change_countdown)
 	
 	# Start the animation but keep it paused; we will drive its position manually
 	animation_player.play("day_and_night")
@@ -56,15 +60,8 @@ func _process(delta: float) -> void:
 	if is_timer_over:
 		return
 
-	if time_remaining > 0:
-		time_remaining -= delta
-		if time_remaining <= 0:
-			time_remaining = 0
-			is_timer_over = true
-			end_day()
-		
-		_update_sky_cycle()
-		_update_time_label()
+	change_countdown(-delta)
+	_update_sky_cycle()
 
 func _update_sky_cycle() -> void:
 	var progress = 1.0 - (time_remaining / countdownDuration)
@@ -111,6 +108,23 @@ func _update_sky_cycle() -> void:
 	if sun_light:
 		_update_world_lighting(current_time, blended_sun)
 
+func calc_countdown() -> float:
+	var result: float = baseCountdownDuration
+	var i: int = SkillTreeConfig.Keys.INC_TIME_1
+	while i <= SkillTreeConfig.Keys.INC_TIME_9:
+		result += SkillTreeConfig.upgrades[i] * 60#fine since they're all +1min
+		i += 1
+	return result
+	
+func change_countdown(amt: float) -> void:
+	time_remaining += amt
+
+	if time_remaining <= 0:
+		time_remaining = 0
+		is_timer_over = true
+		end_day()
+	_update_time_label()
+
 func _update_world_lighting(current_time: float, horizon_color: Color) -> void:
 	if current_time > 20.0 or current_time < 6.0:
 		# Night time: 
@@ -121,6 +135,7 @@ func _update_world_lighting(current_time: float, horizon_color: Color) -> void:
 	sun_light.light_color = horizon_color
 
 func _update_time_label() -> void:
+	@warning_ignore("integer_division")#purposely truncated
 	var minutes: int = int(time_remaining) / 60
 	var seconds: int = int(time_remaining) % 60
 	

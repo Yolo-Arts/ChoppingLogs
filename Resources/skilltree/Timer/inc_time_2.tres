@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TimerSkillResource" format=3 uid="uid://dk3wfrbvxn4vt"]
+
+[ext_resource type="Script" uid="uid://b4nhvaulpqed0" path="res://Resources/skilltree/Timer/TimerSkillResource.gd" id="1_pxsv1"]
+[ext_resource type="Texture2D" uid="uid://c5qopuyvcpkd8" path="res://Assets/skill_tree/TimeIncrease/TimeIncrease02.png" id="2_pxsv1"]
+
+[resource]
+script = ExtResource("1_pxsv1")
+upgrade_name = "Increase Timer 2"
+upgrade_key = 77
+texture = ExtResource("2_pxsv1")
+upgrade_cost = 100
+description = "Permanently increases the time in a run by 1 minute."
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"

@@ -1,4 +1,5 @@
-extends Node
+extends Node 
+@warning_ignore_start("unused_signal")
 
 # BUL -> Bulettin Signals
 signal BUL_create_bulletin
@@ -33,6 +34,7 @@ signal HUD_hide_hud
 signal HUD_show_hud
 signal HUD_reset_hud_elements
 signal HUD_update_time
+signal HUD_change_countdown(amount: float)
 
 # INV -> Inventory signals
 signal INV_ask_update_inventory
@@ -98,3 +100,5 @@ var QUO_get_day_number
 signal QUO_update_quota_text
 signal QUO_increase_quota_amount
 signal QUO_reset_quota
+
+@warning_ignore_restore("unused_signal")

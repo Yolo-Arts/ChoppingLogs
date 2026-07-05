@@ -1,5 +1,8 @@
 extends Node
 
+func _enter_tree() -> void:
+	populate_initial_upgrades()
+
 func _ready() -> void:
 	SaveManager.call_deferred("load_upgrades")
 
@@ -79,86 +82,24 @@ enum Keys {
 	SELL_VALUE_4,
 	SELL_VALUE_5,
 	DOGGO,
-	MAP_UNLOCK
+	MAP_UNLOCK,
+	INC_TIME_1,
+	INC_TIME_2,
+	INC_TIME_3,
+	INC_TIME_4,
+	INC_TIME_5,
+	INC_TIME_6,
+	INC_TIME_7,
+	INC_TIME_8,
+	INC_TIME_9,
+	TIME_TREES
 }
 
-static var upgrades: Dictionary = {
-	Keys.AXE_DAMAGE_1: 0,
-	Keys.AXE_DAMAGE_2: 0,
-	Keys.AXE_DAMAGE_3: 0,
-	Keys.AXE_DAMAGE_4: 0,
-	Keys.AXE_DAMAGE_5: 0,
-	Keys.AXE_DAMAGE_6: 0,
-	Keys.AXE_DAMAGE_7: 0,
-	Keys.MAX_LEVEL_AXE_DAMAGE_1: 0,
-	Keys.MAX_LEVEL_AXE_DAMAGE_2: 0,
-	Keys.MAX_LEVEL_AXE_DAMAGE_3: 0,
-	Keys.MAX_LEVEL_AXE_DAMAGE_4: 0,
-	Keys.MAX_LEVEL_AXE_DAMAGE_5: 0,
-	Keys.MAX_LEVEL_AXE_DAMAGE_6: 0,
-	Keys.MAX_LEVEL_AXE_DAMAGE_7: 0,
-	Keys.MAX_LEVEL_AXE_SPEED_1: 0,
-	Keys.MAX_LEVEL_AXE_SPEED_2: 0,
-	Keys.MAX_LEVEL_AXE_SPEED_3: 0,
-	Keys.MAX_LEVEL_AXE_SPEED_4: 0,
-	Keys.MAX_LEVEL_AXE_SPEED_5: 0,
-	Keys.MAX_LEVEL_AXE_SPEED_6: 0,
-	Keys.MAX_LEVEL_AXE_SPEED_7: 0,
-	Keys.MAX_LEVEL_AXE_SPEED_8: 0,
-	Keys.MAX_LEVEL_INVENTORY_SIZE_1: 0,
-	Keys.MAX_LEVEL_INVENTORY_SIZE_2: 0,
-	Keys.MAX_LEVEL_INVENTORY_SIZE_3: 0,
-	Keys.MAX_LEVEL_INVENTORY_SIZE_4: 0,
-	Keys.INVENTORY_SLOTS_PER_LEVEL_1: 0,
-	Keys.INVENTORY_SLOTS_PER_LEVEL_2: 0,
-	Keys.INVENTORY_SLOTS_PER_LEVEL_3: 0,
-	Keys.INVENTORY_SLOTS_PER_LEVEL_4: 0,
-	Keys.INVENTORY_SLOTS_PER_LEVEL_5: 0,
-	Keys.INVENTORY_SLOTS_PER_LEVEL_6: 0,
-	Keys.MAX_LEVEL_SPRINT_SPEED: 0,
-	Keys.AXE_RANGE_1: 0,
-	Keys.AXE_RANGE_2: 0,
-	Keys.FIRE_SLASH_UNLOCK: 0,
-	Keys.FIRE_SLASH_RATE: 0,
-	Keys.FIRE_SLASH_DAMAGE: 0,
-	Keys.FIRE_SLASH_PIERCE_UNLOCK: 0,
-	Keys.FIRE_SLASH_PIERCE: 0,
-	Keys.AXE_CRIT_DAMAGE_1: 0,
-	Keys.AXE_CRIT_DAMAGE_2: 0,
-	Keys.AXE_CRIT_DAMAGE_3: 0,
-	Keys.AXE_CRIT_DAMAGE_4: 0,
-	Keys.AXE_CRIT_DAMAGE_5: 0,
-	Keys.AXE_CRIT_CHANCE_1: 0,
-	Keys.AXE_CRIT_CHANCE_2: 0,
-	Keys.AXE_CRIT_CHANCE_3: 0,
-	Keys.AXE_CRIT_CHANCE_4: 0,
-	Keys.AXE_CRIT_CHANCE_5: 0,
-	Keys.AXE_CRIT_CHANCE_6: 0,
-	Keys.AXE_CRIT_CHANCE_7: 0,
-	Keys.AXE_CRIT_CHANCE_8: 0,
-	Keys.AXE_SPEED_1: 0,
-	Keys.AXE_SPEED_2: 0,
-	Keys.AXE_SPEED_3: 0,
-	Keys.SPRINT_SPEED_1: 0,
-	Keys.SPRINT_SPEED_2: 0,
-	Keys.JUMP_HEIGHT: 0,
-	Keys.SPRINT_LENGTH_1: 0,
-	Keys.SPRINT_LENGTH_2: 0,
-	Keys.INVENTORY_SIZE_1: 0,
-	Keys.INVENTORY_SIZE_2: 0,
-	Keys.INVENTORY_SIZE_3: 0,
-	Keys.SELL_RADIUS_1: 0,
-	Keys.SELL_RADIUS_2: 0,
-	Keys.SELL_RADIUS_3: 0,
-	Keys.PICKUP_RADIUS_1: 0,
-	Keys.PICKUP_RADIUS_2: 0,
-	Keys.SELL_VALUE_1: 0,
-	Keys.SELL_VALUE_2: 0,
-	Keys.SELL_VALUE_3: 0,
-	Keys.SELL_VALUE_4: 0,
-	Keys.SELL_VALUE_5: 0,
-	Keys.DOGGO: 0,
-	Keys.MAP_UNLOCK: 0
+func populate_initial_upgrades() -> void:
+	for key: int in Keys.values():
+		upgrades[key as Keys] = 0
+
+static var upgrades: Dictionary[Keys, int] = {
 }
 
 func get_upgrade_level(key:Keys) -> int:
