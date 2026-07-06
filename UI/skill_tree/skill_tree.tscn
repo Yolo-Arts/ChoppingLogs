@@ -12,13 +12,9 @@
 [ext_resource type="Resource" uid="uid://d0bcggwo5j84s" path="res://Resources/skilltree/Axe/AxeDamage/axe_range_2.tres" id="10_1n7m1"]
 [ext_resource type="Resource" uid="uid://c14mse0vseuog" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_unlock.tres" id="11_7y20i"]
 [ext_resource type="Texture2D" uid="uid://bi2ogxmckinvl" path="res://Assets/skill_tree/axe/AxeDamage4.png" id="11_mnncb"]
-[ext_resource type="Resource" uid="uid://dlwi82cy1gxt5" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_damage.tres" id="12_04fv4"]
 [ext_resource type="Texture2D" uid="uid://b2o2d5dbrl3gt" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage01.png" id="12_hv2oo"]
-[ext_resource type="Resource" uid="uid://bxbvit3lixre0" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_rate.tres" id="13_04fv4"]
 [ext_resource type="Texture2D" uid="uid://cy2pj8kmfi8s4" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage02.png" id="13_vbdoe"]
 [ext_resource type="Texture2D" uid="uid://c3wk1ktnbskge" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage03.png" id="14_gp51s"]
-[ext_resource type="Resource" uid="uid://ww6csj3pm5h8" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_pierce_unlock.tres" id="14_khc8y"]
-[ext_resource type="Resource" uid="uid://bayefhfb37ljd" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_pierce.tres" id="15_04fv4"]
 [ext_resource type="Texture2D" uid="uid://d2mdi5ethdkcg" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage05.png" id="15_eeitg"]
 [ext_resource type="Texture2D" uid="uid://ky5bahwh4brn" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage04.png" id="15_kffl4"]
 [ext_resource type="Texture2D" uid="uid://bpivt66unnhsk" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage06.png" id="16_gp51s"]
@@ -72,10 +68,25 @@
 [ext_resource type="Resource" uid="uid://ch7pivww81w75" path="res://Resources/skilltree/Timer/inc_time_8.tres" id="54_0pky4"]
 [ext_resource type="Resource" uid="uid://ddnvpfx4edbek" path="res://Resources/skilltree/Timer/inc_time_9.tres" id="55_0pky4"]
 [ext_resource type="Texture2D" uid="uid://bf0ra1dvwovs7" path="res://Assets/skill_tree/TimeIncrease/TimeIncreaser.png" id="56_b7xoe"]
+[ext_resource type="Texture2D" uid="uid://oxukvrqrb7cb" path="res://Assets/skill_tree/axe/FireSlash/FireSlashDamage.png" id="65_b7xoe"]
+[ext_resource type="Texture2D" uid="uid://diekhxrmp5n2k" path="res://Assets/skill_tree/FireSlash/FireSlashDamage/FireSlashDamage02.png" id="66_nder1"]
+[ext_resource type="Texture2D" uid="uid://yooso1a8w5xa" path="res://Assets/skill_tree/axe/FireSlash/FireSlashRate.png" id="66_sbry8"]
+[ext_resource type="Texture2D" uid="uid://b032eno6y561h" path="res://Assets/skill_tree/FireSlash/FireSlashDamage/FireSlashDamage03.png" id="67_6e2eu"]
+[ext_resource type="Texture2D" uid="uid://dhrphypicc6gg" path="res://Assets/skill_tree/FireSlash/FireSlashPierce/FireSlashPierce01.png" id="67_hbeh4"]
+[ext_resource type="Texture2D" uid="uid://b0wmvtewbgqk3" path="res://Assets/skill_tree/FireSlash/FireSlashRate/FireSlashRate02.png" id="67_kck0p"]
+[ext_resource type="Texture2D" uid="uid://bi24m3ch3ktcq" path="res://Assets/skill_tree/FireSlash/FireSlashPierce/FireSlashPierce02.png" id="68_5ujn8"]
+[ext_resource type="Texture2D" uid="uid://bha1vqs56a3lh" path="res://Assets/skill_tree/FireSlash/FireSlashDamage/FireSlashDamage04.png" id="68_krrke"]
+[ext_resource type="Texture2D" uid="uid://cmly75a70oy6i" path="res://Assets/skill_tree/FireSlash/FireSlashRate/FireSlashRate03.png" id="68_q2e6c"]
+[ext_resource type="Texture2D" uid="uid://du61ppkgar37d" path="res://Assets/skill_tree/FireSlash/FireSlashPierce/FireSlashPierce03.png" id="69_8i8nj"]
+[ext_resource type="Texture2D" uid="uid://bescgq7jx5k35" path="res://Assets/skill_tree/FireSlash/FireSlashRate/FireSlashRate04.png" id="69_a6nbd"]
 [ext_resource type="Texture2D" uid="uid://vn5de0y4xw5" path="res://Assets/skill_tree/PlayerMovement/SprintSpeed/SprintSpeed03.png" id="69_eeitg"]
 [ext_resource type="Texture2D" uid="uid://cainnyv2n7rhs" path="res://Assets/skill_tree/PlayerMovement/SprintSpeed/SprintSpeed01.png" id="69_ux5mw"]
 [ext_resource type="Texture2D" uid="uid://bidy5ye6h2fy0" path="res://Assets/skill_tree/PlayerMovement/SprintStamina/SprintStamina02.png" id="70_0pky4"]
+[ext_resource type="Texture2D" uid="uid://begdnj1oaiv2" path="res://Assets/skill_tree/FireSlash/FireSlashRate/FireSlashRate05.png" id="70_nder1"]
+[ext_resource type="Texture2D" uid="uid://lyliph11bt0a" path="res://Assets/skill_tree/FireSlash/FireSlashPierce/FireSlashPierce04.png" id="70_sbry8"]
 [ext_resource type="Texture2D" uid="uid://dnp0warmb8ubu" path="res://Assets/skill_tree/PlayerMovement/SprintStamina/SprintStamina03.png" id="71_b7xoe"]
+[ext_resource type="Texture2D" uid="uid://d0jgaxepwm0e4" path="res://Assets/skill_tree/FireSlash/FireSlashPierce/FireSlashPierce05.png" id="71_hbeh4"]
+[ext_resource type="Texture2D" uid="uid://c1x3ta0oksd6k" path="res://Assets/skill_tree/FireSlash/FireSlashPierce/FireSlashPierce06.png" id="72_5ujn8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
 bg_color = Color(0, 0, 0, 0.84705883)
@@ -434,6 +445,111 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_3hptt"]
 script = ExtResource("24_xsv4x")
 texture = ExtResource("31_lfd44")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_ohkuh"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Damage"
+upgrade_key = 9
+texture = ExtResource("65_b7xoe")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_4ly0s"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Damage"
+upgrade_key = 9
+texture = ExtResource("66_nder1")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_kdj8j"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Damage"
+upgrade_key = 9
+texture = ExtResource("67_6e2eu")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_olcoj"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Damage"
+upgrade_key = 9
+texture = ExtResource("68_krrke")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_1bfld"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Rate"
+upgrade_key = 8
+texture = ExtResource("66_sbry8")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_e2vyx"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Rate"
+upgrade_key = 8
+texture = ExtResource("67_kck0p")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_5h47n"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Rate"
+upgrade_key = 8
+texture = ExtResource("68_q2e6c")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_c5w80"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Rate"
+upgrade_key = 8
+texture = ExtResource("69_a6nbd")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_wohuj"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Rate"
+upgrade_key = 8
+texture = ExtResource("70_nder1")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_wc8uc"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Piercing Flames"
+upgrade_key = 10
+texture = ExtResource("67_hbeh4")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_yjfj4"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Piercing Flames"
+upgrade_key = 10
+texture = ExtResource("68_5ujn8")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_ym7y6"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Piercing Flames"
+upgrade_key = 10
+texture = ExtResource("69_8i8nj")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_xwvl1"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Piercing Flames"
+upgrade_key = 10
+texture = ExtResource("70_sbry8")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_a7qeu"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Piercing Flames"
+upgrade_key = 10
+texture = ExtResource("71_hbeh4")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_70jbf"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Piercing Flames"
+upgrade_key = 10
+texture = ExtResource("72_5ujn8")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_6op4n"]
@@ -938,41 +1054,115 @@ offset_left = -160.0
 offset_right = -70.0
 skill_data = SubResource("Resource_3hptt")
 
-[node name="FireSlash" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2" unique_id=280070737 instance=ExtResource("6_2gknk")]
+[node name="FireSlashUnlock" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2" unique_id=280070737 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_left = -152.0
-offset_top = -184.0
-offset_right = -62.0
-offset_bottom = -94.0
+offset_left = -142.0
+offset_top = -178.0
+offset_right = -52.0
+offset_bottom = -88.0
 skill_data = ExtResource("11_7y20i")
 
-[node name="FireSlashDamage" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlash" unique_id=131047561 instance=ExtResource("6_2gknk")]
+[node name="FireSlashDamage1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=131047561 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_top = -208.0
-offset_bottom = -118.0
-skill_data = ExtResource("12_04fv4")
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_ohkuh")
 
-[node name="FireSlashRate" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlash" unique_id=591565523 instance=ExtResource("6_2gknk")]
+[node name="FireSlashDamage2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=408329291 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -400.0
+offset_bottom = -310.0
+skill_data = SubResource("Resource_4ly0s")
+
+[node name="FireSlashDamage3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=1660886275 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -600.0
+offset_bottom = -510.0
+skill_data = SubResource("Resource_kdj8j")
+
+[node name="FireSlashDamage4" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=543613981 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -800.0
+offset_bottom = -710.0
+skill_data = SubResource("Resource_olcoj")
+
+[node name="FireSlashRate1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=591565523 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = 200.0
-offset_top = -208.0
+offset_top = -200.0
 offset_right = 290.0
-offset_bottom = -118.0
-skill_data = ExtResource("13_04fv4")
+offset_bottom = -110.0
+skill_data = SubResource("Resource_1bfld")
 
-[node name="FireSlashPierceUnlock" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlash" unique_id=1617670860 instance=ExtResource("6_2gknk")]
+[node name="FireSlashRate2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashRate1" unique_id=211865027 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_left = -192.0
-offset_top = -208.0
-offset_right = -102.0
-offset_bottom = -118.0
-skill_data = ExtResource("14_khc8y")
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_e2vyx")
 
-[node name="FireSlashPierce" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlash/FireSlashPierceUnlock" unique_id=1569693821 instance=ExtResource("6_2gknk")]
+[node name="FireSlashRate3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashRate1/FireSlashRate2" unique_id=1387899637 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_top = -216.0
-offset_bottom = -126.0
-skill_data = ExtResource("15_04fv4")
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_5h47n")
+
+[node name="FireSlashRate4" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashRate1/FireSlashRate2/FireSlashRate3" unique_id=1310207065 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_c5w80")
+
+[node name="FireSlashRate5" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashRate1/FireSlashRate2/FireSlashRate3/FireSlashRate4" unique_id=1538962298 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_wohuj")
+
+[node name="FireSlashPierce1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=1617670860 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = -110.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_wc8uc")
+
+[node name="FireSlashPierce2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashPierce1" unique_id=1453517029 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_yjfj4")
+
+[node name="FireSlashPierce3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2" unique_id=1703546298 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -200.0
+offset_right = 92.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_ym7y6")
+
+[node name="FireSlashPierce4" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2/FireSlashPierce3" unique_id=1655032858 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -200.0
+offset_right = 92.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_xwvl1")
+
+[node name="FireSlashPierce5" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2/FireSlashPierce3/FireSlashPierce4" unique_id=1205074829 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -200.0
+offset_right = 92.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_a7qeu")
+
+[node name="FireSlashPierce6" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2/FireSlashPierce3/FireSlashPierce4/FireSlashPierce5" unique_id=1333678357 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -200.0
+offset_right = 92.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_70jbf")
 
 [node name="SprintSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=483513062 instance=ExtResource("6_2gknk")]
 layout_mode = 0

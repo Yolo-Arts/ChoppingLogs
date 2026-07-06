@@ -8,7 +8,5 @@ script = ExtResource("1_aps0u")
 upgrade_name = "Fire Slash"
 upgrade_key = 7
 texture = ExtResource("2_tdq8l")
-max_level = 1
-level_requirement_to_reveal = 1
 description = "Harness the power of fire!"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
