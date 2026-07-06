@@ -1,5 +1,7 @@
 extends Node
 
+var normal_timer_over: bool = false
+@export var get_back_to_base_countdown: float = 30.0
 @export var baseCountdownDuration: float = 40.0
 @export var startHour: float = 6.0         
 @export var endHour: float = 22.0          
@@ -37,6 +39,7 @@ var sun_colors: Array[Color] = []
 
 var countdownDuration: float
 var time_remaining: float
+var encroaching_dark_time_remaining: float
 var is_timer_over: bool = false
 
 func _ready() -> void:
@@ -46,6 +49,8 @@ func _ready() -> void:
 	
 	countdownDuration = calc_countdown()
 	time_remaining = countdownDuration
+	encroaching_dark_time_remaining = get_back_to_base_countdown
+	normal_timer_over = false
 	
 	EventSystem.HUD_change_countdown.connect(change_countdown)
 	
@@ -59,8 +64,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_timer_over:
 		return
-
-	change_countdown(-delta)
+	
+	if !normal_timer_over:
+		change_countdown(-delta)
+	
 	_update_sky_cycle()
 
 func _update_sky_cycle() -> void:
@@ -122,7 +129,7 @@ func change_countdown(amt: float) -> void:
 	if time_remaining <= 0:
 		time_remaining = 0
 		is_timer_over = true
-		end_day()
+		timer_end()
 	_update_time_label()
 
 func _update_world_lighting(current_time: float, horizon_color: Color) -> void:
@@ -142,12 +149,13 @@ func _update_time_label() -> void:
 	var new_time = "%d:%02d" % [minutes, seconds]
 	EventSystem.HUD_update_time.emit(new_time, int(time_remaining))
 
-func end_day() -> void:
-	print("Day is over!")
-	var met_quota = EventSystem.QUO_check_quota.call()
-	print("Met quota:", met_quota)
+func timer_end() -> void:
+	print("Timer is over!")
+	#var met_quota = EventSystem.QUO_check_quota.call()
+	#print("Met quota:", met_quota)
 	#if met_quota:
 		#EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PlaceholderDayEnd)
 	#else:
 		#EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.LoseScreen)
-	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.ResultsScreen)
+	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.BackToBase)
+	EventSystem.DAR_encroaching_dark_start.emit()

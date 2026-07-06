@@ -48,12 +48,12 @@ sky_horizon_color = Color(0.67058825, 0.78431374, 0.83137256, 1)
 ground_bottom_color = Color(0.21568628, 0.29411766, 0.33333334, 1)
 ground_horizon_color = Color(0.67058825, 0.78431374, 0.83137256, 1)
 
-[sub_resource type="Sky" id="Sky_w28og"]
+[sub_resource type="Sky" id="Sky_18tru"]
 sky_material = SubResource("ProceduralSkyMaterial_6kx5t")
 
 [sub_resource type="Environment" id="Environment_grbyp"]
 background_mode = 2
-sky = SubResource("Sky_w28og")
+sky = SubResource("Sky_18tru")
 ambient_light_color = Color(0.3254902, 0.8784314, 1, 1)
 ambient_light_sky_contribution = 0.55
 tonemap_mode = 2
@@ -242,7 +242,7 @@ shadow_enabled = true
 
 [node name="DayNightController" type="Node" parent="." unique_id=1206687905 node_paths=PackedStringArray("sun_light")]
 script = ExtResource("2_jeert")
-baseCountdownDuration = 600.0
+baseCountdownDuration = 5.0
 sun_light = NodePath("../Sun")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DayNightController" unique_id=651528313]

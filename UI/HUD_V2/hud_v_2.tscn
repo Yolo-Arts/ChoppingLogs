@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dmbqc1wu422w1" path="res://Assets/UI/Icons/PrestigePoint.png" id="4_weevo"]
 [ext_resource type="Texture2D" uid="uid://mmgvlaw8itl" path="res://Assets/UI/Icons/upgrade_icon/Sprint Stamina.png" id="5_weevo"]
 [ext_resource type="Texture2D" uid="uid://cesiycy40mw04" path="res://Assets/Textures/Crosshair/circle32.png" id="7_5yrs7"]
+[ext_resource type="Shader" uid="uid://cw83ncdeyxqne" path="res://Shaders/red_vignette.gdshader" id="8_25omd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ms7x3"]
 bg_color = Color(0.36, 0.25344002, 0.22680001, 0.24705882)
@@ -40,6 +41,49 @@ border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c3auu"]
+shader = ExtResource("8_25omd")
+shader_parameter/vignette_intensity = 0.0
+shader_parameter/vignette_opacity = 1.0
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_25omd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EncroachingDark:material:shader_parameter/vignette_intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_c3auu"]
+resource_name = "start_encroaching_dark"
+length = 31.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EncroachingDark:material:shader_parameter/vignette_intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 14, 21.333334, 29.3, 29.666666, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 2.0, 4.0, 7.0, 60.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_33d8d"]
+_data = {
+&"RESET": SubResource("Animation_25omd"),
+&"start_encroaching_dark": SubResource("Animation_c3auu")
+}
 
 [node name="HUD_V2" type="Control" unique_id=1163280902]
 layout_mode = 3
@@ -256,3 +300,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_5yrs7")
 expand_mode = 1
+
+[node name="EncroachingDark" type="ColorRect" parent="." unique_id=1436517404]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_c3auu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="EncroachingDarkPlayer" type="AnimationPlayer" parent="." unique_id=613300403]
+libraries/ = SubResource("AnimationLibrary_33d8d")

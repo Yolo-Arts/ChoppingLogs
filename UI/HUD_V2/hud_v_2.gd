@@ -3,6 +3,8 @@ extends Control
 @onready var money_label: Label = %MoneyLabel
 @onready var time_label: Label = %TimeLabel
 @onready var quota_amount: Label = %QuotaAmount
+@onready var encroaching_dark: ColorRect = %EncroachingDark
+@onready var encroaching_dark_player: AnimationPlayer = $EncroachingDarkPlayer
 
 
 func _ready() -> void:
@@ -14,6 +16,7 @@ func _ready() -> void:
 	
 	EventSystem.HUD_update_time.connect(_on_time_updated)
 	EventSystem.QUO_update_quota_text.connect(update_quota_text)
+	EventSystem.DAR_encroaching_dark_start.connect(encroaching_dark_start)
 
 func reset_hud_elements():
 	money_label.text = "$" + str(0.0)
@@ -71,3 +74,14 @@ func _on_time_updated(new_time: String, seconds_left: int) -> void:
 				.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 		else:
 			time_label.scale = Vector2.ONE
+
+const DARK_DURATION: float = 30.0
+const START_VIGNETTE_INTENSITY: float = 0.4
+const END_VIGNETTE_INTENSITY: float = 60.0
+
+func encroaching_dark_start() -> void:
+	print("encroaching dark started")
+	encroaching_dark_player.play("start_encroaching_dark")
+	await encroaching_dark_player.animation_finished
+	
+	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.ResultsScreen)

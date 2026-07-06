@@ -101,4 +101,8 @@ signal QUO_update_quota_text
 signal QUO_increase_quota_amount
 signal QUO_reset_quota
 
+
+signal DAR_encroaching_dark_start
+
+
 @warning_ignore_restore("unused_signal")
