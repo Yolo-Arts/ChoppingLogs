@@ -28,18 +28,13 @@
 [ext_resource type="Texture2D" uid="uid://dpau2qi6a262a" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage08.png" id="18_kffl4"]
 [ext_resource type="Texture2D" uid="uid://b7jkqwb2c6ehb" path="res://Assets/skill_tree/axe/AxeCritRate/AxeCritRate02.png" id="19_1ny6p"]
 [ext_resource type="Texture2D" uid="uid://dnjrkg7o1xlri" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed02.png" id="19_amre3"]
-[ext_resource type="Resource" uid="uid://bx3gvntp2rsru" path="res://Resources/skilltree/Axe/AxeDamage/sprint_speed_1.tres" id="19_crf34"]
 [ext_resource type="Texture2D" uid="uid://80rb4mqcvga0" path="res://Assets/skill_tree/axe/AxeCritRate/AxeCritRate03.png" id="20_0pky4"]
 [ext_resource type="Texture2D" uid="uid://cj655n43idyi7" path="res://Assets/skill_tree/axe/AxeCritRate/AxeCritRate05.png" id="20_1ny6p"]
-[ext_resource type="Resource" uid="uid://dugkp1peqpny6" path="res://Resources/skilltree/Axe/AxeDamage/sprint_speed_2.tres" id="20_bh5uq"]
 [ext_resource type="Texture2D" uid="uid://bmg11artyqldv" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed03.png" id="20_fm8dc"]
 [ext_resource type="Texture2D" uid="uid://dv3ufu5a8us8f" path="res://Assets/skill_tree/axe/AxeCritRate/AxeCritRate04.png" id="20_ux5mw"]
-[ext_resource type="Resource" uid="uid://k6c1gcbdu0ve" path="res://Resources/skilltree/Axe/AxeDamage/jump_height.tres" id="21_27nor"]
 [ext_resource type="Texture2D" uid="uid://bp5q5os11as4h" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed04.png" id="21_utaip"]
-[ext_resource type="Resource" uid="uid://khvu6thof5f6" path="res://Resources/skilltree/Axe/AxeDamage/sprint_length_1.tres" id="22_2ddyc"]
 [ext_resource type="Texture2D" uid="uid://fsnag8s87n0g" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed05.png" id="22_tcfgv"]
 [ext_resource type="Texture2D" uid="uid://cqcftsy4wy2ta" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed06.png" id="23_05uoc"]
-[ext_resource type="Resource" uid="uid://cu3uy0a4gn5n5" path="res://Resources/skilltree/Axe/AxeDamage/sprint_length_2.tres" id="23_6edkr"]
 [ext_resource type="Shader" uid="uid://cw83ncdeyxqne" path="res://Shaders/red_vignette.gdshader" id="24_2ddyc"]
 [ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="24_xsv4x"]
 [ext_resource type="Texture2D" uid="uid://bey8sem7ewmtu" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed07.png" id="24_yp8gp"]
@@ -76,7 +71,11 @@
 [ext_resource type="Resource" uid="uid://b4m1d4qdacomk" path="res://Resources/skilltree/Timer/inc_time_7.tres" id="53_0pky4"]
 [ext_resource type="Resource" uid="uid://ch7pivww81w75" path="res://Resources/skilltree/Timer/inc_time_8.tres" id="54_0pky4"]
 [ext_resource type="Resource" uid="uid://ddnvpfx4edbek" path="res://Resources/skilltree/Timer/inc_time_9.tres" id="55_0pky4"]
-[ext_resource type="Resource" uid="uid://b7t22mon42cgb" path="res://Resources/skilltree/Timer/tree_inc_time.tres" id="56_b7xoe"]
+[ext_resource type="Texture2D" uid="uid://bf0ra1dvwovs7" path="res://Assets/skill_tree/TimeIncrease/TimeIncreaser.png" id="56_b7xoe"]
+[ext_resource type="Texture2D" uid="uid://vn5de0y4xw5" path="res://Assets/skill_tree/PlayerMovement/SprintSpeed/SprintSpeed03.png" id="69_eeitg"]
+[ext_resource type="Texture2D" uid="uid://cainnyv2n7rhs" path="res://Assets/skill_tree/PlayerMovement/SprintSpeed/SprintSpeed01.png" id="69_ux5mw"]
+[ext_resource type="Texture2D" uid="uid://bidy5ye6h2fy0" path="res://Assets/skill_tree/PlayerMovement/SprintStamina/SprintStamina02.png" id="70_0pky4"]
+[ext_resource type="Texture2D" uid="uid://dnp0warmb8ubu" path="res://Assets/skill_tree/PlayerMovement/SprintStamina/SprintStamina03.png" id="71_b7xoe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
 bg_color = Color(0, 0, 0, 0.84705883)
@@ -371,6 +370,15 @@ upgrade_key = 31
 texture = ExtResource("35_6fw87")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
+[sub_resource type="Resource" id="Resource_k547l"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Time Trees"
+upgrade_key = 85
+texture = ExtResource("56_b7xoe")
+upgrade_cost = 1
+description = "Cutting a tree increases the remaining time until quota by 0.1s."
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
 [sub_resource type="Resource" id="Resource_hx5fe"]
 script = ExtResource("24_xsv4x")
 upgrade_key = 7
@@ -426,6 +434,45 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_3hptt"]
 script = ExtResource("24_xsv4x")
 texture = ExtResource("31_lfd44")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_6op4n"]
+script = ExtResource("24_xsv4x")
+texture = ExtResource("69_ux5mw")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sbry8"]
+load_path = "res://.godot/imported/SprintStamina01.png-f2328fe89abc164b848326b216ce8663.ctex"
+
+[sub_resource type="Resource" id="Resource_vulb5"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Sprint Stamina"
+texture = SubResource("CompressedTexture2D_sbry8")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_rjf26"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Sprint Stamina"
+texture = ExtResource("70_0pky4")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_iyvpv"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Sprint Stamina"
+texture = ExtResource("71_b7xoe")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ny6p"]
+load_path = "res://.godot/imported/SprintSpeed02.png-221b93267d042f74478efc311eebc373.ctex"
+
+[sub_resource type="Resource" id="Resource_7g6ir"]
+script = ExtResource("24_xsv4x")
+texture = SubResource("CompressedTexture2D_1ny6p")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_u6dyp"]
+script = ExtResource("24_xsv4x")
+texture = ExtResource("69_eeitg")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6edkr"]
@@ -590,40 +637,6 @@ layout_mode = 0
 offset_top = -192.0
 offset_bottom = -102.0
 skill_data = SubResource("Resource_6fw87")
-
-[node name="SprintSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1524854648 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_left = -720.0
-offset_top = 472.0
-offset_right = -630.0
-offset_bottom = 562.0
-skill_data = ExtResource("19_crf34")
-
-[node name="SprintSpeed2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=1067747414 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_left = -264.0
-offset_right = -174.0
-skill_data = ExtResource("20_bh5uq")
-
-[node name="JumpHeight" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=133819581 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_top = -216.0
-offset_bottom = -126.0
-skill_data = ExtResource("21_27nor")
-
-[node name="SprintLength1" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=1096809234 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_left = -264.0
-offset_top = -216.0
-offset_right = -174.0
-offset_bottom = -126.0
-skill_data = ExtResource("22_2ddyc")
-
-[node name="SprintLength2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintLength1" unique_id=1951128766 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_left = -224.0
-offset_right = -134.0
-skill_data = ExtResource("23_6edkr")
 
 [node name="AxeSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=397992881 instance=ExtResource("6_2gknk")]
 layout_mode = 0
@@ -841,13 +854,13 @@ offset_left = -184.0
 offset_right = -94.0
 skill_data = ExtResource("55_0pky4")
 
-[node name="TimeTrees" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease/TimeIncrease2/TimeIncrease3/TimeIncrease4" unique_id=1155336736 instance=ExtResource("6_2gknk")]
+[node name="TimeTrees" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease" unique_id=1155336736 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_left = -237.0
-offset_top = -115.0
-offset_right = -147.0
-offset_bottom = -25.0
-skill_data = ExtResource("56_b7xoe")
+offset_left = -160.0
+offset_top = 170.0
+offset_right = -70.0
+offset_bottom = 260.0
+skill_data = SubResource("Resource_k547l")
 
 [node name="AxeDamageMaxLevel0" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=133172710 instance=ExtResource("6_2gknk")]
 layout_mode = 0
@@ -960,6 +973,48 @@ layout_mode = 0
 offset_top = -216.0
 offset_bottom = -126.0
 skill_data = ExtResource("15_04fv4")
+
+[node name="SprintSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=483513062 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -170.0
+offset_top = 522.0
+offset_right = -80.0
+offset_bottom = 612.0
+skill_data = SubResource("Resource_6op4n")
+
+[node name="SprintStamina1" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=710908678 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = 200.0
+offset_bottom = 290.0
+skill_data = SubResource("Resource_vulb5")
+
+[node name="SprintStamina2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintStamina1" unique_id=298985912 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -200.0
+offset_right = -110.0
+skill_data = SubResource("Resource_rjf26")
+
+[node name="SprintStamina3" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintStamina1/SprintStamina2" unique_id=1691299754 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -200.0
+offset_right = -110.0
+skill_data = SubResource("Resource_iyvpv")
+
+[node name="SprintSpeed2" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1877573959 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -370.0
+offset_top = 522.0
+offset_right = -280.0
+offset_bottom = 612.0
+skill_data = SubResource("Resource_7g6ir")
+
+[node name="SprintSpeed3" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=962223423 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -570.0
+offset_top = 522.0
+offset_right = -480.0
+offset_bottom = 612.0
+skill_data = SubResource("Resource_u6dyp")
 
 [node name="Vignette" type="ColorRect" parent="." unique_id=1526985475]
 visible = false
