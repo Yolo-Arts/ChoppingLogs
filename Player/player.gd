@@ -145,5 +145,5 @@ func fire_slash_damage_calculation() -> Damage:
 	if (randf_range(0.0, 100.0) <= player_stats.axe_crit_chance):								# check crit damage chance
 		crit = true
 		crit_damage = player_stats.fire_slash_damage * (player_stats.axe_crit_damage/100.0)		# calculate crit damage 
-	var base_damage = player_stats.fire_slash_damage + player_stats.axe_damage_bonus			# calculate axe base + bonus damage
+	var base_damage = player_stats.fire_slash_damage											# calculate axe base 
 	return Damage.new(base_damage * player_stats.axe_damage_mult_bonus + crit_damage, crit)		# return damage object.

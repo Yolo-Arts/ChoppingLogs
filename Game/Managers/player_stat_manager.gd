@@ -42,9 +42,10 @@ var player_speed_with_weight_modifier: float = 1.0
 		return true if SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_UNLOCK] else false
 @export var fire_slash_damage: float = 500.0:
 	get:
-		return 500 + (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_DMG_INC_1] * 2) \
-		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_DMG_INC_2] * 5) \
-		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_DMG_INC_3] * 8) 
+		return 500 * ( max((SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_DMG_INC_1] * 2), 1) \
+		#* max((SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_DMG_INC_2] * 5), 1) \
+		* pow(5, SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_DMG_INC_2]) \
+		* max((SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_DMG_INC_3] * 8), 1) )
 @export var fire_slash_cooldown: float = 10.0:
 	get:
 		return 10.0 - ((SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_RATE_1] * 2.0) \
