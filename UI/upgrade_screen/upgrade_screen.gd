@@ -255,7 +255,7 @@ func refresh_stat_labels() -> void:
 	var stam_max = UpgradeConfig.max_level[UpgradeConfig.Keys.SprintStamina]
 	
 	if stam_lvl >= stam_max:
-		sprint_stamnia_stat_increase_label.text = "%d Stamina (MAX)" % stam_lvl
+		sprint_stamnia_stat_increase_label.text = "%d Stamina (MAX)" % (stam_lvl + 1)
 	else:
 		update_stat_increase_label(sprint_stamnia_stat_increase_label, stam_lvl + 1, stam_lvl + 2, "Seconds")
 	
