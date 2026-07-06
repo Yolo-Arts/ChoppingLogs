@@ -68,7 +68,6 @@
 [ext_resource type="Resource" uid="uid://ch7pivww81w75" path="res://Resources/skilltree/Timer/inc_time_8.tres" id="54_0pky4"]
 [ext_resource type="Resource" uid="uid://ddnvpfx4edbek" path="res://Resources/skilltree/Timer/inc_time_9.tres" id="55_0pky4"]
 [ext_resource type="Texture2D" uid="uid://bf0ra1dvwovs7" path="res://Assets/skill_tree/TimeIncrease/TimeIncreaser.png" id="56_b7xoe"]
-[ext_resource type="Texture2D" uid="uid://oxukvrqrb7cb" path="res://Assets/skill_tree/axe/FireSlash/FireSlashDamage.png" id="65_b7xoe"]
 [ext_resource type="Texture2D" uid="uid://diekhxrmp5n2k" path="res://Assets/skill_tree/FireSlash/FireSlashDamage/FireSlashDamage02.png" id="66_nder1"]
 [ext_resource type="Texture2D" uid="uid://yooso1a8w5xa" path="res://Assets/skill_tree/axe/FireSlash/FireSlashRate.png" id="66_sbry8"]
 [ext_resource type="Texture2D" uid="uid://b032eno6y561h" path="res://Assets/skill_tree/FireSlash/FireSlashDamage/FireSlashDamage03.png" id="67_6e2eu"]
@@ -195,6 +194,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_5gld0"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Crit Damage"
 upgrade_key = 49
 texture = ExtResource("19_1ny6p")
 max_level = 7
@@ -447,109 +447,116 @@ script = ExtResource("24_xsv4x")
 texture = ExtResource("31_lfd44")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
-[sub_resource type="Resource" id="Resource_ohkuh"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Fire Slash Damage"
-upgrade_key = 9
-texture = ExtResource("65_b7xoe")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_4ly0s"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Fire Slash Damage"
-upgrade_key = 9
-texture = ExtResource("66_nder1")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_kdj8j"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Fire Slash Damage"
-upgrade_key = 9
-texture = ExtResource("67_6e2eu")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_olcoj"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Fire Slash Damage"
-upgrade_key = 9
-texture = ExtResource("68_krrke")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
 [sub_resource type="Resource" id="Resource_1bfld"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
-upgrade_key = 8
+upgrade_key = 85
 texture = ExtResource("66_sbry8")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_e2vyx"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
-upgrade_key = 8
+upgrade_key = 86
 texture = ExtResource("67_kck0p")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_5h47n"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
-upgrade_key = 8
+upgrade_key = 87
 texture = ExtResource("68_q2e6c")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_c5w80"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
-upgrade_key = 8
+upgrade_key = 88
 texture = ExtResource("69_a6nbd")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_wohuj"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
-upgrade_key = 8
+upgrade_key = 89
 texture = ExtResource("70_nder1")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_wc8uc"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 10
+upgrade_key = 90
 texture = ExtResource("67_hbeh4")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_yjfj4"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 10
+upgrade_key = 91
 texture = ExtResource("68_5ujn8")
+max_level = 8
+level_requirement_to_reveal = 8
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_ym7y6"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 10
+upgrade_key = 92
 texture = ExtResource("69_8i8nj")
+max_level = 5
+level_requirement_to_reveal = 5
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_xwvl1"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 10
+upgrade_key = 93
 texture = ExtResource("70_sbry8")
+max_level = 5
+level_requirement_to_reveal = 5
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_a7qeu"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 10
+upgrade_key = 94
 texture = ExtResource("71_hbeh4")
+max_level = 5
+level_requirement_to_reveal = 5
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_70jbf"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 10
+upgrade_key = 95
 texture = ExtResource("72_5ujn8")
+max_level = 5
+level_requirement_to_reveal = 5
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_4ly0s"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Damage"
+upgrade_key = 82
+texture = ExtResource("66_nder1")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_kdj8j"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Damage"
+upgrade_key = 83
+texture = ExtResource("67_6e2eu")
+max_level = 3
+level_requirement_to_reveal = 3
+description = "5X Fire Slash Damage"
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_olcoj"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Damage"
+upgrade_key = 84
+texture = ExtResource("68_krrke")
+description = "Do 1 MILLION DAMAGE with fire slash."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_6op4n"]
@@ -1062,30 +1069,6 @@ offset_right = -52.0
 offset_bottom = -88.0
 skill_data = ExtResource("11_7y20i")
 
-[node name="FireSlashDamage1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=131047561 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_top = -200.0
-offset_bottom = -110.0
-skill_data = SubResource("Resource_ohkuh")
-
-[node name="FireSlashDamage2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=408329291 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_top = -400.0
-offset_bottom = -310.0
-skill_data = SubResource("Resource_4ly0s")
-
-[node name="FireSlashDamage3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=1660886275 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_top = -600.0
-offset_bottom = -510.0
-skill_data = SubResource("Resource_kdj8j")
-
-[node name="FireSlashDamage4" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=543613981 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_top = -800.0
-offset_bottom = -710.0
-skill_data = SubResource("Resource_olcoj")
-
 [node name="FireSlashRate1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=591565523 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = 200.0
@@ -1163,6 +1146,24 @@ offset_top = -200.0
 offset_right = 92.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_70jbf")
+
+[node name="FireSlashDamage1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=408329291 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_4ly0s")
+
+[node name="FireSlashDamage2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashDamage1" unique_id=1660886275 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_kdj8j")
+
+[node name="FireSlashDamage3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashDamage1/FireSlashDamage2" unique_id=543613981 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_olcoj")
 
 [node name="SprintSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=483513062 instance=ExtResource("6_2gknk")]
 layout_mode = 0
