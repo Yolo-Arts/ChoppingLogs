@@ -167,6 +167,7 @@ close_menu={
 
 [rendering]
 
+viewport/hdr_2d=true
 occlusion_culling/use_occlusion_culling=true
 
 [shader_globals]

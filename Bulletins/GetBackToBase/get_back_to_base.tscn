@@ -1,0 +1,233 @@
+[gd_scene format=3 uid="uid://c02ffqnbuetgp"]
+
+[ext_resource type="Script" uid="uid://cxilcnyvjsqwn" path="res://Bulletins/GetBackToBase/get_back_to_base.gd" id="1_t031s"]
+
+[sub_resource type="Gradient" id="Gradient_it183"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t031s"]
+gradient = SubResource("Gradient_it183")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9, 0.9)
+
+[node name="GetBackToBase" type="Control" unique_id=1845928765]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t031s")
+
+[node name="BlackOverlay" type="TextureRect" parent="." unique_id=314399963]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_t031s")
+
+[node name="GetContainer" type="Control" parent="." unique_id=1173878345]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GET" type="Label" parent="GetContainer" unique_id=2075683478]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -473.5
+offset_top = -349.0
+offset_right = 473.5
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 512
+text = "GET"
+horizontal_alignment = 1
+
+[node name="GET2" type="Label" parent="GetContainer" unique_id=1490494425]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -473.5
+offset_top = -349.0
+offset_right = 473.5
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 512
+text = "GET"
+horizontal_alignment = 1
+
+[node name="BackContainer" type="Control" parent="." unique_id=2102505579]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BACK" type="Label" parent="BackContainer" unique_id=1753268463]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -663.5
+offset_top = -349.0
+offset_right = 663.5
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 512
+text = "BACK"
+horizontal_alignment = 1
+
+[node name="BACK2" type="Label" parent="BackContainer" unique_id=579016398]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -663.5
+offset_top = -349.0
+offset_right = 663.5
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 512
+text = "BACK"
+horizontal_alignment = 1
+
+[node name="ToContainer" type="Control" parent="." unique_id=532945960]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TO" type="Label" parent="ToContainer" unique_id=367206419]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = -349.0
+offset_right = 346.0
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 512
+text = "TO"
+horizontal_alignment = 1
+
+[node name="TO2" type="Label" parent="ToContainer" unique_id=1895016673]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = -349.0
+offset_right = 346.0
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 512
+text = "TO"
+horizontal_alignment = 1
+
+[node name="BaseContainer" type="Control" parent="." unique_id=657311195]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BASE" type="Label" parent="BaseContainer" unique_id=1193883584]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -621.5
+offset_top = -349.0
+offset_right = 621.5
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 512
+text = "BASE"
+horizontal_alignment = 1
+
+[node name="BASE2" type="Label" parent="BaseContainer" unique_id=1805703640]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -621.5
+offset_top = -349.0
+offset_right = 621.5
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 512
+text = "BASE"
+horizontal_alignment = 1

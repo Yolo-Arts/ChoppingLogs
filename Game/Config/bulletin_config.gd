@@ -14,6 +14,7 @@ enum Keys{
 	LoseScreen,
 	ResultsScreen,
 	UpgradeScreen,
+	BackToBase,
 }
 
 
@@ -34,5 +35,6 @@ const BULLETIN_PATHS := {
 	Keys.PlaceholderDayEnd: "res://UI/placeholders/day_end/placeholder_day_end.tscn",
 	Keys.LoseScreen: "res://UI/placeholders/day_lost/lose_screen.tscn",
 	Keys.ResultsScreen: "res://UI/results_screen/results_screen.tscn",
-	Keys.UpgradeScreen: "res://UI/upgrade_screen/upgrade_screen.tscn"
+	Keys.UpgradeScreen: "res://UI/upgrade_screen/upgrade_screen.tscn",
+	Keys.BackToBase: "res://Bulletins/GetBackToBase/get_back_to_base.tscn",
 }
