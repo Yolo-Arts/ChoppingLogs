@@ -65,7 +65,6 @@ signal UPG_increase_max_weight
 signal UPG_increase_sell_radius
 signal UPG_increase_normal_speed
 signal UPG_increase_sprint_speed
-signal UPG_increase_stamina
 signal UPG_increase_fire_slash_damage
 signal UPG_increase_fire_slash_fire_rate
 signal UPG_increase_fire_slash_pierce_count

@@ -16,11 +16,12 @@ static var upgrades: Dictionary = {
 	Keys.BackPack: 0,
 }
 
+
 static var max_level: Dictionary = {
 	Keys.ChopDamage: 5,
 	Keys.AxeSpeed: 3,
-	Keys.SprintStamina: 5,
-	Keys.SprintSpeed: 5,
+	Keys.SprintStamina: 1,
+	Keys.SprintSpeed: 1,
 	Keys.BackPack: 3,
 }
 
@@ -56,7 +57,7 @@ static func update_max_levels() -> void:
 
 
 	
-	max_level[Keys.SprintSpeed] = 5 + SkillTreeConfig.upgrades[SkillTreeConfig.Keys.MAX_LEVEL_SPRINT_SPEED]
+	max_level[Keys.SprintSpeed] = 1 + SkillTreeConfig.upgrades[SkillTreeConfig.Keys.MAX_LEVEL_SPRINT_SPEED]
 	
 	max_level[Keys.BackPack] = 3 \
 	+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.MAX_LEVEL_INVENTORY_SIZE_1] * 7) \
