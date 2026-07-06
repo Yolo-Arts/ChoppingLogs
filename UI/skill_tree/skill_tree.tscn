@@ -120,7 +120,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_kck0p"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 40
+upgrade_key = 35
 texture = ExtResource("12_hv2oo")
 description = "Unlocks Critical Hits:
 + 10% Crit Chance"
@@ -129,7 +129,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_q2e6c"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 41
+upgrade_key = 36
 texture = ExtResource("13_vbdoe")
 max_level = 5
 price_increase_mult_per_level = 1.0
@@ -140,7 +140,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_a6nbd"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 42
+upgrade_key = 37
 texture = ExtResource("14_gp51s")
 max_level = 6
 price_increase_mult_per_level = 1.0
@@ -151,42 +151,42 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_nder1"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 43
+upgrade_key = 38
 texture = ExtResource("15_kffl4")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_6e2eu"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Damage"
-upgrade_key = 44
+upgrade_key = 39
 texture = ExtResource("15_eeitg")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_krrke"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 45
+upgrade_key = 40
 texture = ExtResource("16_gp51s")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_kd8vb"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 46
+upgrade_key = 41
 texture = ExtResource("17_kffl4")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_pk2xw"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 47
+upgrade_key = 42
 texture = ExtResource("18_kffl4")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_erkpd"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Damage"
-upgrade_key = 48
+upgrade_key = 43
 texture = ExtResource("18_eeitg")
 max_level = 6
 level_requirement_to_reveal = 4
@@ -195,7 +195,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_5gld0"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Damage"
-upgrade_key = 49
+upgrade_key = 44
 texture = ExtResource("19_1ny6p")
 max_level = 7
 level_requirement_to_reveal = 5
@@ -204,7 +204,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_xc6ld"]
 script = ExtResource("24_xsv4x")
-upgrade_key = 50
+upgrade_key = 45
 texture = ExtResource("20_0pky4")
 max_level = 4
 level_requirement_to_reveal = 3
@@ -212,7 +212,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_pgb8i"]
 script = ExtResource("24_xsv4x")
-upgrade_key = 51
+upgrade_key = 46
 texture = ExtResource("20_ux5mw")
 max_level = 2
 level_requirement_to_reveal = 2
@@ -220,7 +220,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_7ed06"]
 script = ExtResource("24_xsv4x")
-upgrade_key = 52
+upgrade_key = 47
 texture = ExtResource("20_1ny6p")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
