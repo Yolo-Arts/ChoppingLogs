@@ -11,7 +11,6 @@
 [ext_resource type="Resource" uid="uid://o0okwuy0lsdq" path="res://Resources/skilltree/Axe/AxeDamage/axe_range_1.tres" id="9_xtb7d"]
 [ext_resource type="Resource" uid="uid://d0bcggwo5j84s" path="res://Resources/skilltree/Axe/AxeDamage/axe_range_2.tres" id="10_1n7m1"]
 [ext_resource type="Resource" uid="uid://c14mse0vseuog" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_unlock.tres" id="11_7y20i"]
-[ext_resource type="Texture2D" uid="uid://bi2ogxmckinvl" path="res://Assets/skill_tree/axe/AxeDamage4.png" id="11_mnncb"]
 [ext_resource type="Texture2D" uid="uid://b2o2d5dbrl3gt" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage01.png" id="12_hv2oo"]
 [ext_resource type="Texture2D" uid="uid://cy2pj8kmfi8s4" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage02.png" id="13_vbdoe"]
 [ext_resource type="Texture2D" uid="uid://c3wk1ktnbskge" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage03.png" id="14_gp51s"]
@@ -31,10 +30,13 @@
 [ext_resource type="Texture2D" uid="uid://bp5q5os11as4h" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed04.png" id="21_utaip"]
 [ext_resource type="Texture2D" uid="uid://fsnag8s87n0g" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed05.png" id="22_tcfgv"]
 [ext_resource type="Texture2D" uid="uid://cqcftsy4wy2ta" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed06.png" id="23_05uoc"]
+[ext_resource type="Texture2D" uid="uid://bpnky8pk126tw" path="res://Assets/skill_tree/axe/AxeDamage5.png" id="23_6e2eu"]
 [ext_resource type="Shader" uid="uid://cw83ncdeyxqne" path="res://Shaders/red_vignette.gdshader" id="24_2ddyc"]
+[ext_resource type="Texture2D" uid="uid://buijgsef88a08" path="res://Assets/skill_tree/axe/AxeDamage6.png" id="24_krrke"]
 [ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="24_xsv4x"]
 [ext_resource type="Texture2D" uid="uid://bey8sem7ewmtu" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed07.png" id="24_yp8gp"]
 [ext_resource type="Texture2D" uid="uid://begc66124e45k" path="res://Assets/skill_tree/SkillTreeBackground.svg" id="25_fjpjg"]
+[ext_resource type="Texture2D" uid="uid://bjrdkuwtvbcc2" path="res://Assets/skill_tree/axe/AxeDamage7.png" id="25_kd8vb"]
 [ext_resource type="Texture2D" uid="uid://3hvkbkvmhbxa" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed08.png" id="25_uoit0"]
 [ext_resource type="Texture2D" uid="uid://ctsc4neuvapn" path="res://Assets/skill_tree/Inventory/InventorySizeMaxLevel/InvetorySizeMaxLevel01.png" id="26_amre3"]
 [ext_resource type="Texture2D" uid="uid://b5jpm0kqxis3q" path="res://Assets/UI/Icons/symbols_money.svg" id="26_gj7ge"]
@@ -228,7 +230,21 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 script = ExtResource("5_mnncb")
 upgrade_name = "Axe Damage 5"
 upgrade_key = 4
-texture = ExtResource("11_mnncb")
+texture = ExtResource("23_6e2eu")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_ohkuh"]
+script = ExtResource("5_mnncb")
+upgrade_name = "Axe Damage 6"
+upgrade_key = 5
+texture = ExtResource("24_krrke")
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_0eu8x"]
+script = ExtResource("5_mnncb")
+upgrade_name = "Axe Damage 7"
+upgrade_key = 6
+texture = ExtResource("25_kd8vb")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_khday"]
@@ -760,6 +776,22 @@ layout_mode = 0
 offset_top = -192.0
 offset_bottom = -102.0
 skill_data = SubResource("Resource_6fw87")
+
+[node name="AxeDamage6" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4" unique_id=1708988974 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -388.0
+offset_right = 70.0
+offset_bottom = -298.0
+skill_data = SubResource("Resource_ohkuh")
+
+[node name="AxeDamage7" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4" unique_id=246468010 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -588.0
+offset_right = 70.0
+offset_bottom = -498.0
+skill_data = SubResource("Resource_0eu8x")
 
 [node name="AxeSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=397992881 instance=ExtResource("6_2gknk")]
 layout_mode = 0
