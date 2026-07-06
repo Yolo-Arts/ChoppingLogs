@@ -34,6 +34,7 @@ signal HUD_hide_hud
 signal HUD_show_hud
 signal HUD_reset_hud_elements
 signal HUD_update_time
+signal HUD_update_stamina(rem_stamina: float, max_stamina_changed: bool)
 signal HUD_change_countdown(amount: float)
 
 # INV -> Inventory signals
@@ -64,6 +65,7 @@ signal UPG_increase_max_weight
 signal UPG_increase_sell_radius
 signal UPG_increase_normal_speed
 signal UPG_increase_sprint_speed
+signal UPG_increase_stamina
 signal UPG_increase_fire_slash_damage
 signal UPG_increase_fire_slash_fire_rate
 signal UPG_increase_fire_slash_pierce_count

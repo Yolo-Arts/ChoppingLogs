@@ -5,6 +5,8 @@ extends Control
 @onready var quota_amount: Label = %QuotaAmount
 @onready var encroaching_dark: ColorRect = %EncroachingDark
 @onready var encroaching_dark_player: AnimationPlayer = $EncroachingDarkPlayer
+@export var sprint_container: HBoxContainer
+@export var stamina_bar: ProgressBar
 
 
 func _ready() -> void:
@@ -17,6 +19,7 @@ func _ready() -> void:
 	EventSystem.HUD_update_time.connect(_on_time_updated)
 	EventSystem.QUO_update_quota_text.connect(update_quota_text)
 	EventSystem.DAR_encroaching_dark_start.connect(encroaching_dark_start)
+	EventSystem.HUD_update_stamina.connect(_update_stamina)
 
 func reset_hud_elements():
 	money_label.text = "$" + str(0.0)
@@ -27,6 +30,13 @@ func update_text(money: float, color: Color):
 
 func update_quota_text() -> void:
 	quota_amount.text = "/ $" + str(EventSystem.QUO_get_quota_amount.call())
+
+func _update_stamina(stamina: float, max_stam_changed: bool = false) -> void:
+	if max_stam_changed:
+		stamina_bar.max_value = stamina # move to different signal if we want more robust behaviour for max stamina increases
+		return
+	stamina_bar.value = stamina
+	sprint_container.visible = stamina_bar.value != stamina_bar.max_value
 
 func apply_text_effect(label: Label, color: Color):
 	var tween = create_tween().set_parallel(true)

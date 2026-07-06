@@ -2,11 +2,10 @@ extends Node
 
 func _enter_tree() -> void:
 	EventSystem.UPG_upgrade_requested.connect(increase_upgrade_level)
-	
-	EventSystem.AXE_increase_axe_damage.connect(increase_upgrade_level.bind(UpgradeConfig.Keys.ChopDamage))
-	EventSystem.AXE_increase_axe_speed.connect(increase_upgrade_level.bind(UpgradeConfig.Keys.AxeSpeed))
-	EventSystem.UPG_increase_sprint_speed.connect(increase_upgrade_level.bind(UpgradeConfig.Keys.SprintSpeed))
-	EventSystem.UPG_increase_inventory_size.connect(increase_upgrade_level.bind(UpgradeConfig.Keys.BackPack))
+	#EventSystem.AXE_increase_axe_damage.connect(increase_upgrade_level.bind(UpgradeConfig.Keys.ChopDamage)) these seem deprecated?
+	#EventSystem.AXE_increase_axe_speed.connect(increase_upgrade_level.bind(UpgradeConfig.Keys.AxeSpeed))
+	#EventSystem.UPG_increase_sprint_speed.connect(increase_upgrade_level.bind(UpgradeConfig.Keys.SprintSpeed))
+	#EventSystem.UPG_increase_inventory_size.connect(increase_upgrade_level.bind(UpgradeConfig.Keys.BackPack))
 
 func increase_upgrade_level(upgrade_key: UpgradeConfig.Keys) -> void:
 	if not UpgradeConfig.upgrades.has(upgrade_key):

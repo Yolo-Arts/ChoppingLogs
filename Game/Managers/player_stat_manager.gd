@@ -5,7 +5,9 @@ class_name PlayerStats
 @export var base_inventory_size: int = 3
 @export var base_max_weight: float = 5000.0
 @export var base_normal_speed: float = 4.0
-@export var base_sprint_speed: float = 16.0
+@export var base_sprint_multi: float = 4.0
+@export var base_sprint_stamina: float = 1.0 #seconds
+@export var stamina_per_level: float = 1
 @export var base_axe_damage_bonus: float = 1.0
 @export var base_axe_speed_bonus: float = 1.0
 
@@ -73,6 +75,9 @@ var axe_speed_bonus: float:
 var sprint_speed: float:
 	get: return get_sprint_speed_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed])
 
+var max_sprint_stamina: float:
+	get: return get_sprint_stamina_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintStamina]) 
+
 var normal_speed: float:
 	get: return get_normal_speed_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed])
 
@@ -101,7 +106,10 @@ func get_normal_speed_at_level(lvl: int) -> float:
 	return base_normal_speed + (lvl * 0.4)
 
 func get_sprint_speed_at_level(lvl: int) -> float:
-	return base_sprint_speed + (lvl * 2.4)
+	return normal_speed * (base_sprint_multi + (lvl * 2.4))
+	
+func get_sprint_stamina_at_level(lvl: int) -> float:
+	return base_sprint_stamina + (stamina_per_level * lvl)
 
 func get_inventory_size_at_level(lvl: int) -> int:
 	return base_inventory_size + (lvl * max(1, (1 * 
