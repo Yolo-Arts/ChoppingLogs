@@ -75,10 +75,6 @@ func _on_time_updated(new_time: String, seconds_left: int) -> void:
 		else:
 			time_label.scale = Vector2.ONE
 
-const DARK_DURATION: float = 30.0
-const START_VIGNETTE_INTENSITY: float = 0.4
-const END_VIGNETTE_INTENSITY: float = 60.0
-
 func encroaching_dark_start() -> void:
 	print("encroaching dark started")
 	encroaching_dark_player.play("start_encroaching_dark")

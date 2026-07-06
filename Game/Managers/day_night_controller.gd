@@ -1,7 +1,5 @@
 extends Node
 
-var normal_timer_over: bool = false
-@export var get_back_to_base_countdown: float = 30.0
 @export var baseCountdownDuration: float = 40.0
 @export var startHour: float = 6.0         
 @export var endHour: float = 22.0          
@@ -49,8 +47,6 @@ func _ready() -> void:
 	
 	countdownDuration = calc_countdown()
 	time_remaining = countdownDuration
-	encroaching_dark_time_remaining = get_back_to_base_countdown
-	normal_timer_over = false
 	
 	EventSystem.HUD_change_countdown.connect(change_countdown)
 	
@@ -65,8 +61,7 @@ func _process(delta: float) -> void:
 	if is_timer_over:
 		return
 	
-	if !normal_timer_over:
-		change_countdown(-delta)
+	change_countdown(-delta)
 	
 	_update_sky_cycle()
 
