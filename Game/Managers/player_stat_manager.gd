@@ -6,7 +6,7 @@ class_name PlayerStats
 @export var base_max_weight: float = 5000.0
 @export var base_normal_speed: float = 4.0
 const base_sprint_multi: float = 4.0
-@export var sprint_multi_per_lvl: float = 1
+@export var sprint_multi_per_lvl: float = 0.1
 @export var base_sprint_stamina: float = 1.0 #seconds
 @export var stamina_per_lvl: float = 1
 @export var base_axe_damage_bonus: float = 1.0
@@ -74,7 +74,7 @@ var axe_speed_bonus: float:
 	get: return get_axe_speed_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.AxeSpeed])
 
 var sprint_speed: float:
-	get: return get_sprint_speed_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed])
+	get: return normal_speed * get_sprint_multi_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed])
 
 var max_sprint_stamina: float:
 	get: return get_sprint_stamina_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintStamina]) 
@@ -106,8 +106,8 @@ func get_axe_speed_at_level(lvl: int) -> float:
 func get_normal_speed_at_level(lvl: int) -> float:
 	return base_normal_speed + (lvl * 0.4)
 
-func get_sprint_speed_at_level(lvl: int) -> float:
-	return normal_speed * (base_sprint_multi + (lvl * sprint_multi_per_lvl))
+func get_sprint_multi_at_level(lvl: int) -> float:
+	return base_sprint_multi + (lvl * sprint_multi_per_lvl)
 	
 func get_sprint_stamina_at_level(lvl: int) -> float:
 	return base_sprint_stamina + (stamina_per_lvl * lvl)

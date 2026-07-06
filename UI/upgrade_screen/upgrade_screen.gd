@@ -255,18 +255,18 @@ func refresh_stat_labels() -> void:
 	var stam_max = UpgradeConfig.max_level[UpgradeConfig.Keys.SprintStamina]
 	
 	if stam_lvl >= stam_max:
-		sprint_stamnia_stat_increase_label.text = "%d Stamina (MAX)" % (stam_lvl + 1)
+		sprint_stamnia_stat_increase_label.text = "%d Seconds (MAX)" % (stam_lvl + 1)
 	else:
 		update_stat_increase_label(sprint_stamnia_stat_increase_label, stam_lvl + 1, stam_lvl + 2, "Seconds")
 	
 	var sprint_lvl = UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed]
 	var sprint_max = UpgradeConfig.max_level[UpgradeConfig.Keys.SprintSpeed]
-	var current_spd = player_stat_manager.get_sprint_speed_at_level(sprint_lvl)
+	var current_spd = player_stat_manager.get_sprint_multi_at_level(sprint_lvl)
 	
 	if sprint_lvl >= sprint_max:
-		sprint_speed_stat_increase_label.text = "%.1f Speed (MAX)" % current_spd
+		sprint_speed_stat_increase_label.text = "x%.1f (MAX)" % current_spd
 	else:
-		var next_spd = player_stat_manager.get_sprint_speed_at_level(sprint_lvl + 1)
+		var next_spd = player_stat_manager.get_sprint_multi_at_level(sprint_lvl + 1)
 		update_stat_increase_label(sprint_speed_stat_increase_label, current_spd, next_spd, "", "", "x")
 	
 	var bag_lvl = UpgradeConfig.upgrades[UpgradeConfig.Keys.BackPack]
