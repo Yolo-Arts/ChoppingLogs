@@ -37,10 +37,31 @@ var player_speed_with_weight_modifier: float = 1.0
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_DAMAGE_5] * 100.0) 
 
 @export_group("Fire Slash")
-@export var unlocked_fire_slash: bool = false
-@export var fire_slash_damage: float = 50.0
-@export var fire_slash_cooldown: float = 20.0
-@export var fire_slash_pierce_count: int = 1
+@export var unlocked_fire_slash: bool = false:
+	get:
+		return true if SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_UNLOCK] else false
+@export var fire_slash_damage: float = 500.0:
+	get:
+		return 500 + (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_DMG_INC_1] * 2) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_DMG_INC_2] * 5) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_DMG_INC_3] * 8) 
+@export var fire_slash_cooldown: float = 10.0:
+	get:
+		return 10.0 - ((SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_RATE_1] * 2.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_RATE_2] * 2.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_RATE_3] * 3.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_RATE_4] * 1.0) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_RATE_5] * 1.0) )
+@export var fire_slash_pierce_count: int = 1:
+	get:
+		return 1 \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_PIERCE_1]) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_PIERCE_2]) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_PIERCE_3]) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_PIERCE_4]) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_PIERCE_5]) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.FIRE_SLASH_PIERCE_6]) 
+		
 
 var axe_damage_bonus: float:
 	get: return get_axe_damage_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.ChopDamage])
