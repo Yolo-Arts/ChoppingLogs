@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://crg4tt4e2dhcw"]
+
+[ext_resource type="Script" uid="uid://jum37rocc4v2" path="res://Stages/Level/level.gd" id="1_1ketp"]
+[ext_resource type="Script" uid="uid://cmfmxk08kighk" path="res://Game/Managers/day_night_controller.gd" id="2_ntkyc"]
+[ext_resource type="PackedScene" uid="uid://bolmbxrohop2y" path="res://Objects/interactables/prototype_helpers/prototype_helper_upgrade_screen.tscn" id="35_ssqta"]
+[ext_resource type="PackedScene" uid="uid://b2iwqgom3rekv" path="res://Game/Managers/spawner.tscn" id="37_h4iel"]
+[ext_resource type="PackedScene" uid="uid://cyc4xn25gqd5j" path="res://Assets/Meshes/maps/testV5/log_chopping_map_test_5.tscn" id="40_qeflf"]
+[ext_resource type="PackedScene" uid="uid://daslwbn4o17jw" path="res://Objects/hittable_objects/hittable_tree_of_infinity.tscn" id="41_cyw1o"]
+[ext_resource type="PackedScene" uid="uid://dfa6w3onh1aef" path="res://Player/player.tscn" id="42_sdb2i"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6kx5t"]
+sky_top_color = Color(0.3254902, 0.8784314, 1, 1)
+sky_horizon_color = Color(0.67058825, 0.78431374, 0.83137256, 1)
+ground_bottom_color = Color(0.21568628, 0.29411766, 0.33333334, 1)
+ground_horizon_color = Color(0.67058825, 0.78431374, 0.83137256, 1)
+
+[sub_resource type="Sky" id="Sky_18tru"]
+sky_material = SubResource("ProceduralSkyMaterial_6kx5t")
+
+[sub_resource type="Environment" id="Environment_grbyp"]
+background_mode = 2
+sky = SubResource("Sky_18tru")
+ambient_light_color = Color(0.3254902, 0.8784314, 1, 1)
+ambient_light_sky_contribution = 0.55
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 0.9
+glow_hdr_threshold = 1.5
+fog_light_color = Color(0.2901961, 0.76862746, 0.8352941, 1)
+fog_density = 0.0025
+fog_height = 3.0
+fog_height_density = 0.02
+
+[sub_resource type="Animation" id="Animation_byejm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.8325957, 2.6179938, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sun:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jeert"]
+resource_name = "day_and_night"
+length = 24.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.8325957, 2.6179938, 0), Vector3(-4.4505897, 2.6179938, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sun:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_byejm"]
+_data = {
+&"RESET": SubResource("Animation_byejm"),
+&"day_and_night": SubResource("Animation_jeert")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i71hr"]
+transparency = 1
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.08627451, 1, 1, 0.49803922)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w28og"]
+material = SubResource("StandardMaterial3D_i71hr")
+size = Vector2(500, 500)
+
+[node name="Level" type="Node" unique_id=870475367]
+script = ExtResource("1_1ketp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1487685097]
+unique_name_in_owner = true
+environment = SubResource("Environment_grbyp")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1906963384]
+transform = Transform3D(-0.8660252, 0.48296285, -0.12940949, 0, -0.25881898, -0.9659255, -0.49999994, -0.8365161, 0.2241438, -274.6944, 8.685556, 0)
+layers = 8
+light_color = Color(0.99607843, 1, 0.7294118, 1)
+shadow_enabled = true
+
+[node name="DayNightController" type="Node" parent="." unique_id=1206687905 node_paths=PackedStringArray("sun_light")]
+script = ExtResource("2_ntkyc")
+baseCountdownDuration = 600.0
+sun_light = NodePath("../Sun")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DayNightController" unique_id=651528313]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_byejm")
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=582853822]
+transform = Transform3D(1.8767056, 0, 0, 0, 1, 0, 0, 0, 2.3238485, -274.6944, -9.047562, 0)
+layers = 256
+mesh = SubResource("PlaneMesh_w28og")
+
+[node name="PickuppableLogs" type="Node3D" parent="." unique_id=333574750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.6944, 0, 0)
+
+[node name="PrototypeHelpers2OnTheMap" type="Node3D" parent="." unique_id=1441189763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.34161, -2.6482544, -295.0777)
+
+[node name="PrototypeHelperUpgradeScreen" parent="PrototypeHelpers2OnTheMap" unique_id=139572133 instance=ExtResource("35_ssqta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275.5866, 0, 0)
+
+[node name="Spawner" parent="." unique_id=1704739753 instance=ExtResource("37_h4iel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.6944, 0, 0)
+
+[node name="logChoppingMapTest5" parent="." unique_id=1864310886 instance=ExtResource("40_qeflf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -408.14996, -3.3727942, -275.08105)
+
+[node name="HittableTreeOfInfinity2" parent="." unique_id=756079416 instance=ExtResource("41_cyw1o")]
+transform = Transform3D(100, 0, 0, 0, 50, 0, 0, 0, 100, -585.1039, 7.2027617, -352.93045)
+
+[node name="Player" parent="." unique_id=842877921 instance=ExtResource("42_sdb2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -403.9511, 36.057793, -295.46252)

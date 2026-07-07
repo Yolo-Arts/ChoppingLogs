@@ -10,7 +10,8 @@ func _on_play_btn_pressed() -> void:
 	process_mode = PROCESS_MODE_DISABLED
 	EventSystem.HUD_reset_hud_elements.emit()
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.MenuBtnPressed)
-	EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
+	SaveManager.reset_all_upgrades_completely()
+	EventSystem.STA_change_stage.emit(StageConfig.Keys.Level)
 
 
 func _on_options_btn_pressed() -> void:
@@ -20,3 +21,10 @@ func _on_options_btn_pressed() -> void:
 func _on_quit_btn_pressed() -> void:
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.MenuBtnPressed)
 	get_tree().quit()
+
+
+func _on_prototype_btn_pressed() -> void:
+	process_mode = PROCESS_MODE_DISABLED
+	EventSystem.HUD_reset_hud_elements.emit()
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.MenuBtnPressed)
+	EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)

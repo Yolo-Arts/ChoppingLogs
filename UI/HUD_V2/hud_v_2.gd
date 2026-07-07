@@ -108,7 +108,8 @@ func _on_time_updated(new_time: String, seconds_left: int) -> void:
 
 func encroaching_dark_start() -> void:
 	print("encroaching dark started")
+	encroaching_dark.visible = true
 	encroaching_dark_player.play("start_encroaching_dark")
 	await encroaching_dark_player.animation_finished
-	
+	encroaching_dark.visible = false
 	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.ResultsScreen)

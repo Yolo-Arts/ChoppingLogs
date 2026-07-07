@@ -54,3 +54,10 @@ func apply_text_effect(label: Label, color: Color):
 	
 	tween.tween_property(label, "scale", Vector2(1.2, 1.2), 0.1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.tween_property(label, "scale", Vector2(1.0, 1.0), 0.2).set_delay(0.1)
+
+
+func _on_next_button_pressed() -> void:
+	EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
+	#EventSystem.STA_change_stage.emit(StageConfig.Keys.Level)
+	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.YouLose)
+	_close_skill_tree()

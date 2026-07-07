@@ -15,6 +15,7 @@ enum Keys{
 	ResultsScreen,
 	UpgradeScreen,
 	BackToBase,
+	YouLose,
 }
 
 
@@ -37,4 +38,5 @@ const BULLETIN_PATHS := {
 	Keys.ResultsScreen: "res://UI/results_screen/results_screen.tscn",
 	Keys.UpgradeScreen: "res://UI/upgrade_screen/upgrade_screen.tscn",
 	Keys.BackToBase: "res://Bulletins/GetBackToBase/get_back_to_base.tscn",
+	Keys.YouLose: "res://UI/lose_screen/you_lose.tscn",
 }

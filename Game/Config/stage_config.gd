@@ -4,6 +4,7 @@ enum Keys {
 	MainMenu,
 	Main,
 	Prototype,
+	Level,
 }
 
 static func get_stage(stage_key:Keys) -> Node:
@@ -12,5 +13,6 @@ static func get_stage(stage_key:Keys) -> Node:
 const STAGE_PATHS := {
 	Keys.MainMenu: "res://Stages/main_menu/start_screen.tscn",
 	Keys.Main: "res://Stages/main/main.tscn",
-	Keys.Prototype: "res://Stages/PrototypeArea/prototype_scene.tscn"
+	Keys.Prototype: "res://Stages/PrototypeArea/prototype_scene.tscn",
+	Keys.Level: "res://Stages/Level/level.tscn",
 }

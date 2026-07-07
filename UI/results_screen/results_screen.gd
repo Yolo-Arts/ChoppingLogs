@@ -172,10 +172,12 @@ func _on_continue_button_pressed() -> void:
 	var met_quota = EventSystem.QUO_check_quota.call()
 	if met_quota:
 		EventSystem.QUO_increase_quota_amount.emit()
+		EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
+		#EventSystem.STA_change_stage.emit(StageConfig.Keys.Level)
 	else:
 		EventSystem.QUO_reset_quota.emit()
+		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.YouLose)
 	
-	EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.ResultsScreen)
 

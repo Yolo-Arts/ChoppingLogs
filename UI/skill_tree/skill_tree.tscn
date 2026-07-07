@@ -90,9 +90,10 @@
 [ext_resource type="Resource" uid="uid://edfeo4ybjqal" path="res://Resources/skilltree/Sprint/sprint_length_3.tres" id="84_krrke"]
 [ext_resource type="Resource" uid="uid://dugkp1peqpny6" path="res://Resources/skilltree/Sprint/sprint_speed_2.tres" id="85_kd8vb"]
 [ext_resource type="Resource" uid="uid://cq2lilfa1d1jw" path="res://Resources/skilltree/Sprint/sprint_speed_3.tres" id="86_kd8vb"]
+[ext_resource type="Theme" uid="uid://b6i7mrm1os0yh" path="res://UI/PauseMenu.tres" id="91_pk2xw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
-bg_color = Color(0, 0, 0, 0.84705883)
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Resource" id="Resource_uoit0"]
 script = ExtResource("5_mnncb")
@@ -599,8 +600,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2gknk")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=696873900]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1550.0
+offset_top = -1950.0
+offset_right = 1550.0
+offset_bottom = 2831.0527
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Panel" type="Panel" parent="." unique_id=1431637610]
-visible = false
 z_index = -2
 custom_minimum_size = Vector2(5000, 5000)
 layout_mode = 1
@@ -1199,7 +1212,6 @@ offset_right = -110.0
 skill_data = ExtResource("86_kd8vb")
 
 [node name="Vignette" type="ColorRect" parent="." unique_id=1526985475]
-visible = false
 material = SubResource("ShaderMaterial_6edkr")
 layout_mode = 1
 anchors_preset = 15
@@ -1230,6 +1242,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=2092466966]
+z_index = 4
 custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xsv4x")
@@ -1269,3 +1282,14 @@ theme_override_font_sizes/font_size = 24
 text = "$ 100"
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="NextButton" type="Button" parent="MarginContainer" unique_id=1370615720]
+z_index = 4
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("91_pk2xw")
+theme_override_font_sizes/font_size = 64
+text = "Next"
+
+[connection signal="pressed" from="MarginContainer/NextButton" to="." method="_on_next_button_pressed"]

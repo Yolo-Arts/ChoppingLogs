@@ -29,6 +29,13 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_constants/separation = 20
 
+[node name="PrototypeBtn" type="Button" parent="ButtonMargins/ButtonVbox" unique_id=1081845065]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = " PrototypeScene (Testing level)"
+alignment = 0
+
 [node name="PlayBtn" type="Button" parent="ButtonMargins/ButtonVbox" unique_id=239855471]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
@@ -68,6 +75,7 @@ text = "[wave amp=50.0 freq=5.0 connected=1]Yolo[/wave]"
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[connection signal="pressed" from="ButtonMargins/ButtonVbox/PrototypeBtn" to="." method="_on_prototype_btn_pressed"]
 [connection signal="pressed" from="ButtonMargins/ButtonVbox/PlayBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="ButtonMargins/ButtonVbox/OptionsBtn" to="." method="_on_options_btn_pressed"]
 [connection signal="pressed" from="ButtonMargins/ButtonVbox/QuitBtn" to="." method="_on_quit_btn_pressed"]
