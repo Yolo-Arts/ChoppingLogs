@@ -8,6 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_n5bjq"]
 script = ExtResource("2_vnxak")
+drop_item_key = 2
 max_health = 200
 metadata/_custom_type_script = "uid://bxwywhofnn8c8"
 

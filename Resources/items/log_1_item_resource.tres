@@ -8,6 +8,4 @@ script = ExtResource("1_hwx4q")
 display_name = "Log"
 icon = ExtResource("1_15wof")
 description = "A sturdy log."
-weight = 2
-sell_price = 5
 metadata/_custom_type_script = "uid://rrdagysicmkc"

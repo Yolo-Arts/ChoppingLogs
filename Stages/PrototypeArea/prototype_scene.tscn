@@ -42,6 +42,11 @@
 [ext_resource type="PackedScene" uid="uid://cd6vvqgc6guom" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_crit_damage.tscn" id="38_te1uh"]
 [ext_resource type="PackedScene" uid="uid://cyc4xn25gqd5j" path="res://Assets/Meshes/maps/testV5/log_chopping_map_test_5.tscn" id="39_18tru"]
 [ext_resource type="PackedScene" uid="uid://daslwbn4o17jw" path="res://Objects/hittable_objects/hittable_tree_of_infinity.tscn" id="40_s0pcj"]
+[ext_resource type="PackedScene" uid="uid://bjo0buxylwec3" path="res://Objects/hittable_objects/hittable_tree_2.tscn" id="43_45xq0"]
+[ext_resource type="PackedScene" uid="uid://cixmj3omok1sd" path="res://Objects/hittable_objects/hittable_tree_3.tscn" id="44_brol4"]
+[ext_resource type="PackedScene" uid="uid://0i8q6oxo74n8" path="res://Objects/hittable_objects/hittable_tree_4.tscn" id="45_uussw"]
+[ext_resource type="PackedScene" uid="uid://duj2hvp4x8my7" path="res://Objects/hittable_objects/hittable_tree_5.tscn" id="46_tmttx"]
+[ext_resource type="PackedScene" uid="uid://8xiwjd03ys4v" path="res://Objects/hittable_objects/hittable_tree_6.tscn" id="47_102ow"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6kx5t"]
 sky_top_color = Color(0.3254902, 0.8784314, 1, 1)
@@ -243,7 +248,6 @@ shadow_enabled = true
 
 [node name="DayNightController" type="Node" parent="." unique_id=1206687905 node_paths=PackedStringArray("sun_light")]
 script = ExtResource("2_jeert")
-baseCountdownDuration = 10.0
 sun_light = NodePath("../Sun")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DayNightController" unique_id=651528313]
@@ -522,3 +526,18 @@ transform = Transform3D(100, 0, 0, 0, 50, 0, 0, 0, 100, -585.1039, 7.2027617, -3
 
 [node name="Player" parent="." unique_id=842877921 instance=ExtResource("4_w28og")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -403.9511, 36.057793, -295.46252)
+
+[node name="HittableTree2" parent="." unique_id=941709029 instance=ExtResource("43_45xq0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -413.1609, -2.6884632, -292.11902)
+
+[node name="HittableTree3" parent="." unique_id=450500079 instance=ExtResource("44_brol4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -414.45694, -2.634513, -293.46472)
+
+[node name="HittableTree4" parent="." unique_id=146851252 instance=ExtResource("45_uussw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -415.66098, -2.5210252, -295.0944)
+
+[node name="HittableTree5" parent="." unique_id=95508149 instance=ExtResource("46_tmttx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -416.15463, -2.7152467, -297.15115)
+
+[node name="HittableTree6" parent="." unique_id=1913223765 instance=ExtResource("47_102ow")]
+transform = Transform3D(0.4770361, 0, -0.8788837, 0, 1, 0, 0.8788837, 0, 0.4770361, -415.09146, -2.7232146, -298.3899)

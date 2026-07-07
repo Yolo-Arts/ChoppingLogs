@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dh5o1kdupykg2"]
+
+[ext_resource type="PackedScene" uid="uid://rxe354k8sgck" path="res://Objects/interactables/pickuppables/rigid_pickuppable_log.tscn" id="1_0qq0a"]
+[ext_resource type="Shader" uid="uid://bqshvvofn5uiq" path="res://shaders/outline.gdshader" id="2_ttkxf"]
+[ext_resource type="Shader" uid="uid://c83gmkkhntq2a" path="res://Shaders/toon_shader.gdshader" id="3_m1a5b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_08fmj"]
+render_priority = 0
+shader = ExtResource("2_ttkxf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yxc0x"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_08fmj")
+shader = ExtResource("3_m1a5b")
+shader_parameter/color = Color(0.7647059, 0.65882355, 0.3137255, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5gcoc"]
+render_priority = 0
+shader = ExtResource("3_m1a5b")
+shader_parameter/color = Color(0.94509804, 0.6901961, 0.9490196, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[node name="RigidPickuppableLog6" unique_id=1838406015 instance=ExtResource("1_0qq0a")]
+item_key = 5
+
+[node name="Log" parent="." index="0" unique_id=1790793256]
+surface_material_override/0 = SubResource("ShaderMaterial_yxc0x")
+surface_material_override/1 = SubResource("ShaderMaterial_5gcoc")

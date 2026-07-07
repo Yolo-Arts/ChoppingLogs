@@ -5,5 +5,5 @@ class_name ItemResource
 @export var display_name := "item_name"
 @export var icon:Texture2D
 @export_multiline var description := "item description"
-@export var weight: int = 1
+@export var weight: int = 0
 @export var sell_price: int = 1
