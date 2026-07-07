@@ -28,8 +28,12 @@ func _ready() -> void:
 func reset_hud_elements():
 	money_label.text = "$" + str(0.0)
 
+var last_money_value = 0
 func update_text(money: float, color: Color):
 	money_label.text = "$" + str(money)
+	var tween = create_tween()
+	tween.tween_method(set_label_number.bind(money_label), last_money_value, int(money), 0.5)
+	last_money_value = money
 	apply_text_effect(money_label, color)
 
 func update_quota_text() -> void:
@@ -46,19 +50,26 @@ func update_inventory_label(current_size: int, max_size: int) -> void:
 	inventory_size.text = str(current_size) + " / " + str(max_size)
 
 func update_prestige_label(prestige_points_amount: int):
-	prestige_points.text = str(prestige_points_amount)
+	var tween = create_tween()
+	tween.tween_method(set_label_number.bind(prestige_points), 0, int(prestige_points_amount), 0.5)
 
 func apply_text_effect(label: Label, color: Color):
 	var tween = create_tween().set_parallel(true)
 	
 	var color_chain = create_tween()
 	color_chain.tween_property(label, "theme_override_colors/font_color", color, 0.1)
-
-		
+	
 	color_chain.tween_property(label, "theme_override_colors/font_color", Color.WHITE, 0.3).set_delay(0.1)
 	
 	tween.tween_property(label, "scale", Vector2(1.2, 1.2), 0.1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.tween_property(label, "scale", Vector2(1.0, 1.0), 0.2).set_delay(0.1)
+
+func set_label_number(number: int, label: Label) -> void:
+	match label:
+		money_label:
+			label.set_text(str(number))
+		_:
+			label.set_text(str(number))
 
 var _time_pop_tween: Tween
 var _last_seconds_left: int = -1
