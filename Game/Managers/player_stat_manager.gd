@@ -136,13 +136,6 @@ func _ready() -> void:
 	EventSystem.UPG_increase_fire_slash_fire_rate.connect(func(increase): fire_slash_cooldown -= increase)
 	EventSystem.UPG_increase_fire_slash_pierce_count.connect(func(increase): fire_slash_pierce_count += increase)
 	
-	EventSystem.HUD_update_prestige_points.emit(prestige_points)
-	EventSystem.PRE_change_prestige_points_value.connect(func(value): 
-		prestige_points += value
-		SaveManager.save_player_data(money, prestige_points)
-		EventSystem.HUD_update_prestige_points.emit(prestige_points)
-	)
-	
 	EventSystem.UPG_increase_axe_range.connect(func(increase): 
 		axe_range += increase
 		EventSystem.AXE_update_hit_marker_position.emit()
@@ -152,6 +145,8 @@ func _ready() -> void:
 		if SkillTreeConfig.upgrades[SkillTreeConfig.Keys.TIME_TREES] > 0:
 			EventSystem.HUD_change_countdown.emit(0.1) #TODO: Refactor once skill tree system is more solidified.
 	)
+	
+	
 	#EventSystem.UPG_increase_crit_chance.connect(increase_player_crit_chance)
 	#EventSystem.UPG_increase_crit_damage.connect(increase_player_crit_damage)
 

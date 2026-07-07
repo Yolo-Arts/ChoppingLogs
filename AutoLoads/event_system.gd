@@ -40,6 +40,8 @@ signal HUD_update_inventory_label(current_size: int, max_size: int)
 signal HUD_update_prestige_points(prestige_point_amount: int)
 
 signal PRE_change_prestige_points_value(increase_amount: int)
+signal PRE_cannot_decrease_prestige_points
+var PRE_get_prestige_points: Callable
 
 # INV -> Inventory signals
 signal INV_ask_update_inventory

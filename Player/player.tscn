@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://b5ndsxcel2j73" path="res://Game/Managers/weapon_handler.gd" id="7_00tjw"]
 [ext_resource type="PackedScene" uid="uid://cg6gschdmf6ch" path="res://Objects/equippables/axe/equippable_axe.tscn" id="7_vtle1"]
 [ext_resource type="PackedScene" uid="uid://bl41gwihorw4j" path="res://Objects/equippables/pistol/equippable_pistol.tscn" id="8_od3ui"]
+[ext_resource type="Script" uid="uid://bvt624h1duhuu" path="res://Game/Managers/prestige_points_manager.gd" id="8_p5o4e"]
 [ext_resource type="Resource" uid="uid://uxontmw53lq4" path="res://Resources/axe/base_axe.tres" id="9_apopc"]
 [ext_resource type="PackedScene" uid="uid://du80y7eiwdye" path="res://Objects/equippables/assault_rifle/equippable_ar.tscn" id="10_x3vf3"]
 
@@ -72,6 +73,10 @@ player_stats = NodePath("../PlayerStatManager")
 
 [node name="MoneyManager" type="Node" parent="Managers" unique_id=976647838 node_paths=PackedStringArray("player_stats")]
 script = ExtResource("6_fhl08")
+player_stats = NodePath("../PlayerStatManager")
+
+[node name="PrestigePointsManager" type="Node" parent="Managers" unique_id=2077343561 node_paths=PackedStringArray("player_stats")]
+script = ExtResource("8_p5o4e")
 player_stats = NodePath("../PlayerStatManager")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1356320662]

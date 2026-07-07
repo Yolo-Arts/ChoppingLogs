@@ -51,11 +51,9 @@ func load_player_data() -> Dictionary:
 
 func save_skill_tree_upgrades() -> void:
 	save_encrypted_file(PRESTIGE_UPGRADES_FILE_PATH, SkillTreeConfig.upgrades)
-	print("Prestige Upgrades saved successfully.")
 
 func save_upgrade_config() -> void:
 	save_encrypted_file(UPGRADES_FILE_PATH, UpgradeConfig.upgrades)
-	print("Shop Upgrades saved successfully.")
 
 func load_upgrades() -> void:
 	var prestige_data: Dictionary = load_encrypted_file(PRESTIGE_UPGRADES_FILE_PATH)
@@ -76,7 +74,6 @@ func load_upgrades() -> void:
 				UpgradeConfig.upgrades[enum_key] = level_value
 				
 	UpgradeConfig.update_max_levels()
-	print("All shop and prestige upgrades loaded successfully.")
 
 func _on_upgrade_updated(_upgrade_key: UpgradeConfig.Keys, _new_level: int) -> void:
 	save_upgrade_config()

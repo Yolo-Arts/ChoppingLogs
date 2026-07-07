@@ -1,17 +1,21 @@
 extends Bulletin
 
 @onready var zoom_content: Control = %ZoomContent
-@onready var money_label: Label = %MoneyLabel
+@onready var prestige_label: Label = %PrestigeLabel
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	EventSystem.PLA_freeze_player.emit()
-	EventSystem.MON_money_updated.connect(update_text)
-	EventSystem.MON_cannot_decrease_money.connect(func(): 
-		update_text(EventSystem.MON_get_player_money.call(), Color.RED)
+	
+	EventSystem.HUD_update_prestige_points.connect(func(new_amount: int):
+		update_prestige_text(new_amount, Color.YELLOW)
 	)
-	var current_money = EventSystem.MON_get_player_money.call()
-	money_label.text = "$" + str(current_money)
+	
+	EventSystem.PRE_cannot_decrease_prestige_points.connect(func(): update_prestige_text(EventSystem.PRE_get_prestige_points.call(), Color.RED))
+	
+	var current_prestige = EventSystem.PRE_get_prestige_points.call() 
+	prestige_label.text = str(current_prestige)
+	
 	EventSystem.HUD_hide_hud.emit()
 	if zoom_content:
 		_run_ripple_cascade(zoom_content, 0.0)
@@ -41,11 +45,11 @@ func _run_ripple_cascade(current_node: Node, current_delay: float) -> void:
 	for child in current_node.get_children():
 		_run_ripple_cascade(child, next_delay)
 
-func update_text(money: float, color: Color):
-	money_label.text = "$" + str(money)
-	apply_text_effect(money_label, color)
+func update_prestige_text(amount: int, color: Color) -> void:
+	prestige_label.text = str(amount)
+	apply_text_effect(prestige_label, color)
 
-func apply_text_effect(label: Label, color: Color):
+func apply_text_effect(label: Label, color: Color) -> void:
 	var tween = create_tween().set_parallel(true)
 	
 	var color_chain = create_tween()
@@ -58,7 +62,6 @@ func apply_text_effect(label: Label, color: Color):
 
 func _on_next_button_pressed() -> void:
 	EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
-	#EventSystem.STA_change_stage.emit(StageConfig.Keys.Level)
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.YouLose)
 	SaveManager.reset_run_upgrades()
 	_close_skill_tree()

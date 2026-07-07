@@ -39,7 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://bjrdkuwtvbcc2" path="res://Assets/skill_tree/axe/AxeDamage7.png" id="25_kd8vb"]
 [ext_resource type="Texture2D" uid="uid://3hvkbkvmhbxa" path="res://Assets/skill_tree/axe/AxeSpeedMaxLevel/AxeSpeed08.png" id="25_uoit0"]
 [ext_resource type="Texture2D" uid="uid://ctsc4neuvapn" path="res://Assets/skill_tree/Inventory/InventorySizeMaxLevel/InvetorySizeMaxLevel01.png" id="26_amre3"]
-[ext_resource type="Texture2D" uid="uid://b5jpm0kqxis3q" path="res://Assets/UI/Icons/symbols_money.svg" id="26_gj7ge"]
 [ext_resource type="Texture2D" uid="uid://bqrt4b2lxtwra" path="res://Assets/skill_tree/Inventory/InventorySizeMaxLevel/InvetorySizeMaxLevel02.png" id="27_fm8dc"]
 [ext_resource type="Theme" uid="uid://ks0hgvfqbimr" path="res://Assets/UI/theme.tres" id="27_gj7ge"]
 [ext_resource type="Texture2D" uid="uid://br12ymg1djtea" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel01.png" id="27_v6pny"]
@@ -90,6 +89,7 @@
 [ext_resource type="Resource" uid="uid://edfeo4ybjqal" path="res://Resources/skilltree/Sprint/sprint_length_3.tres" id="84_krrke"]
 [ext_resource type="Resource" uid="uid://dugkp1peqpny6" path="res://Resources/skilltree/Sprint/sprint_speed_2.tres" id="85_kd8vb"]
 [ext_resource type="Resource" uid="uid://cq2lilfa1d1jw" path="res://Resources/skilltree/Sprint/sprint_speed_3.tres" id="86_kd8vb"]
+[ext_resource type="Texture2D" uid="uid://dmbqc1wu422w1" path="res://Assets/UI/Icons/PrestigePoint.png" id="89_pk2xw"]
 [ext_resource type="Theme" uid="uid://b6i7mrm1os0yh" path="res://UI/PauseMenu.tres" id="91_pk2xw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
@@ -1264,15 +1264,15 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="MoneyIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer" unique_id=231021426]
+[node name="PrestigeIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer" unique_id=231021426]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_filter = 2
-texture = ExtResource("26_gj7ge")
+texture = ExtResource("89_pk2xw")
 expand_mode = 1
 
-[node name="MoneyLabel" type="Label" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer" unique_id=2025638333]
+[node name="PrestigeLabel" type="Label" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer" unique_id=2025638333]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2

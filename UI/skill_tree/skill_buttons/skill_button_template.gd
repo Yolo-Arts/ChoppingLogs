@@ -44,12 +44,18 @@ func _on_pressed() -> void:
 	if not skill_data: return
 	pressed_animation()
 	var calculated_cost = int(skill_data.upgrade_cost * pow(skill_data.price_increase_mult_per_level, level))
-	if EventSystem.MON_get_player_money.call() < calculated_cost:
-		print("Not enough money")
-		EventSystem.MON_cannot_decrease_money.emit()
+	#if EventSystem.MON_get_player_money.call() < calculated_cost:
+		#print("Not enough money")
+		#EventSystem.MON_cannot_decrease_money.emit()
+		#return
+	
+	if EventSystem.PRE_get_prestige_points.call() < calculated_cost:
+		print("Not enough prestige points")
+		EventSystem.PRE_cannot_decrease_prestige_points.emit()
 		return
 	
-	EventSystem.MON_decrease_money.emit(calculated_cost)
+	#EventSystem.MON_decrease_money.emit(calculated_cost)
+	EventSystem.PRE_change_prestige_points_value.emit(-calculated_cost)
 	level = min(level + 1, skill_data.max_level)
 	SkillTreeConfig.upgrades[skill_data.upgrade_key] += 1
 	
