@@ -22,6 +22,7 @@ func _ready() -> void:
 func update_quota_amount():
 	quota_level += 0.2
 	day += 1
+	@warning_ignore("narrowing_conversion")
 	quota = pow(quota_base, quota_level)
 	EventSystem.QUO_update_quota_text.emit()
 	print("Quota is: ", quota)
