@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://cq2lilfa1d1jw"]
+
+[ext_resource type="Script" uid="uid://e78p5pcwrhn3" path="res://Resources/skilltree/Sprint/SprintSpdSkillResource.gd" id="1_o0084"]
+[ext_resource type="Texture2D" uid="uid://vn5de0y4xw5" path="res://Assets/skill_tree/PlayerMovement/SprintSpeed/SprintSpeed03.png" id="2_mpuww"]
+
+[resource]
+script = ExtResource("1_o0084")
+upgrade_name = "Sprint Speed 3"
+upgrade_key = 96
+texture = ExtResource("2_mpuww")
+max_level = 6
+upgrade_cost = 10000
+price_increase_mult_per_level = 1.35
+level_requirement_to_reveal = 3
+description = "Increases the maximum level of the sprint speed upgrade by 1."
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"

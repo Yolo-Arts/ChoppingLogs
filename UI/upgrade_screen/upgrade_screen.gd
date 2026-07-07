@@ -108,31 +108,31 @@ func update_ui(upgrade_key: UpgradeConfig.Keys, new_level: int) -> void:
 	match upgrade_key:
 		UpgradeConfig.Keys.ChopDamage:
 			chop_damage_level_label.text = level_text
-			animate_progress_bar(chop_damage_progress_bar)
+			animate_progress_bar(chop_damage_progress_bar, new_level)
 			if is_maxed:
 				set_button_maxed(chop_damage_buy_button)
 				
 		UpgradeConfig.Keys.AxeSpeed:
 			axe_speed_level_label.text = level_text
-			animate_progress_bar(axe_speed_progress_bar)
+			animate_progress_bar(axe_speed_progress_bar, new_level)
 			if is_maxed:
 				set_button_maxed(axe_speed_buy_button)
 				
 		UpgradeConfig.Keys.SprintStamina:
 			sprint_stamina_level_label.text = level_text
-			animate_progress_bar(sprint_stamina_progress_bar)
+			animate_progress_bar(sprint_stamina_progress_bar, new_level)
 			if is_maxed:
 				set_button_maxed(sprint_stamina_buy_button)
 				
 		UpgradeConfig.Keys.SprintSpeed:
 			sprint_speed_level_label.text = level_text
-			animate_progress_bar(sprint_speed_progress_bar)
+			animate_progress_bar(sprint_speed_progress_bar, new_level)
 			if is_maxed:
 				set_button_maxed(sprint_speed_buy_button)
 				
 		UpgradeConfig.Keys.BackPack: 
 			backpack_level_label.text = level_text
-			animate_progress_bar(backpack_progress_bar)
+			animate_progress_bar(backpack_progress_bar, new_level)
 			if is_maxed:
 				set_button_maxed(backpack_size_buy_button)
 	
@@ -208,8 +208,8 @@ func backpack_size_buy_button_pressed() -> void:
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.BackPack)
 
-func animate_progress_bar(bar: Range) -> void:
-	var target_value: float = min(bar.value + 1.0, bar.max_value)
+func animate_progress_bar(bar: Range, new_level: int) -> void:
+	var target_value: float = min(new_level, bar.max_value)
 	
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
@@ -255,18 +255,18 @@ func refresh_stat_labels() -> void:
 	var stam_max = UpgradeConfig.max_level[UpgradeConfig.Keys.SprintStamina]
 	
 	if stam_lvl >= stam_max:
-		sprint_stamnia_stat_increase_label.text = "%d Stamina (MAX)" % stam_lvl
+		sprint_stamnia_stat_increase_label.text = "%d Seconds (MAX)" % (stam_lvl + 1)
 	else:
-		update_stat_increase_label(sprint_stamnia_stat_increase_label, stam_lvl, stam_lvl + 1, "Seconds")
+		update_stat_increase_label(sprint_stamnia_stat_increase_label, stam_lvl + 1, stam_lvl + 2, "Seconds")
 	
 	var sprint_lvl = UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed]
 	var sprint_max = UpgradeConfig.max_level[UpgradeConfig.Keys.SprintSpeed]
-	var current_spd = player_stat_manager.get_sprint_speed_at_level(sprint_lvl)
+	var current_spd = player_stat_manager.get_sprint_multi_at_level(sprint_lvl)
 	
 	if sprint_lvl >= sprint_max:
-		sprint_speed_stat_increase_label.text = "%.1f Speed (MAX)" % current_spd
+		sprint_speed_stat_increase_label.text = "x%.1f (MAX)" % current_spd
 	else:
-		var next_spd = player_stat_manager.get_sprint_speed_at_level(sprint_lvl + 1)
+		var next_spd = player_stat_manager.get_sprint_multi_at_level(sprint_lvl + 1)
 		update_stat_increase_label(sprint_speed_stat_increase_label, current_spd, next_spd, "", "", "x")
 	
 	var bag_lvl = UpgradeConfig.upgrades[UpgradeConfig.Keys.BackPack]

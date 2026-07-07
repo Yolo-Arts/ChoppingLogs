@@ -103,6 +103,8 @@ enum Keys {
 	FIRE_SLASH_PIERCE_4,
 	FIRE_SLASH_PIERCE_5,
 	FIRE_SLASH_PIERCE_6,
+	SPRINT_SPEED_3,
+	SPRINT_LENGTH_3
 }
 
 func populate_initial_upgrades() -> void:

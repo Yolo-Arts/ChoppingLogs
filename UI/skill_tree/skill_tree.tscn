@@ -80,14 +80,16 @@
 [ext_resource type="Texture2D" uid="uid://cmly75a70oy6i" path="res://Assets/skill_tree/FireSlash/FireSlashRate/FireSlashRate03.png" id="68_q2e6c"]
 [ext_resource type="Texture2D" uid="uid://du61ppkgar37d" path="res://Assets/skill_tree/FireSlash/FireSlashPierce/FireSlashPierce03.png" id="69_8i8nj"]
 [ext_resource type="Texture2D" uid="uid://bescgq7jx5k35" path="res://Assets/skill_tree/FireSlash/FireSlashRate/FireSlashRate04.png" id="69_a6nbd"]
-[ext_resource type="Texture2D" uid="uid://vn5de0y4xw5" path="res://Assets/skill_tree/PlayerMovement/SprintSpeed/SprintSpeed03.png" id="69_eeitg"]
-[ext_resource type="Texture2D" uid="uid://cainnyv2n7rhs" path="res://Assets/skill_tree/PlayerMovement/SprintSpeed/SprintSpeed01.png" id="69_ux5mw"]
-[ext_resource type="Texture2D" uid="uid://bidy5ye6h2fy0" path="res://Assets/skill_tree/PlayerMovement/SprintStamina/SprintStamina02.png" id="70_0pky4"]
 [ext_resource type="Texture2D" uid="uid://begdnj1oaiv2" path="res://Assets/skill_tree/FireSlash/FireSlashRate/FireSlashRate05.png" id="70_nder1"]
 [ext_resource type="Texture2D" uid="uid://lyliph11bt0a" path="res://Assets/skill_tree/FireSlash/FireSlashPierce/FireSlashPierce04.png" id="70_sbry8"]
-[ext_resource type="Texture2D" uid="uid://dnp0warmb8ubu" path="res://Assets/skill_tree/PlayerMovement/SprintStamina/SprintStamina03.png" id="71_b7xoe"]
 [ext_resource type="Texture2D" uid="uid://d0jgaxepwm0e4" path="res://Assets/skill_tree/FireSlash/FireSlashPierce/FireSlashPierce05.png" id="71_hbeh4"]
 [ext_resource type="Texture2D" uid="uid://c1x3ta0oksd6k" path="res://Assets/skill_tree/FireSlash/FireSlashPierce/FireSlashPierce06.png" id="72_5ujn8"]
+[ext_resource type="Resource" uid="uid://bx3gvntp2rsru" path="res://Resources/skilltree/Sprint/sprint_speed_1.tres" id="81_krrke"]
+[ext_resource type="Resource" uid="uid://khvu6thof5f6" path="res://Resources/skilltree/Sprint/sprint_length_1.tres" id="82_krrke"]
+[ext_resource type="Resource" uid="uid://cu3uy0a4gn5n5" path="res://Resources/skilltree/Sprint/sprint_length_2.tres" id="83_krrke"]
+[ext_resource type="Resource" uid="uid://edfeo4ybjqal" path="res://Resources/skilltree/Sprint/sprint_length_3.tres" id="84_krrke"]
+[ext_resource type="Resource" uid="uid://dugkp1peqpny6" path="res://Resources/skilltree/Sprint/sprint_speed_2.tres" id="85_kd8vb"]
+[ext_resource type="Resource" uid="uid://cq2lilfa1d1jw" path="res://Resources/skilltree/Sprint/sprint_speed_3.tres" id="86_kd8vb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
 bg_color = Color(0, 0, 0, 0.84705883)
@@ -573,45 +575,6 @@ upgrade_name = "Fire Slash Damage"
 upgrade_key = 84
 texture = ExtResource("68_krrke")
 description = "Do 1 MILLION DAMAGE with fire slash."
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_6op4n"]
-script = ExtResource("24_xsv4x")
-texture = ExtResource("69_ux5mw")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sbry8"]
-load_path = "res://.godot/imported/SprintStamina01.png-f2328fe89abc164b848326b216ce8663.ctex"
-
-[sub_resource type="Resource" id="Resource_vulb5"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Sprint Stamina"
-texture = SubResource("CompressedTexture2D_sbry8")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_rjf26"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Sprint Stamina"
-texture = ExtResource("70_0pky4")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_iyvpv"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Sprint Stamina"
-texture = ExtResource("71_b7xoe")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ny6p"]
-load_path = "res://.godot/imported/SprintSpeed02.png-221b93267d042f74478efc311eebc373.ctex"
-
-[sub_resource type="Resource" id="Resource_7g6ir"]
-script = ExtResource("24_xsv4x")
-texture = SubResource("CompressedTexture2D_1ny6p")
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_u6dyp"]
-script = ExtResource("24_xsv4x")
-texture = ExtResource("69_eeitg")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6edkr"]
@@ -1203,41 +1166,37 @@ offset_left = -170.0
 offset_top = 522.0
 offset_right = -80.0
 offset_bottom = 612.0
-skill_data = SubResource("Resource_6op4n")
+skill_data = ExtResource("81_krrke")
 
 [node name="SprintStamina1" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=710908678 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_top = 200.0
 offset_bottom = 290.0
-skill_data = SubResource("Resource_vulb5")
+skill_data = ExtResource("82_krrke")
 
 [node name="SprintStamina2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintStamina1" unique_id=298985912 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -200.0
 offset_right = -110.0
-skill_data = SubResource("Resource_rjf26")
+skill_data = ExtResource("83_krrke")
 
 [node name="SprintStamina3" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintStamina1/SprintStamina2" unique_id=1691299754 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -200.0
 offset_right = -110.0
-skill_data = SubResource("Resource_iyvpv")
+skill_data = ExtResource("84_krrke")
 
-[node name="SprintSpeed2" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1877573959 instance=ExtResource("6_2gknk")]
+[node name="SprintSpeed2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=1877573959 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_left = -370.0
-offset_top = 522.0
-offset_right = -280.0
-offset_bottom = 612.0
-skill_data = SubResource("Resource_7g6ir")
+offset_left = -200.0
+offset_right = -110.0
+skill_data = ExtResource("85_kd8vb")
 
-[node name="SprintSpeed3" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=962223423 instance=ExtResource("6_2gknk")]
+[node name="SprintSpeed3" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintSpeed2" unique_id=962223423 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_left = -570.0
-offset_top = 522.0
-offset_right = -480.0
-offset_bottom = 612.0
-skill_data = SubResource("Resource_u6dyp")
+offset_left = -200.0
+offset_right = -110.0
+skill_data = ExtResource("86_kd8vb")
 
 [node name="Vignette" type="ColorRect" parent="." unique_id=1526985475]
 visible = false

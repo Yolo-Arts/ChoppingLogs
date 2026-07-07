@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://edfeo4ybjqal"]
+
+[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_df41b"]
+[ext_resource type="Texture2D" uid="uid://dnp0warmb8ubu" path="res://Assets/skill_tree/PlayerMovement/SprintStamina/SprintStamina03.png" id="2_df41b"]
+
+[resource]
+script = ExtResource("1_df41b")
+upgrade_name = "Sprint Stamina 3"
+upgrade_key = 97
+texture = ExtResource("2_df41b")
+max_level = 10
+upgrade_cost = 4000
+price_increase_mult_per_level = 1.0
+description = "Increases maximum sprint stamina upgrade by 3 per level."
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"

@@ -28,6 +28,12 @@ func _ready() -> void:
 	EventSystem.PLA_freeze_player.connect(set_freeze.bind(true))
 	EventSystem.PLA_unfreeze_player.connect(set_freeze.bind(false))
 	EventSystem.SPA_send_spawn_scene_data.connect(spawn_discarded_item)
+	EventSystem.UPG_upgrade_updated.connect(
+		func(upgrade_key: UpgradeConfig.Keys, _new_level: int): 
+			if upgrade_key == UpgradeConfig.Keys.SprintStamina:
+				_update_stamina()
+			)
+	_update_stamina()
 
 func set_freeze(freeze: bool) -> void:
 	set_process(!freeze)
@@ -46,7 +52,7 @@ func _physics_process(delta: float) -> void:
 			if can_fire_slash:
 				shoot_fire_slash()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	interaction_ray_cast.check_interaction()
 
 var was_on_floor: bool = true
@@ -71,7 +77,7 @@ func move(delta: float) -> void:
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	var is_sprinting := Input.is_action_pressed("sprint")
-	var base_speed := player_stats.sprint_speed if is_sprinting else player_stats.normal_speed
+	var base_speed := _handle_sprinting(delta) if is_sprinting else player_stats.normal_speed
 	var target_speed := base_speed * player_stats.player_speed_with_weight_modifier
 
 	if is_on_floor():
@@ -91,6 +97,38 @@ func move(delta: float) -> void:
 			velocity.x = horizontal.x
 			velocity.z = horizontal.y
 	move_and_slide()
+	stamina_regen(delta)
+
+#region Sprinting
+func _update_stamina() -> void:
+	cur_stamina = player_stats.max_sprint_stamina
+	EventSystem.HUD_update_stamina.emit(player_stats.max_sprint_stamina, true)
+	EventSystem.HUD_update_stamina.emit(cur_stamina)
+
+
+var cur_stamina: float = -1
+var stamina_drained: bool = false
+func _handle_sprinting(delta: float) -> float:
+	if stamina_drained:
+		return player_stats.normal_speed
+		
+	cur_stamina -= delta
+	if cur_stamina <= 0:
+		cur_stamina = 0
+		stamina_drained = true
+	EventSystem.HUD_update_stamina.emit(cur_stamina)
+	return player_stats.sprint_speed
+		
+const STAMINA_RECHARGE_TIME: float = 5.0
+func stamina_regen(delta: float) -> void:
+	if !stamina_drained:
+		return
+	var stamina_regen_speed: float = player_stats.max_sprint_stamina / STAMINA_RECHARGE_TIME
+	cur_stamina = clampf(cur_stamina + (stamina_regen_speed * delta), 0, player_stats.max_sprint_stamina)
+	EventSystem.HUD_update_stamina.emit(cur_stamina)
+	if cur_stamina == player_stats.max_sprint_stamina:
+		stamina_drained = false
+#endregion Sprinting
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

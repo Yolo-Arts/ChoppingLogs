@@ -190,6 +190,8 @@ theme_override_constants/margin_bottom = 16
 [node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer" unique_id=1929567791]
 layout_mode = 2
 split_offsets = PackedInt32Array(77, 420, 532)
+dragging_enabled = false
+dragger_visibility = 1
 split_offset = 77
 
 [node name="UpgradeIcon" type="TextureRect" parent="MarginContainer/UpgradesContainer/VBoxContainer/ChopDamagePanel/MarginContainer/HBoxContainer" unique_id=806142125]
@@ -278,6 +280,8 @@ theme_override_constants/margin_bottom = 16
 [node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2" unique_id=645441646]
 layout_mode = 2
 split_offsets = PackedInt32Array(77, 420, 532)
+dragging_enabled = false
+dragger_visibility = 1
 split_offset = 77
 
 [node name="UpgradeIcon" type="TextureRect" parent="MarginContainer/UpgradesContainer/VBoxContainer/AxeSpeedPanel/MarginContainer2/HBoxContainer" unique_id=1091383228]
@@ -366,6 +370,8 @@ theme_override_constants/margin_bottom = 16
 [node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3" unique_id=1938408168]
 layout_mode = 2
 split_offsets = PackedInt32Array(77, 420, 532)
+dragging_enabled = false
+dragger_visibility = 1
 split_offset = 77
 
 [node name="UpgradeIcon" type="TextureRect" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintStaminaPanel/MarginContainer3/HBoxContainer" unique_id=1443372467]
@@ -454,6 +460,8 @@ theme_override_constants/margin_bottom = 16
 [node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4" unique_id=1623306541]
 layout_mode = 2
 split_offsets = PackedInt32Array(77, 420, 532)
+dragging_enabled = false
+dragger_visibility = 1
 split_offset = 77
 
 [node name="UpgradeIcon" type="TextureRect" parent="MarginContainer/UpgradesContainer/VBoxContainer/SprintSpeedPanel/MarginContainer4/HBoxContainer" unique_id=460621582]
@@ -542,6 +550,8 @@ theme_override_constants/margin_bottom = 16
 [node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5" unique_id=1553081188]
 layout_mode = 2
 split_offsets = PackedInt32Array(77, 420, 532)
+dragging_enabled = false
+dragger_visibility = 1
 split_offset = 77
 
 [node name="UpgradeIcon" type="TextureRect" parent="MarginContainer/UpgradesContainer/VBoxContainer/BackpackSizePanel/MarginContainer5/HBoxContainer" unique_id=1606892220]
