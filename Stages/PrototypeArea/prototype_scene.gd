@@ -4,7 +4,9 @@ extends Node
 @onready var navigation_region_3d: NavigationRegion3D = $NavigationRegion3D
 
 ## Debug option to disable/enable skill tree resetting
-@export var reset_upgrades: bool = true
+@export var reset_all_upgrades: bool = false
+@export var reset_prestige_upgrades: bool = false
+@export var reset_run_upgrades: bool = false
 
 var _is_baking: bool = false
 var trees_cut = 0
@@ -21,8 +23,12 @@ func _ready() -> void:
 	randomize_forest()
 	scatter_trees.build_completed.connect(_on_scatter_finished)
 	navigation_region_3d.bake_finished.connect(_on_bake_finished)
-	if reset_upgrades:
-		SaveManager.reset_upgrades()
+	if reset_all_upgrades:
+		SaveManager.reset_all_upgrades_completely()
+	elif reset_prestige_upgrades:
+		SaveManager.reset_prestige_upgrades()
+	elif reset_run_upgrades:
+		SaveManager.reset_run_upgrades()
 	EventSystem.HUD_show_hud.emit()
 
 func randomize_forest() -> void:

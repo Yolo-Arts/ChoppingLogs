@@ -53,9 +53,6 @@ static func update_max_levels() -> void:
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SPRINT_LENGTH_1] * 1) \
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SPRINT_LENGTH_2] * 2) \
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SPRINT_LENGTH_3] * 3) 
-
-
-
 	
 	max_level[Keys.SprintSpeed] = 10 + SkillTreeConfig.upgrades[SkillTreeConfig.Keys.MAX_LEVEL_SPRINT_SPEED] * 10
 	

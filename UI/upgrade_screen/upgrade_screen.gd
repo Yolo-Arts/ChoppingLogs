@@ -184,7 +184,7 @@ func close_menu() -> void:
 	EventSystem.PLA_unfreeze_player.emit()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
-	#SaveManager.save_upgrades()
+	#SaveManager.save_skill_tree_upgrades()
 	get_tree().paused = false
 	menu_transition_out()
 

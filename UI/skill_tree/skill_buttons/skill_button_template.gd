@@ -53,7 +53,7 @@ func _on_pressed() -> void:
 	level = min(level + 1, skill_data.max_level)
 	SkillTreeConfig.upgrades[skill_data.upgrade_key] += 1
 	
-	#SaveManager.save_upgrades()
+	#SaveManager.save_skill_tree_upgrades()
 	
 	skill_data.apply_upgrade()
 	activate()

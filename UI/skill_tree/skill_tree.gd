@@ -22,7 +22,7 @@ func _close_skill_tree() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.HUD_show_hud.emit()
-	SaveManager.save_upgrades()
+	SaveManager.save_skill_tree_upgrades()
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("close_menu"):
