@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_ep0li")
 upgrade_name = "Increase Timer 9"
-upgrade_key = 84
+upgrade_key = 82
 texture = ExtResource("2_ep0li")
 upgrade_cost = 1000000000
 description = "Permanently increases the time in a run by 1 minute."

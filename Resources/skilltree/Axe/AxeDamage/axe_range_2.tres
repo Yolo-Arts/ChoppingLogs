@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_12ej7")
 upgrade_name = "Axe Range 2"
-upgrade_key = 6
+upgrade_key = 34
 texture = ExtResource("2_12ej7")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"

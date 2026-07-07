@@ -8,8 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://csy7aujtijov4" path="res://Assets/skill_tree/axe/AxeDamage1.png" id="6_usaod"]
 [ext_resource type="Texture2D" uid="uid://cybbgsj5hfkyv" path="res://Assets/skill_tree/axe/AxeDamage2.png" id="7_21wj6"]
 [ext_resource type="Texture2D" uid="uid://3niq60vrbjjo" path="res://Assets/skill_tree/axe/AxeDamage3.png" id="8_mnncb"]
-[ext_resource type="Resource" uid="uid://o0okwuy0lsdq" path="res://Resources/skilltree/Axe/AxeDamage/axe_range_1.tres" id="9_xtb7d"]
-[ext_resource type="Resource" uid="uid://d0bcggwo5j84s" path="res://Resources/skilltree/Axe/AxeDamage/axe_range_2.tres" id="10_1n7m1"]
 [ext_resource type="Resource" uid="uid://c14mse0vseuog" path="res://Resources/skilltree/Axe/AxeDamage/fire_slash_unlock.tres" id="11_7y20i"]
 [ext_resource type="Texture2D" uid="uid://b2o2d5dbrl3gt" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage01.png" id="12_hv2oo"]
 [ext_resource type="Texture2D" uid="uid://cy2pj8kmfi8s4" path="res://Assets/skill_tree/axe/AxeCritDamage/AxeCritDamage02.png" id="13_vbdoe"]
@@ -69,6 +67,9 @@
 [ext_resource type="Resource" uid="uid://ch7pivww81w75" path="res://Resources/skilltree/Timer/inc_time_8.tres" id="54_0pky4"]
 [ext_resource type="Resource" uid="uid://ddnvpfx4edbek" path="res://Resources/skilltree/Timer/inc_time_9.tres" id="55_0pky4"]
 [ext_resource type="Texture2D" uid="uid://bf0ra1dvwovs7" path="res://Assets/skill_tree/TimeIncrease/TimeIncreaser.png" id="56_b7xoe"]
+[ext_resource type="Script" uid="uid://0ehivno670p5" path="res://Resources/skilltree/Axe/AxeDamage/axe_range.gd" id="61_erkpd"]
+[ext_resource type="Texture2D" uid="uid://21ifvpqqqtuk" path="res://Assets/skill_tree/axe/AxeRange/AxeRange01.png" id="62_5gld0"]
+[ext_resource type="Texture2D" uid="uid://dypimsx5s1x8y" path="res://Assets/skill_tree/axe/AxeRange/AxeRange02.png" id="63_xc6ld"]
 [ext_resource type="Texture2D" uid="uid://diekhxrmp5n2k" path="res://Assets/skill_tree/FireSlash/FireSlashDamage/FireSlashDamage02.png" id="66_nder1"]
 [ext_resource type="Texture2D" uid="uid://yooso1a8w5xa" path="res://Assets/skill_tree/axe/FireSlash/FireSlashRate.png" id="66_sbry8"]
 [ext_resource type="Texture2D" uid="uid://b032eno6y561h" path="res://Assets/skill_tree/FireSlash/FireSlashDamage/FireSlashDamage03.png" id="67_6e2eu"]
@@ -125,7 +126,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_kck0p"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 35
+upgrade_key = 38
 texture = ExtResource("12_hv2oo")
 description = "Unlocks Critical Hits:
 + 10% Crit Chance"
@@ -134,7 +135,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_q2e6c"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 36
+upgrade_key = 39
 texture = ExtResource("13_vbdoe")
 max_level = 5
 price_increase_mult_per_level = 1.0
@@ -145,7 +146,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_a6nbd"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 37
+upgrade_key = 40
 texture = ExtResource("14_gp51s")
 max_level = 6
 price_increase_mult_per_level = 1.0
@@ -156,42 +157,42 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_nder1"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 38
+upgrade_key = 41
 texture = ExtResource("15_kffl4")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_6e2eu"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Damage"
-upgrade_key = 39
+upgrade_key = 42
 texture = ExtResource("15_eeitg")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_krrke"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 40
+upgrade_key = 43
 texture = ExtResource("16_gp51s")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_kd8vb"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 41
+upgrade_key = 44
 texture = ExtResource("17_kffl4")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_pk2xw"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
-upgrade_key = 42
+upgrade_key = 45
 texture = ExtResource("18_kffl4")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_erkpd"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Damage"
-upgrade_key = 43
+upgrade_key = 46
 texture = ExtResource("18_eeitg")
 max_level = 6
 level_requirement_to_reveal = 4
@@ -200,7 +201,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_5gld0"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Damage"
-upgrade_key = 44
+upgrade_key = 47
 texture = ExtResource("19_1ny6p")
 max_level = 7
 level_requirement_to_reveal = 5
@@ -209,7 +210,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_xc6ld"]
 script = ExtResource("24_xsv4x")
-upgrade_key = 45
+upgrade_key = 48
 texture = ExtResource("20_0pky4")
 max_level = 4
 level_requirement_to_reveal = 3
@@ -217,7 +218,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_pgb8i"]
 script = ExtResource("24_xsv4x")
-upgrade_key = 46
+upgrade_key = 49
 texture = ExtResource("20_ux5mw")
 max_level = 2
 level_requirement_to_reveal = 2
@@ -225,7 +226,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_7ed06"]
 script = ExtResource("24_xsv4x")
-upgrade_key = 47
+upgrade_key = 50
 texture = ExtResource("20_1ny6p")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -403,7 +404,7 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 [sub_resource type="Resource" id="Resource_k547l"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Time Trees"
-upgrade_key = 85
+upgrade_key = 83
 texture = ExtResource("56_b7xoe")
 upgrade_cost = 1
 description = "Cutting a tree increases the remaining time until quota by 0.1s."
@@ -451,129 +452,166 @@ upgrade_key = 13
 texture = ExtResource("33_3hptt")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
+[sub_resource type="Resource" id="Resource_6op4n"]
+script = ExtResource("61_erkpd")
+upgrade_name = "Axe Range 1"
+upgrade_key = 33
+texture = ExtResource("62_5gld0")
+description = "Increases how far you can hit a tree with your axe!"
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_7g6ir"]
+script = ExtResource("61_erkpd")
+upgrade_name = "Axe Range 2"
+upgrade_key = 34
+texture = ExtResource("63_xc6ld")
+description = "Increases how far you can hit a tree with your axe!"
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
 [sub_resource type="Resource" id="Resource_rqgbt"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Axe Range3"
+upgrade_key = 35
 texture = ExtResource("29_t64jv")
+description = "Increases how far you can hit a tree with your axe!"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_dcdam"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Axe Range 4"
+upgrade_key = 36
 texture = ExtResource("30_vdq88")
+description = "Increases how far you can hit a tree with your axe!"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_3hptt"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Axe Range 5"
+upgrade_key = 37
 texture = ExtResource("31_lfd44")
+description = "Increases how far you can hit a tree with your axe!"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_1bfld"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
-upgrade_key = 85
+upgrade_key = 88
 texture = ExtResource("66_sbry8")
+description = "Decreases Fire Slash Cooldown by 20%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_e2vyx"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
-upgrade_key = 86
+upgrade_key = 89
 texture = ExtResource("67_kck0p")
+description = "Decreases Fire Slash Cooldown by 25%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_5h47n"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
-upgrade_key = 87
+upgrade_key = 90
 texture = ExtResource("68_q2e6c")
+description = "Decreases Fire Slash Cooldown by 50%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_c5w80"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
-upgrade_key = 88
+upgrade_key = 91
 texture = ExtResource("69_a6nbd")
+description = "Decreases Fire Slash Cooldown by 33%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_wohuj"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
-upgrade_key = 89
+upgrade_key = 92
 texture = ExtResource("70_nder1")
+description = "Decreases Fire Slash Cooldown by 50%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_wc8uc"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 90
+upgrade_key = 93
 texture = ExtResource("67_hbeh4")
+description = "Pierces 2 trees.."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_yjfj4"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 91
+upgrade_key = 94
 texture = ExtResource("68_5ujn8")
 max_level = 8
 level_requirement_to_reveal = 8
+description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_ym7y6"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 92
+upgrade_key = 95
 texture = ExtResource("69_8i8nj")
 max_level = 5
 level_requirement_to_reveal = 5
+description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_xwvl1"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 93
+upgrade_key = 96
 texture = ExtResource("70_sbry8")
 max_level = 5
 level_requirement_to_reveal = 5
+description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_a7qeu"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 94
+upgrade_key = 97
 texture = ExtResource("71_hbeh4")
 max_level = 5
 level_requirement_to_reveal = 5
+description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_70jbf"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames"
-upgrade_key = 95
+upgrade_key = 98
 texture = ExtResource("72_5ujn8")
 max_level = 5
 level_requirement_to_reveal = 5
+description = "+1 tree pierce per level. SCORCH THEM FORESTS!"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_4ly0s"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Damage"
-upgrade_key = 82
+upgrade_key = 85
 texture = ExtResource("66_nder1")
+description = "Doubles Fire Slash Damage!"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_kdj8j"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Damage"
-upgrade_key = 83
+upgrade_key = 86
 texture = ExtResource("67_6e2eu")
 max_level = 3
 level_requirement_to_reveal = 3
-description = "5X Fire Slash Damage"
+description = "5X Fire Slash Damage!"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_olcoj"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Damage"
-upgrade_key = 84
+upgrade_key = 87
 texture = ExtResource("68_krrke")
 description = "Do 1 MILLION DAMAGE with fire slash."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
@@ -602,6 +640,7 @@ grow_vertical = 2
 script = ExtResource("1_2gknk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=696873900]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -615,6 +654,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Panel" type="Panel" parent="." unique_id=1431637610]
+visible = false
 z_index = -2
 custom_minimum_size = Vector2(5000, 5000)
 layout_mode = 1
@@ -1044,13 +1084,13 @@ offset_left = -160.0
 offset_top = -400.0
 offset_right = -70.0
 offset_bottom = -310.0
-skill_data = ExtResource("9_xtb7d")
+skill_data = SubResource("Resource_6op4n")
 
 [node name="AxeRange2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1" unique_id=2063436650 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -168.0
 offset_right = -78.0
-skill_data = ExtResource("10_1n7m1")
+skill_data = SubResource("Resource_7g6ir")
 
 [node name="AxeRange3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2" unique_id=1516830785 instance=ExtResource("6_2gknk")]
 layout_mode = 0
@@ -1182,6 +1222,18 @@ offset_right = -80.0
 offset_bottom = 612.0
 skill_data = ExtResource("81_krrke")
 
+[node name="SprintSpeed2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=1877573959 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -200.0
+offset_right = -110.0
+skill_data = ExtResource("85_kd8vb")
+
+[node name="SprintSpeed3" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintSpeed2" unique_id=962223423 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -200.0
+offset_right = -110.0
+skill_data = ExtResource("86_kd8vb")
+
 [node name="SprintStamina1" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=710908678 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_top = 200.0
@@ -1200,19 +1252,8 @@ offset_left = -200.0
 offset_right = -110.0
 skill_data = ExtResource("84_krrke")
 
-[node name="SprintSpeed2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=1877573959 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_left = -200.0
-offset_right = -110.0
-skill_data = ExtResource("85_kd8vb")
-
-[node name="SprintSpeed3" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintSpeed2" unique_id=962223423 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_left = -200.0
-offset_right = -110.0
-skill_data = ExtResource("86_kd8vb")
-
 [node name="Vignette" type="ColorRect" parent="." unique_id=1526985475]
+visible = false
 material = SubResource("ShaderMaterial_6edkr")
 layout_mode = 1
 anchors_preset = 15
@@ -1280,7 +1321,7 @@ size_flags_horizontal = 10
 theme = ExtResource("27_gj7ge")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-text = "$ 100"
+text = "100"
 horizontal_alignment = 2
 vertical_alignment = 2
 

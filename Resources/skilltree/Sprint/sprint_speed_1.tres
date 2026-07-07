@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_4c177")
 upgrade_name = "Sprint Speed 1"
-upgrade_key = 51
+upgrade_key = 54
 texture = ExtResource("2_etejo")
 max_level = 2
 upgrade_cost = 25
