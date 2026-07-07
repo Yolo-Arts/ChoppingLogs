@@ -10,10 +10,12 @@ func _ready() -> void:
 func add_money(money_to_add: float):
 	player_stats.money += money_to_add
 	EventSystem.MON_money_updated.emit(player_stats.money, Color.YELLOW)
+	SaveManager.save_player_data(player_stats.money, player_stats.prestige_points)
 
 func remove_money(money_to_remove: float) -> void:
 	player_stats.money -= money_to_remove
 	EventSystem.MON_money_updated.emit(player_stats.money, Color.RED)
+	SaveManager.save_player_data(player_stats.money, player_stats.prestige_points)
 
 func check_if_balance_will_not_go_below_zero(money_to_remove: float):
 	if player_stats.money - money_to_remove >= 0:

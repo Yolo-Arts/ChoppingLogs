@@ -14,6 +14,7 @@
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1208827721]
 
 [node name="BulletinController" type="Node" parent="UILayer" unique_id=1789201587]
+process_mode = 3
 script = ExtResource("1_welsx")
 
 [node name="HUDController" type="Node" parent="UILayer" unique_id=1166291365]

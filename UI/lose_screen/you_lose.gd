@@ -3,6 +3,7 @@ extends Bulletin
 @onready var prestige_button: Button = $PrestigeButton
 
 func _ready() -> void:
+	get_tree().paused = true
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BOUNCE)

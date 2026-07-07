@@ -67,7 +67,7 @@ func apply_text_effect(label: Label, color: Color):
 func set_label_number(number: int, label: Label) -> void:
 	match label:
 		money_label:
-			label.set_text(str(number))
+			label.set_text("$" + str(number))
 		_:
 			label.set_text(str(number))
 

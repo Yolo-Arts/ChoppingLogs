@@ -2,6 +2,7 @@ extends Node
 
 const PRESTIGE_UPGRADES_FILE_PATH: String = "user://skill_tree_upgrades_test_3.json"
 const UPGRADES_FILE_PATH: String = "user://upgrades_test_1.json"
+const PLAYER_DATA_FILE_PATH: String = "user://player_data_test_1.json"
 
 const ENCRYPTION_PASSWORD: String = "jaIAOSDjn1327SaKL_jds0YuPKjL4dz*wdja"
 
@@ -38,6 +39,16 @@ func load_encrypted_file(file_path: String) -> Dictionary:
 		push_error("Corrupted encrypted data in: " + file_path + " -> " + json.get_error_message())
 		return {}
 
+func save_player_data(money: float, prestige_points: int) -> void:
+	var data := {
+		"money": money,
+		"prestige_points": prestige_points
+	}
+	save_encrypted_file(PLAYER_DATA_FILE_PATH, data)
+
+func load_player_data() -> Dictionary:
+	return load_encrypted_file(PLAYER_DATA_FILE_PATH)
+
 func save_skill_tree_upgrades() -> void:
 	save_encrypted_file(PRESTIGE_UPGRADES_FILE_PATH, SkillTreeConfig.upgrades)
 	print("Prestige Upgrades saved successfully.")
@@ -53,28 +64,22 @@ func load_upgrades() -> void:
 		for string_key in prestige_data.keys():
 			var enum_key: int = int(string_key) 
 			var level_value: int = int(prestige_data[string_key])
-			
 			if enum_key in SkillTreeConfig.upgrades:
 				SkillTreeConfig.upgrades[enum_key] = level_value
 				
-	
 	var shop_data: Dictionary = load_encrypted_file(UPGRADES_FILE_PATH)
 	if not shop_data.is_empty():
 		for string_key in shop_data.keys():
 			var enum_key: int = int(string_key)
 			var level_value: int = int(shop_data[string_key])
-			
 			if enum_key in UpgradeConfig.upgrades:
 				UpgradeConfig.upgrades[enum_key] = level_value
 				
-	
 	UpgradeConfig.update_max_levels()
 	print("All shop and prestige upgrades loaded successfully.")
 
-
 func _on_upgrade_updated(_upgrade_key: UpgradeConfig.Keys, _new_level: int) -> void:
 	save_upgrade_config()
-
 
 func reset_all_upgrades_completely() -> void:
 	for key in SkillTreeConfig.upgrades.keys():
@@ -98,4 +103,3 @@ func reset_run_upgrades() -> void:
 		UpgradeConfig.upgrades[key] = 0
 	save_upgrade_config()
 	UpgradeConfig.update_max_levels()
-	

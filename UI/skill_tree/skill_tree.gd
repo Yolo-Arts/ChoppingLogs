@@ -61,3 +61,4 @@ func _on_next_button_pressed() -> void:
 	#EventSystem.STA_change_stage.emit(StageConfig.Keys.Level)
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.YouLose)
 	_close_skill_tree()
+	get_tree().paused = false

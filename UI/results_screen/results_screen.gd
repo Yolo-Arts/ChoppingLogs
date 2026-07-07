@@ -91,8 +91,8 @@ func animate_stats():
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
 	
-	
-	tween.tween_method(set_label_number.bind(balance_number_lbl), 0, todays_revenue - quota, 0.5)
+	var money_remaining = todays_revenue - quota
+	tween.tween_method(set_label_number.bind(balance_number_lbl), 0, money_remaining, 0.5)
 	tween.parallel().tween_property(balance_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
@@ -173,9 +173,12 @@ func _on_continue_button_pressed() -> void:
 	if met_quota:
 		EventSystem.QUO_increase_quota_amount.emit()
 		EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
+		EventSystem.MON_decrease_money.emit(quota)
 		#EventSystem.STA_change_stage.emit(StageConfig.Keys.Level)
 	else:
 		EventSystem.QUO_reset_quota.emit()
+		var player_money = EventSystem.MON_get_player_money.call()
+		EventSystem.MON_decrease_money.emit(player_money)
 		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.YouLose)
 	
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)

@@ -125,15 +125,24 @@ func get_inventory_size_at_level(lvl: int) -> int:
 	))))
 
 func _ready() -> void:
+	var saved_wallet = SaveManager.load_player_data()
+	if not saved_wallet.is_empty():
+		money = saved_wallet.get("money", 0.0)
+		prestige_points = saved_wallet.get("prestige_points", 0)
+		EventSystem.MON_money_updated.emit(money, Color(1.0, 1.0, 1.0, 1.0))
+	
 	EventSystem.WEP_unlock_fire_slash.connect(func(): unlocked_fire_slash = true, CONNECT_ONE_SHOT)
 	EventSystem.UPG_increase_fire_slash_damage.connect(func(increase): fire_slash_damage += increase)
 	EventSystem.UPG_increase_fire_slash_fire_rate.connect(func(increase): fire_slash_cooldown -= increase)
 	EventSystem.UPG_increase_fire_slash_pierce_count.connect(func(increase): fire_slash_pierce_count += increase)
+	
 	EventSystem.HUD_update_prestige_points.emit(prestige_points)
 	EventSystem.PRE_change_prestige_points_value.connect(func(value): 
 		prestige_points += value
+		SaveManager.save_player_data(money, prestige_points)
 		EventSystem.HUD_update_prestige_points.emit(prestige_points)
 	)
+	
 	EventSystem.UPG_increase_axe_range.connect(func(increase): 
 		axe_range += increase
 		EventSystem.AXE_update_hit_marker_position.emit()
