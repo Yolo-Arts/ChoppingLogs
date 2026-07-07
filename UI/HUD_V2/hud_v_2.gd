@@ -7,6 +7,8 @@ extends Control
 @onready var encroaching_dark_player: AnimationPlayer = $EncroachingDarkPlayer
 @export var sprint_container: HBoxContainer
 @export var stamina_bar: ProgressBar
+@onready var inventory_size: Label = %InventorySize
+@onready var prestige_points: Label = %PrestigePoints
 
 
 func _ready() -> void:
@@ -20,6 +22,7 @@ func _ready() -> void:
 	EventSystem.QUO_update_quota_text.connect(update_quota_text)
 	EventSystem.DAR_encroaching_dark_start.connect(encroaching_dark_start)
 	EventSystem.HUD_update_stamina.connect(_update_stamina)
+	EventSystem.HUD_update_inventory_label.connect(_on_inventory_label_updated)
 
 func reset_hud_elements():
 	money_label.text = "$" + str(0.0)
@@ -37,6 +40,9 @@ func _update_stamina(stamina: float, max_stam_changed: bool = false) -> void:
 		return
 	stamina_bar.value = stamina
 	sprint_container.visible = stamina_bar.value != stamina_bar.max_value
+
+func _on_inventory_label_updated(current_size: int, max_size: int) -> void:
+	inventory_size.text = str(current_size) + " / " + str(max_size)
 
 func apply_text_effect(label: Label, color: Color):
 	var tween = create_tween().set_parallel(true)

@@ -16,6 +16,7 @@ func _enter_tree() -> void:
 	
 	EventSystem.UPG_upgrade_updated.connect(_on_upgrade_updated)
 	EventSystem.MON_sell_all_items.connect(sell_all_items)
+	send_inventory()
 
 func lock_inventory(weight_maxed: bool) -> void:
 	can_add_to_inventory = !weight_maxed
@@ -56,14 +57,17 @@ func add_item(item_key: ItemConfig.Keys) -> void:
 	var item_weight = ItemConfig.get_item_resource(item_key).weight
 	EventSystem.WEI_weight_changed.emit(item_weight)
 	EventSystem.INV_inventory_updated.emit(inventory)
+	_update_hud_label()
 	EventSystem.MON_check_if_can_sell.emit()
 
 func send_inventory() -> void:
 	EventSystem.INV_inventory_updated.emit(inventory)
+	_update_hud_label()
 
 func _on_upgrade_updated(upgrade_key: UpgradeConfig.Keys, _new_level: int) -> void:
 	if upgrade_key == UpgradeConfig.Keys.BackPack:
 		EventSystem.INV_inventory_updated.emit(inventory)
+		_update_hud_label()
 
 func sell_all_items() -> void:
 	if inventory.is_empty():
@@ -85,3 +89,7 @@ func sell_all_items() -> void:
 	EventSystem.MON_add_money.emit(total_money_earned)
 	EventSystem.WEI_weight_changed.emit(-total_weight_removed)
 	EventSystem.INV_inventory_updated.emit(inventory)
+	_update_hud_label()
+
+func _update_hud_label() -> void:
+	EventSystem.HUD_update_inventory_label.emit(get_total_items(), player_stats.inventory_size)

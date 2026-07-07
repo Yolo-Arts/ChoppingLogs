@@ -36,6 +36,7 @@ signal HUD_reset_hud_elements
 signal HUD_update_time
 signal HUD_update_stamina(rem_stamina: float, max_stamina_changed: bool)
 signal HUD_change_countdown(amount: float)
+signal HUD_update_inventory_label(current_size: int, max_size: int)
 
 # INV -> Inventory signals
 signal INV_ask_update_inventory

@@ -250,6 +250,7 @@ size_flags_horizontal = 10
 theme_override_constants/margin_bottom = 1
 
 [node name="PrestigePoints" type="Label" parent="MarginContainer/TopRightContainer/PrestigePanel/MarginContainer2/HBoxContainer/MarginContainer" unique_id=1290428690]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
