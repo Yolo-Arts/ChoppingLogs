@@ -19,6 +19,7 @@ var player_speed_with_weight_modifier: float = 1.0
 @export_group("Stats")
 @export var health: float = 100
 @export var money: float = 0
+@export var prestige_points: int = 0
 @export var axe_damage_mult_bonus: float = 1.0
 @export var axe_range: float = 1.5
 @export var axe_crit_chance: float = 0.0:
@@ -128,7 +129,11 @@ func _ready() -> void:
 	EventSystem.UPG_increase_fire_slash_damage.connect(func(increase): fire_slash_damage += increase)
 	EventSystem.UPG_increase_fire_slash_fire_rate.connect(func(increase): fire_slash_cooldown -= increase)
 	EventSystem.UPG_increase_fire_slash_pierce_count.connect(func(increase): fire_slash_pierce_count += increase)
-	
+	EventSystem.HUD_update_prestige_points.emit(prestige_points)
+	EventSystem.PRE_change_prestige_points_value.connect(func(value): 
+		prestige_points += value
+		EventSystem.HUD_update_prestige_points.emit(prestige_points)
+	)
 	EventSystem.UPG_increase_axe_range.connect(func(increase): 
 		axe_range += increase
 		EventSystem.AXE_update_hit_marker_position.emit()

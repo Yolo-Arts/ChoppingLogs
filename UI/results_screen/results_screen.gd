@@ -29,7 +29,7 @@ var quota = EventSystem.QUO_get_quota_amount.call()
 var todays_revenue = EventSystem.MON_get_player_money.call()
 var progress_bar_width = 818
 var prestige_price = 50
-
+var prestige_points_earned
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -97,7 +97,9 @@ func animate_stats():
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
 	
-	tween.tween_method(set_label_number.bind(prestige_points_number_lbl), 0, int(todays_revenue / prestige_price), 0.5)
+	prestige_points_earned = todays_revenue / prestige_price
+	EventSystem.PRE_change_prestige_points_value.emit(prestige_points_earned)
+	tween.tween_method(set_label_number.bind(prestige_points_number_lbl), 0, int(prestige_points_earned), 0.5)
 	tween.parallel().tween_property(prestige_points_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
