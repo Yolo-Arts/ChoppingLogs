@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://b2m3s8i2ae4bj"]
+
+[ext_resource type="Script" uid="uid://dkk847t6v7bvs" path="res://Resources/skilltree/Axe/axe_range/axe_range.gd" id="1_blpto"]
+[ext_resource type="Texture2D" uid="uid://6dek8efsaefs" path="res://Assets/skill_tree/axe/AxeRange/AxeRange04.png" id="2_p5lj5"]
+
+[resource]
+script = ExtResource("1_blpto")
+upgrade_name = "Axe Range 4"
+upgrade_key = 36
+texture = ExtResource("2_p5lj5")
+description = "Increases how far you can hit a tree with your axe!"
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"

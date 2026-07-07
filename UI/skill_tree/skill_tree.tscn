@@ -42,13 +42,10 @@
 [ext_resource type="Texture2D" uid="uid://br12ymg1djtea" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel01.png" id="27_v6pny"]
 [ext_resource type="Texture2D" uid="uid://s7ajmx3itncw" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel02.png" id="28_mnncb"]
 [ext_resource type="Texture2D" uid="uid://cvyhielws0yjp" path="res://Assets/skill_tree/Inventory/InventorySizeMaxLevel/InvetorySizeMaxLevel03.png" id="28_utaip"]
-[ext_resource type="Texture2D" uid="uid://dnyqxu4xgfpr6" path="res://Assets/skill_tree/axe/AxeRange/AxeRange03.png" id="29_t64jv"]
 [ext_resource type="Texture2D" uid="uid://bnvus3ubrk3di" path="res://Assets/skill_tree/Inventory/InventorySizeMaxLevel/InvetorySizeMaxLevel04.png" id="29_tcfgv"]
 [ext_resource type="Texture2D" uid="uid://cfjhcevwlnesw" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel03.png" id="29_usaod"]
 [ext_resource type="Texture2D" uid="uid://du2nywrpr0deq" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel01.png" id="30_05uoc"]
 [ext_resource type="Texture2D" uid="uid://bwf3hgtn4ht64" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel04.png" id="30_21wj6"]
-[ext_resource type="Texture2D" uid="uid://6dek8efsaefs" path="res://Assets/skill_tree/axe/AxeRange/AxeRange04.png" id="30_vdq88"]
-[ext_resource type="Texture2D" uid="uid://crtkt4no3dsah" path="res://Assets/skill_tree/axe/AxeRange/AxeRange05.png" id="31_lfd44"]
 [ext_resource type="Texture2D" uid="uid://c7okrxts1yfvq" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel05.png" id="31_wn3og"]
 [ext_resource type="Texture2D" uid="uid://bds4gf466wf35" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel02.png" id="31_yp8gp"]
 [ext_resource type="Texture2D" uid="uid://bd7tduhhn3aoo" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel06.png" id="32_dcdam"]
@@ -67,9 +64,11 @@
 [ext_resource type="Resource" uid="uid://ch7pivww81w75" path="res://Resources/skilltree/Timer/inc_time_8.tres" id="54_0pky4"]
 [ext_resource type="Resource" uid="uid://ddnvpfx4edbek" path="res://Resources/skilltree/Timer/inc_time_9.tres" id="55_0pky4"]
 [ext_resource type="Texture2D" uid="uid://bf0ra1dvwovs7" path="res://Assets/skill_tree/TimeIncrease/TimeIncreaser.png" id="56_b7xoe"]
-[ext_resource type="Script" uid="uid://0ehivno670p5" path="res://Resources/skilltree/Axe/AxeDamage/axe_range.gd" id="61_erkpd"]
-[ext_resource type="Texture2D" uid="uid://21ifvpqqqtuk" path="res://Assets/skill_tree/axe/AxeRange/AxeRange01.png" id="62_5gld0"]
-[ext_resource type="Texture2D" uid="uid://dypimsx5s1x8y" path="res://Assets/skill_tree/axe/AxeRange/AxeRange02.png" id="63_xc6ld"]
+[ext_resource type="Resource" uid="uid://cgyu5tmtmesic" path="res://Resources/skilltree/Axe/axe_range/axe_range_1.tres" id="61_pk2xw"]
+[ext_resource type="Resource" uid="uid://c2uf8t1yvoi8p" path="res://Resources/skilltree/Axe/axe_range/axe_range_2.tres" id="62_erkpd"]
+[ext_resource type="Resource" uid="uid://dx05o1ru5bmck" path="res://Resources/skilltree/Axe/axe_range/axe_range_3.tres" id="63_pk2xw"]
+[ext_resource type="Resource" uid="uid://b2m3s8i2ae4bj" path="res://Resources/skilltree/Axe/axe_range/axe_range_4.tres" id="64_erkpd"]
+[ext_resource type="Resource" uid="uid://prc6l6235qvj" path="res://Resources/skilltree/Axe/axe_range/axe_range_5.tres" id="65_5gld0"]
 [ext_resource type="Texture2D" uid="uid://diekhxrmp5n2k" path="res://Assets/skill_tree/FireSlash/FireSlashDamage/FireSlashDamage02.png" id="66_nder1"]
 [ext_resource type="Texture2D" uid="uid://yooso1a8w5xa" path="res://Assets/skill_tree/axe/FireSlash/FireSlashRate.png" id="66_sbry8"]
 [ext_resource type="Texture2D" uid="uid://b032eno6y561h" path="res://Assets/skill_tree/FireSlash/FireSlashDamage/FireSlashDamage03.png" id="67_6e2eu"]
@@ -452,46 +451,6 @@ upgrade_key = 13
 texture = ExtResource("33_3hptt")
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
-[sub_resource type="Resource" id="Resource_6op4n"]
-script = ExtResource("61_erkpd")
-upgrade_name = "Axe Range 1"
-upgrade_key = 33
-texture = ExtResource("62_5gld0")
-description = "Increases how far you can hit a tree with your axe!"
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_7g6ir"]
-script = ExtResource("61_erkpd")
-upgrade_name = "Axe Range 2"
-upgrade_key = 34
-texture = ExtResource("63_xc6ld")
-description = "Increases how far you can hit a tree with your axe!"
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_rqgbt"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Axe Range3"
-upgrade_key = 35
-texture = ExtResource("29_t64jv")
-description = "Increases how far you can hit a tree with your axe!"
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_dcdam"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Axe Range 4"
-upgrade_key = 36
-texture = ExtResource("30_vdq88")
-description = "Increases how far you can hit a tree with your axe!"
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_3hptt"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Axe Range 5"
-upgrade_key = 37
-texture = ExtResource("31_lfd44")
-description = "Increases how far you can hit a tree with your axe!"
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
 [sub_resource type="Resource" id="Resource_1bfld"]
 script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
@@ -794,20 +753,18 @@ offset_top = -192.0
 offset_bottom = -102.0
 skill_data = SubResource("Resource_6fw87")
 
-[node name="AxeDamage6" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4" unique_id=1708988974 instance=ExtResource("6_2gknk")]
+[node name="AxeDamage6" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeDamage5" unique_id=1708988974 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -20.0
-offset_top = -388.0
+offset_top = -196.0
 offset_right = 70.0
-offset_bottom = -298.0
+offset_bottom = -106.0
 skill_data = SubResource("Resource_ohkuh")
 
-[node name="AxeDamage7" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4" unique_id=246468010 instance=ExtResource("6_2gknk")]
+[node name="AxeDamage7" parent="SubViewport/ZoomContent/AxeDamage1/AxeDamage2/AxeDamage3/AxeDamage4/AxeDamage5/AxeDamage6" unique_id=246468010 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_left = -20.0
-offset_top = -588.0
-offset_right = 70.0
-offset_bottom = -498.0
+offset_top = -200.0
+offset_bottom = -110.0
 skill_data = SubResource("Resource_0eu8x")
 
 [node name="AxeSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=397992881 instance=ExtResource("6_2gknk")]
@@ -1084,31 +1041,31 @@ offset_left = -160.0
 offset_top = -400.0
 offset_right = -70.0
 offset_bottom = -310.0
-skill_data = SubResource("Resource_6op4n")
+skill_data = ExtResource("61_pk2xw")
 
 [node name="AxeRange2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1" unique_id=2063436650 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -168.0
 offset_right = -78.0
-skill_data = SubResource("Resource_7g6ir")
+skill_data = ExtResource("62_erkpd")
 
 [node name="AxeRange3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2" unique_id=1516830785 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -160.0
 offset_right = -70.0
-skill_data = SubResource("Resource_rqgbt")
+skill_data = ExtResource("63_pk2xw")
 
 [node name="AxeRange4" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3" unique_id=1125142501 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -136.0
 offset_right = -46.0
-skill_data = SubResource("Resource_dcdam")
+skill_data = ExtResource("64_erkpd")
 
 [node name="AxeRange5" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/AxeRange4" unique_id=1870019126 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -160.0
 offset_right = -70.0
-skill_data = SubResource("Resource_3hptt")
+skill_data = ExtResource("65_5gld0")
 
 [node name="FireSlashUnlock" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2" unique_id=280070737 instance=ExtResource("6_2gknk")]
 layout_mode = 0

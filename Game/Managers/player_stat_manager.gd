@@ -21,7 +21,15 @@ var player_speed_with_weight_modifier: float = 1.0
 @export var money: float = 0
 @export var prestige_points: int = 0
 @export var axe_damage_mult_bonus: float = 1.0
-@export var axe_range: float = 1.5
+@export var axe_range: float = 1.5:
+	get:
+		return 1.5 + (
+			(SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_RANGE_1] * 0.5) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_RANGE_2] * 1.0) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_RANGE_3] * 2.0) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_RANGE_4] * 5.0) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_RANGE_5] * 10.0) 
+		)
 @export var axe_crit_chance: float = 0.0:
 	get:
 		return (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_CRIT_CHANCE_1] * 10.0) \
@@ -136,10 +144,9 @@ func _ready() -> void:
 	EventSystem.UPG_increase_fire_slash_fire_rate.connect(func(increase): fire_slash_cooldown -= increase)
 	EventSystem.UPG_increase_fire_slash_pierce_count.connect(func(increase): fire_slash_pierce_count += increase)
 	
-	EventSystem.UPG_increase_axe_range.connect(func(increase): 
-		axe_range += increase
-		EventSystem.AXE_update_hit_marker_position.emit()
-	)
+	#EventSystem.UPG_increase_axe_range.connect(func(): 
+		#EventSystem.AXE_update_hit_marker_position.emit()
+	#)
 	
 	EventSystem.TRE_tree_cut.connect(func(): 
 		if SkillTreeConfig.upgrades[SkillTreeConfig.Keys.TIME_TREES] > 0:
