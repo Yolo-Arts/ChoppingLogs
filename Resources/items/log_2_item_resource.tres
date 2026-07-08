@@ -9,5 +9,5 @@ item_key = 1
 display_name = "Log"
 icon = ExtResource("1_shou6")
 description = "A sturdy log."
-sell_price = 3
+sell_price = 4
 metadata/_custom_type_script = "uid://rrdagysicmkc"

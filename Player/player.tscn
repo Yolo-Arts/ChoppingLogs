@@ -24,7 +24,7 @@ radius = 1.887207
 
 [node name="Player" type="CharacterBody3D" unique_id=842877921 node_paths=PackedStringArray("player_stats") groups=["player"]]
 collision_layer = 2
-collision_mask = 65
+collision_mask = 577
 script = ExtResource("1_4ntmi")
 player_stats = NodePath("Managers/PlayerStatManager")
 

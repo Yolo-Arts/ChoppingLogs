@@ -11,6 +11,7 @@ func _on_play_btn_pressed() -> void:
 	EventSystem.HUD_reset_hud_elements.emit()
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.MenuBtnPressed)
 	SaveManager.reset_all_upgrades_completely()
+	SaveManager.reset_player_data()
 	EventSystem.STA_change_stage.emit(StageConfig.Keys.Level)
 
 

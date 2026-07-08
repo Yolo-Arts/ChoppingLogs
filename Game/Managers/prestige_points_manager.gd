@@ -4,11 +4,11 @@ extends Node
 
 func _ready() -> void:
 	EventSystem.PRE_change_prestige_points_value.connect(modify_prestige_points)
-	EventSystem.PRE_get_prestige_points = func() -> int: return player_stats.prestige_points
+	EventSystem.PRE_get_prestige_points = func() -> float: return player_stats.prestige_points
 	
 	_update_ui_display.call_deferred()
 
-func modify_prestige_points(change_amount: int) -> void:
+func modify_prestige_points(change_amount: float) -> void:
 	player_stats.prestige_points += change_amount
 	
 	if player_stats.prestige_points < 0:

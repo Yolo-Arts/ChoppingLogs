@@ -21,12 +21,16 @@ func _ready() -> void:
 	EventSystem.HUD_update_time.connect(_on_time_updated)
 	EventSystem.QUO_update_quota_text.connect(update_quota_text)
 	EventSystem.DAR_encroaching_dark_start.connect(encroaching_dark_start)
+	EventSystem.DAR_reset_encroaching_dark.connect(reset_encroaching_dark)
 	EventSystem.HUD_update_stamina.connect(_update_stamina)
 	EventSystem.HUD_update_inventory_label.connect(update_inventory_label)
 	EventSystem.HUD_update_prestige_points.connect(update_prestige_label)
 
 func reset_hud_elements():
 	money_label.text = "$" + str(0.0)
+
+func reset_encroaching_dark():
+	encroaching_dark_player.play("RESET")
 
 var last_money_value = 0
 func update_text(money: float, color: Color):
@@ -49,9 +53,10 @@ func _update_stamina(stamina: float, max_stam_changed: bool = false) -> void:
 func update_inventory_label(current_size: int, max_size: int) -> void:
 	inventory_size.text = str(current_size) + " / " + str(max_size)
 
-func update_prestige_label(prestige_points_amount: int):
-	var tween = create_tween()
-	tween.tween_method(set_label_number.bind(prestige_points), 0, int(prestige_points_amount), 0.5)
+func update_prestige_label(prestige_points_amount: float):
+	#var tween = create_tween()
+	#tween.tween_method(set_label_number.bind(prestige_points), 0, float(prestige_points_amount), 0.5)
+	prestige_points.text = "%.1f" % prestige_points_amount
 
 func apply_text_effect(label: Label, color: Color):
 	var tween = create_tween().set_parallel(true)
@@ -110,6 +115,10 @@ func encroaching_dark_start() -> void:
 	print("encroaching dark started")
 	encroaching_dark.visible = true
 	encroaching_dark_player.play("start_encroaching_dark")
-	await encroaching_dark_player.animation_finished
-	encroaching_dark.visible = false
+	#await encroaching_dark_player.animation_finished
+	#encroaching_dark.visible = false
+	#EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.ResultsScreen)
+
+func fire_results_screen():
 	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.ResultsScreen)
+	

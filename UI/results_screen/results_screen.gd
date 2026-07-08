@@ -28,7 +28,7 @@ var trees_cut = EventSystem.TRE_get_tree_cut_amount.call()
 var quota = EventSystem.QUO_get_quota_amount.call()
 var todays_revenue = EventSystem.MON_get_player_money.call()
 var progress_bar_width = 818
-var prestige_price = 50
+var prestige_price = 25
 var prestige_points_earned
 
 func _ready() -> void:
@@ -98,25 +98,27 @@ func animate_stats():
 	tween.tween_interval(0.25)
 	
 	prestige_points_earned = todays_revenue / prestige_price
+	print("Prestige Points earned today:", prestige_points_earned)
 	EventSystem.PRE_change_prestige_points_value.emit(prestige_points_earned)
-	tween.tween_method(set_label_number.bind(prestige_points_number_lbl), 0, int(prestige_points_earned), 0.5)
+	#tween.tween_method(set_label_number.bind(prestige_points_number_lbl), 0, prestige_points_earned, 0.5)
+	tween.tween_callback(func(): prestige_points_number_lbl.text = "%.1f" % prestige_points_earned + "p")
 	tween.parallel().tween_property(prestige_points_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
 	
 	tween.tween_callback(transition_buttons)
 
-func set_label_number(number: int, label: Label) -> void:
+func set_label_number(number: float, label: Label) -> void:
 	match label:
 		trees_cut_count_lbl:
-			label.set_text(str(number) + " trees cut")
+			label.set_text(str(int(number)) + " trees cut")
 		quota_number_lbl, todays_revenue_number_lbl, balance_number_lbl:
 			if number < 0:
-				label.set_text("-$" + str(abs(number)))
+				label.set_text("-$" + str(abs(int(number))))
 			else:
-				label.set_text("$" + str(number))
+				label.set_text("$" + str(int(number)))
 		prestige_points_number_lbl:
-			label.set_text(str(number) + "p")
+			label.set_text("%.2f" % number + "p")
 		_:
 			label.set_text(str(number))
 
@@ -172,15 +174,16 @@ func _on_continue_button_pressed() -> void:
 	var met_quota = EventSystem.QUO_check_quota.call()
 	if met_quota:
 		EventSystem.QUO_increase_quota_amount.emit()
-		EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
+		#EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
 		EventSystem.MON_decrease_money.emit(quota)
-		#EventSystem.STA_change_stage.emit(StageConfig.Keys.Level)
+		EventSystem.STA_change_stage.emit(StageConfig.Keys.Level)
 	else:
 		EventSystem.QUO_reset_quota.emit()
 		var player_money = EventSystem.MON_get_player_money.call()
 		EventSystem.MON_decrease_money.emit(player_money)
 		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.YouLose)
 	
+	EventSystem.DAR_reset_encroaching_dark.emit()
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.ResultsScreen)
 

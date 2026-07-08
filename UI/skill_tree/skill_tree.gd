@@ -30,7 +30,8 @@ func _close_skill_tree() -> void:
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("close_menu"):
-		_close_skill_tree()
+		#_close_skill_tree()
+		pass
 
 func _run_ripple_cascade(current_node: Node, current_delay: float) -> void:
 	var next_delay = current_delay
@@ -45,8 +46,9 @@ func _run_ripple_cascade(current_node: Node, current_delay: float) -> void:
 	for child in current_node.get_children():
 		_run_ripple_cascade(child, next_delay)
 
-func update_prestige_text(amount: int, color: Color) -> void:
-	prestige_label.text = str(amount)
+func update_prestige_text(amount: float, color: Color) -> void:
+	#prestige_label.text = str(amount)
+	prestige_label.text = "%.1f" % amount
 	apply_text_effect(prestige_label, color)
 
 func apply_text_effect(label: Label, color: Color) -> void:
@@ -61,7 +63,8 @@ func apply_text_effect(label: Label, color: Color) -> void:
 
 
 func _on_next_button_pressed() -> void:
-	EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
+	#EventSystem.STA_change_stage.emit(StageConfig.Keys.Prototype)
+	EventSystem.STA_change_stage.emit(StageConfig.Keys.Level)
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.YouLose)
 	SaveManager.reset_run_upgrades()
 	_close_skill_tree()

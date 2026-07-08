@@ -1,7 +1,7 @@
 extends Node
 
-@export var quota_base: int = 50
-@export var quota: int = 50
+@export var quota_base: int = 5
+@export var quota: int = 5
 @export var quota_level: float = 1.0
 @export var day: int = 1
 
@@ -20,7 +20,7 @@ func _ready() -> void:
 			return false
 
 func update_quota_amount():
-	quota_level += 0.2
+	quota_level += 0.5
 	day += 1
 	@warning_ignore("narrowing_conversion")
 	quota = pow(quota_base, quota_level)
@@ -28,7 +28,7 @@ func update_quota_amount():
 	print("Quota is: ", quota)
 
 func reset_quota():
-	quota_base = 50
+	quota_base = 5
 	quota_level = 1.0
 	day = 1
 	quota = quota_base

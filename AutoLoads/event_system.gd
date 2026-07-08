@@ -37,9 +37,9 @@ signal HUD_update_time
 signal HUD_update_stamina(rem_stamina: float, max_stamina_changed: bool)
 signal HUD_change_countdown(amount: float)
 signal HUD_update_inventory_label(current_size: int, max_size: int)
-signal HUD_update_prestige_points(prestige_point_amount: int)
+signal HUD_update_prestige_points(prestige_point_amount: float)
 
-signal PRE_change_prestige_points_value(increase_amount: int)
+signal PRE_change_prestige_points_value(increase_amount: float)
 signal PRE_cannot_decrease_prestige_points
 var PRE_get_prestige_points: Callable
 
@@ -110,6 +110,6 @@ signal QUO_reset_quota
 
 
 signal DAR_encroaching_dark_start
-
+signal DAR_reset_encroaching_dark
 
 @warning_ignore_restore("unused_signal")
