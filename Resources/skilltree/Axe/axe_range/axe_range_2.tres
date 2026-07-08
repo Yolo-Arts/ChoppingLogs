@@ -8,5 +8,6 @@ script = ExtResource("1_3uak6")
 upgrade_name = "Axe Range 2"
 upgrade_key = 34
 texture = ExtResource("2_5caf8")
+upgrade_cost = 2
 description = "Increases how far you can hit a tree with your axe!"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"

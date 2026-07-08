@@ -99,6 +99,8 @@ bg_color = Color(0, 0, 0, 1)
 script = ExtResource("5_mnncb")
 upgrade_name = "Axe Damage"
 texture = ExtResource("5_usaod")
+upgrade_cost = 1
+description = "Axe Damage +2 per upgrade level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_yp8gp"]
@@ -106,6 +108,7 @@ script = ExtResource("5_mnncb")
 upgrade_name = "Axe Damage 2"
 upgrade_key = 1
 texture = ExtResource("6_usaod")
+description = "Axe Damage +5 per upgrade level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_ph2hn"]
@@ -113,6 +116,8 @@ script = ExtResource("5_mnncb")
 upgrade_name = "Axe Damage 3"
 upgrade_key = 2
 texture = ExtResource("7_21wj6")
+upgrade_cost = 200
+description = "Axe Damage +10 per upgrade level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_7jxhf"]
@@ -120,6 +125,8 @@ script = ExtResource("5_mnncb")
 upgrade_name = "Axe Damage 4"
 upgrade_key = 3
 texture = ExtResource("8_mnncb")
+upgrade_cost = 400
+description = "Axe Damage +20 per upgrade level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_kck0p"]
@@ -127,6 +134,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
 upgrade_key = 38
 texture = ExtResource("12_hv2oo")
+upgrade_cost = 100
 description = "Unlocks Critical Hits:
 + 10% Crit Chance"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
@@ -137,6 +145,7 @@ upgrade_name = "Crit Chance"
 upgrade_key = 39
 texture = ExtResource("13_vbdoe")
 max_level = 5
+upgrade_cost = 50
 price_increase_mult_per_level = 1.0
 level_requirement_to_reveal = 5
 description = "+2% Crit Chance Per Level"
@@ -148,6 +157,7 @@ upgrade_name = "Crit Chance"
 upgrade_key = 40
 texture = ExtResource("14_gp51s")
 max_level = 6
+upgrade_cost = 200
 price_increase_mult_per_level = 1.0
 level_requirement_to_reveal = 6
 description = "+5% Crit Chance Per Level"
@@ -158,6 +168,8 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
 upgrade_key = 41
 texture = ExtResource("15_kffl4")
+upgrade_cost = 1500
+description = "60% Crit Rate"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_6e2eu"]
@@ -165,6 +177,8 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Damage"
 upgrade_key = 42
 texture = ExtResource("15_eeitg")
+upgrade_cost = 7500
+description = "70% Crit Rate"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_krrke"]
@@ -172,6 +186,8 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
 upgrade_key = 43
 texture = ExtResource("16_gp51s")
+upgrade_cost = 12500
+description = "80% Crit Rate"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_kd8vb"]
@@ -179,6 +195,8 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
 upgrade_key = 44
 texture = ExtResource("17_kffl4")
+upgrade_cost = 20000
+description = "90% Crit Rate"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_pk2xw"]
@@ -186,6 +204,8 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Crit Chance"
 upgrade_key = 45
 texture = ExtResource("18_kffl4")
+upgrade_cost = 30000
+description = "100% Crit Rate"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_erkpd"]
@@ -194,7 +214,10 @@ upgrade_name = "Crit Damage"
 upgrade_key = 46
 texture = ExtResource("18_eeitg")
 max_level = 6
-level_requirement_to_reveal = 4
+upgrade_cost = 15
+price_increase_mult_per_level = 1.0
+level_requirement_to_reveal = 6
+description = "+5% Crit Damage Per Level"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_5gld0"]
@@ -203,30 +226,44 @@ upgrade_name = "Crit Damage"
 upgrade_key = 47
 texture = ExtResource("19_1ny6p")
 max_level = 7
+upgrade_cost = 125
+price_increase_mult_per_level = 1.0
 level_requirement_to_reveal = 5
-description = "+10% Crit Damage"
+description = "+10% Crit Damage Per Level"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_xc6ld"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Crit Damage"
 upgrade_key = 48
 texture = ExtResource("20_0pky4")
 max_level = 4
+upgrade_cost = 1000
+price_increase_mult_per_level = 1.25
 level_requirement_to_reveal = 3
+description = "+25% Crit Damage Per Level"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_pgb8i"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Crit Damage"
 upgrade_key = 49
 texture = ExtResource("20_ux5mw")
 max_level = 2
+upgrade_cost = 10000
+price_increase_mult_per_level = 1.1
 level_requirement_to_reveal = 2
+description = "50% Crit Damage Per Level"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_7ed06"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Crit Damage"
 upgrade_key = 50
 texture = ExtResource("20_1ny6p")
+upgrade_cost = 50000
+description = "+100% Crit Damage
+Total: +500% Crit Damage."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_6fw87"]
@@ -234,6 +271,8 @@ script = ExtResource("5_mnncb")
 upgrade_name = "Axe Damage 5"
 upgrade_key = 4
 texture = ExtResource("23_6e2eu")
+upgrade_cost = 1000
+description = "Axe Damage +50 per upgrade level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_ohkuh"]
@@ -241,6 +280,8 @@ script = ExtResource("5_mnncb")
 upgrade_name = "Axe Damage 6"
 upgrade_key = 5
 texture = ExtResource("24_krrke")
+upgrade_cost = 30000
+description = "Axe Damage +100 per upgrade level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_0eu8x"]
@@ -248,6 +289,8 @@ script = ExtResource("5_mnncb")
 upgrade_name = "Axe Damage 7"
 upgrade_key = 6
 texture = ExtResource("25_kd8vb")
+upgrade_cost = 100000
+description = "Axe Damage +500 per upgrade level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_khday"]
@@ -255,55 +298,71 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Axe Speed 1"
 upgrade_key = 14
 texture = ExtResource("18_gx7re")
+upgrade_cost = 5
+description = "Increases Axe Speed Max Level to 5"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_ui4la"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Axe Speed 1"
+upgrade_name = "Axe Speed 2"
 upgrade_key = 15
 texture = ExtResource("19_amre3")
+upgrade_cost = 40
+description = "Increases Axe Speed Max Level to 10"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_hv2oo"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Axe Speed 1"
+upgrade_name = "Axe Speed 3"
 upgrade_key = 16
 texture = ExtResource("20_fm8dc")
+upgrade_cost = 100
+description = "Increases Axe Speed Max Level to 15"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_gp51s"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Axe Speed 1"
+upgrade_name = "Axe Speed 4"
 upgrade_key = 17
 texture = ExtResource("21_utaip")
+upgrade_cost = 1000
+description = "Increases Axe Speed Max Level to 20"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_vbdoe"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Axe Speed 1"
+upgrade_name = "Axe Speed 5"
 upgrade_key = 18
 texture = ExtResource("22_tcfgv")
+upgrade_cost = 5000
+description = "Increases Axe Speed Max Level to 25"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_qeb7a"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Axe Speed 1"
+upgrade_name = "Axe Speed 6"
 upgrade_key = 19
 texture = ExtResource("23_05uoc")
+upgrade_cost = 10000
+description = "Increases Axe Speed Max Level to 30"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_kffl4"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Axe Speed 1"
+upgrade_name = "Axe Speed 7"
 upgrade_key = 20
 texture = ExtResource("24_yp8gp")
+upgrade_cost = 30000
+description = "Increases Axe Speed Max Level to 35"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_1ny6p"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Axe Speed 1"
+upgrade_name = "Axe Speed 8"
 upgrade_key = 21
 texture = ExtResource("25_uoit0")
+upgrade_cost = 50000
+description = "Increases Axe Speed Max Level to 40"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_5qrow"]
@@ -336,68 +395,100 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_8i8nj"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Inventory Max Level"
 upgrade_key = 22
 texture = ExtResource("26_amre3")
+upgrade_cost = 20
+description = "Increase Inventory Max Level to 10"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_jthqg"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Inventory Max Level"
 upgrade_key = 23
 texture = ExtResource("27_fm8dc")
+upgrade_cost = 75
+description = "Increase Inventory Max Level to 25"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_vl3os"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Inventory Max Level"
 upgrade_key = 24
 texture = ExtResource("28_utaip")
+upgrade_cost = 2000
+description = "Increase Inventory Max Level to 50"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_eeitg"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Inventory Max Level"
 upgrade_key = 25
 texture = ExtResource("29_tcfgv")
+upgrade_cost = 60000
+description = "Increase Inventory Max Level to 100"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_ux5mw"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Inventory Slots"
 upgrade_key = 26
 texture = ExtResource("30_05uoc")
 max_level = 4
+price_increase_mult_per_level = 1.1
 level_requirement_to_reveal = 4
+description = "Inventory Slots +1 Per Upgrade"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_0pky4"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Inventory Slots"
 upgrade_key = 27
 texture = ExtResource("31_yp8gp")
 max_level = 3
+upgrade_cost = 20
+price_increase_mult_per_level = 1.2
 level_requirement_to_reveal = 3
+description = "Inventory Slots +2 Per Upgrade"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_b7xoe"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Inventory Slots"
 upgrade_key = 28
 texture = ExtResource("32_uoit0")
 max_level = 2
+upgrade_cost = 250
+price_increase_mult_per_level = 1.0
 level_requirement_to_reveal = 2
+description = "Inventory Slots +5 Per Upgrade"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_sbry8"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Inventory Slots"
 upgrade_key = 29
 texture = ExtResource("33_ph2hn")
+upgrade_cost = 1000
+description = "Inventory Slots +10 Per Upgrade"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_hbeh4"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Inventory Slots"
 upgrade_key = 30
 texture = ExtResource("34_7jxhf")
+upgrade_cost = 10000
+description = "Inventory Slots +20 Per Upgrade"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_5ujn8"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Inventory Slots"
 upgrade_key = 31
 texture = ExtResource("35_6fw87")
+upgrade_cost = 40000
+description = "Inventory Slots +50 Per Upgrade"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_k547l"]
@@ -411,44 +502,95 @@ metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_hx5fe"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Axe Max Level Increase"
 upgrade_key = 7
 texture = ExtResource("27_v6pny")
+upgrade_cost = 5
+description = "Increases Max Level of Axe Damage to 10"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_gx7re"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Axe Max Level Increase"
 upgrade_key = 8
 texture = ExtResource("28_mnncb")
+upgrade_cost = 40
+description = "Increases Max Level of Axe Damage to 25"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_amre3"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Axe Max Level Increase"
 upgrade_key = 9
 texture = ExtResource("29_usaod")
+upgrade_cost = 1000
+description = "Increases Max Level of Axe Damage to 50"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_fm8dc"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Axe Max Level Increase"
 upgrade_key = 10
 texture = ExtResource("30_21wj6")
+upgrade_cost = 10000
+description = "Increases Max Level of Axe Damage to 100"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_utaip"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Axe Max Level Increase"
 upgrade_key = 11
 texture = ExtResource("31_wn3og")
+upgrade_cost = 30000
+description = "Increases Max Level of Axe Damage to 250"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_tcfgv"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Axe Max Level Increase"
 upgrade_key = 12
 texture = ExtResource("32_dcdam")
+upgrade_cost = 100000
+description = "Increases Max Level of Axe Damage to 500"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_05uoc"]
 script = ExtResource("24_xsv4x")
+upgrade_name = "Axe Max Level Increase"
 upgrade_key = 13
 texture = ExtResource("33_3hptt")
+upgrade_cost = 200000
+description = "Increases Max Level of Axe Damage to 1000"
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_4ly0s"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Damage I"
+upgrade_key = 85
+texture = ExtResource("66_nder1")
+upgrade_cost = 500
+description = "Doubles Fire Slash Damage!"
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_kdj8j"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Damage II"
+upgrade_key = 86
+texture = ExtResource("67_6e2eu")
+max_level = 3
+upgrade_cost = 3000
+price_increase_mult_per_level = 5.0
+level_requirement_to_reveal = 3
+description = "5X Fire Slash Damage!"
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_olcoj"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "Fire Slash Damage III"
+upgrade_key = 87
+texture = ExtResource("68_krrke")
+upgrade_cost = 250000
+description = "Do 1 MILLION DAMAGE with fire slash."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_1bfld"]
@@ -456,6 +598,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
 upgrade_key = 88
 texture = ExtResource("66_sbry8")
+upgrade_cost = 500
 description = "Decreases Fire Slash Cooldown by 20%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -464,6 +607,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
 upgrade_key = 89
 texture = ExtResource("67_kck0p")
+upgrade_cost = 1500
 description = "Decreases Fire Slash Cooldown by 25%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -472,6 +616,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
 upgrade_key = 90
 texture = ExtResource("68_q2e6c")
+upgrade_cost = 10000
 description = "Decreases Fire Slash Cooldown by 50%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -480,6 +625,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
 upgrade_key = 91
 texture = ExtResource("69_a6nbd")
+upgrade_cost = 35000
 description = "Decreases Fire Slash Cooldown by 33%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -488,91 +634,77 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
 upgrade_key = 92
 texture = ExtResource("70_nder1")
+upgrade_cost = 70000
 description = "Decreases Fire Slash Cooldown by 50%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_wc8uc"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Piercing Flames"
+upgrade_name = "Piercing Flames I"
 upgrade_key = 93
 texture = ExtResource("67_hbeh4")
+upgrade_cost = 500
 description = "Pierces 2 trees.."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_yjfj4"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Piercing Flames"
+upgrade_name = "Piercing Flames II"
 upgrade_key = 94
 texture = ExtResource("68_5ujn8")
 max_level = 8
+upgrade_cost = 500
+price_increase_mult_per_level = 1.0
 level_requirement_to_reveal = 8
 description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_ym7y6"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Piercing Flames"
+upgrade_name = "Piercing Flames III"
 upgrade_key = 95
 texture = ExtResource("69_8i8nj")
 max_level = 5
+upgrade_cost = 1500
+price_increase_mult_per_level = 1.0
 level_requirement_to_reveal = 5
 description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_xwvl1"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Piercing Flames"
+upgrade_name = "Piercing Flames IV"
 upgrade_key = 96
 texture = ExtResource("70_sbry8")
 max_level = 5
+upgrade_cost = 3000
+price_increase_mult_per_level = 1.0
 level_requirement_to_reveal = 5
 description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_a7qeu"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Piercing Flames"
+upgrade_name = "Piercing Flames V"
 upgrade_key = 97
 texture = ExtResource("71_hbeh4")
 max_level = 5
+upgrade_cost = 5000
+price_increase_mult_per_level = 1.0
 level_requirement_to_reveal = 5
 description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_70jbf"]
 script = ExtResource("24_xsv4x")
-upgrade_name = "Piercing Flames"
+upgrade_name = "Piercing Flames VI"
 upgrade_key = 98
 texture = ExtResource("72_5ujn8")
 max_level = 5
+upgrade_cost = 10000
+price_increase_mult_per_level = 1.0
 level_requirement_to_reveal = 5
 description = "+1 tree pierce per level. SCORCH THEM FORESTS!"
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_4ly0s"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Fire Slash Damage"
-upgrade_key = 85
-texture = ExtResource("66_nder1")
-description = "Doubles Fire Slash Damage!"
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_kdj8j"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Fire Slash Damage"
-upgrade_key = 86
-texture = ExtResource("67_6e2eu")
-max_level = 3
-level_requirement_to_reveal = 3
-description = "5X Fire Slash Damage!"
-metadata/_custom_type_script = "uid://b8bjcen86kwfh"
-
-[sub_resource type="Resource" id="Resource_olcoj"]
-script = ExtResource("24_xsv4x")
-upgrade_name = "Fire Slash Damage"
-upgrade_key = 87
-texture = ExtResource("68_krrke")
-description = "Do 1 MILLION DAMAGE with fire slash."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6edkr"]
@@ -1067,15 +1199,33 @@ offset_left = -160.0
 offset_right = -70.0
 skill_data = ExtResource("65_5gld0")
 
-[node name="FireSlashUnlock" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2" unique_id=280070737 instance=ExtResource("6_2gknk")]
+[node name="FireSlashUnlock" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3" unique_id=280070737 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_left = -142.0
+offset_left = 18.0
 offset_top = -178.0
-offset_right = -52.0
+offset_right = 108.0
 offset_bottom = -88.0
 skill_data = ExtResource("11_7y20i")
 
-[node name="FireSlashRate1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=591565523 instance=ExtResource("6_2gknk")]
+[node name="FireSlashDamage1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock" unique_id=408329291 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_4ly0s")
+
+[node name="FireSlashDamage2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock/FireSlashDamage1" unique_id=1660886275 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_kdj8j")
+
+[node name="FireSlashDamage3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock/FireSlashDamage1/FireSlashDamage2" unique_id=543613981 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_top = -200.0
+offset_bottom = -110.0
+skill_data = SubResource("Resource_olcoj")
+
+[node name="FireSlashRate1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock" unique_id=591565523 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = 200.0
 offset_top = -200.0
@@ -1083,31 +1233,31 @@ offset_right = 290.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_1bfld")
 
-[node name="FireSlashRate2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashRate1" unique_id=211865027 instance=ExtResource("6_2gknk")]
+[node name="FireSlashRate2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock/FireSlashRate1" unique_id=211865027 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_top = -200.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_e2vyx")
 
-[node name="FireSlashRate3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashRate1/FireSlashRate2" unique_id=1387899637 instance=ExtResource("6_2gknk")]
+[node name="FireSlashRate3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock/FireSlashRate1/FireSlashRate2" unique_id=1387899637 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_top = -200.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_5h47n")
 
-[node name="FireSlashRate4" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashRate1/FireSlashRate2/FireSlashRate3" unique_id=1310207065 instance=ExtResource("6_2gknk")]
+[node name="FireSlashRate4" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock/FireSlashRate1/FireSlashRate2/FireSlashRate3" unique_id=1310207065 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_top = -200.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_c5w80")
 
-[node name="FireSlashRate5" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashRate1/FireSlashRate2/FireSlashRate3/FireSlashRate4" unique_id=1538962298 instance=ExtResource("6_2gknk")]
+[node name="FireSlashRate5" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock/FireSlashRate1/FireSlashRate2/FireSlashRate3/FireSlashRate4" unique_id=1538962298 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_top = -200.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_wohuj")
 
-[node name="FireSlashPierce1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=1617670860 instance=ExtResource("6_2gknk")]
+[node name="FireSlashPierce1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock" unique_id=1617670860 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -200.0
 offset_top = -200.0
@@ -1115,13 +1265,13 @@ offset_right = -110.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_wc8uc")
 
-[node name="FireSlashPierce2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashPierce1" unique_id=1453517029 instance=ExtResource("6_2gknk")]
+[node name="FireSlashPierce2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock/FireSlashPierce1" unique_id=1453517029 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_top = -200.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_yjfj4")
 
-[node name="FireSlashPierce3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2" unique_id=1703546298 instance=ExtResource("6_2gknk")]
+[node name="FireSlashPierce3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2" unique_id=1703546298 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = 2.0
 offset_top = -200.0
@@ -1129,7 +1279,7 @@ offset_right = 92.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_ym7y6")
 
-[node name="FireSlashPierce4" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2/FireSlashPierce3" unique_id=1655032858 instance=ExtResource("6_2gknk")]
+[node name="FireSlashPierce4" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2/FireSlashPierce3" unique_id=1655032858 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = 2.0
 offset_top = -200.0
@@ -1137,7 +1287,7 @@ offset_right = 92.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_xwvl1")
 
-[node name="FireSlashPierce5" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2/FireSlashPierce3/FireSlashPierce4" unique_id=1205074829 instance=ExtResource("6_2gknk")]
+[node name="FireSlashPierce5" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2/FireSlashPierce3/FireSlashPierce4" unique_id=1205074829 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = 2.0
 offset_top = -200.0
@@ -1145,31 +1295,13 @@ offset_right = 92.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_a7qeu")
 
-[node name="FireSlashPierce6" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2/FireSlashPierce3/FireSlashPierce4/FireSlashPierce5" unique_id=1333678357 instance=ExtResource("6_2gknk")]
+[node name="FireSlashPierce6" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/AxeRange3/FireSlashUnlock/FireSlashPierce1/FireSlashPierce2/FireSlashPierce3/FireSlashPierce4/FireSlashPierce5" unique_id=1333678357 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = 2.0
 offset_top = -200.0
 offset_right = 92.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_70jbf")
-
-[node name="FireSlashDamage1" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock" unique_id=408329291 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_top = -200.0
-offset_bottom = -110.0
-skill_data = SubResource("Resource_4ly0s")
-
-[node name="FireSlashDamage2" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashDamage1" unique_id=1660886275 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_top = -200.0
-offset_bottom = -110.0
-skill_data = SubResource("Resource_kdj8j")
-
-[node name="FireSlashDamage3" parent="SubViewport/ZoomContent/AxeDamage1/AxeRange1/AxeRange2/FireSlashUnlock/FireSlashDamage1/FireSlashDamage2" unique_id=543613981 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_top = -200.0
-offset_bottom = -110.0
-skill_data = SubResource("Resource_olcoj")
 
 [node name="SprintSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=483513062 instance=ExtResource("6_2gknk")]
 layout_mode = 0

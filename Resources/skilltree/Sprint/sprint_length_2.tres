@@ -10,5 +10,6 @@ upgrade_key = 58
 texture = ExtResource("2_hy343")
 max_level = 10
 upgrade_cost = 100
+level_requirement_to_reveal = 10
 description = "Increases maximum sprint stamina upgrade by 2 per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"

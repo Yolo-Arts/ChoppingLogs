@@ -8,6 +8,6 @@ script = ExtResource("1_pxsv1")
 upgrade_name = "Increase Timer 2"
 upgrade_key = 75
 texture = ExtResource("2_pxsv1")
-upgrade_cost = 100
+upgrade_cost = 25
 description = "Permanently increases the time in a run by 1 minute."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
