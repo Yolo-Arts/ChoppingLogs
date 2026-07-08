@@ -1,4 +1,5 @@
 extends Bulletin
+
 @onready var blur: ColorRect = %Blur
 @onready var upgrades_controller: Node = %UpgradesController
 @onready var close_menu_button: TextureButton = $MarginContainer/CloseMenuButton
@@ -36,8 +37,7 @@ extends Bulletin
 
 const MAXED_BUTTON = preload("uid://doudgfaw4grl1")
 
-var player_money = EventSystem.MON_get_player_money.call()
-
+var player_money: float = 0.0
 var entrance_tween: Tween
 
 func _ready() -> void:
@@ -46,7 +46,14 @@ func _ready() -> void:
 	EventSystem.HUD_hide_hud.emit()
 	get_tree().paused = true
 	
+	player_money = EventSystem.MON_get_player_money.call()
 	player_money_label.text = "$" + str(player_money)
+	
+	EventSystem.MON_money_updated.connect(func(new_balance: float, _color: Color):
+		player_money = new_balance
+		player_money_label.text = "$" + str(player_money)
+		refresh_button_states()
+	)
 	
 	setup_ui()
 	setup_progress_bars()
@@ -60,7 +67,7 @@ func _ready() -> void:
 	
 	EventSystem.UPG_upgrade_updated.connect(update_ui)
 
-func setup_ui():
+func setup_ui() -> void:
 	UpgradeConfig.update_max_levels()
 	
 	chop_damage_level_label.text = "lvl %d/%d" % [UpgradeConfig.upgrades[UpgradeConfig.Keys.ChopDamage], UpgradeConfig.max_level[UpgradeConfig.Keys.ChopDamage]]
@@ -68,33 +75,17 @@ func setup_ui():
 	sprint_stamina_level_label.text = "lvl %d/%d" % [UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintStamina], UpgradeConfig.max_level[UpgradeConfig.Keys.SprintStamina]]
 	sprint_speed_level_label.text = "lvl %d/%d" % [UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed], UpgradeConfig.max_level[UpgradeConfig.Keys.SprintSpeed]]
 	backpack_level_label.text = "lvl %d/%d" % [UpgradeConfig.upgrades[UpgradeConfig.Keys.BackPack], UpgradeConfig.max_level[UpgradeConfig.Keys.BackPack]]
-	refresh_stat_labels()
 	
-	for i in range(5):
-		var is_maxed: bool = (UpgradeConfig.upgrades[i] == UpgradeConfig.max_level[i])
-		match i:
-			UpgradeConfig.Keys.ChopDamage:
-				if is_maxed:
-					set_button_maxed(chop_damage_buy_button)
-			UpgradeConfig.Keys.AxeSpeed:
-				if is_maxed:
-					set_button_maxed(axe_speed_buy_button)
-			UpgradeConfig.Keys.SprintStamina:
-				if is_maxed:
-					set_button_maxed(sprint_stamina_buy_button)
-			UpgradeConfig.Keys.SprintSpeed:
-				if is_maxed:
-					set_button_maxed(sprint_speed_buy_button)
-			UpgradeConfig.Keys.BackPack: 
-				if is_maxed:
-					set_button_maxed(backpack_size_buy_button)
+	refresh_stat_labels()
+	refresh_button_states()
 
-func setup_progress_bars():
+func setup_progress_bars() -> void:
 	chop_damage_progress_bar.max_value = UpgradeConfig.max_level[UpgradeConfig.Keys.ChopDamage]
 	axe_speed_progress_bar.max_value = UpgradeConfig.max_level[UpgradeConfig.Keys.AxeSpeed]
 	sprint_stamina_progress_bar.max_value = UpgradeConfig.max_level[UpgradeConfig.Keys.SprintStamina]
 	sprint_speed_progress_bar.max_value = UpgradeConfig.max_level[UpgradeConfig.Keys.SprintSpeed]
 	backpack_progress_bar.max_value = UpgradeConfig.max_level[UpgradeConfig.Keys.BackPack]
+	
 	chop_damage_progress_bar.value = UpgradeConfig.upgrades[UpgradeConfig.Keys.ChopDamage]
 	axe_speed_progress_bar.value = UpgradeConfig.upgrades[UpgradeConfig.Keys.AxeSpeed]
 	sprint_stamina_progress_bar.value = UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintStamina]
@@ -102,41 +93,86 @@ func setup_progress_bars():
 	backpack_progress_bar.value = UpgradeConfig.upgrades[UpgradeConfig.Keys.BackPack]
 
 func update_ui(upgrade_key: UpgradeConfig.Keys, new_level: int) -> void:
-	var is_maxed: bool = (new_level == UpgradeConfig.max_level[upgrade_key])
 	var level_text: String = "lvl %d/%d" % [new_level, UpgradeConfig.max_level[upgrade_key]]
 	
 	match upgrade_key:
 		UpgradeConfig.Keys.ChopDamage:
 			chop_damage_level_label.text = level_text
 			animate_progress_bar(chop_damage_progress_bar, new_level)
-			if is_maxed:
-				set_button_maxed(chop_damage_buy_button)
-				
 		UpgradeConfig.Keys.AxeSpeed:
 			axe_speed_level_label.text = level_text
 			animate_progress_bar(axe_speed_progress_bar, new_level)
-			if is_maxed:
-				set_button_maxed(axe_speed_buy_button)
-				
 		UpgradeConfig.Keys.SprintStamina:
 			sprint_stamina_level_label.text = level_text
 			animate_progress_bar(sprint_stamina_progress_bar, new_level)
-			if is_maxed:
-				set_button_maxed(sprint_stamina_buy_button)
-				
 		UpgradeConfig.Keys.SprintSpeed:
 			sprint_speed_level_label.text = level_text
 			animate_progress_bar(sprint_speed_progress_bar, new_level)
-			if is_maxed:
-				set_button_maxed(sprint_speed_buy_button)
-				
 		UpgradeConfig.Keys.BackPack: 
 			backpack_level_label.text = level_text
 			animate_progress_bar(backpack_progress_bar, new_level)
-			if is_maxed:
-				set_button_maxed(backpack_size_buy_button)
 	
 	refresh_stat_labels()
+	refresh_button_states()
+
+## MAIN FUNCTION FOR MODIFYING COSTS OF UPGRADES
+func calculate_upgrade_cost(upgrade_key: UpgradeConfig.Keys, current_lvl: int) -> int:
+	var cost_multiplier: float = 1.5
+	
+	match upgrade_key:
+		UpgradeConfig.Keys.ChopDamage:
+			cost_multiplier = 1.016
+		UpgradeConfig.Keys.AxeSpeed:
+			cost_multiplier = 1.47
+		UpgradeConfig.Keys.SprintStamina:
+			cost_multiplier = 1.56
+		UpgradeConfig.Keys.SprintSpeed:
+			cost_multiplier = 1.08
+		UpgradeConfig.Keys.BackPack:
+			cost_multiplier = 1.15
+			
+	var exponential_growth = pow(cost_multiplier, current_lvl) - 1
+	return 5 + current_lvl + int(exponential_growth)
+
+func refresh_button_states() -> void:
+	var buttons_map = {
+		UpgradeConfig.Keys.ChopDamage: chop_damage_buy_button,
+		UpgradeConfig.Keys.AxeSpeed: axe_speed_buy_button,
+		UpgradeConfig.Keys.SprintStamina: sprint_stamina_buy_button,
+		UpgradeConfig.Keys.SprintSpeed: sprint_speed_buy_button,
+		UpgradeConfig.Keys.BackPack: backpack_size_buy_button
+	}
+	
+	for key in buttons_map.keys():
+		var btn: Button = buttons_map[key]
+		var current_lvl: int = UpgradeConfig.upgrades[key]
+		var max_lvl: int = UpgradeConfig.max_level[key]
+		
+		if current_lvl >= max_lvl:
+			set_button_maxed(btn)
+		else:
+			var next_cost = calculate_upgrade_cost(key, current_lvl)
+			btn.disabled = false
+			btn.text = "$" + str(next_cost)
+			
+			if player_money < next_cost:
+				set_button_color_override(btn, Color(0.75, 0.15, 0.15, 1.0)) # Red tint for unaffordable
+			else:
+				clear_button_color_override(btn) # Revert to default UI theme layout
+
+func set_button_color_override(button: Button, bg_color: Color) -> void:
+	var style_override = button.get_theme_stylebox("normal").duplicate() as StyleBoxFlat
+	if style_override:
+		style_override.bg_color = bg_color
+		button.add_theme_stylebox_override("normal", style_override)
+		button.add_theme_stylebox_override("hover", style_override)
+		button.add_theme_stylebox_override("pressed", style_override)
+
+func clear_button_color_override(button: Button) -> void:
+	button.remove_theme_stylebox_override("normal")
+	button.remove_theme_stylebox_override("hover")
+	button.remove_theme_stylebox_override("pressed")
+	button.remove_theme_stylebox_override("disabled")
 
 func set_button_maxed(button: Button) -> void:
 	button.disabled = true
@@ -144,12 +180,43 @@ func set_button_maxed(button: Button) -> void:
 	var maxed_style = button.get_theme_stylebox("normal").duplicate() as StyleBoxFlat
 	
 	if maxed_style:
-		maxed_style.bg_color = Color(0.831, 0.514, 0.004, 1.0)
-		
+		maxed_style.bg_color = Color(0.831, 0.514, 0.004, 1.0) # Gold / Orange style
 		button.add_theme_stylebox_override("normal", maxed_style)
 		button.add_theme_stylebox_override("hover", maxed_style)
 		button.add_theme_stylebox_override("pressed", maxed_style)
 		button.add_theme_stylebox_override("disabled", maxed_style) 
+
+func try_buy_upon_button_pressed(upgrade_key: UpgradeConfig.Keys) -> void:
+	var current_lvl: int = UpgradeConfig.upgrades[upgrade_key]
+	var max_lvl: int = UpgradeConfig.max_level[upgrade_key]
+	
+	if current_lvl >= max_lvl:
+		return
+		
+	var cost = calculate_upgrade_cost(upgrade_key, current_lvl)
+	
+	if player_money >= cost:
+		EventSystem.MON_decrease_money.emit(cost)
+		EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
+		EventSystem.UPG_upgrade_requested.emit(upgrade_key)
+	else:
+		print("Not Enough money")
+		EventSystem.MON_cannot_decrease_money.emit()
+
+func chop_damage_buy_button_pressed() -> void:
+	try_buy_upon_button_pressed(UpgradeConfig.Keys.ChopDamage)
+
+func axe_speed_buy_button_pressed() -> void:
+	try_buy_upon_button_pressed(UpgradeConfig.Keys.AxeSpeed)
+
+func sprint_stamina_buy_button_pressed() -> void:
+	try_buy_upon_button_pressed(UpgradeConfig.Keys.SprintStamina)
+
+func sprint_speed_buy_button_pressed() -> void:
+	try_buy_upon_button_pressed(UpgradeConfig.Keys.SprintSpeed)
+
+func backpack_size_buy_button_pressed() -> void:
+	try_buy_upon_button_pressed(UpgradeConfig.Keys.BackPack)
 
 func menu_transition_in():
 	entrance_tween = create_tween()
@@ -184,51 +251,24 @@ func close_menu() -> void:
 	EventSystem.PLA_unfreeze_player.emit()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
-	#SaveManager.save_skill_tree_upgrades()
 	get_tree().paused = false
 	menu_transition_out()
 
-func chop_damage_buy_button_pressed() -> void:
-	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
-	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.ChopDamage)
-
-func axe_speed_buy_button_pressed() -> void:
-	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
-	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.AxeSpeed)
-
-func sprint_stamina_buy_button_pressed() -> void:
-	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
-	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.SprintStamina)
-
-func sprint_speed_buy_button_pressed() -> void:
-	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
-	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.SprintSpeed)
-
-func backpack_size_buy_button_pressed() -> void:
-	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)
-	EventSystem.UPG_upgrade_requested.emit(UpgradeConfig.Keys.BackPack)
-
 func animate_progress_bar(bar: Range, new_level: int) -> void:
 	var target_value: float = min(new_level, bar.max_value)
-	
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
 	tween.set_ease(Tween.EASE_OUT)
-	
 	tween.tween_property(bar, "value", target_value, 0.20)
 
 func update_stat_increase_label(label: Label, current_val: float, next_val: float, stat_name: String = "", unit: String = "", prefix: String = "") -> void:
 	var is_float: bool = (not is_equal_approx(current_val, round(current_val))) or (not is_equal_approx(next_val, round(next_val)))
-	
 	var current_str: String = "%.1f" % current_val if is_float else "%d" % int(current_val)
 	var next_str: String = "%.1f" % next_val if is_float else "%d" % int(next_val)
-	
 	var final_text: String = "%s%s%s -> %s%s%s" % [prefix, current_str, unit, prefix, next_str, unit]
 	if stat_name != "":
 		final_text += " " + stat_name
-		
 	label.text = final_text
-
 
 func refresh_stat_labels() -> void:
 	var chop_lvl = UpgradeConfig.upgrades[UpgradeConfig.Keys.ChopDamage]
