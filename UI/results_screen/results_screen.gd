@@ -23,6 +23,7 @@ extends Bulletin
 @onready var quota_overflow_progress_bar: ProgressBar = %QuotaOverflowProgressBar
 @onready var progress_bar_h_split_container: HSplitContainer = %ProgressBarHSplitContainer
 @onready var stats_for_day_x_label: Label = %StatsForDayXLabel
+@onready var prestige_button: Button = %PrestigeButton
 
 var trees_cut = EventSystem.TRE_get_tree_cut_amount.call()
 var quota = EventSystem.QUO_get_quota_amount.call()
@@ -165,6 +166,8 @@ func transition_buttons():
 	var tween: Tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(continue_button, "position:y", 0, 0.5).from(1200)
 	tween.parallel().tween_property(continue_button, "modulate:a", 1, 0.1).from(0.0)
+	tween.parallel().tween_property(prestige_button, "position:y", 0, 0.5).from(1200)
+	tween.parallel().tween_property(prestige_button, "modulate:a", 1, 0.1).from(0.0)
 	tween.parallel().tween_property(back_to_menu, "position:y", 0, 0.5).from(1200)
 	tween.parallel().tween_property(back_to_menu, "modulate:a", 1, 0.1).from(0.0)
 
@@ -193,3 +196,12 @@ func _on_back_to_menu_pressed() -> void:
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.ResultsScreen)
 	EventSystem.STA_change_stage.emit(StageConfig.Keys.MainMenu)
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.MenuBtnPressed)
+
+
+func _on_prestige_button_pressed() -> void:
+	TransitionManager.play_iris(true)
+	await TransitionManager.iris_transition_player.animation_finished
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.MenuBtnPressed)
+	
+	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.ResultsScreen)
+	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.SkillTree)

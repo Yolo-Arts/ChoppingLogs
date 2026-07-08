@@ -39,7 +39,7 @@ func load_encrypted_file(file_path: String) -> Dictionary:
 		push_error("Corrupted encrypted data in: " + file_path + " -> " + json.get_error_message())
 		return {}
 
-var data: Dictionary
+var data: Dictionary 
 
 func save_player_data(money: float, prestige_points: float) -> void:
 	data = {
@@ -49,12 +49,21 @@ func save_player_data(money: float, prestige_points: float) -> void:
 	save_encrypted_file(PLAYER_DATA_FILE_PATH, data)
 
 func load_player_data() -> Dictionary:
-	return load_encrypted_file(PLAYER_DATA_FILE_PATH)
+	data = load_encrypted_file(PLAYER_DATA_FILE_PATH)
+	return data
 
-func reset_player_data():
-	for key in data.keys():
-		data[key] = 0
-	save_encrypted_file(PLAYER_DATA_FILE_PATH, data)
+func reset_player_data() -> void:
+	var current_data = load_player_data()
+	for key in current_data.keys():
+		current_data[key] = 0
+	
+	save_encrypted_file(PLAYER_DATA_FILE_PATH, current_data)
+
+func reset_player_money() -> void:
+	var current_data = load_player_data()
+	
+	current_data["money"] = 0
+	save_encrypted_file(PLAYER_DATA_FILE_PATH, current_data)
 
 func save_skill_tree_upgrades() -> void:
 	save_encrypted_file(PRESTIGE_UPGRADES_FILE_PATH, SkillTreeConfig.upgrades)

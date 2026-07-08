@@ -44,7 +44,7 @@ func update_dynamic_content() -> void:
 			var calculated_cost = int(data.upgrade_cost * pow(data.price_increase_mult_per_level, tracked_node.level))
 			upgrade_cost.text = str(int(calculated_cost))
 			
-			if EventSystem.MON_get_player_money.call() < calculated_cost:
+			if EventSystem.PRE_get_prestige_points.call() < calculated_cost:
 				can_buy_rect.color = Color("8d2e30ff")
 			else:
 				can_buy_rect.color = Color("32633bff")

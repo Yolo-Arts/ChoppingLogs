@@ -19,7 +19,7 @@ var player_speed_with_weight_modifier: float = 1.0
 @export_group("Stats")
 @export var health: float = 100
 @export var money: float = 0
-@export var prestige_points: float = 0
+@export var prestige_points: float = 2
 @export var axe_damage_mult_bonus: float = 1.0
 @export var axe_range: float = 1.5:
 	get:

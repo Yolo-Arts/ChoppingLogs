@@ -118,21 +118,25 @@ func update_ui(upgrade_key: UpgradeConfig.Keys, new_level: int) -> void:
 ## MAIN FUNCTION FOR MODIFYING COSTS OF UPGRADES
 func calculate_upgrade_cost(upgrade_key: UpgradeConfig.Keys, current_lvl: int) -> int:
 	var cost_multiplier: float = 1.5
+	var base_cost = 5
 	
 	match upgrade_key:
 		UpgradeConfig.Keys.ChopDamage:
-			cost_multiplier = 1.016
+			cost_multiplier = 1.01
 		UpgradeConfig.Keys.AxeSpeed:
-			cost_multiplier = 1.47
+			base_cost = 3
+			cost_multiplier = 1.4
 		UpgradeConfig.Keys.SprintStamina:
-			cost_multiplier = 1.56
+			cost_multiplier = 1.5
 		UpgradeConfig.Keys.SprintSpeed:
-			cost_multiplier = 1.08
+			base_cost = 1
+			cost_multiplier = 1.05
 		UpgradeConfig.Keys.BackPack:
-			cost_multiplier = 1.15
+			base_cost = 4
+			cost_multiplier = 1.10
 			
 	var exponential_growth = pow(cost_multiplier, current_lvl) - 1
-	return 5 + current_lvl + int(exponential_growth)
+	return base_cost + current_lvl + int(exponential_growth)
 
 func refresh_button_states() -> void:
 	var buttons_map = {

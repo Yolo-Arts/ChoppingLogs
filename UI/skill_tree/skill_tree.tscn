@@ -496,7 +496,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Time Trees"
 upgrade_key = 83
 texture = ExtResource("56_b7xoe")
-upgrade_cost = 1
+upgrade_cost = 500
 description = "Cutting a tree increases the remaining time until quota by 0.1s."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -1166,12 +1166,12 @@ offset_left = -184.0
 offset_right = -94.0
 skill_data = ExtResource("55_0pky4")
 
-[node name="TimeTrees" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease" unique_id=1155336736 instance=ExtResource("6_2gknk")]
+[node name="TimeTrees" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease/TimeIncrease2/TimeIncrease3/TimeIncrease4" unique_id=1155336736 instance=ExtResource("6_2gknk")]
 visible = false
 layout_mode = 0
-offset_left = -160.0
+offset_left = 304.0
 offset_top = 170.0
-offset_right = -70.0
+offset_right = 394.0
 offset_bottom = 260.0
 skill_data = SubResource("Resource_k547l")
 

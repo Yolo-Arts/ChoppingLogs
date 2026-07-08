@@ -31,6 +31,30 @@ corner_radius_bottom_left = 34
 color = Color(0.23529412, 0.16470589, 0.019607844, 1)
 thickness = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq6vg"]
+bg_color = Color(0.7578125, 0.42099667, 0.104593895, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xs44"]
+bg_color = Color(0.6171875, 0.32991415, 0.062683105, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [node name="ResultsScreen" type="Control" unique_id=2093610872]
 process_mode = 3
 layout_mode = 3
@@ -247,19 +271,19 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Tree's Cut"
 
-[node name="QuotaLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer/LabelCategories" unique_id=376258611]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
-text = "Quota"
-
 [node name="TodaysRevenueLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer/LabelCategories" unique_id=84786345]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Today's Revenue"
+
+[node name="QuotaLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer/LabelCategories" unique_id=376258611]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Quota"
 
 [node name="BalanceLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer/LabelCategories" unique_id=1733189618]
 unique_name_in_owner = true
@@ -290,15 +314,6 @@ theme_override_font_sizes/font_size = 32
 text = "143"
 horizontal_alignment = 2
 
-[node name="QuotaNumberLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer/LabelNumbers" unique_id=1078943975]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
-text = "-$2,228"
-horizontal_alignment = 2
-
 [node name="TodaysRevenueNumberLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer/LabelNumbers" unique_id=809617605]
 unique_name_in_owner = true
 layout_mode = 2
@@ -306,6 +321,15 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "$8,900"
+horizontal_alignment = 2
+
+[node name="QuotaNumberLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer/LabelNumbers" unique_id=1078943975]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "-$2,228"
 horizontal_alignment = 2
 
 [node name="BalanceNumberLbl" type="Label" parent="MarginContainer/ResultsContainer/VBoxContainer/DetailsPanel/MarginContainer/VBoxContainer/HBoxContainer/LabelNumbers" unique_id=796729257]
@@ -340,19 +364,33 @@ theme_override_constants/separation = 24
 [node name="ButtonsContainer" type="HBoxContainer" parent="MarginContainer/ResultsContainer/VBoxContainer" unique_id=354291234]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 70
+theme_override_constants/separation = 29
 
 [node name="ContinueButton" type="Button" parent="MarginContainer/ResultsContainer/VBoxContainer/ButtonsContainer" unique_id=1441616487]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_n4wge")
 theme_override_font_sizes/font_size = 48
-text = "Press To Continue"
+text = "Next Day"
+
+[node name="PrestigeButton" type="Button" parent="MarginContainer/ResultsContainer/VBoxContainer/ButtonsContainer" unique_id=342243398]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_n4wge")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_fq6vg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fq6vg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4xs44")
+text = "Prestige"
 
 [node name="BackToMenu" type="TextureButton" parent="MarginContainer/ResultsContainer/VBoxContainer/ButtonsContainer" unique_id=2022499057]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_gj08v")
 texture_pressed = ExtResource("4_k5toj")
 texture_hover = ExtResource("5_fq6vg")
@@ -367,4 +405,5 @@ constant = true
 metadata/_custom_type_script = "uid://lyg5d4w1rqvk"
 
 [connection signal="pressed" from="MarginContainer/ResultsContainer/VBoxContainer/ButtonsContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ResultsContainer/VBoxContainer/ButtonsContainer/PrestigeButton" to="." method="_on_prestige_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ResultsContainer/VBoxContainer/ButtonsContainer/BackToMenu" to="." method="_on_back_to_menu_pressed"]
