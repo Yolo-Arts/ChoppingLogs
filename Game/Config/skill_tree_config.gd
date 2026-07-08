@@ -107,7 +107,10 @@ enum Keys {
 	FIRE_SLASH_PIERCE_5,
 	FIRE_SLASH_PIERCE_6,
 	SPRINT_SPEED_3,
-	SPRINT_LENGTH_3
+	SPRINT_LENGTH_3,
+	PICKUP_RADIUS_3,
+	PICKUP_RADIUS_4,
+	PICKUP_RADIUS_5,
 }
 
 func populate_initial_upgrades() -> void:
