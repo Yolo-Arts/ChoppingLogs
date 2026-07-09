@@ -771,6 +771,8 @@ grow_vertical = 2
 script = ExtResource("1_2gknk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=696873900]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -784,6 +786,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Panel" type="Panel" parent="." unique_id=1431637610]
+unique_name_in_owner = true
+visible = false
 z_index = -2
 custom_minimum_size = Vector2(5000, 5000)
 layout_mode = 1
@@ -1418,6 +1422,8 @@ offset_right = -110.0
 skill_data = ExtResource("84_krrke")
 
 [node name="Vignette" type="ColorRect" parent="." unique_id=1526985475]
+unique_name_in_owner = true
+visible = false
 material = SubResource("ShaderMaterial_6edkr")
 layout_mode = 1
 anchors_preset = 15

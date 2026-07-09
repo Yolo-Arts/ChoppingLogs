@@ -2,6 +2,9 @@ extends Bulletin
 
 @onready var zoom_content: Control = %ZoomContent
 @onready var prestige_label: Label = %PrestigeLabel
+@onready var color_rect: ColorRect = %ColorRect
+@onready var panel: Panel = %Panel
+@onready var vignette: ColorRect = %Vignette
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -19,6 +22,11 @@ func _ready() -> void:
 	EventSystem.HUD_hide_hud.emit()
 	if zoom_content:
 		_run_ripple_cascade(zoom_content, 0.0)
+	
+	# make them automatically visible and make testing easier
+	color_rect.visible = true
+	panel.visible = true
+	vignette.visible = true
 
 func _close_skill_tree() -> void:
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.SkillTree)
