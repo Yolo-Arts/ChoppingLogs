@@ -440,7 +440,8 @@ upgrade_name = "Inventory Slots"
 upgrade_key = 26
 texture = ExtResource("30_05uoc")
 max_level = 4
-price_increase_mult_per_level = 1.1
+upgrade_cost = 5
+price_increase_mult_per_level = 1.25
 level_requirement_to_reveal = 4
 description = "Inventory Slots +1 Per Upgrade"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
@@ -501,6 +502,8 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Pickup Radius"
 upgrade_key = 65
 texture = ExtResource("45_xc6ld")
+upgrade_cost = 2
+description = "Increases Pickup Radius"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_7g6ir"]
@@ -508,6 +511,8 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Pickup Radius"
 upgrade_key = 66
 texture = ExtResource("46_pgb8i")
+upgrade_cost = 5
+description = "Increases Pickup Radius"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_u6dyp"]
@@ -515,6 +520,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Pickup Radius"
 upgrade_key = 101
 texture = ExtResource("46_xc6ld")
+description = "Increases Pickup Radius"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_vulb5"]
@@ -522,6 +528,8 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Pickup Radius"
 upgrade_key = 102
 texture = ExtResource("47_pgb8i")
+upgrade_cost = 15
+description = "Increases Pickup Radius"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_rjf26"]
@@ -529,6 +537,8 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Pickup Radius"
 upgrade_key = 103
 texture = ExtResource("48_7ed06")
+upgrade_cost = 30
+description = "Increases Pickup Radius"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_k547l"]
@@ -536,7 +546,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Time Trees"
 upgrade_key = 83
 texture = ExtResource("56_b7xoe")
-upgrade_cost = 500
+upgrade_cost = 50
 description = "Cutting a tree increases the remaining time until quota by 0.1s."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -608,7 +618,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Damage I"
 upgrade_key = 85
 texture = ExtResource("66_nder1")
-upgrade_cost = 500
+upgrade_cost = 100
 description = "Doubles Fire Slash Damage!"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -618,8 +628,8 @@ upgrade_name = "Fire Slash Damage II"
 upgrade_key = 86
 texture = ExtResource("67_6e2eu")
 max_level = 3
-upgrade_cost = 3000
-price_increase_mult_per_level = 5.0
+upgrade_cost = 300
+price_increase_mult_per_level = 3.0
 level_requirement_to_reveal = 3
 description = "5X Fire Slash Damage!"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
@@ -629,7 +639,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Damage III"
 upgrade_key = 87
 texture = ExtResource("68_krrke")
-upgrade_cost = 250000
+upgrade_cost = 5000
 description = "Do 1 MILLION DAMAGE with fire slash."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -638,7 +648,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
 upgrade_key = 88
 texture = ExtResource("66_sbry8")
-upgrade_cost = 500
+upgrade_cost = 50
 description = "Decreases Fire Slash Cooldown by 20%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -647,7 +657,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
 upgrade_key = 89
 texture = ExtResource("67_kck0p")
-upgrade_cost = 1500
+upgrade_cost = 100
 description = "Decreases Fire Slash Cooldown by 25%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -656,7 +666,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
 upgrade_key = 90
 texture = ExtResource("68_q2e6c")
-upgrade_cost = 10000
+upgrade_cost = 150
 description = "Decreases Fire Slash Cooldown by 50%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -665,7 +675,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
 upgrade_key = 91
 texture = ExtResource("69_a6nbd")
-upgrade_cost = 35000
+upgrade_cost = 250
 description = "Decreases Fire Slash Cooldown by 33%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -674,7 +684,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Fire Slash Rate"
 upgrade_key = 92
 texture = ExtResource("70_nder1")
-upgrade_cost = 70000
+upgrade_cost = 300
 description = "Decreases Fire Slash Cooldown by 50%."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -683,7 +693,7 @@ script = ExtResource("24_xsv4x")
 upgrade_name = "Piercing Flames I"
 upgrade_key = 93
 texture = ExtResource("67_hbeh4")
-upgrade_cost = 500
+upgrade_cost = 20
 description = "Pierces 2 trees.."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
@@ -693,8 +703,8 @@ upgrade_name = "Piercing Flames II"
 upgrade_key = 94
 texture = ExtResource("68_5ujn8")
 max_level = 8
-upgrade_cost = 500
-price_increase_mult_per_level = 1.0
+upgrade_cost = 25
+price_increase_mult_per_level = 1.1
 level_requirement_to_reveal = 8
 description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
@@ -705,8 +715,8 @@ upgrade_name = "Piercing Flames III"
 upgrade_key = 95
 texture = ExtResource("69_8i8nj")
 max_level = 5
-upgrade_cost = 1500
-price_increase_mult_per_level = 1.0
+upgrade_cost = 50
+price_increase_mult_per_level = 1.1
 level_requirement_to_reveal = 5
 description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
@@ -717,8 +727,8 @@ upgrade_name = "Piercing Flames IV"
 upgrade_key = 96
 texture = ExtResource("70_sbry8")
 max_level = 5
-upgrade_cost = 3000
-price_increase_mult_per_level = 1.0
+upgrade_cost = 80
+price_increase_mult_per_level = 1.1
 level_requirement_to_reveal = 5
 description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
@@ -729,8 +739,8 @@ upgrade_name = "Piercing Flames V"
 upgrade_key = 97
 texture = ExtResource("71_hbeh4")
 max_level = 5
-upgrade_cost = 5000
-price_increase_mult_per_level = 1.0
+upgrade_cost = 140
+price_increase_mult_per_level = 1.1
 level_requirement_to_reveal = 5
 description = "+1 tree pierce per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
@@ -741,8 +751,8 @@ upgrade_name = "Piercing Flames VI"
 upgrade_key = 98
 texture = ExtResource("72_5ujn8")
 max_level = 5
-upgrade_cost = 10000
-price_increase_mult_per_level = 1.0
+upgrade_cost = 200
+price_increase_mult_per_level = 1.1
 level_requirement_to_reveal = 5
 description = "+1 tree pierce per level. SCORCH THEM FORESTS!"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
@@ -1197,9 +1207,9 @@ skill_data = ExtResource("55_0pky4")
 
 [node name="TimeTrees" parent="SubViewport/ZoomContent/AxeDamage1/TimeIncrease/TimeIncrease2/TimeIncrease3/TimeIncrease4" unique_id=1155336736 instance=ExtResource("6_2gknk")]
 layout_mode = 0
-offset_left = 304.0
+offset_left = 4.0
 offset_top = 170.0
-offset_right = 394.0
+offset_right = 94.0
 offset_bottom = 260.0
 skill_data = SubResource("Resource_k547l")
 
@@ -1383,6 +1393,26 @@ offset_right = 92.0
 offset_bottom = -110.0
 skill_data = SubResource("Resource_70jbf")
 
+[node name="SprintStamina1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=710908678 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -170.0
+offset_top = 722.0
+offset_right = -80.0
+offset_bottom = 812.0
+skill_data = ExtResource("82_krrke")
+
+[node name="SprintStamina2" parent="SubViewport/ZoomContent/AxeDamage1/SprintStamina1" unique_id=298985912 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -200.0
+offset_right = -110.0
+skill_data = ExtResource("83_krrke")
+
+[node name="SprintStamina3" parent="SubViewport/ZoomContent/AxeDamage1/SprintStamina1/SprintStamina2" unique_id=1691299754 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = -200.0
+offset_right = -110.0
+skill_data = ExtResource("84_krrke")
+
 [node name="SprintSpeed1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=483513062 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = -170.0
@@ -1402,24 +1432,6 @@ layout_mode = 0
 offset_left = -200.0
 offset_right = -110.0
 skill_data = ExtResource("86_kd8vb")
-
-[node name="SprintStamina1" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=710908678 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_top = 200.0
-offset_bottom = 290.0
-skill_data = ExtResource("82_krrke")
-
-[node name="SprintStamina2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintStamina1" unique_id=298985912 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_left = -200.0
-offset_right = -110.0
-skill_data = ExtResource("83_krrke")
-
-[node name="SprintStamina3" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintStamina1/SprintStamina2" unique_id=1691299754 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_left = -200.0
-offset_right = -110.0
-skill_data = ExtResource("84_krrke")
 
 [node name="Vignette" type="ColorRect" parent="." unique_id=1526985475]
 unique_name_in_owner = true

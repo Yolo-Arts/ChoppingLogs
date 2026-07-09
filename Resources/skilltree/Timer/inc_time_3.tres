@@ -8,6 +8,6 @@ script = ExtResource("1_achjc")
 upgrade_name = "Increase Timer 3"
 upgrade_key = 76
 texture = ExtResource("2_achjc")
-upgrade_cost = 69
+upgrade_cost = 25
 description = "Permanently increases the time in a run by 1 minute."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
