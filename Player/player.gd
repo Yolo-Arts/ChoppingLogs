@@ -89,7 +89,7 @@ func move(delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
-	var is_sprinting := Input.is_action_pressed("sprint")
+	var is_sprinting := Input.is_action_pressed("sprint") && input_dir != Vector2.ZERO
 	var base_speed := _handle_sprinting(delta) if is_sprinting else player_stats.normal_speed
 	var target_speed := base_speed * player_stats.player_speed_with_weight_modifier
 
@@ -134,7 +134,7 @@ func _handle_sprinting(delta: float) -> float:
 		
 const STAMINA_RECHARGE_TIME: float = 5.0
 func stamina_regen(delta: float) -> void:
-	if !stamina_drained:
+	if cur_stamina >= player_stats.max_sprint_stamina:
 		return
 	var stamina_regen_speed: float = player_stats.max_sprint_stamina / STAMINA_RECHARGE_TIME
 	cur_stamina = clampf(cur_stamina + (stamina_regen_speed * delta), 0, player_stats.max_sprint_stamina)
