@@ -20,6 +20,9 @@ class_name Player
 @export var friction := 10.0
 @onready var head: CameraController = %Head
 
+@export var log_collection_detection: CollisionShape3D = null
+var log_collection_shape: CylinderShape3D = null
+# @export var test_radius: float = 1.887
 
 func _ready() -> void:
 	print("Player is ready")
@@ -34,6 +37,10 @@ func _ready() -> void:
 				_update_stamina()
 			)
 	_update_stamina()
+
+	# Get the shape of the log collecting area3d.
+	if log_collection_detection:
+		log_collection_shape = log_collection_detection.shape as CylinderShape3D
 
 func set_freeze(freeze: bool) -> void:
 	set_process(!freeze)
@@ -54,6 +61,13 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	interaction_ray_cast.check_interaction()
+	# set pickup radius
+	if log_collection_shape: #NOTE: This is less than ideal since it checks every tick, but it should work.
+		log_collection_shape.radius = player_stats.pickup_radius
+		# if (Input.is_key_pressed(KEY_R)):
+		# 	test_radius += 0.5
+		# 	print("R key pressed")
+		# log_collection_shape.radius = test_radius
 
 var was_on_floor: bool = true
 

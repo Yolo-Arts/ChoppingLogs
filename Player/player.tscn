@@ -22,11 +22,12 @@
 height = 0.29589844
 radius = 1.887207
 
-[node name="Player" type="CharacterBody3D" unique_id=842877921 node_paths=PackedStringArray("player_stats") groups=["player"]]
+[node name="Player" type="CharacterBody3D" unique_id=842877921 node_paths=PackedStringArray("player_stats", "log_collection_detection") groups=["player"]]
 collision_layer = 2
 collision_mask = 577
 script = ExtResource("1_4ntmi")
 player_stats = NodePath("Managers/PlayerStatManager")
+log_collection_detection = NodePath("LogCollectionArea/CollisionShape3D")
 
 [node name="Head" type="Node3D" parent="." unique_id=497952282]
 unique_name_in_owner = true
