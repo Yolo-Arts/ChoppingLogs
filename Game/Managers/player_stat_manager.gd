@@ -4,8 +4,8 @@ class_name PlayerStats
 @export_group("Upgrades")
 @export var base_inventory_size: int = 3
 @export var base_max_weight: float = 5000.0
-@export var base_normal_speed: float = 1.0
-const base_sprint_multi: float = 2.0
+@export var base_normal_speed: float = 2.0
+const base_sprint_multi: float = 3.0
 @export var sprint_multi_per_lvl: float = 0.1
 @export var base_sprint_stamina: float = 1.0 #seconds
 @export var stamina_per_lvl: float = 1
