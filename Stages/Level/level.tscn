@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jum37rocc4v2" path="res://Stages/Level/level.gd" id="1_1ketp"]
 [ext_resource type="Script" uid="uid://cmfmxk08kighk" path="res://Game/Managers/day_night_controller.gd" id="2_ntkyc"]
+[ext_resource type="PackedScene" uid="uid://cqhgdbc35oxg" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_pickup_radius.tscn" id="4_m0yck"]
 [ext_resource type="PackedScene" uid="uid://bolmbxrohop2y" path="res://Objects/interactables/prototype_helpers/prototype_helper_upgrade_screen.tscn" id="35_ssqta"]
 [ext_resource type="PackedScene" uid="uid://b2iwqgom3rekv" path="res://Game/Managers/spawner.tscn" id="37_h4iel"]
 [ext_resource type="PackedScene" uid="uid://cyc4xn25gqd5j" path="res://Assets/Meshes/maps/testV5/log_chopping_map_test_5.tscn" id="40_qeflf"]
@@ -138,6 +139,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.34161, -2.6482544, -295.
 
 [node name="PrototypeHelperUpgradeScreen" parent="PrototypeHelpers2OnTheMap" unique_id=139572133 instance=ExtResource("35_ssqta")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275.5866, 0, 0)
+
+[node name="PrototypeHelperIncreasePickupRadius" parent="PrototypeHelpers2OnTheMap" unique_id=979320369 instance=ExtResource("4_m0yck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.98264, -0.17149734, 1.9752197)
 
 [node name="Spawner" parent="." unique_id=1704739753 instance=ExtResource("37_h4iel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.6944, 0, 0)
