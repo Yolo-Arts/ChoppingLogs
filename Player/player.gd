@@ -20,6 +20,9 @@ class_name Player
 @export var friction := 10.0
 @onready var head: CameraController = %Head
 
+@export var log_collection_detection: CollisionShape3D = null
+var log_collection_shape: CylinderShape3D = null
+var log_collection_radius_eventsystem: float = 0;
 
 func _ready() -> void:
 	print("Player is ready")
@@ -34,6 +37,13 @@ func _ready() -> void:
 				_update_stamina()
 			)
 	_update_stamina()
+
+	# Get the shape of the log collecting area3d.
+	if log_collection_detection:
+		log_collection_shape = log_collection_detection.shape as CylinderShape3D
+
+	# EventSystem version of increasing log collection radius
+	EventSystem.UPG_increase_pickup_radius.connect(increase_pickup_radius)
 
 func set_freeze(freeze: bool) -> void:
 	set_process(!freeze)
@@ -54,6 +64,9 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	interaction_ray_cast.check_interaction()
+	# set pickup radius
+	if log_collection_shape: #NOTE: This is less than ideal since it checks every tick, but it should work.
+		log_collection_shape.radius = player_stats.pickup_radius + log_collection_radius_eventsystem
 
 var was_on_floor: bool = true
 
@@ -185,3 +198,8 @@ func fire_slash_damage_calculation() -> Damage:
 		crit_damage = player_stats.fire_slash_damage * (player_stats.axe_crit_damage/100.0)		# calculate crit damage 
 	var base_damage = player_stats.fire_slash_damage											# calculate axe base 
 	return Damage.new(base_damage * player_stats.axe_damage_mult_bonus + crit_damage, crit)		# return damage object.
+
+func increase_pickup_radius(increase_amount: float):
+	if log_collection_shape:
+		print("Increased pickup radius by 0.5")
+		log_collection_radius_eventsystem += increase_amount

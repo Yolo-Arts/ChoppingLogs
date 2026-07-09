@@ -109,6 +109,16 @@ func get_axe_damage_at_level(lvl: int) -> float:
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_7] * 400) 
 	))))
 
+var pickup_radius: float = 1.887:
+	get:
+		return 1.887 \
+		# increase radius by 0.5 increments every skill level.
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.PICKUP_RADIUS_1] * 0.5) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.PICKUP_RADIUS_2] * 0.5) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.PICKUP_RADIUS_3] * 0.5) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.PICKUP_RADIUS_4] * 0.5) \
+		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.PICKUP_RADIUS_5] * 0.5)
+
 func get_axe_speed_at_level(lvl: int) -> float:
 	return base_axe_speed_bonus + (lvl * 0.2)
 

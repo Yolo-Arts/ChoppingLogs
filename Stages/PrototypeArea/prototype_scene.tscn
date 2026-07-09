@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://c557q4xh5xvwu" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_fire_slash_damage.tscn" id="16_jpb4y"]
 [ext_resource type="PackedScene" uid="uid://f7e4iprhhnur" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_fire_slash_fire_rate.tscn" id="17_0rur4"]
 [ext_resource type="PackedScene" uid="uid://dsss5jrtw6rxn" path="res://enemies/deer_enemy/deer_enemy.tscn" id="17_7thjy"]
+[ext_resource type="PackedScene" uid="uid://cqhgdbc35oxg" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_pickup_radius.tscn" id="23_brol4"]
 [ext_resource type="PackedScene" uid="uid://cj86suryewjgs" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_axe_attack_damage.tscn" id="23_yslmy"]
 [ext_resource type="PackedScene" uid="uid://cp3gh4eo623ab" path="res://Objects/interactables/prototype_helpers/prototype_helper_increase_sell_radius.tscn" id="24_twccb"]
 [ext_resource type="PackedScene" uid="uid://cd3f3prklq5ep" path="res://Objects/hittable_objects/hittable_tree_common_tree_1.tscn" id="25_s5o8u"]
@@ -408,6 +409,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269.6944, 0, -4)
 
 [node name="PrototypeHelperIncrease_Max_Weight" parent="PrototypeHelpersOnTheIsland" unique_id=1854175241 instance=ExtResource("7_7yfsk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -268.00577, 0.13963515, -3.207336)
+
+[node name="PrototypeHelperIncreasePickupRadius" parent="PrototypeHelpersOnTheIsland" unique_id=251725483 instance=ExtResource("23_brol4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.51236, 0, -1.6416396)
 
 [node name="PrototypeHelperIncreaseMoney" parent="PrototypeHelpersOnTheIsland" unique_id=2033220718 instance=ExtResource("8_jdp5v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.59262, 0, -4)
