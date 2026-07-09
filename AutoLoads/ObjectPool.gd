@@ -8,17 +8,18 @@ func get_object(scene: PackedScene) -> Node:
 	
 	if _pools.has(path) and not _pools[path].is_empty():
 		var obj = _pools[path].pop_back()
-		obj.visible = true
-		obj.process_mode = Node.PROCESS_MODE_INHERIT
-		
-		if obj.has_method("reset_from_pool"):
-			obj.reset_from_pool()
+		if is_instance_valid(obj):
+			obj.visible = true
+			obj.process_mode = Node.PROCESS_MODE_INHERIT
 			
-		return obj
+			if obj.has_method("reset_from_pool"):
+				obj.reset_from_pool()
+				
+			return obj
 	
-	var obj := scene.instantiate()
-	_scene_paths[obj] = path  
-	return obj
+	var new_obj := scene.instantiate()
+	_scene_paths[new_obj] = path  
+	return new_obj
 
 func return_object(obj: Node) -> void:
 	var path: String = _scene_paths.get(obj, "")
