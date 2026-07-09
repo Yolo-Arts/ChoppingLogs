@@ -33,7 +33,6 @@ EventSystem="*uid://8dn3brnlxu36"
 ObjectPool="*uid://biknfn13i40iq"
 SkillTreeConfig="*uid://bhetvvuc3e0v5"
 SaveManager="*uid://53gecmeydwe6"
-PlayerStatManager="uid://dsk3w5lardgl5"
 
 [display]
 

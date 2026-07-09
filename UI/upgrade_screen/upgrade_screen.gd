@@ -5,7 +5,6 @@ extends Bulletin
 @onready var close_menu_button: TextureButton = $MarginContainer/CloseMenuButton
 @onready var upgrades_container: PanelContainer = %UpgradesContainer
 @onready var player_money_label: Label = %PlayerMoneyLabel
-@onready var player_stat_manager: PlayerStats = %PlayerStatManager
 
 # buy buttons
 @onready var chop_damage_buy_button: Button = %ChopDamageBuyButton
@@ -277,22 +276,22 @@ func update_stat_increase_label(label: Label, current_val: float, next_val: floa
 func refresh_stat_labels() -> void:
 	var chop_lvl = UpgradeConfig.upgrades[UpgradeConfig.Keys.ChopDamage]
 	var chop_max = UpgradeConfig.max_level[UpgradeConfig.Keys.ChopDamage]
-	var current_dmg = player_stat_manager.get_axe_damage_at_level(chop_lvl)
+	var current_dmg = PlayerStats.get_axe_damage_at_level(chop_lvl)
 	
 	if chop_lvl >= chop_max:
 		chop_damage_stat_increase_label.text = "%d Damage (MAX)" % int(current_dmg)
 	else:
-		var next_dmg = player_stat_manager.get_axe_damage_at_level(chop_lvl + 1)
+		var next_dmg = PlayerStats.get_axe_damage_at_level(chop_lvl + 1)
 		update_stat_increase_label(chop_damage_stat_increase_label, current_dmg, next_dmg, "DMG")
 	
 	var axe_lvl = UpgradeConfig.upgrades[UpgradeConfig.Keys.AxeSpeed]
 	var axe_max = UpgradeConfig.max_level[UpgradeConfig.Keys.AxeSpeed]
-	var current_axe_spd = player_stat_manager.get_axe_speed_at_level(axe_lvl)
+	var current_axe_spd = PlayerStats.get_axe_speed_at_level(axe_lvl)
 	
 	if axe_lvl >= axe_max:
 		axe_speed_stat_increase_label.text = "%.1f (MAX)" % current_axe_spd
 	else:
-		var next_axe_spd = player_stat_manager.get_axe_speed_at_level(axe_lvl + 1)
+		var next_axe_spd = PlayerStats.get_axe_speed_at_level(axe_lvl + 1)
 		update_stat_increase_label(axe_speed_stat_increase_label, current_axe_spd, next_axe_spd, "", "", "x")
 	
 	var stam_lvl = UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintStamina]
@@ -305,20 +304,20 @@ func refresh_stat_labels() -> void:
 	
 	var sprint_lvl = UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintSpeed]
 	var sprint_max = UpgradeConfig.max_level[UpgradeConfig.Keys.SprintSpeed]
-	var current_spd = player_stat_manager.get_sprint_multi_at_level(sprint_lvl)
+	var current_spd = PlayerStats.get_sprint_multi_at_level(sprint_lvl)
 	
 	if sprint_lvl >= sprint_max:
 		sprint_speed_stat_increase_label.text = "x%.1f (MAX)" % current_spd
 	else:
-		var next_spd = player_stat_manager.get_sprint_multi_at_level(sprint_lvl + 1)
+		var next_spd = PlayerStats.get_sprint_multi_at_level(sprint_lvl + 1)
 		update_stat_increase_label(sprint_speed_stat_increase_label, current_spd, next_spd, "", "", "x")
 	
 	var bag_lvl = UpgradeConfig.upgrades[UpgradeConfig.Keys.BackPack]
 	var bag_max = UpgradeConfig.max_level[UpgradeConfig.Keys.BackPack]
-	var current_slots = player_stat_manager.get_inventory_size_at_level(bag_lvl)
+	var current_slots = PlayerStats.get_inventory_size_at_level(bag_lvl)
 	
 	if bag_lvl >= bag_max:
 		backpack_stat_increase_label.text = "%d slots (MAX)" % int(current_slots)
 	else:
-		var next_slots = player_stat_manager.get_inventory_size_at_level(bag_lvl + 1)
+		var next_slots = PlayerStats.get_inventory_size_at_level(bag_lvl + 1)
 		update_stat_increase_label(backpack_stat_increase_label, current_slots, next_slots, "slots")

@@ -1,18 +1,18 @@
 extends Node
 class_name PlayerStats
 
-@export_group("Upgrades")
-@export var base_inventory_size: int = 3
-@export var base_max_weight: float = 5000.0
-@export var base_normal_speed: float = 2.0
+const base_inventory_size: int = 3
+const base_max_weight: float = 5000.0
+const base_normal_speed: float = 2.0
 const base_sprint_multi: float = 3.0
-@export var sprint_multi_per_lvl: float = 0.1
-@export var base_sprint_stamina: float = 1.0 #seconds
-@export var stamina_per_lvl: float = 1
+const sprint_multi_per_lvl: float = 0.1
+const base_sprint_stamina: float = 1.0 #seconds
+const stamina_per_lvl: float = 1
 const base_stamina_recharge_time: float = 5.0
-@export var stamina_recharge_per_lvl: float = -0.5
-@export var base_axe_damage_bonus: float = 1.0
-@export var base_axe_speed_bonus: float = 1.0
+const stamina_recharge_per_lvl: float = -0.5
+const time_trees_cd: float = 0.1
+const base_axe_damage_bonus: float = 1.0
+const base_axe_speed_bonus: float = 1.0
 
 @export_group("Weight")
 @export var weight : float = 0
@@ -104,7 +104,7 @@ var inventory_size: int:
 var max_weight : float:
 	get: return base_max_weight
 
-func get_axe_damage_at_level(lvl: int) -> float:
+static func get_axe_damage_at_level(lvl: int) -> float:
 	return base_axe_damage_bonus + (lvl * max(1, (1 * 
 	(
 		(SkillTreeConfig.upgrades[SkillTreeConfig.Keys.AXE_DAMAGE_1] * 2) \
@@ -126,19 +126,19 @@ var pickup_radius: float = 1.887:
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.PICKUP_RADIUS_4] * 0.5) \
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.PICKUP_RADIUS_5] * 0.5)
 
-func get_axe_speed_at_level(lvl: int) -> float:
+static func get_axe_speed_at_level(lvl: int) -> float:
 	return base_axe_speed_bonus + (lvl * 0.2)
 
-func get_normal_speed_at_level(lvl: int) -> float:
+static func get_normal_speed_at_level(lvl: int) -> float:
 	return base_normal_speed + (lvl * 0.4)
 
-func get_sprint_multi_at_level(lvl: int) -> float:
+static func get_sprint_multi_at_level(lvl: int) -> float:
 	return base_sprint_multi + (lvl * sprint_multi_per_lvl)
 	
-func get_sprint_stamina_at_level(lvl: int) -> float:
+static func get_sprint_stamina_at_level(lvl: int) -> float:
 	return base_sprint_stamina + (stamina_per_lvl * lvl)
 
-func get_inventory_size_at_level(lvl: int) -> int:
+static func get_inventory_size_at_level(lvl: int) -> int:
 	return base_inventory_size + (lvl * max(1, (1 * 
 	(
 		(SkillTreeConfig.upgrades[SkillTreeConfig.Keys.INVENTORY_SLOTS_PER_LEVEL_1] * 1) \
@@ -149,13 +149,20 @@ func get_inventory_size_at_level(lvl: int) -> int:
 		+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.INVENTORY_SLOTS_PER_LEVEL_4] * 50) \
 	))))
 
+static var has_connected_signals: bool = false#moderately smelly safety net
+
 func _ready() -> void:
 	var saved_wallet = SaveManager.load_player_data()
 	if not saved_wallet.is_empty():
 		money = saved_wallet.get("money", 0.0)
 		prestige_points = saved_wallet.get("prestige_points", 0)
 		EventSystem.MON_money_updated.emit(money, Color(1.0, 1.0, 1.0, 1.0))
-	
+
+	if !has_connected_signals:
+		connect_signals()
+
+
+func connect_signals() -> void:
 	EventSystem.WEP_unlock_fire_slash.connect(func(): unlocked_fire_slash = true, CONNECT_ONE_SHOT)
 	EventSystem.UPG_increase_fire_slash_damage.connect(func(increase): fire_slash_damage += increase)
 	EventSystem.UPG_increase_fire_slash_fire_rate.connect(func(increase): fire_slash_cooldown -= increase)
@@ -167,12 +174,13 @@ func _ready() -> void:
 	
 	EventSystem.TRE_tree_cut.connect(func(): 
 		if SkillTreeConfig.upgrades[SkillTreeConfig.Keys.TIME_TREES] > 0:
-			EventSystem.HUD_change_countdown.emit(0.1) #TODO: Refactor once skill tree system is more solidified.
+			EventSystem.HUD_change_countdown.emit(time_trees_cd) #TODO: Refactor once skill tree system is more solidified.
 	)
 	
 	
 	#EventSystem.UPG_increase_crit_chance.connect(increase_player_crit_chance)
 	#EventSystem.UPG_increase_crit_damage.connect(increase_player_crit_damage)
+	has_connected_signals = true
 
 
 #func increase_player_crit_chance(crit_chance: float):
