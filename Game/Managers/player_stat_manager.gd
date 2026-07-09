@@ -9,6 +9,8 @@ const base_sprint_multi: float = 3.0
 @export var sprint_multi_per_lvl: float = 0.1
 @export var base_sprint_stamina: float = 1.0 #seconds
 @export var stamina_per_lvl: float = 1
+const base_stamina_recharge_time: float = 5.0
+@export var stamina_recharge_per_lvl: float = -0.5
 @export var base_axe_damage_bonus: float = 1.0
 @export var base_axe_speed_bonus: float = 1.0
 
@@ -87,6 +89,11 @@ var sprint_speed: float:
 
 var max_sprint_stamina: float:
 	get: return get_sprint_stamina_at_level(UpgradeConfig.upgrades[UpgradeConfig.Keys.SprintStamina]) 
+	
+var stamina_recharge_time: float:
+	get: return base_stamina_recharge_time + \
+		SkillTreeConfig.upgrades[SkillTreeConfig.Keys.STAMINA_RECHARGE_1] * stamina_recharge_per_lvl + \
+		SkillTreeConfig.upgrades[SkillTreeConfig.Keys.STAMINA_RECHARGE_2] * stamina_recharge_per_lvl
 
 var normal_speed: float:
 	get: return base_normal_speed#Change this back if desired, would just need to change how sprint speed upgrade gets displayed
