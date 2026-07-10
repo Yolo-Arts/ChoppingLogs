@@ -111,6 +111,8 @@ enum Keys {
 	PICKUP_RADIUS_3,
 	PICKUP_RADIUS_4,
 	PICKUP_RADIUS_5,
+	STAMINA_RECHARGE_1,
+	STAMINA_RECHARGE_2,
 }
 
 func populate_initial_upgrades() -> void:

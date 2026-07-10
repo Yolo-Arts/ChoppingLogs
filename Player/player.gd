@@ -89,7 +89,7 @@ func move(delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
-	var is_sprinting := Input.is_action_pressed("sprint")
+	var is_sprinting :=  !stamina_drained && Input.is_action_pressed("sprint") && input_dir != Vector2.ZERO
 	var base_speed := _handle_sprinting(delta) if is_sprinting else player_stats.normal_speed
 	var target_speed := base_speed * player_stats.player_speed_with_weight_modifier
 
@@ -110,7 +110,7 @@ func move(delta: float) -> void:
 			velocity.x = horizontal.x
 			velocity.z = horizontal.y
 	move_and_slide()
-	stamina_regen(delta)
+	stamina_regen(is_sprinting, delta)
 
 #region Sprinting
 func _update_stamina() -> void:
@@ -122,9 +122,6 @@ func _update_stamina() -> void:
 var cur_stamina: float = -1
 var stamina_drained: bool = false
 func _handle_sprinting(delta: float) -> float:
-	if stamina_drained:
-		return player_stats.normal_speed
-		
 	cur_stamina -= delta
 	if cur_stamina <= 0:
 		cur_stamina = 0
@@ -132,11 +129,11 @@ func _handle_sprinting(delta: float) -> float:
 	EventSystem.HUD_update_stamina.emit(cur_stamina)
 	return player_stats.sprint_speed
 		
-const STAMINA_RECHARGE_TIME: float = 5.0
-func stamina_regen(delta: float) -> void:
-	if !stamina_drained:
+func stamina_regen(is_sprinting, delta: float) -> void:
+	if is_sprinting || cur_stamina >= player_stats.max_sprint_stamina:
 		return
-	var stamina_regen_speed: float = player_stats.max_sprint_stamina / STAMINA_RECHARGE_TIME
+	var stamina_regen_speed: float = player_stats.max_sprint_stamina / player_stats.stamina_recharge_time
+	print_debug(stamina_regen_speed)
 	cur_stamina = clampf(cur_stamina + (stamina_regen_speed * delta), 0, player_stats.max_sprint_stamina)
 	EventSystem.HUD_update_stamina.emit(cur_stamina)
 	if cur_stamina == player_stats.max_sprint_stamina:

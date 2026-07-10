@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://dpfs23ah88iah"]
+
+[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_ps3wh"]
+[ext_resource type="Texture2D" uid="uid://drw3syxeokhhg" path="res://Assets/skill_tree/PlayerMovement/SprintStamina2.png" id="2_hxkbi"]
+
+[resource]
+script = ExtResource("1_ps3wh")
+upgrade_name = "Stamine Recharge 2"
+upgrade_key = 105
+texture = ExtResource("2_hxkbi")
+max_level = 4
+upgrade_cost = 50
+price_increase_mult_per_level = 1.2
+level_requirement_to_reveal = 8
+description = "Decreases the amount it takes for a full bar of stamina to regenerate by 0.5 seconds per level."
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
