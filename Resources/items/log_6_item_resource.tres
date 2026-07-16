@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://d0yyx58pt04it"]
+[gd_resource type="Resource" script_class="LogItem" format=3 uid="uid://d0yyx58pt04it"]
 
 [ext_resource type="Texture2D" uid="uid://bdmbqpnrlodgr" path="res://Assets/UI/log.png" id="1_ll1of"]
-[ext_resource type="Script" uid="uid://rrdagysicmkc" path="res://Resources/items/item_resource.gd" id="2_jj07s"]
+[ext_resource type="Script" uid="uid://do2ysyj6d0rav" path="res://Resources/items/log_item.gd" id="2_ll1of"]
 
 [resource]
-script = ExtResource("2_jj07s")
+script = ExtResource("2_ll1of")
+stronger_trees_key = 113
 item_key = 5
 display_name = "Log"
 icon = ExtResource("1_ll1of")

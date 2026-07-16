@@ -115,6 +115,12 @@ enum Keys {
 	STAMINA_RECHARGE_2,
 	SELL_VALUE_6,
 	SELL_VALUE_7,
+	TOUGHER_TREES_1,
+	TOUGHER_TREES_2,
+	TOUGHER_TREES_3,
+	TOUGHER_TREES_4,
+	TOUGHER_TREES_5,
+	TOUGHER_TREES_6,
 }
 
 func populate_initial_upgrades() -> void:

@@ -33,6 +33,7 @@ shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 
 [node name="HittableTree6" unique_id=640084038 instance=ExtResource("1_01q8x")]
+tougher_trees_key = 113
 attributes = SubResource("Resource_tn4sw")
 
 [node name="CommonTree_1" parent="." index="2" unique_id=1094452780 instance=ExtResource("3_tn4sw")]

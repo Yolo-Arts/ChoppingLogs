@@ -43,6 +43,7 @@ shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 
 [node name="HittableTree3" unique_id=640084038 instance=ExtResource("1_b43d2")]
+tougher_trees_key = 110
 attributes = SubResource("Resource_n5bjq")
 
 [node name="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(1570950279) index="0" unique_id=1547967030]

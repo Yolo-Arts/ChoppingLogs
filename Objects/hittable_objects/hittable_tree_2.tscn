@@ -33,6 +33,7 @@ shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 
 [node name="HittableTree2" unique_id=640084038 instance=ExtResource("1_1y68c")]
+tougher_trees_key = 109
 attributes = SubResource("Resource_pgl0r")
 
 [node name="Marker3D3" type="Marker3D" parent="ItemSpawnPoints" parent_id_path=PackedInt32Array(1765943128) index="2" unique_id=59523786]
