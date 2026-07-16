@@ -15,7 +15,7 @@ func die() -> void:
 	super()
 
 #this is the only thing I can forsee possibly not working correctly, if on re-init from pool hp isn't correct
-#from limited testing this seems to be correct
+#from limited testing this seems to be working as intended
 func reset() -> void:
 	super.reset() 
 	current_health *= 1 + SkillTreeConfig.get_upgrade_level(tougher_trees_key)

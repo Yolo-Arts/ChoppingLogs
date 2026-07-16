@@ -52,6 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://b725ljwemy0sr" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel03.png" id="32_uoit0"]
 [ext_resource type="Texture2D" uid="uid://dm0e5bhwfquax" path="res://Assets/skill_tree/axe/AxeDamageMaxLevel/AxeDamageMaxLevel07.png" id="33_3hptt"]
 [ext_resource type="Texture2D" uid="uid://bb8mda7t4flsc" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel04.png" id="33_ph2hn"]
+[ext_resource type="Resource" uid="uid://carh4m1o3hn4a" path="res://Resources/skilltree/TougherTrees/TougherTrees1.tres" id="34_7g6ir"]
 [ext_resource type="Texture2D" uid="uid://6hkbuwk1doph" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel05.png" id="34_7jxhf"]
 [ext_resource type="Texture2D" uid="uid://ct7y8df4bixhb" path="res://Assets/skill_tree/SellValue/SellValueIncrease01.png" id="34_u6dyp"]
 [ext_resource type="Texture2D" uid="uid://byhc75p51avth" path="res://Assets/skill_tree/Inventory/InventorySlotsPerLevel/InventorySlotsPerLevel06.png" id="35_6fw87"]
@@ -61,6 +62,11 @@
 [ext_resource type="Texture2D" uid="uid://bhg33y32tqimd" path="res://Assets/skill_tree/SellValue/SellValueIncrease05.png" id="38_yjfj4"]
 [ext_resource type="Texture2D" uid="uid://crgrw57gxorii" path="res://Assets/skill_tree/SellValue/SellValueIncrease06.png" id="39_ym7y6"]
 [ext_resource type="Texture2D" uid="uid://dgoh20o3ywyju" path="res://Assets/skill_tree/SellValue/SellValueIncrease07.png" id="40_xwvl1"]
+[ext_resource type="Resource" uid="uid://bh3kdoy5qrlk7" path="res://Resources/skilltree/TougherTrees/TougherTrees2.tres" id="35_u6dyp"]
+[ext_resource type="Resource" uid="uid://bmuu6bjdvde2a" path="res://Resources/skilltree/TougherTrees/TougherTrees3.tres" id="36_rjf26"]
+[ext_resource type="Resource" uid="uid://bdvl0id7fuba" path="res://Resources/skilltree/TougherTrees/TougherTrees4.tres" id="36_vulb5"]
+[ext_resource type="Resource" uid="uid://b8rddr872kdvv" path="res://Resources/skilltree/TougherTrees/TougherTrees5.tres" id="37_rjf26"]
+[ext_resource type="Resource" uid="uid://xvhw321d2oeu" path="res://Resources/skilltree/TougherTrees/TougherTrees6.tres" id="39_ohkuh"]
 [ext_resource type="Texture2D" uid="uid://bjs8ijtoyqwto" path="res://Assets/UI/Icons/upgrade_icon/PickupRadius1.png" id="45_xc6ld"]
 [ext_resource type="Texture2D" uid="uid://cqhrafva17qmq" path="res://Assets/UI/Icons/upgrade_icon/PickupRadius2.png" id="46_pgb8i"]
 [ext_resource type="Texture2D" uid="uid://dovxj8t2mda6p" path="res://Assets/UI/Icons/upgrade_icon/PickupRadius03.png" id="46_xc6ld"]
@@ -1086,6 +1092,50 @@ layout_mode = 0
 offset_left = 192.0
 offset_right = 282.0
 skill_data = SubResource("Resource_mq7u6")
+
+[node name="LogSellPrice8" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/LogSellPrice2/LogSellPrice3/LogSellPrice4/LogSellPrice5/LogSellPrice6" unique_id=898068682 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 282.0
+skill_data = SubResource("Resource_mq7u6")
+
+[node name="TougherTrees1" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice" unique_id=280492940 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 135.0
+offset_right = 314.0
+offset_bottom = 225.0
+skill_data = ExtResource("34_7g6ir")
+
+[node name="TougherTrees2" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/TougherTrees1" unique_id=837142764 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 250.0
+skill_data = ExtResource("35_u6dyp")
+
+[node name="TougherTrees3" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/TougherTrees1/TougherTrees2" unique_id=1338537645 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 250.0
+skill_data = ExtResource("36_rjf26")
+
+[node name="TougherTrees4" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/TougherTrees1/TougherTrees2/TougherTrees3" unique_id=766449072 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 250.0
+skill_data = ExtResource("36_vulb5")
+
+[node name="TougherTrees5" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/TougherTrees1/TougherTrees2/TougherTrees3/TougherTrees4" unique_id=1671733337 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 250.0
+skill_data = ExtResource("37_rjf26")
+
+[node name="TougherTrees6" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/TougherTrees1/TougherTrees2/TougherTrees3/TougherTrees4/TougherTrees5" unique_id=2045271806 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 250.0
+skill_data = ExtResource("39_ohkuh")
 
 [node name="InventoryMaxLevel" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1359269755 instance=ExtResource("6_2gknk")]
 layout_mode = 0
