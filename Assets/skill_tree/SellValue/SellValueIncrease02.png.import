@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sw3vnncq5w67"
-path="res://.godot/imported/SellValue4.png-e19524dd8f9b8e5bab3f74a4b7aeee0f.ctex"
+uid="uid://dn2j75qd35jim"
+path="res://.godot/imported/SellValueIncrease02.png-c647e501c7b2c9e0c116ad71d932936b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/skill_tree/SellValue/SellValue4.png"
-dest_files=["res://.godot/imported/SellValue4.png-e19524dd8f9b8e5bab3f74a4b7aeee0f.ctex"]
+source_file="res://Assets/skill_tree/SellValue/SellValueIncrease02.png"
+dest_files=["res://.godot/imported/SellValueIncrease02.png-c647e501c7b2c9e0c116ad71d932936b.ctex"]
 
 [params]
 

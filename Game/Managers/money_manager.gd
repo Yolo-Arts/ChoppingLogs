@@ -8,7 +8,8 @@ func _ready() -> void:
 	EventSystem.MON_get_player_money = func() -> float: return player_stats.money
 
 func add_money(money_to_add: float):
-	player_stats.money += money_to_add
+	player_stats.money += money_to_add * player_stats.sell_multiplier
+	print("Sell Multiplier is: ", player_stats.sell_multiplier)
 	EventSystem.MON_money_updated.emit(player_stats.money, Color.YELLOW)
 	SaveManager.save_player_data(player_stats.money, player_stats.prestige_points)
 

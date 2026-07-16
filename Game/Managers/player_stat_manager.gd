@@ -13,6 +13,17 @@ const stamina_recharge_per_lvl: float = -0.5
 const time_trees_cd: float = 0.1
 const base_axe_damage_bonus: float = 1.0
 const base_axe_speed_bonus: float = 1.0
+var sell_multiplier: float = 1.0:
+	get:
+		return 1.0 + (
+			(SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SELL_VALUE_1] * 0.05) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SELL_VALUE_2] * 0.05) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SELL_VALUE_3] * 0.15) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SELL_VALUE_4] * 0.25) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SELL_VALUE_5] * 0.25) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SELL_VALUE_6] * 0.25) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SELL_VALUE_7] * 1.0) 
+		)
 
 @export_group("Weight")
 @export var weight : float = 0
@@ -20,7 +31,7 @@ var player_speed_with_weight_modifier: float = 1.0
 
 @export_group("Stats")
 @export var health: float = 100
-@export var money: float = 0
+@export var money: float = 0.0
 @export var prestige_points: float = 2
 @export var axe_damage_mult_bonus: float = 1.0
 @export var axe_range: float = 1.5:

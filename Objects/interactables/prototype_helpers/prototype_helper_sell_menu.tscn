@@ -21,7 +21,7 @@ prompt = "Open Sell Menu"
 texture = SubResource("ViewportTexture_0hem7")
 
 [node name="PrototypeHelperLabel" parent="Sprite3D/SubViewport/MarginContainer" parent_id_path=PackedInt32Array(320563032) index="0" unique_id=1559570643]
-text = "Sell Menu"
+text = "Sell Area"
 
 [node name="LogSellArea" type="Area3D" parent="." index="4" unique_id=1823251328]
 collision_mask = 3
