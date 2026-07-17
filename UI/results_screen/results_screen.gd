@@ -181,9 +181,7 @@ func _on_continue_button_pressed() -> void:
 		EventSystem.MON_decrease_money.emit(quota)
 		EventSystem.STA_change_stage.emit(StageConfig.Keys.Level)
 	else:
-		EventSystem.QUO_reset_quota.emit()
-		var player_money = EventSystem.MON_get_player_money.call()
-		EventSystem.MON_decrease_money.emit(player_money)
+		#EventSystem.QUO_reset_quota.emit() In theory, this currently always transitions to skill tree which emits quota reset.
 		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.YouLose)
 	
 	EventSystem.DAR_reset_encroaching_dark.emit()

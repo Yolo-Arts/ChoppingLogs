@@ -121,6 +121,10 @@ enum Keys {
 	TOUGHER_TREES_4,
 	TOUGHER_TREES_5,
 	TOUGHER_TREES_6,
+	STARTING_CASH_1,
+	STARTING_CASH_2,
+	STARTING_CASH_3,
+	STARTING_CASH_4,
 }
 
 func populate_initial_upgrades() -> void:
