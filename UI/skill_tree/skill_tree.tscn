@@ -71,11 +71,15 @@
 [ext_resource type="Texture2D" uid="uid://cqhrafva17qmq" path="res://Assets/UI/Icons/upgrade_icon/PickupRadius2.png" id="46_pgb8i"]
 [ext_resource type="Texture2D" uid="uid://dovxj8t2mda6p" path="res://Assets/UI/Icons/upgrade_icon/PickupRadius03.png" id="46_xc6ld"]
 [ext_resource type="Resource" uid="uid://be8kf3wa5wmgu" path="res://Resources/skilltree/Timer/inc_time_1.tres" id="47_0pky4"]
+[ext_resource type="Texture2D" uid="uid://668etb4btje1" path="res://Assets/skill_tree/StartingCash/StartingCash01.png" id="47_e2vyx"]
 [ext_resource type="Texture2D" uid="uid://bayxun1kk7s6o" path="res://Assets/UI/Icons/upgrade_icon/PickupRadius04.png" id="47_pgb8i"]
 [ext_resource type="Resource" uid="uid://dk3wfrbvxn4vt" path="res://Resources/skilltree/Timer/inc_time_2.tres" id="48_0pky4"]
+[ext_resource type="Texture2D" uid="uid://v4bibmh64bfl" path="res://Assets/skill_tree/StartingCash/StartingCash02.png" id="48_5h47n"]
 [ext_resource type="Texture2D" uid="uid://beimpgw280j37" path="res://Assets/UI/Icons/upgrade_icon/PickupRadius05.png" id="48_7ed06"]
 [ext_resource type="Resource" uid="uid://bp3wpq7814mxo" path="res://Resources/skilltree/Timer/inc_time_3.tres" id="49_0pky4"]
+[ext_resource type="Texture2D" uid="uid://dec5t0rsq46lv" path="res://Assets/skill_tree/StartingCash/StartingCash03.png" id="49_c5w80"]
 [ext_resource type="Resource" uid="uid://by7cjnv7c2dix" path="res://Resources/skilltree/Timer/inc_time_4.tres" id="50_0pky4"]
+[ext_resource type="Texture2D" uid="uid://bkqg2dqlyralf" path="res://Assets/skill_tree/StartingCash/StartingCash04.png" id="50_wohuj"]
 [ext_resource type="Resource" uid="uid://vbq8mhfjb4pw" path="res://Resources/skilltree/Timer/inc_time_5.tres" id="51_0pky4"]
 [ext_resource type="Resource" uid="uid://cbo2ge7xbh7sp" path="res://Resources/skilltree/Timer/inc_time_6.tres" id="52_0pky4"]
 [ext_resource type="Resource" uid="uid://b4m1d4qdacomk" path="res://Resources/skilltree/Timer/inc_time_7.tres" id="53_0pky4"]
@@ -446,6 +450,46 @@ upgrade_key = 107
 texture = ExtResource("40_xwvl1")
 upgrade_cost = 5000
 description = "Logs sell for 200% more!"
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_wcu42"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "StartingCash1"
+upgrade_key = 114
+texture = ExtResource("47_e2vyx")
+max_level = 10
+upgrade_cost = 5
+description = "After prestige, start with 10 more money per level."
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_bnatt"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "StartingCash2"
+upgrade_key = 115
+texture = ExtResource("48_5h47n")
+max_level = 10
+upgrade_cost = 50
+description = "After prestige, start with 100 more money per level."
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_5pl83"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "StartingCash3"
+upgrade_key = 116
+texture = ExtResource("49_c5w80")
+max_level = 10
+upgrade_cost = 500
+description = "After prestige, start with 1000 more money per level."
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_ehptv"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "StartingCash4"
+upgrade_key = 117
+texture = ExtResource("50_wohuj")
+max_level = 10
+upgrade_cost = 5000
+description = "After prestige, start with 10000 more money per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_8i8nj"]
@@ -1093,12 +1137,6 @@ offset_left = 192.0
 offset_right = 282.0
 skill_data = SubResource("Resource_mq7u6")
 
-[node name="LogSellPrice8" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/LogSellPrice2/LogSellPrice3/LogSellPrice4/LogSellPrice5/LogSellPrice6" unique_id=898068682 instance=ExtResource("6_2gknk")]
-layout_mode = 0
-offset_left = 192.0
-offset_right = 282.0
-skill_data = SubResource("Resource_mq7u6")
-
 [node name="TougherTrees1" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice" unique_id=280492940 instance=ExtResource("6_2gknk")]
 layout_mode = 0
 offset_left = 224.0
@@ -1136,6 +1174,32 @@ layout_mode = 0
 offset_left = 160.0
 offset_right = 250.0
 skill_data = ExtResource("39_ohkuh")
+
+[node name="StartingCash1" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice" unique_id=1059340149 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 224.0
+offset_top = -100.0
+offset_right = 314.0
+offset_bottom = -10.0
+skill_data = SubResource("Resource_wcu42")
+
+[node name="StartingCash2" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/StartingCash1" unique_id=831343055 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 250.0
+skill_data = SubResource("Resource_bnatt")
+
+[node name="StartingCash3" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/StartingCash1/StartingCash2" unique_id=1549106988 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 250.0
+skill_data = SubResource("Resource_5pl83")
+
+[node name="StartingCash4" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice/StartingCash1/StartingCash2/StartingCash3" unique_id=1466150506 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 250.0
+skill_data = SubResource("Resource_ehptv")
 
 [node name="InventoryMaxLevel" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1359269755 instance=ExtResource("6_2gknk")]
 layout_mode = 0
