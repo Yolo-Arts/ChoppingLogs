@@ -27,16 +27,18 @@ func _ready() -> void:
 	EventSystem.HUD_update_prestige_points.connect(update_prestige_label)
 
 func reset_hud_elements():
-	money_label.text = "$" + str(0.0)
+	#money_label.text = "$" + str(0.0)
+	money_label.text = "$%.2f" % 0.00
 
 func reset_encroaching_dark():
 	encroaching_dark_player.play("RESET")
 
 var last_money_value = 0
 func update_text(money: float, color: Color):
-	money_label.text = "$" + str(money)
+	money_label.text = "$%.2f" % money
+
 	var tween = create_tween()
-	tween.tween_method(set_label_number.bind(money_label), last_money_value, int(money), 0.5)
+	tween.tween_method(set_label_number.bind(money_label), last_money_value, float(money), 0.5)
 	last_money_value = money
 	apply_text_effect(money_label, color)
 
@@ -69,10 +71,11 @@ func apply_text_effect(label: Label, color: Color):
 	tween.tween_property(label, "scale", Vector2(1.2, 1.2), 0.1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.tween_property(label, "scale", Vector2(1.0, 1.0), 0.2).set_delay(0.1)
 
-func set_label_number(number: int, label: Label) -> void:
+func set_label_number(number: float, label: Label) -> void:
 	match label:
 		money_label:
-			label.set_text("$" + str(number))
+			#label.set_text("$" + str(number))
+			label.set_text("$%.2f" % (number))
 		_:
 			label.set_text(str(number))
 

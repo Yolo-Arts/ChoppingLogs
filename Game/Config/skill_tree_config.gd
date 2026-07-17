@@ -113,6 +113,8 @@ enum Keys {
 	PICKUP_RADIUS_5,
 	STAMINA_RECHARGE_1,
 	STAMINA_RECHARGE_2,
+	SELL_VALUE_6,
+	SELL_VALUE_7,
 }
 
 func populate_initial_upgrades() -> void:

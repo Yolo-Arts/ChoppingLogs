@@ -133,7 +133,7 @@ func stamina_regen(is_sprinting, delta: float) -> void:
 	if is_sprinting || cur_stamina >= player_stats.max_sprint_stamina:
 		return
 	var stamina_regen_speed: float = player_stats.max_sprint_stamina / player_stats.stamina_recharge_time
-	print_debug(stamina_regen_speed)
+	#print_debug(stamina_regen_speed)
 	cur_stamina = clampf(cur_stamina + (stamina_regen_speed * delta), 0, player_stats.max_sprint_stamina)
 	EventSystem.HUD_update_stamina.emit(cur_stamina)
 	if cur_stamina == player_stats.max_sprint_stamina:
