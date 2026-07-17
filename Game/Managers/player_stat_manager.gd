@@ -24,7 +24,15 @@ var sell_multiplier: float = 1.0:
 			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SELL_VALUE_6] * 0.25) \
 			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.SELL_VALUE_7] * 1.0) 
 		)
-
+var starting_money: float = 0.0:
+	get: 
+		return 0.0 + (
+			(SkillTreeConfig.upgrades[SkillTreeConfig.Keys.STARTING_CASH_1] * 10) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.STARTING_CASH_2] * 100) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.STARTING_CASH_3] * 1000) \
+			+ (SkillTreeConfig.upgrades[SkillTreeConfig.Keys.STARTING_CASH_4] * 10000)
+		)
+		
 @export_group("Weight")
 @export var weight : float = 0
 var player_speed_with_weight_modifier: float = 1.0

@@ -1,6 +1,6 @@
 extends Bulletin
 class_name PlayerMenuBase
-
+#DEPRECATED?
 const INVENTORY_SLOT = preload("uid://cvyf6knuyqwb6")
 @onready var inventory_slot_container: GridContainer = %InventorySlotContainer
 @onready var item_name: Label = %ItemName
@@ -69,7 +69,7 @@ func update_weight(weight: int, max_weight: int) -> void:
 	weight_progress.value = weight
 
 func _on_close_button_pressed() -> void:
-	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.Inventory)
+	#EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.Inventory)
 	EventSystem.PLA_unfreeze_player.emit()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.NormalButtonPressed)

@@ -76,7 +76,6 @@ func _on_next_button_pressed() -> void:
 	EventSystem.DAR_reset_encroaching_dark.emit()
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.YouLose)
 	SaveManager.reset_run_upgrades()
-	SaveManager.reset_player_money()
 	EventSystem.QUO_reset_quota.emit()
 	_close_skill_tree()
 	get_tree().paused = false

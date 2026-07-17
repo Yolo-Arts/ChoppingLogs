@@ -86,7 +86,8 @@ func sell_all_items() -> void:
 
 	inventory.clear() 
 	
-	EventSystem.MON_add_money.emit(total_money_earned)
+	EventSystem.MON_add_money.emit(total_money_earned * player_stats.sell_multiplier)
+	print("Sell Multiplier is: ", player_stats.sell_multiplier)
 	EventSystem.WEI_weight_changed.emit(-total_weight_removed)
 	EventSystem.INV_inventory_updated.emit(inventory)
 	_update_hud_label()

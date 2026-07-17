@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://xvhw321d2oeu"]
+
+[ext_resource type="Script" uid="uid://b8bjcen86kwfh" path="res://Resources/skilltree/SkillResource.gd" id="1_lqf0p"]
+[ext_resource type="Texture2D" uid="uid://djxwr7gby2grx" path="res://Assets/skill_tree/TougherTrees/TougherTrees6.png" id="2_lqf0p"]
+
+[resource]
+script = ExtResource("1_lqf0p")
+upgrade_name = "Tougher Trees 6"
+upgrade_key = 113
+texture = ExtResource("2_lqf0p")
+max_level = 5
+upgrade_cost = 20000
+price_increase_mult_per_level = 1.2
+description = "Tier 6 tree logs sell for 100% more, but tier 6 trees have 100% more health per level."
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
