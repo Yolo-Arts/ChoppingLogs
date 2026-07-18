@@ -9,7 +9,6 @@ upgrade_name = "Tougher Trees 1"
 upgrade_key = 108
 texture = ExtResource("2_164br")
 max_level = 5
-upgrade_cost = 100
 price_increase_mult_per_level = 1.2
 description = "Tier 1 tree logs sell for 100% more, but tier 1 trees have 100% more health per level."
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"

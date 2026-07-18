@@ -151,6 +151,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -408.14996, -3.3727942, -275.
 
 [node name="HittableTreeOfInfinity2" parent="." unique_id=756079416 instance=ExtResource("41_cyw1o")]
 transform = Transform3D(100, 0, 0, 0, 50, 0, 0, 0, 100, -585.1039, 7.2027617, -352.93045)
+tougher_trees_key = 0
 
 [node name="Player" parent="." unique_id=842877921 instance=ExtResource("42_sdb2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -403.9511, -2.4113069, -293.2897)

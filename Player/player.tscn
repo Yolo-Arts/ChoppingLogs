@@ -63,6 +63,7 @@ shape = SubResource("CapsuleShape3D_l8h54")
 [node name="Managers" type="Node" parent="." unique_id=1911751187]
 
 [node name="PlayerStatManager" parent="Managers" unique_id=743444273 instance=ExtResource("4_5htga")]
+prestige_points = 16.0
 
 [node name="InventoryManager" type="Node" parent="Managers" unique_id=2003678697 node_paths=PackedStringArray("player_stats")]
 script = ExtResource("5_5htga")
