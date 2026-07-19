@@ -932,6 +932,45 @@ offset_right = 2554.0
 offset_bottom = 2778.0
 skill_data = SubResource("Resource_uoit0")
 
+[node name="SprintRecharge1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=17794756 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = -170.0
+offset_top = 922.0
+offset_right = -80.0
+offset_bottom = 1012.0
+skill_data = ExtResource("92_6op4n")
+
+[node name="SprintRecharge2" parent="SubViewport/ZoomContent/AxeDamage1/SprintRecharge1" unique_id=131339592 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = -200.0
+offset_right = -110.0
+skill_data = ExtResource("93_7g6ir")
+
+[node name="SprintStamina1" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=710908678 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = -170.0
+offset_top = 722.0
+offset_right = -80.0
+offset_bottom = 812.0
+skill_data = ExtResource("82_krrke")
+
+[node name="SprintStamina2" parent="SubViewport/ZoomContent/AxeDamage1/SprintStamina1" unique_id=298985912 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = -200.0
+offset_right = -110.0
+skill_data = ExtResource("83_krrke")
+
+[node name="SprintStamina3" parent="SubViewport/ZoomContent/AxeDamage1/SprintStamina1/SprintStamina2" unique_id=1691299754 instance=ExtResource("6_2gknk")]
+visible = false
+layout_mode = 0
+offset_left = -200.0
+offset_right = -110.0
+skill_data = ExtResource("84_krrke")
+
 [node name="AxeDamage2" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1487470350 instance=ExtResource("6_2gknk")]
 visible = false
 layout_mode = 0
@@ -1674,41 +1713,6 @@ layout_mode = 0
 offset_left = -200.0
 offset_right = -110.0
 skill_data = ExtResource("86_kd8vb")
-
-[node name="SprintStamina1" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1" unique_id=710908678 instance=ExtResource("6_2gknk")]
-visible = false
-layout_mode = 0
-offset_top = 200.0
-offset_bottom = 290.0
-skill_data = ExtResource("82_krrke")
-
-[node name="SprintStamina2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintStamina1" unique_id=298985912 instance=ExtResource("6_2gknk")]
-visible = false
-layout_mode = 0
-offset_left = -200.0
-offset_right = -110.0
-skill_data = ExtResource("83_krrke")
-
-[node name="SprintStamina3" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintStamina1/SprintStamina2" unique_id=1691299754 instance=ExtResource("6_2gknk")]
-visible = false
-layout_mode = 0
-offset_left = -200.0
-offset_right = -110.0
-skill_data = ExtResource("84_krrke")
-
-[node name="SprintRecharge1" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintStamina1" unique_id=17794756 instance=ExtResource("6_2gknk")]
-visible = false
-layout_mode = 0
-offset_top = 200.0
-offset_bottom = 290.0
-skill_data = ExtResource("92_6op4n")
-
-[node name="SprintRecharge2" parent="SubViewport/ZoomContent/AxeDamage1/SprintSpeed1/SprintStamina1/SprintRecharge1" unique_id=131339592 instance=ExtResource("6_2gknk")]
-visible = false
-layout_mode = 0
-offset_left = -200.0
-offset_right = -110.0
-skill_data = ExtResource("93_7g6ir")
 
 [node name="Vignette" type="ColorRect" parent="." unique_id=1526985475]
 unique_name_in_owner = true

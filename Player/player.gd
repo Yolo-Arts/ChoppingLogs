@@ -130,13 +130,13 @@ func _handle_sprinting(delta: float) -> float:
 	return player_stats.sprint_speed
 		
 func stamina_regen(is_sprinting, delta: float) -> void:
+	if cur_stamina == player_stats.max_sprint_stamina:
+		stamina_drained = false
 	if is_sprinting || cur_stamina >= player_stats.max_sprint_stamina:
 		return
 	var stamina_regen_speed: float = player_stats.max_sprint_stamina / player_stats.stamina_recharge_time
 	cur_stamina = clampf(cur_stamina + (stamina_regen_speed * delta), 0, player_stats.max_sprint_stamina)
 	EventSystem.HUD_update_stamina.emit(cur_stamina)
-	if cur_stamina == player_stats.max_sprint_stamina:
-		stamina_drained = false
 #endregion Sprinting
 
 func _input(event: InputEvent) -> void:
