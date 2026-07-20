@@ -85,6 +85,7 @@
 [ext_resource type="Resource" uid="uid://b4m1d4qdacomk" path="res://Resources/skilltree/Timer/inc_time_7.tres" id="53_0pky4"]
 [ext_resource type="Resource" uid="uid://ch7pivww81w75" path="res://Resources/skilltree/Timer/inc_time_8.tres" id="54_0pky4"]
 [ext_resource type="Resource" uid="uid://ddnvpfx4edbek" path="res://Resources/skilltree/Timer/inc_time_9.tres" id="55_0pky4"]
+[ext_resource type="Texture2D" uid="uid://m6u2vfh5fh1k" path="res://Assets/skill_tree/PrestigePointModifier/PrestigePointModifier.png" id="56_4ly0s"]
 [ext_resource type="Texture2D" uid="uid://bf0ra1dvwovs7" path="res://Assets/skill_tree/TimeIncrease/TimeIncreaser.png" id="56_b7xoe"]
 [ext_resource type="Resource" uid="uid://cgyu5tmtmesic" path="res://Resources/skilltree/Axe/axe_range/axe_range_1.tres" id="61_pk2xw"]
 [ext_resource type="Resource" uid="uid://c2uf8t1yvoi8p" path="res://Resources/skilltree/Axe/axe_range/axe_range_2.tres" id="62_erkpd"]
@@ -495,6 +496,17 @@ max_level = 10
 upgrade_cost = 5000
 level_requirement_to_reveal = 10
 description = "After prestige, start with 10000 more money per level."
+metadata/_custom_type_script = "uid://b8bjcen86kwfh"
+
+[sub_resource type="Resource" id="Resource_xdnvd"]
+script = ExtResource("24_xsv4x")
+upgrade_name = "PrestigePointModifier"
+upgrade_key = 118
+texture = ExtResource("56_4ly0s")
+max_level = 24
+upgrade_cost = 25
+price_increase_mult_per_level = 2.0
+description = "Decreases amount needed to earn a prestige point by $1"
 metadata/_custom_type_script = "uid://b8bjcen86kwfh"
 
 [sub_resource type="Resource" id="Resource_8i8nj"]
@@ -1243,6 +1255,14 @@ layout_mode = 0
 offset_left = 160.0
 offset_right = 250.0
 skill_data = SubResource("Resource_ehptv")
+
+[node name="PrestigePointModifier" parent="SubViewport/ZoomContent/AxeDamage1/LogSellPrice" unique_id=1224829450 instance=ExtResource("6_2gknk")]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 172.0
+offset_right = 328.0
+offset_bottom = 262.0
+skill_data = SubResource("Resource_xdnvd")
 
 [node name="InventoryMaxLevel" parent="SubViewport/ZoomContent/AxeDamage1" unique_id=1359269755 instance=ExtResource("6_2gknk")]
 layout_mode = 0

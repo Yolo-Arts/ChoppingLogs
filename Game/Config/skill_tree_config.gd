@@ -125,6 +125,7 @@ enum Keys {
 	STARTING_CASH_2,
 	STARTING_CASH_3,
 	STARTING_CASH_4,
+	PRESTIGE_POINT_MODIFIER,
 }
 
 func populate_initial_upgrades() -> void:
