@@ -76,7 +76,6 @@ func animate_stats():
 	
 	tween.tween_interval(0.25)
 	
-	
 	tween.tween_method(set_label_number.bind(trees_cut_count_lbl), 0, trees_cut, 0.5)
 	tween.parallel().tween_property(trees_cut_count_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
