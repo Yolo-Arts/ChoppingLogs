@@ -9,7 +9,7 @@ extends Control
 @export var stamina_bar: ProgressBar
 @onready var inventory_size: Label = %InventorySize
 @onready var prestige_points: Label = %PrestigePoints
-
+@onready var day_label: Label = %DayLabel
 
 func _ready() -> void:
 	EventSystem.HUD_reset_hud_elements.connect(reset_hud_elements)
@@ -43,6 +43,7 @@ func update_text(money: float, color: Color):
 	apply_text_effect(money_label, color)
 
 func update_quota_text() -> void:
+	update_day_label()
 	quota_amount.text = "/ $" + str(EventSystem.QUO_get_quota_amount.call())
 
 func _update_stamina(stamina: float, max_stam_changed: bool = false) -> void:
@@ -59,6 +60,9 @@ func update_prestige_label(prestige_points_amount: float):
 	#var tween = create_tween()
 	#tween.tween_method(set_label_number.bind(prestige_points), 0, float(prestige_points_amount), 0.5)
 	prestige_points.text = "%.1f" % prestige_points_amount
+
+func update_day_label() -> void:
+	day_label.text = "Day: " + str(EventSystem.QUO_get_day_number.call())
 
 func apply_text_effect(label: Label, color: Color):
 	var tween = create_tween().set_parallel(true)
