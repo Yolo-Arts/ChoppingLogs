@@ -82,13 +82,13 @@ func animate_stats():
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
 	
-	tween.tween_method(set_label_number.bind(quota_number_lbl), 0, -quota, 0.5)
-	tween.parallel().tween_property(quota_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
+	tween.tween_method(set_label_number.bind(todays_revenue_number_lbl), 0, todays_revenue, 0.5)
+	tween.parallel().tween_property(todays_revenue_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
 	
-	tween.tween_method(set_label_number.bind(todays_revenue_number_lbl), 0, todays_revenue, 0.5)
-	tween.parallel().tween_property(todays_revenue_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
+	tween.tween_method(set_label_number.bind(quota_number_lbl), 0, -quota, 0.5)
+	tween.parallel().tween_property(quota_number_lbl, "self_modulate:a", 1.0, 0.05).from(0.0)
 	tween.parallel().tween_callback(shaker.start.bind(0.25))
 	tween.tween_interval(0.25)
 	
